@@ -1,0 +1,25 @@
+{
+  "name": "exam-prep-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "db:sync": "cp supabase/schema.sql supabase/migrations/00000000000000_init.sql",
+    "db:start": "npm run db:sync && supabase start",
+    "db:reset": "npm run db:sync && supabase db reset",
+    "db:stop": "supabase stop",
+    "seed": "node scripts/seed.mjs"
+  },
+  "devDependencies": {
+    "supabase": "^2.115.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-singlefile": "^2.3.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0"
+  }
+}
