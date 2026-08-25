@@ -1,0 +1,332 @@
+[
+ {
+  "stage_id": "morning",
+  "kind": "mc",
+  "n": 1,
+  "stem_en": "[Sample] A company wants to reduce the response time of a database that is read-heavy. Which approach is most appropriate?",
+  "stem_ja": "[サンプル] 読み取りが多いデータベースの応答時間を短縮したい。最も適切な方法はどれか。",
+  "options": [
+   {
+    "label": "A",
+    "en": "Add a read replica and route read queries to it.",
+    "ja": "リードレプリカを追加し、読み取りクエリをそちらに振り分ける。"
+   },
+   {
+    "label": "B",
+    "en": "Increase the number of write transactions per second.",
+    "ja": "秒間の書き込みトランザクション数を増やす。"
+   },
+   {
+    "label": "C",
+    "en": "Remove all indexes to simplify writes.",
+    "ja": "書き込みを単純化するため、すべてのインデックスを削除する。"
+   },
+   {
+    "label": "D",
+    "en": "Disable database backups.",
+    "ja": "データベースのバックアップを無効にする。"
+   }
+  ],
+  "answer": "A",
+  "multi": false,
+  "domain": "Technology"
+ },
+ {
+  "stage_id": "morning",
+  "kind": "mc",
+  "n": 2,
+  "stem_en": "[Sample] In project management, what does \"critical path\" refer to?",
+  "stem_ja": "[サンプル] プロジェクト管理における「クリティカルパス」とは何か。",
+  "options": [
+   {
+    "label": "A",
+    "en": "The most expensive task in the project.",
+    "ja": "プロジェクトの中で最も費用がかかるタスク。"
+   },
+   {
+    "label": "B",
+    "en": "The longest sequence of dependent tasks that determines the minimum project duration.",
+    "ja": "プロジェクトの最短完了期間を決定する、依存関係のある最長のタスク列。"
+   },
+   {
+    "label": "C",
+    "en": "A task that can be delayed without affecting the schedule.",
+    "ja": "スケジュールに影響を与えずに遅らせられるタスク。"
+   },
+   {
+    "label": "D",
+    "en": "The first task in the project plan.",
+    "ja": "プロジェクト計画の最初のタスク。"
+   }
+  ],
+  "answer": "B",
+  "multi": false,
+  "domain": "Management"
+ },
+ {
+  "stage_id": "morning",
+  "kind": "mc",
+  "n": 3,
+  "stem_en": "[Sample] Which of the following best describes a SWOT analysis?",
+  "stem_ja": "[サンプル] SWOT分析を最もよく説明しているのはどれか。",
+  "options": [
+   {
+    "label": "A",
+    "en": "A method for encrypting sensitive business data.",
+    "ja": "機密性の高い業務データを暗号化する手法。"
+   },
+   {
+    "label": "B",
+    "en": "A framework for evaluating Strengths, Weaknesses, Opportunities, and Threats.",
+    "ja": "強み・弱み・機会・脅威を評価するフレームワーク。"
+   },
+   {
+    "label": "C",
+    "en": "A network topology used in enterprise systems.",
+    "ja": "企業システムで使われるネットワークトポロジー。"
+   },
+   {
+    "label": "D",
+    "en": "A software testing technique.",
+    "ja": "ソフトウェアのテスト手法。"
+   }
+  ],
+  "answer": "B",
+  "multi": false,
+  "domain": "Strategy"
+ },
+ {
+  "stage_id": "morning",
+  "kind": "mc",
+  "n": 4,
+  "stem_en": "[Sample] Which practices help protect against SQL injection? (Select two.)",
+  "stem_ja": "[サンプル] SQLインジェクション対策として有効なものはどれか。（2つ選択）",
+  "options": [
+   {
+    "label": "A",
+    "en": "Use parameterized queries / prepared statements.",
+    "ja": "パラメータ化クエリ（プリペアドステートメント）を使用する。"
+   },
+   {
+    "label": "B",
+    "en": "Validate and sanitize user input.",
+    "ja": "ユーザー入力を検証・サニタイズする。"
+   },
+   {
+    "label": "C",
+    "en": "Store passwords in plain text for easier debugging.",
+    "ja": "デバッグしやすいようパスワードを平文で保存する。"
+   },
+   {
+    "label": "D",
+    "en": "Disable all database logging.",
+    "ja": "データベースのログをすべて無効にする。"
+   },
+   {
+    "label": "E",
+    "en": "Grant the application's database user full admin rights.",
+    "ja": "アプリケーションのDBユーザーに管理者権限をすべて付与する。"
+   }
+  ],
+  "answer": "AB",
+  "multi": true,
+  "domain": "Technology"
+ },
+ {
+  "stage_id": "morning",
+  "kind": "mc",
+  "n": 5,
+  "stem_en": "[Sample] What is the primary purpose of a service level agreement (SLA)?",
+  "stem_ja": "[サンプル] SLA（サービスレベル合意書）の主な目的は何か。",
+  "options": [
+   {
+    "label": "A",
+    "en": "To define the visual design of a product.",
+    "ja": "製品の外観デザインを定義すること。"
+   },
+   {
+    "label": "B",
+    "en": "To set measurable expectations for service quality between provider and customer.",
+    "ja": "提供者と顧客の間でサービス品質の測定可能な期待値を定めること。"
+   },
+   {
+    "label": "C",
+    "en": "To list the source code repositories used in a project.",
+    "ja": "プロジェクトで使用するソースコードリポジトリを列挙すること。"
+   },
+   {
+    "label": "D",
+    "en": "To replace the need for a project budget.",
+    "ja": "プロジェクト予算の必要性をなくすこと。"
+   }
+  ],
+  "answer": "B",
+  "multi": false,
+  "domain": "Management"
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 1,
+  "title": "Câu 1 · An toàn thông tin (bắt buộc)",
+  "prompt": "[Câu hỏi minh hoạ] Một công ty vận hành hệ thống thương mại điện tử. Gần đây, đội bảo mật phát hiện có các lượt đăng nhập thất bại lặp lại với tần suất cao từ nhiều địa chỉ IP khác nhau, nhắm vào cùng một tài khoản quản trị viên.",
+  "sub_questions": [
+   {
+    "id": "1a",
+    "prompt": "Kiểu tấn công nào phù hợp nhất với mô tả trên, và công ty nên áp dụng biện pháp kỹ thuật nào để giảm thiểu rủi ro này?",
+    "referenceAnswer": "[Đáp án mẫu] Đây là dấu hiệu của tấn công dò mật khẩu phân tán (credential stuffing / distributed brute-force). Biện pháp giảm thiểu: giới hạn số lần đăng nhập sai (rate limiting), khoá tài khoản tạm thời sau ngưỡng thất bại, bắt buộc xác thực đa yếu tố (MFA) cho tài khoản quản trị, và giám sát theo IP/thiết bị bất thường."
+   }
+  ],
+  "required": true
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 2,
+  "title": "Câu 2 · Cơ sở dữ liệu",
+  "prompt": "[Câu hỏi minh hoạ] Một bảng đơn hàng đang có hiệu năng truy vấn kém khi số dòng dữ liệu vượt quá 10 triệu bản ghi, dù đã có index trên cột ngày đặt hàng.",
+  "sub_questions": [
+   {
+    "id": "2a",
+    "prompt": "Nêu hai hướng tiếp cận để cải thiện hiệu năng truy vấn trong trường hợp này.",
+    "referenceAnswer": "[Đáp án mẫu] (1) Phân vùng bảng (partitioning) theo khoảng thời gian để mỗi truy vấn chỉ quét một phân vùng nhỏ; (2) Xem lại kế hoạch thực thi truy vấn (execution plan) để bổ sung index kết hợp (composite index) phù hợp với điều kiện WHERE/ORDER BY thực tế, thay vì chỉ index một cột."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 3,
+  "title": "Câu 3 · Quản lý dự án",
+  "prompt": "[Câu hỏi minh hoạ] Một dự án phần mềm đang chậm tiến độ 3 tuần so với kế hoạch ban đầu, do một hạng mục phụ thuộc (external dependency) bị trễ từ nhà cung cấp bên ngoài.",
+  "sub_questions": [
+   {
+    "id": "3a",
+    "prompt": "Đề xuất một biện pháp ứng phó rủi ro phù hợp và giải thích ngắn gọn lý do.",
+    "referenceAnswer": "[Đáp án mẫu] Có thể áp dụng \"fast-tracking\" — chạy song song một số hạng mục công việc vốn được lên kế hoạch nối tiếp, để bù lại phần trễ mà không cần tăng thêm nguồn lực. Lý do: phù hợp khi mức độ rủi ro về chất lượng do chạy song song chấp nhận được, và nhanh hơn so với \"crashing\" (tăng nguồn lực) vốn tốn chi phí hơn."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 4,
+  "title": "Câu 4 · Chiến lược kinh doanh",
+  "prompt": "[Câu hỏi minh hoạ] Một doanh nghiệp bán lẻ truyền thống đang cân nhắc đầu tư vào kênh bán hàng trực tuyến để cạnh tranh với các đối thủ thương mại điện tử.",
+  "sub_questions": [
+   {
+    "id": "4a",
+    "prompt": "Nêu một lợi thế cạnh tranh (theo mô hình 5 áp lực cạnh tranh của Porter) mà doanh nghiệp này có thể tận dụng khi mở kênh trực tuyến.",
+    "referenceAnswer": "[Đáp án mẫu] Doanh nghiệp có thể tận dụng mạng lưới cửa hàng vật lý sẵn có làm điểm nhận/trả hàng (click-and-collect), tạo rào cản gia nhập với đối thủ thương mại điện tử thuần tuý — đây là lợi thế giảm \"đe doạ từ đối thủ mới\" trong mô hình Porter's Five Forces."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 5,
+  "title": "Câu 5 · Mạng máy tính",
+  "prompt": "[Câu hỏi minh hoạ] Người dùng tại một chi nhánh phản ánh tốc độ truy cập hệ thống nội bộ đặt tại trung tâm dữ liệu chính chậm hơn hẳn so với các chi nhánh khác cùng băng thông đường truyền.",
+  "sub_questions": [
+   {
+    "id": "5a",
+    "prompt": "Nêu một nguyên nhân khả dĩ khác ngoài băng thông, và cách kiểm tra.",
+    "referenceAnswer": "[Đáp án mẫu] Nguyên nhân khả dĩ là độ trễ (latency) hoặc mất gói tin (packet loss) trên tuyến đường mạng tới chi nhánh đó — có thể do định tuyến vòng hoặc thiết bị trung gian lỗi. Kiểm tra bằng traceroute/ping liên tục theo thời gian để đo RTT và tỉ lệ mất gói trên từng chặng mạng."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 6,
+  "title": "Câu 6 · Kiểm thử phần mềm",
+  "prompt": "[Câu hỏi minh hoạ] Một đội phát triển áp dụng kiểm thử hồi quy (regression test) thủ công trước mỗi lần phát hành, tốn trung bình 2 ngày công mỗi đợt.",
+  "sub_questions": [
+   {
+    "id": "6a",
+    "prompt": "Đề xuất cách giảm thời gian kiểm thử hồi quy mà vẫn giữ độ tin cậy.",
+    "referenceAnswer": "[Đáp án mẫu] Tự động hoá các kịch bản kiểm thử hồi quy lặp lại (automated regression suite) chạy trong pipeline CI/CD, chỉ giữ kiểm thử thủ công cho các trường hợp cần đánh giá trải nghiệm người dùng (UX) hoặc kịch bản mới chưa được tự động hoá."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 7,
+  "title": "Câu 7 · Kiến trúc hệ thống",
+  "prompt": "[Câu hỏi minh hoạ] Một hệ thống nguyên khối (monolith) đang gặp khó khăn khi mở rộng vì một module xử lý báo cáo tiêu tốn nhiều tài nguyên, ảnh hưởng tới các chức năng khác trong cùng ứng dụng.",
+  "sub_questions": [
+   {
+    "id": "7a",
+    "prompt": "Đề xuất một hướng tái cấu trúc kiến trúc để xử lý vấn đề này.",
+    "referenceAnswer": "[Đáp án mẫu] Tách module báo cáo thành một dịch vụ độc lập (service tách rời theo hướng vi dịch vụ — microservice), giao tiếp qua hàng đợi/message queue để xử lý bất đồng bộ, tránh chiếm tài nguyên chung với các chức năng lõi của ứng dụng chính."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 8,
+  "title": "Câu 8 · Quản lý chất lượng",
+  "prompt": "[Câu hỏi minh hoạ] Tỉ lệ lỗi (defect rate) sau khi phát hành của một sản phẩm phần mềm tăng đều trong ba đợt phát hành gần nhất.",
+  "sub_questions": [
+   {
+    "id": "8a",
+    "prompt": "Đề xuất một biện pháp quản lý chất lượng để đảo ngược xu hướng này.",
+    "referenceAnswer": "[Đáp án mẫu] Bổ sung bước rà soát mã nguồn bắt buộc (mandatory code review) và đo lường độ phủ kiểm thử (test coverage) làm tiêu chí chặn trước khi hợp nhất (merge) — kết hợp phân tích nguyên nhân gốc (root cause analysis) cho các lỗi phát sinh ở ba đợt gần nhất để tránh lặp lại."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 9,
+  "title": "Câu 9 · Quản trị dữ liệu",
+  "prompt": "[Câu hỏi minh hoạ] Một tổ chức lưu trữ dữ liệu khách hàng ở nhiều hệ thống khác nhau (CRM, kế toán, hỗ trợ khách hàng) không đồng bộ, dẫn đến thông tin khách hàng không nhất quán.",
+  "sub_questions": [
+   {
+    "id": "9a",
+    "prompt": "Đề xuất một giải pháp quản trị dữ liệu để giải quyết tình trạng này.",
+    "referenceAnswer": "[Đáp án mẫu] Xây dựng một nguồn dữ liệu chủ duy nhất (Master Data Management — MDM) cho thông tin khách hàng, các hệ thống khác đồng bộ về nguồn này qua một quy trình tích hợp dữ liệu (data pipeline) thay vì tự quản lý bản sao riêng."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 10,
+  "title": "Câu 10 · Vận hành hệ thống",
+  "prompt": "[Câu hỏi minh hoạ] Đội vận hành nhận được cảnh báo sự cố (incident) ngoài giờ làm việc nhưng thời gian phản hồi trung bình hiện tại là hơn một giờ, ảnh hưởng tới cam kết SLA với khách hàng.",
+  "sub_questions": [
+   {
+    "id": "10a",
+    "prompt": "Đề xuất một biện pháp vận hành để rút ngắn thời gian phản hồi sự cố.",
+    "referenceAnswer": "[Đáp án mẫu] Thiết lập lịch trực gác (on-call rotation) với hệ thống cảnh báo tự động gọi/nhắn trực tiếp người trực, kèm playbook xử lý sự cố phổ biến để giảm thời gian chẩn đoán ban đầu."
+   }
+  ],
+  "required": false
+ },
+ {
+  "stage_id": "afternoon",
+  "kind": "essay",
+  "n": 11,
+  "title": "Câu 11 · Pháp lý & tuân thủ CNTT",
+  "prompt": "[Câu hỏi minh hoạ] Một công ty chuẩn bị triển khai hệ thống thu thập dữ liệu cá nhân của khách hàng tại nhiều quốc gia có quy định bảo vệ dữ liệu khác nhau.",
+  "sub_questions": [
+   {
+    "id": "11a",
+    "prompt": "Nêu một việc công ty cần làm trước khi triển khai để tuân thủ quy định.",
+    "referenceAnswer": "[Đáp án mẫu] Thực hiện đánh giá tác động bảo vệ dữ liệu (Data Protection Impact Assessment) cho từng khu vực pháp lý liên quan, xác định cơ sở pháp lý cho việc thu thập dữ liệu (ví dụ: sự đồng ý của người dùng) trước khi hệ thống đi vào vận hành."
+   }
+  ],
+  "required": false
+ }
+]

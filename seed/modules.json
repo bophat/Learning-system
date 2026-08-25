@@ -1,0 +1,249 @@
+[
+  {
+    "id": "aws",
+    "short_name": "AWS",
+    "short_label": "SAA-C03",
+    "full_name": "AWS Certified Solutions Architect — Associate",
+    "tagline": "904 câu song ngữ Anh/Nhật, có đáp án tham khảo cho 651 câu.",
+    "description": "Chứng chỉ kiến trúc sư giải pháp mức Associate của AWS. Đề thi gồm câu chọn một và chọn nhiều đáp án, xoay quanh việc chọn kiến trúc phù hợp về chi phí, độ sẵn sàng và bảo mật trên AWS.",
+    "icon_name": "cloud",
+    "provider": "Amazon Web Services",
+    "level": "Associate",
+    "exam_minutes": 130,
+    "pass_note": "720/1000 điểm",
+    "pass_pct": 72,
+    "accent_hue": 45,
+    "available": true,
+    "sample_data": false,
+    "bilingual": true,
+    "highlights": [
+      "Ngân hàng 904 câu tổng hợp, hiển thị song song bản tiếng Anh và tiếng Nhật.",
+      "Chế độ thi thử 65 câu / 130 phút mô phỏng đúng bài thi thật.",
+      "Chế độ luyện tập chấm ngay từng câu để hiểu lỗi sai tại chỗ."
+    ],
+    "facts": [
+      {
+        "label": "Số câu đề thật",
+        "value": "65 câu (50 câu tính điểm)"
+      },
+      {
+        "label": "Thời gian",
+        "value": "130 phút"
+      },
+      {
+        "label": "Dạng câu",
+        "value": "Chọn 1 đáp án & chọn nhiều đáp án"
+      },
+      {
+        "label": "Điểm đậu",
+        "value": "720 / 1000"
+      },
+      {
+        "label": "Ngôn ngữ trong app",
+        "value": "Tiếng Anh · 日本語"
+      }
+    ],
+    "stages": [
+      {
+        "id": "exam",
+        "name": "Bài thi",
+        "durationMinutes": 130,
+        "kind": "mc-test",
+        "questionCount": 65
+      }
+    ],
+    "sort_order": 0
+  },
+  {
+    "id": "ap",
+    "short_name": "AP",
+    "short_label": "応用情報",
+    "full_name": "Kỹ sư CNTT ứng dụng (応用情報技術者試験)",
+    "tagline": "Buổi sáng trắc nghiệm có giờ + buổi chiều tự luận chọn 5/11 câu.",
+    "description": "Kỳ thi kỹ sư CNTT ứng dụng của Nhật (IPA), trình độ Level 3. Một ngày thi hai buổi: buổi sáng 80 câu trắc nghiệm, buổi chiều 11 đề tự luận chọn làm 5 đề, mỗi buổi phải đạt tối thiểu 60 điểm.",
+    "icon_name": "cpu",
+    "provider": "IPA (Nhật Bản) · VITEC (Việt Nam)",
+    "level": "Level 3",
+    "exam_minutes": 300,
+    "pass_note": "Mỗi buổi ≥ 60/100 điểm",
+    "pass_pct": 60,
+    "accent_hue": 268,
+    "available": true,
+    "sample_data": true,
+    "bilingual": true,
+    "highlights": [
+      "Buổi sáng: đồng hồ đếm ngược, tự do nhảy câu, đánh dấu câu cần xem lại, chấm điểm sau khi nộp toàn bài.",
+      "Buổi chiều: chọn 5 trong 11 đề (đề 1 An toàn thông tin bắt buộc), viết bài rồi tự đối chiếu đáp án mẫu.",
+      "Bản nháp buổi chiều được lưu tự động trên máy bạn."
+    ],
+    "facts": [
+      {
+        "label": "Buổi sáng",
+        "value": "80 câu trắc nghiệm · 150 phút"
+      },
+      {
+        "label": "Buổi chiều",
+        "value": "Chọn 5/11 đề tự luận · 150 phút"
+      },
+      {
+        "label": "Điểm đậu",
+        "value": "Cả hai buổi đều ≥ 60/100"
+      },
+      {
+        "label": "Đề bắt buộc",
+        "value": "Đề 1 — An toàn thông tin"
+      },
+      {
+        "label": "Dữ liệu trong app",
+        "value": "Câu hỏi minh hoạ"
+      }
+    ],
+    "stages": [
+      {
+        "id": "morning",
+        "name": "Buổi sáng",
+        "durationMinutes": 150,
+        "kind": "mc-test",
+        "questionCount": 80,
+        "note": "Trắc nghiệm 4 lựa chọn"
+      },
+      {
+        "id": "afternoon",
+        "name": "Buổi chiều",
+        "durationMinutes": 150,
+        "kind": "essay-test",
+        "questionCount": 5,
+        "note": "Chọn 5 trong 11 đề"
+      }
+    ],
+    "sort_order": 1
+  },
+  {
+    "id": "jlpt",
+    "short_name": "JLPT",
+    "short_label": "N5 → N1",
+    "full_name": "Japanese-Language Proficiency Test",
+    "tagline": "3 phần thi: Từ vựng/Chữ Hán, Đọc hiểu & Ngữ pháp, Nghe hiểu.",
+    "description": "Kỳ thi năng lực tiếng Nhật với 5 cấp độ từ N5 đến N1. Điểm được chia theo từng phần và mỗi phần đều có ngưỡng tối thiểu riêng — chỉ tổng điểm cao thôi vẫn có thể trượt.",
+    "icon_name": "language",
+    "provider": "Japan Foundation · JEES",
+    "level": "N5 · N4 · N3 · N2 · N1",
+    "exam_minutes": 170,
+    "pass_note": "Tổng điểm + ngưỡng từng phần",
+    "pass_pct": 60,
+    "accent_hue": 348,
+    "available": false,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Cần giao diện riêng cho phần Nghe (phát audio một lần, không tua lại).",
+      "Chấm điểm tách riêng từng phần kèm ngưỡng đậu của mỗi phần.",
+      "Đang chờ bổ sung ngân hàng câu hỏi và file nghe."
+    ],
+    "facts": [
+      {
+        "label": "Phần 1",
+        "value": "Từ vựng & chữ Hán"
+      },
+      {
+        "label": "Phần 2",
+        "value": "Ngữ pháp & đọc hiểu"
+      },
+      {
+        "label": "Phần 3",
+        "value": "Nghe hiểu (có audio)"
+      },
+      {
+        "label": "Điểm đậu",
+        "value": "Tổng điểm + ngưỡng từng phần"
+      },
+      {
+        "label": "Trạng thái",
+        "value": "Chưa có dữ liệu câu hỏi"
+      }
+    ],
+    "stages": [
+      {
+        "id": "vocab",
+        "name": "Từ vựng & chữ Hán",
+        "durationMinutes": 30,
+        "kind": "mc-test"
+      },
+      {
+        "id": "reading",
+        "name": "Ngữ pháp & đọc hiểu",
+        "durationMinutes": 70,
+        "kind": "mc-test"
+      },
+      {
+        "id": "listening",
+        "name": "Nghe hiểu",
+        "durationMinutes": 50,
+        "kind": "listening-test"
+      }
+    ],
+    "sort_order": 2
+  },
+  {
+    "id": "fe",
+    "short_name": "FE",
+    "short_label": "基本情報",
+    "full_name": "Kỹ sư CNTT cơ bản (基本情報技術者試験)",
+    "tagline": "Khoa A trắc nghiệm kiến thức + Khoa B thuật toán bằng giả ngôn ngữ.",
+    "description": "Kỳ thi kỹ sư CNTT cơ bản của IPA, trình độ Level 2, thi trên máy (CBT). Khoa A kiểm tra kiến thức nền, Khoa B tập trung vào tư duy thuật toán và bảo mật với đoạn mã giả ngôn ngữ kèm nhiều câu hỏi con.",
+    "icon_name": "code",
+    "provider": "IPA (Nhật Bản) · VITEC (Việt Nam)",
+    "level": "Level 2",
+    "exam_minutes": 190,
+    "pass_note": "Mỗi khoa ≥ 600/1000 điểm",
+    "pass_pct": 60,
+    "accent_hue": 168,
+    "available": false,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Khoa B cần khung hiển thị mã giả ngôn ngữ cạnh nhiều câu hỏi con của cùng một đề.",
+      "Thi trên máy nên bố cục cần bám sát phần mềm thi thật (CBT).",
+      "Đang chờ bổ sung ngân hàng câu hỏi."
+    ],
+    "facts": [
+      {
+        "label": "Khoa A",
+        "value": "60 câu trắc nghiệm · 90 phút"
+      },
+      {
+        "label": "Khoa B",
+        "value": "20 câu thuật toán · 100 phút"
+      },
+      {
+        "label": "Điểm đậu",
+        "value": "Mỗi khoa ≥ 600/1000"
+      },
+      {
+        "label": "Hình thức",
+        "value": "Thi trên máy (CBT)"
+      },
+      {
+        "label": "Trạng thái",
+        "value": "Chưa có dữ liệu câu hỏi"
+      }
+    ],
+    "stages": [
+      {
+        "id": "a",
+        "name": "Khoa A",
+        "durationMinutes": 90,
+        "kind": "mc-test",
+        "questionCount": 60
+      },
+      {
+        "id": "b",
+        "name": "Khoa B",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 20
+      }
+    ],
+    "sort_order": 3
+  }
+]
