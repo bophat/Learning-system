@@ -1,0 +1,198 @@
+/**
+ * Design tokens.
+ *
+ * HỆ MÀU: đúng 3 mã màu + đen trắng.
+ *   1. Cam   (--brand) — thương hiệu, hành động chính, mọi điểm nhấn
+ *   2. Xanh  (--good)  — đúng / đạt / thành công
+ *   3. Đỏ    (--bad)   — sai / chưa đạt / nguy hiểm
+ *   + thang xám trung tính (chroma = 0) cho nền, bề mặt, chữ, đường kẻ.
+ *
+ * Không thêm hue mới. Những vai trò từng có màu riêng nay quy về ba mã trên:
+ *   cảnh báo  -> cam        thông tin -> xám
+ *   màu nhấn theo từng chứng chỉ -> cam (phân biệt bằng biểu tượng, không bằng màu)
+ *
+ * `--accent-*` giữ lại làm bí danh của `--brand-*` để các file CSS/JS cũ không
+ * phải sửa hàng loạt, và để sau này muốn đổi màu nhấn thì chỉ sửa một chỗ.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- đen trắng (nền trắng thuần) ---------- */
+  --bg: oklch(100% 0 0);
+  --bg-tint: oklch(100% 0 0);
+  --surface: oklch(100% 0 0);
+  --surface-2: oklch(100% 0 0);
+  --surface-3: oklch(95% 0 0);
+  --overlay: oklch(0% 0 0 / 0.5);
+
+  --ink: oklch(16% 0 0);
+  --ink-2: oklch(36% 0 0);
+  --muted: oklch(50% 0 0);
+  --faint: oklch(68% 0 0);
+
+  --line: oklch(90% 0 0);
+  --line-strong: oklch(80% 0 0);
+
+  /* ---------- màu 1: cam ---------- */
+  --brand: oklch(63% 0.19 42);
+  --brand-strong: oklch(55% 0.2 40);
+  --brand-soft: oklch(95% 0.04 45);
+  --brand-soft-2: oklch(89% 0.075 45);
+  --brand-ink: oklch(100% 0 0);
+
+  /* ---------- màu 2: xanh lá ---------- */
+  --good: oklch(55% 0.15 155);
+  --good-soft: oklch(95% 0.045 155);
+  --good-line: oklch(84% 0.08 155);
+
+  /* ---------- màu 3: đỏ ---------- */
+  --bad: oklch(55% 0.2 27);
+  --bad-soft: oklch(95.5% 0.05 27);
+  --bad-line: oklch(85% 0.09 27);
+
+  /* ---------- bí danh: mọi vai trò khác quy về 3 màu trên ---------- */
+  --accent: var(--brand);
+  --accent-strong: var(--brand-strong);
+  --accent-soft: var(--brand-soft);
+  --accent-soft-2: var(--brand-soft-2);
+  --accent-ink: var(--brand-ink);
+
+  --warn: var(--brand);
+  --warn-soft: var(--brand-soft);
+  --info: var(--ink-2);
+  --info-soft: var(--surface-2);
+
+  /* dải kêu gọi hành động: khối viền tinh tế, không dùng màu xám bẩn */
+  --band: oklch(100% 0 0);
+  --band-ink: oklch(16% 0 0);
+
+  /* ---------- đổ bóng (xám trung tính) ---------- */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.05);
+  --shadow-sm: 0 2px 8px -2px oklch(0% 0 0 / 0.08), 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-md: 0 12px 28px -14px oklch(0% 0 0 / 0.18), 0 2px 6px -2px oklch(0% 0 0 / 0.06);
+  --shadow-lg: 0 28px 64px -28px oklch(0% 0 0 / 0.24), 0 4px 12px -6px oklch(0% 0 0 / 0.08);
+  --shadow-brand: 0 10px 22px -12px oklch(63% 0.19 42 / 0.45);
+  --shadow-accent: var(--shadow-brand);
+
+  /* ---------- bo góc ---------- */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------- chữ ---------- */
+  --font-sans: "Be Vietnam Pro", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- nhịp & chuyển động ---------- */
+  --pad-page: 24px;
+  --w-page: 1160px;
+  --w-read: 720px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 0.14s var(--ease);
+  --t-med: 0.24s var(--ease);
+
+  --z-header: 60;
+  --z-drawer: 80;
+  --z-modal: 100;
+  --z-toast: 120;
+}
+
+/* ---------- chế độ tối (tạm thời tắt theo yêu cầu) ---------- */
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg: oklch(0% 0 0);
+    --bg-tint: oklch(0% 0 0);
+    --surface: oklch(0% 0 0);
+    --surface-2: oklch(0% 0 0);
+    --surface-3: oklch(10% 0 0);
+    --overlay: oklch(0% 0 0 / 0.85);
+
+    --ink: oklch(98% 0 0);
+    --ink-2: oklch(84% 0 0);
+    --muted: oklch(66% 0 0);
+    --faint: oklch(48% 0 0);
+
+    --line: oklch(20% 0 0);
+    --line-strong: oklch(30% 0 0);
+
+    --brand: oklch(76% 0.165 48);
+    --brand-strong: oklch(84% 0.135 50);
+    --brand-soft: oklch(16% 0.035 48);
+    --brand-soft-2: oklch(24% 0.055 48);
+    --brand-ink: oklch(0% 0 0);
+
+    --good: oklch(82% 0.17 155);
+    --good-soft: oklch(16% 0.035 155);
+    --good-line: oklch(44% 0.09 155);
+
+    --bad: oklch(76% 0.18 27);
+    --bad-soft: oklch(16% 0.04 27);
+    --bad-line: oklch(45% 0.095 27);
+
+    --band: oklch(0% 0 0);
+    --band-ink: oklch(98% 0 0);
+
+    --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.4);
+    --shadow-sm: 0 2px 8px -2px oklch(0% 0 0 / 0.5);
+    --shadow-md: 0 12px 28px -14px oklch(0% 0 0 / 0.65), 0 2px 6px -2px oklch(0% 0 0 / 0.4);
+    --shadow-lg: 0 28px 64px -28px oklch(0% 0 0 / 0.8), 0 4px 12px -6px oklch(0% 0 0 / 0.5);
+    --shadow-brand: 0 10px 22px -12px oklch(76% 0.165 48 / 0.35);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: oklch(0% 0 0);
+  --bg-tint: oklch(0% 0 0);
+  --surface: oklch(0% 0 0);
+  --surface-2: oklch(0% 0 0);
+  --surface-3: oklch(10% 0 0);
+  --overlay: oklch(0% 0 0 / 0.85);
+
+  --ink: oklch(98% 0 0);
+  --ink-2: oklch(84% 0 0);
+  --muted: oklch(66% 0 0);
+  --faint: oklch(48% 0 0);
+
+  --line: oklch(20% 0 0);
+  --line-strong: oklch(30% 0 0);
+
+  --brand: oklch(76% 0.165 48);
+  --brand-strong: oklch(84% 0.135 50);
+  --brand-soft: oklch(16% 0.035 48);
+  --brand-soft-2: oklch(24% 0.055 48);
+  --brand-ink: oklch(0% 0 0);
+
+  --good: oklch(82% 0.17 155);
+  --good-soft: oklch(16% 0.035 155);
+  --good-line: oklch(44% 0.09 155);
+
+  --bad: oklch(76% 0.18 27);
+  --bad-soft: oklch(16% 0.04 27);
+  --bad-line: oklch(45% 0.095 27);
+
+  --band: oklch(0% 0 0);
+  --band-ink: oklch(98% 0 0);
+
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.4);
+  --shadow-sm: 0 2px 8px -2px oklch(0% 0 0 / 0.5);
+  --shadow-md: 0 12px 28px -14px oklch(0% 0 0 / 0.65), 0 2px 6px -2px oklch(0% 0 0 / 0.4);
+  --shadow-lg: 0 28px 64px -28px oklch(0% 0 0 / 0.8), 0 4px 12px -6px oklch(0% 0 0 / 0.5);
+  --shadow-brand: 0 10px 22px -12px oklch(76% 0.165 48 / 0.35);
+}
+*/
+
+@media (max-width: 720px) {
+  :root { --pad-page: 18px; }
+}
