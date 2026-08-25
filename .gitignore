@@ -28,6 +28,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# File tạm của công cụ
+.claude/*.lock
+
 # Supabase CLI
 supabase/.temp
 supabase/.branches
