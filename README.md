@@ -4,9 +4,6 @@ Web app luyện thi nhiều chứng chỉ (AWS SAA-C03, AP 応用情報, và khu
 Mỗi chứng chỉ ôn theo đúng cấu trúc đề thi thật của nó — đúng số câu, đúng thời gian,
 đúng cách chấm — thay vì dùng chung một khuôn "câu hỏi + đáp án".
 
-> **Đang có hai bên cùng làm dự án này?** Đọc [CONTRACT.md](CONTRACT.md) trước — file đó
-> quy định hệ màu, quy tắc cấu trúc, ranh giới sở hữu file và là nơi hai bên nhắn nhau.
-
 Người dùng đăng nhập bằng tài khoản riêng; ngân hàng đề thi và toàn bộ tiến trình học
 nằm trên **Supabase**, nên đổi máy hay đổi trình duyệt vẫn thấy nguyên tiến trình.
 

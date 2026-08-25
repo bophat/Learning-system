@@ -126,7 +126,7 @@ export async function loadFlashcards(moduleId: string, stageId?: string): Promis
 
 /**
  * Ghi câu hỏi lên máy chủ theo lô. Dùng cho trang quản trị — nhờ đó tầng giao
- * diện không phải import `services/supabase` (xem luật 4.1 trong CONTRACT.md).
+ * diện không phải gọi thẳng Supabase, mọi truy cập dữ liệu đi qua đúng một lớp.
  * Trả về số câu đã ghi; `onProgress` để hiện tiến độ.
  */
 export async function saveQuestions(
