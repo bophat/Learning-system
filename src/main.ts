@@ -17,6 +17,7 @@ import { clearHabitCache } from "./state/habits";
 import { clearTopicCache } from "./data/topics";
 import { clearLessonCache } from "./data/lessons";
 import { flushResponses } from "./state/responses";
+import { clearHighlightCache } from "./state/highlights";
 import { pullSessions } from "./state/session";
 import { renderLoading } from "./components/loading";
 import { renderPage, bindShell } from "./components/appShell";
@@ -36,7 +37,12 @@ import { mountFlashcards } from "./modules/shared/flashcards";
 import { mountLessons } from "./modules/lessons/lessonPage";
 import { registerAwsRoutes } from "./modules/aws";
 import { registerApRoutes } from "./modules/ap";
+import { registerJlptRoutes } from "./modules/jlpt";
+import { registerIeltsRoutes } from "./modules/ielts";
+import { registerToeicRoutes } from "./modules/toeic";
 import { registerExamRoutes } from "./modules/shared/mcExam";
+import { registerRichExamRoutes } from "./modules/shared/richExam";
+import { registerRichExamDemoRoute } from "./modules/dev/richExamDemo";
 
 const LOGIN_PATH = "/dang-nhap";
 
@@ -59,7 +65,12 @@ registerRoute("/bai-hoc/:id", mountLessons);
 registerRoute("/bai-hoc/:id/:slug", mountLessons);
 registerAwsRoutes();
 registerApRoutes();
+registerJlptRoutes();
+registerIeltsRoutes();
+registerToeicRoutes();
 registerExamRoutes();
+registerRichExamRoutes();
+registerRichExamDemoRoute();
 registerNotFound(mountNotFound);
 
 // Chưa đăng nhập thì mọi đường dẫn đều dẫn về màn đăng nhập, và ngược lại.
@@ -163,6 +174,7 @@ async function boot(): Promise<void> {
       clearHabitCache();
       clearTopicCache();
       clearLessonCache();
+      clearHighlightCache();
       navigate(LOGIN_PATH);
     }
   });

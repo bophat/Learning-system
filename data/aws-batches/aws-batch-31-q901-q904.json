@@ -1,0 +1,142 @@
+[
+  {
+    "n": 901,
+    "question_en": "A company is migrating its workloads to AWS. The company has sensitive and critical data in on-premises relational databases that run on SQL Server instances. The company wants to use the AWS Cloud to increase security and reduce operational overhead for the databases. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、ワークロードをAWSに移行しています。企業は、SQL Serverインスタンス上で実行されているオンプレミスのリレーショナルデータベースに機密で重要なデータを持っています。企業は、AWSクラウドを使用してセキュリティを向上させ、データベースの運用オーバーヘッドを削減したいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Migrate the databases to Amazon EC2 instances. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.",
+        "text_ja": "データベースをAmazon EC2インスタンスに移行する。暗号化にAWS Key Management Service(AWS KMS)のAWS管理キーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Migrate the databases to a Multi-AZ Amazon RDS for SQL Server DB instance. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.",
+        "text_ja": "データベースをMulti-AZのAmazon RDS for SQL Server DBインスタンスに移行する。暗号化にAWS Key Management Service(AWS KMS)のAWS管理キーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Migrate the data to an Amazon S3 bucket. Use Amazon Macie to ensure data security.",
+        "text_ja": "データをAmazon S3バケットに移行する。データセキュリティを確保するためにAmazon Macieを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Migrate the databases to an Amazon DynamoDB table. Use Amazon CloudWatch Logs to ensure data security.",
+        "text_ja": "データベースをAmazon DynamoDBテーブルに移行する。データセキュリティを確保するためにAmazon CloudWatch Logsを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 902,
+    "question_en": "A company wants to migrate an application to AWS. The company wants to increase the application's current availability. The company wants to use AWS WAF in the application's architecture. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、アプリケーションをAWSに移行したいと考えています。企業は、アプリケーションの現在の可用性を向上させたいと考えています。企業は、アプリケーションのアーキテクチャでAWS WAFを使用したいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Auto Scaling group that contains multiple Amazon EC2 instances that host the application across two Availability Zones. Configure an Application Load Balancer (ALB) and set the Auto Scaling group as the target. Connect a WAF to the ALB.",
+        "text_ja": "2つのアベイラビリティーゾーンにまたがってアプリケーションをホストする複数のAmazon EC2インスタンスを含むAuto Scalingグループを作成する。Application Load Balancer(ALB)を設定し、そのAuto Scalingグループをターゲットとして設定する。WAFをALBに接続する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create a cluster placement group that contains multiple Amazon EC2 instances that hosts the application. Configure an Application Load Balancer and set the EC2 instances as the targets. Connect a WAF to the placement group.",
+        "text_ja": "アプリケーションをホストする複数のAmazon EC2インスタンスを含むクラスタープレイスメントグループを作成する。Application Load Balancerを設定し、EC2インスタンスをターゲットとして設定する。WAFをそのプレイスメントグループに接続する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create two Amazon EC2 instances that host the application across two Availability Zones. Configure the EC2 instances as the targets of an Application Load Balancer (ALB). Connect a WAF to the ALB.",
+        "text_ja": "2つのアベイラビリティーゾーンにまたがってアプリケーションをホストする2つのAmazon EC2インスタンスを作成する。Application Load Balancer(ALB)のターゲットとしてEC2インスタンスを設定する。WAFをALBに接続する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Auto Scaling group that contains multiple Amazon EC2 instances that host the application across two Availability Zones. Configure an Application Load Balancer (ALB) and set the Auto Scaling group as the target. Connect a WAF to the Auto Scaling group.",
+        "text_ja": "2つのアベイラビリティーゾーンにまたがってアプリケーションをホストする複数のAmazon EC2インスタンスを含むAuto Scalingグループを作成する。Application Load Balancer(ALB)を設定し、そのAuto Scalingグループをターゲットとして設定する。WAFをそのAuto Scalingグループに接続する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 903,
+    "question_en": "A company manages a data lake in an Amazon S3 bucket that numerous applications access. The S3 bucket contains a unique prefix for each application. The company wants to restrict each application to its specific prefix and to have granular control of the objects under each prefix. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業が、多数のアプリケーションがアクセスするAmazon S3バケット内でデータレイクを管理しています。このS3バケットには、各アプリケーション用の固有のプレフィックスが含まれています。企業は、各アプリケーションをその特定のプレフィックスに制限し、各プレフィックス配下のオブジェクトをきめ細かく制御したいと考えています。運用オーバーヘッドが最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create dedicated S3 access points and access point policies for each application.",
+        "text_ja": "各アプリケーション用に専用のS3アクセスポイントとアクセスポイントポリシーを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an S3 Batch Operations job to set the ACL permissions for each object in the S3 bucket.",
+        "text_ja": "S3バケット内の各オブジェクトのACL権限を設定するS3バッチオペレーションジョブを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Replicate the objects in the S3 bucket to new S3 buckets for each application. Create replication rules by prefix.",
+        "text_ja": "S3バケット内のオブジェクトを、各アプリケーション用の新しいS3バケットにレプリケートする。プレフィックスごとにレプリケーションルールを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Replicate the objects in the S3 bucket to new S3 buckets for each application. Create dedicated S3 access points for each application.",
+        "text_ja": "S3バケット内のオブジェクトを、各アプリケーション用の新しいS3バケットにレプリケートする。各アプリケーション用に専用のS3アクセスポイントを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 904,
+    "question_en": "A company has an application that customers use to upload images to an Amazon S3 bucket. Each night, the company launches an Amazon EC2 Spot Fleet that processes all the images that the company received that day. The processing for each image takes 2 minutes and requires 512 MB of memory. A solutions architect needs to change the application to process the images when the images are uploaded. Which change will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業に、顧客がAmazon S3バケットに画像をアップロードするために使用するアプリケーションがあります。毎晩、企業はその日に受信したすべての画像を処理するAmazon EC2スポットフリートを起動しています。各画像の処理には2分かかり、512MBのメモリを必要とします。ソリューションアーキテクトは、画像がアップロードされたときに処理するようアプリケーションを変更する必要があります。これらの要件を最もコスト効率よく満たす変更はどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use S3 Event Notifications to write a message with image details to an Amazon Simple Queue Service (Amazon SQS) queue. Configure an AWS Lambda function to read the messages from the queue and to process the images.",
+        "text_ja": "S3イベント通知を使用して、画像の詳細を含むメッセージをAmazon Simple Queue Service(Amazon SQS)キューに書き込む。キューからメッセージを読み取り画像を処理するようAWS Lambda関数を設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use S3 Event Notifications to write a message with image details to an Amazon Simple Queue Service (Amazon SQS) queue. Configure an EC2 Reserved Instance to read the messages from the queue and to process the images.",
+        "text_ja": "S3イベント通知を使用して、画像の詳細を含むメッセージをAmazon Simple Queue Service(Amazon SQS)キューに書き込む。キューからメッセージを読み取り画像を処理するようEC2リザーブドインスタンスを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use S3 Event Notifications to publish a message with image details to an Amazon Simple Notification Service (Amazon SNS) topic. Configure a container instance in Amazon Elastic Container Service (Amazon ECS) to subscribe to the topic and to process the images.",
+        "text_ja": "S3イベント通知を使用して、画像の詳細を含むメッセージをAmazon Simple Notification Service(Amazon SNS)トピックに発行する。そのトピックにサブスクライブし画像を処理するよう、Amazon Elastic Container Service(Amazon ECS)内のコンテナインスタンスを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use S3 Event Notifications to publish a message with image details to an Amazon Simple Notification Service (Amazon SNS) topic. Configure an AWS Elastic Beanstalk application to subscribe to the topic and to process the images.",
+        "text_ja": "S3イベント通知を使用して、画像の詳細を含むメッセージをAmazon Simple Notification Service(Amazon SNS)トピックに発行する。そのトピックにサブスクライブし画像を処理するよう、AWS Elastic Beanstalkアプリケーションを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  }
+]

@@ -5,7 +5,7 @@
  * đọc được đồng bộ (`getModules()`) như hồi danh mục còn nằm cứng trong code.
  */
 
-import type { ExamModuleMeta, ExamStage } from "../types/exam";
+import type { ExamModuleMeta, ExamStage, ExamLevel } from "../types/exam";
 import { db } from "../services/supabase";
 
 /** Số liệu tổng hợp của ngân hàng câu hỏi, lấy từ view `module_stats`. */
@@ -22,7 +22,11 @@ const EMPTY_STATS: BankStats = { total: 0, mcTotal: 0, essayTotal: 0, withAnswer
 
 let modules: ExamModuleMeta[] = [];
 let stats: Record<string, BankStats> = {};
+/** Số liệu theo từng cấp, khoá bằng `moduleId + "/" + levelId`. */
+let levelStats: Record<string, BankStats> = {};
 let loaded = false;
+
+const levelKey = (moduleId: string, levelId: string) => `${moduleId}/${levelId}`;
 
 interface ModuleRow {
   id: string;
@@ -44,10 +48,11 @@ interface ModuleRow {
   highlights: string[];
   facts: { label: string; value: string }[];
   stages: ExamStage[];
+  levels: Omit<ExamLevel, "questionCount">[];
   sort_order: number;
 }
 
-function toMeta(row: ModuleRow, bank: BankStats): ExamModuleMeta {
+function toMeta(row: ModuleRow, bank: BankStats, levels: ExamLevel[]): ExamModuleMeta {
   return {
     id: row.id,
     shortName: row.short_name,
@@ -66,7 +71,8 @@ function toMeta(row: ModuleRow, bank: BankStats): ExamModuleMeta {
     highlights: Array.isArray(row.highlights) ? row.highlights : [],
     facts: Array.isArray(row.facts) ? row.facts : [],
     stages: Array.isArray(row.stages) ? row.stages : [],
-    available: !!row.available && bank.total > 0,
+    levels,
+    available: !!row.available,
     sampleData: !!row.sample_data,
     accentHue: row.accent_hue ?? 45,
     sortOrder: row.sort_order ?? 0,
@@ -75,9 +81,10 @@ function toMeta(row: ModuleRow, bank: BankStats): ExamModuleMeta {
 
 /** Tải danh mục + số liệu ngân hàng câu hỏi. Gọi sau khi đăng nhập xong. */
 export async function loadCatalog(): Promise<void> {
-  const [modRes, statRes] = await Promise.all([
+  const [modRes, statRes, levelStatRes] = await Promise.all([
     db().from("exam_modules").select("*").order("sort_order", { ascending: true }),
     db().from("module_stats").select("*"),
+    db().from("level_stats").select("*"),
   ]);
 
   if (modRes.error) throw new Error(modRes.error.message);
@@ -94,7 +101,25 @@ export async function loadCatalog(): Promise<void> {
     };
   }
 
-  modules = (modRes.data ?? []).map((row: ModuleRow) => toMeta(row, stats[row.id] ?? EMPTY_STATS));
+  levelStats = {};
+  for (const s of levelStatRes.data ?? []) {
+    levelStats[levelKey(s.module_id, s.level_id)] = {
+      total: s.total ?? 0,
+      mcTotal: s.mc_total ?? 0,
+      essayTotal: s.essay_total ?? 0,
+      withAnswer: s.with_answer ?? 0,
+      answerable: s.answerable ?? 0,
+      multiTotal: s.multi_total ?? 0,
+    };
+  }
+
+  modules = (modRes.data ?? []).map((row: ModuleRow) => {
+    const levels: ExamLevel[] = (Array.isArray(row.levels) ? row.levels : []).map((lv) => ({
+      ...lv,
+      questionCount: levelStats[levelKey(row.id, lv.id)]?.total ?? 0,
+    }));
+    return toMeta(row, stats[row.id] ?? EMPTY_STATS, levels);
+  });
   loaded = true;
 }
 
@@ -112,4 +137,15 @@ export function getModule(id: string): ExamModuleMeta | undefined {
 
 export function getBankStats(id: string): BankStats {
   return stats[id] ?? EMPTY_STATS;
+}
+
+/** Số liệu ngân hàng câu hỏi của riêng MỘT CẤP — chỉ có ý nghĩa với chứng
+ * chỉ có `levels` (JLPT...). Chứng chỉ không chia cấp thì dùng `getBankStats`. */
+export function getLevelStats(moduleId: string, levelId: string): BankStats {
+  return levelStats[levelKey(moduleId, levelId)] ?? EMPTY_STATS;
+}
+
+/** Cấp độ theo id, tiện cho màn chọn cấp và trang chi tiết. */
+export function getLevel(moduleId: string, levelId: string): ExamLevel | undefined {
+  return getModule(moduleId)?.levels.find((l) => l.id === levelId);
 }

@@ -1,0 +1,1118 @@
+{
+  "https://test.ebomb.edu.vn/tests/1624887675?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887675?site=ielts-fighter",
+      "title": "IELTS Mock Test 07"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887675/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887675",
+            "test_detail": {
+              "_id": 1624887675,
+              "title": "IELTS Mock Test 07",
+              "times": 160,
+              "score_type": "ielts",
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "is_group": 1,
+              "skill": "writing",
+              "is_review": 1,
+              "is_practice": 1,
+              "is_publish": 1,
+              "no_repeat": 1,
+              "listen_order": 1,
+              "status": "active",
+              "access_code": "ywsrwgyyc7",
+              "created_by": 15069,
+              "created_time": 1745571842,
+              "updated_time": 1782182779,
+              "tests": [
+                1624887674,
+                1624887673,
+                1624887804
+              ],
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_description": null,
+              "seo_keyword": null,
+              "seo_title": null,
+              "title_show": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0,
+              "question": null,
+              "link_solution": null
+            },
+            "tests": {
+              "1624887673": {
+                "_id": 1624887673,
+                "title": "IELTS Mock Test - Reading 07",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "reading",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "qhefxvf3pn",
+                "created_by": 15069,
+                "created_time": 1745482494,
+                "updated_time": 1766732200,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "question": [
+                  {
+                    "title": "PASSAGE 1",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should spend about 20 minutes on Questions 1-13 which are based on Reading Passage 1 below.</p>\r\n<h2 style=\"text-align: center;\">Bondi Beach<strong>&nbsp;</strong></h2>\r\n<p data-start=\"0\" data-end=\"521\"><strong data-start=\"0\" data-end=\"5\">A</strong><br data-start=\"5\" data-end=\"8\" />Bondi Beach, Australia&rsquo;s most famous beach, is located in the suburb of Bondi, in the Local Government Area of Waverley, seven kilometers from the centre of Sydney. &ldquo;Bondi&rdquo; or &ldquo;Boondi&rdquo; is an Aboriginal word meaning water breaking over rocks or the sound of breaking waves. The Australian Museum records that Bondi means place where a flight of nullas took place. There are Aboriginal Rock carving on the northern end of the beach at Ben Buckler and south of Bondi Beach near McKenzies Beach on the coastal walk.</p>\r\n<p data-start=\"0\" data-end=\"521\">&nbsp;</p>\r\n<p data-start=\"523\" data-end=\"1191\"><strong data-start=\"523\" data-end=\"528\">B</strong><br data-start=\"528\" data-end=\"531\" />The indigenous people of the area at the time of European settlement have generally been welcomed to as the Sydney people or the Eora (Eora means &ldquo;the people&rdquo;). One theory describes the Eora as a sub-group of the Darug language group which occupied the Cumberland Plain west to the Blue Mountains. However, another theory suggests that they were a distinct language group of their own. There is no clear evidence for the name or names of the particular band(s) of the Eora that roamed what is now the Waverley area. A number of place names within Waverley, most famously Bondi, have been based on words derived from Aboriginal languages of the Sydney region.</p>\r\n<p data-start=\"523\" data-end=\"1191\">&nbsp;</p>\r\n<p data-start=\"1193\" data-end=\"2109\"><strong data-start=\"1193\" data-end=\"1198\">C</strong><br data-start=\"1198\" data-end=\"1201\" />From the mid-1800s Bondi Beach was a favourite location for family outings and picnics. The beginnings of the suburb go back to 1809, when the early road builder, William Roberts, received from Governor Bligh a grant of 81 hectares of what is now most of the business and residential area of Bondi Beach. In 1851, Edward Smith Hall and Francis O&rsquo;Brien purchased 200 acres of the Bondi area that embraced almost the whole frontage of Bondi Beach, and it was named the &ldquo;The Bondi Estate.&rdquo; Between 1855 and 1877 O&rsquo;Brien purchased Hall&rsquo;s share of the land, renamed the land the &ldquo;O&rsquo;Brien Estate,&rdquo; and made the beach and the surrounding land available to the public as a picnic ground and amusement resort. As the beach became increasingly popular, O&rsquo;Brien threatened to stop public beach access. However, the Municipal Council believed that the Government needed to intervene to make the beach a public reserve.</p>\r\n<p data-start=\"1193\" data-end=\"2109\">&nbsp;</p>\r\n<p data-start=\"2111\" data-end=\"2810\"><strong data-start=\"2111\" data-end=\"2116\">D</strong><br data-start=\"2116\" data-end=\"2119\" />During the 1900s beach became associated with health, leisure and democracy &ndash; a playground everyone could enjoy equally. Bondi Beach was a working class suburb throughout most of the twentieth century with migrant people from New Zealand comprising the majority of the local population. The first tramway reached the beach in 1884. Following this, tram became the first public transportation in Bondi. As an alternative, this action changed the rule that only rich people can enjoy the beach. By the 1930s Bondi was drawing not only local visitors but also people from elsewhere in Australia and overseas. Advertising at the time referred to Bondi Beach as the &ldquo;Playground of the Pacific&rdquo;.</p>\r\n<p data-start=\"2111\" data-end=\"2810\">&nbsp;</p>\r\n<p data-start=\"2812\" data-end=\"3648\"><strong data-start=\"2812\" data-end=\"2817\">E</strong><br data-start=\"2817\" data-end=\"2820\" />There is a growing trend that people prefer having relax near seaside instead of living unhealthily in cities. The increasing popularity of sea bathing during the late 1800s and early 1900s raised concerns about public safety and how to prevent people from drowning. In response, the world&rsquo;s first formally documented surf lifesaving club, the Bondi Surf Bathers&rsquo; Life Saving Club, was formed in 1907. This was powerfully reinforced by the dramatic events of &ldquo;Black Sunday&rdquo; at Bondi in 1938. Some 35,000 people were on the beach and a large group of lifesavers were about to start a surf race when three freak waves hit the beach, sweeping hundreds of people out to sea. Lifesavers rescued 300 people. The largest mass rescue in the history of surf bathing, it confirmed the place of the lifesaver in the national imagination.</p>\r\n<p data-start=\"2812\" data-end=\"3648\">&nbsp;</p>\r\n<p data-start=\"3650\" data-end=\"4375\"><strong data-start=\"3650\" data-end=\"3655\">F</strong><br data-start=\"3655\" data-end=\"3658\" />Bondi Beach is the end point of the City to Surf Fun Run which is held each year in August. Australian surf carnivals further instilled this image. A Royal Surf Carnival was held at Bondi Beach for the Queen Elizabeth II during her first visited in Australia in 1954. Since 1867, there have been over fifty visits by a member of the British Royal Family to Australia. In addition to many activities, the Bondi Beach Markets is open every Sunday. Many wealthy people spend Christmas Day at the beach. However, the shortage of houses occurs when lots of people crushed to seaside. Manly is the seashore town which solved this problem. However, people still choose Bondi as the satisfied destination rather than Manly.</p>\r\n<p data-start=\"3650\" data-end=\"4375\">&nbsp;</p>\r\n<p data-start=\"4377\" data-end=\"4938\"><strong data-start=\"4377\" data-end=\"4382\">G</strong><br data-start=\"4382\" data-end=\"4385\" />Bondi Beach has a commercial area along Campbell Parade and adjacent side streets, featuring many popular cafes, restaurants, and hotels, with views of the contemporary beach. It is depicted as wholly modern and European. In the last decade, Bondi Beaches&rsquo; unique position has seen a dramatic rise in svelte houses and apartments to take advantage of the views and scent of the sea. The valley running down to the beach is famous world over for its view of distinctive red tiled roofs. Those architectures are deeply influenced by British costal town.</p>\r\n<p data-start=\"4377\" data-end=\"4938\">&nbsp;</p>\r\n<p data-start=\"4940\" data-end=\"5576\"><strong data-start=\"4940\" data-end=\"4945\">H</strong><br data-start=\"4945\" data-end=\"4948\" />Bondi Beach hosted the beach volleyball competition at the 2000 Summer Olympics. A temporary 10,000-seat stadium, a much smaller stadium, 2 warm-up courts, and 3 training courts were set up to host the tournament. The Bondi Beach Volleyball Stadium was constructed for it and stood for just six weeks. Campaigners oppose both the social and environmental consequences of the development. The stadium will divide the beach in two and seriously restrict public access for swimming, walking, and other forms of outdoor recreation. People protest for their human rights of having a pure seaside and argue for health life in Bondi.</p>\r\n<p data-start=\"4940\" data-end=\"5576\">&nbsp;</p>\r\n<p data-start=\"5578\" data-end=\"5905\" data-is-last-node=\"\" data-is-only-node=\"\"><strong data-start=\"5578\" data-end=\"5583\">I</strong></p>\r\n<p data-start=\"5578\" data-end=\"5905\" data-is-last-node=\"\" data-is-only-node=\"\">&ldquo;They&rsquo;re prepared to risk lives and risk the Bondi beach environment for the sake of eight days of volleyball&rdquo;, said Stephen Uniacke, a construction lawyer involved in the campaign. Other environmental concerns include the possibility that soil dredged up from below the sand will acidify when brought to the surface.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900074,
+                      1724900075,
+                      1724900076
+                    ]
+                  },
+                  {
+                    "title": "PASSAGE 2",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should spend about 20 minutes on Questions 14-26 which are based on Reading Passage 2 below.</p>\r\n<h2 style=\"text-align: center;\">Antarctica &ndash; in from the cold?</h2>\r\n<p data-pm-slice=\"0 0 []\"><strong>A</strong></p>\r\n<p>A little over a century ago, men of the ilk of Scott, Shackleton and Mawson battled against Antarctica&rsquo;s blizzards, cold and deprivation. In the name of Empire and in an age of heroic deeds they created an image of Antarctica that was to last well into the 20th century &ndash; an image of remoteness, hardship, bleakness and isolation that was the province of only the most courageous of men. The image was one of a place removed from everyday reality, of a place with no apparent value to anyone.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>B</strong></p>\r\n<p>As we enter the 21st century, our perception of Antarctica has changed. Although physically Antarctica is no closer and probably no warmer, and to spend time there still demands a dedication not seen in ordinary life, the continent and its surrounding ocean are increasingly seen to an integral part of Planet Earth, and a key component in the Earth System. Is this because the world seems a little smaller these days, shrunk by TV and tourism, or is it because Antarctica really does occupy a central spot on Earth&rsquo;s mantle? Scientific research during the past half century has revealed &ndash; and continues to reveal &ndash; that Antarctica&rsquo;s great mass and low temperature exert a major influence on climate and ocean circulation, factors which influence the lives of millions of people all over the globe.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>C</strong></p>\r\n<p>Antarctica was not always cold. The slow break-up of the super-continent Gondwana with the northward movements of Africa, South America, India and Australia eventually created enough space around Antarctica for the development of an Antarctic Circumpolar Current (ACC), that flowed from west to east under the influence of the prevailing westerly winds. Antarctica cooled, its vegetation perished, glaciation began and the continent took on its present-day appearance. Today the ice that overlies the bedrock is up to 4km thick, and surface temperatures as low as &ndash; 89.2deg C have been recorded. The icy blast that howls over the ice cap and out to sea &ndash; the so-called katabatic wind &ndash; can reach 300 km/hr, creating fearsome wind-chill effects.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>D</strong></p>\r\n<p>Out of this extreme environment come some powerful forces that reverberate around the world. The Earth&rsquo;s rotation, coupled to the generation of cells of low pressure off the Antarctic coast, would allow Astronauts a view of Antarctica that is as beautiful as it is awesome. Spinning away to the northeast, the cells grow and deepen, whipping up the Southern Ocean into the mountainous seas so respected by mariners. Recent work is showing that the temperature of the ocean may be a better predictor of rainfall in Australia than is the pressure difference between Darwin and Tahiti &ndash; the Southern Oscillation Index. By receiving more accurate predictions, graziers in northern Queensland are able to avoid overstocking in years when rainfall will be poor. Not only does this limit their losses but it prevents serious pasture degradation that may take decades to repair. CSIRO is developing this as a prototype forecasting system, but we can confidently predict that as we know more about the Antarctic and Southern Ocean we will be able to enhance and extend our predictive ability.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>E</strong></p>\r\n<p>The ocean&rsquo;s surface temperature results from the interplay between deep-water temperature, air temperature and ice. Each winter between 4 and 19 million square km of sea ice form, locking up huge quantities of heat close to the continent. Only now can we start to unravel the influence of sea ice on the weather that is experienced in southern Australia. But in another way the extent of sea ice extends its influence far beyond Antarctica. Antarctic krill &ndash; the small shrimp-like crustaceans that are the staple diet for baleen whales, penguins, some seals, flighted sea birds and many fish &ndash; breed well in years when sea ice is extensive and poorly when it is not. Many species of baleen whales and flighted sea birds migrate between the hemispheres and when the krill are less abundant they do not thrive.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>F</strong></p>\r\n<p>The circulatory system of the world&rsquo;s oceans is like a huge conveyor belt, moving water and dissolved minerals and nutrients from one hemisphere to the other, and from the ocean&rsquo;s abyssal depths to the surface. The ACC is the longest current in the world, and has the largest flow. Through it, the deep flows of the Atlantic, Indian and Pacific Oceans are joined to form part of a single global thermohaline circulation. During winter, the howling katabatics sometimes scour the ice off patches of the sea&rsquo;s surface leaving large ice-locked lagoons, or &lsquo;polynyas&rsquo;. Recent research has shown that as fresh sea ice forms, it is continuously stripped away by the wind and may be blown up to 90km in a single day. Since only fresh water freezes into ice, the water that remains becomes increasingly salty and dense, sinking until it spills over the continental shelf. Cold water carries more oxygen than warm water, so when it rises, well into the northern hemisphere, it reoxygenates and revitalises the ocean. The state of the northern oceans, and their biological productivity, owe much to what happens in the Antarctic.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900077,
+                      1724900078,
+                      1724900079
+                    ]
+                  },
+                  {
+                    "title": "PASSAGE 3",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should spend about 20 minutes on Questions 27-40 which are based on Reading Passage 3 below.</p>\r\n<h2 style=\"text-align: center;\">Talc Powder</h2>\r\n<p data-pm-slice=\"0 0 []\"><strong>A</strong></p>\r\n<p>Peter Brigg discovers how talc from Luzenac&rsquo;s Trimouns in France find its way into food and agricultural products &ndash; from chewing gum to olive oil. High in the French Pyrenees, some 1,700m above see level, lies Trimouns, a huge deposit of hydrated magnesium silicate &ndash; talc to you and me. Talc from Trimouns, and from ten other Luzenac mines across the globe, is used in the manufacture of a vast array of everyday products extending from paper, paint and plaster to cosmetics, plastics and car tyres. And of course there is always talc&rsquo;s best known end use: talcum powder for babies&rsquo; bottoms. But the true versatility of this remarkable mineral is nowhere better displayed than in its sometimes surprising use in certain niche markets in the food and agriculture industries.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>B</strong></p>\r\n<p>Take, for example, the chewing gum business. Every year, Talc de Luzenac France &ndash; which owns and operates the Trimouns mine and is a member of international Luzenac Group (art of Rio Tinto minerals) &ndash; supplies about 6,000 tones of talc to chewing gum manufacturers in Europe. &ldquo;We&rsquo;ve been selling to this sector of the market since the 1960s,&rdquo; says Laurent Fournier, sales manager in Luzenac&rsquo;s Specialties business unit in Toulouse. &ldquo;Admittedly, in terms of our total annual sales of talc, the amount we supply to chewing gum manufacturers is relatively small, but we see is as a valuable niche market: one where customers place a premium on securing supplies from a reliable, high quality source. Because of this, long term allegiance to a proven suppler is very much a feature of this sector of the talc market.&rdquo; Switching sources &ndash; in the way that you might choose to buy, say, paperclips from Supplier A rather than from Supplier B &ndash; is not a easy option for chewing gum manufacturers,&rdquo; Fournier says. &ldquo;The cost of reformulating is high, so when customers are using a talc grade that works, even if it&rsquo;s expensive, they are understandably reluctant to switch.&rdquo;</p>\r\n<p>&nbsp;</p>\r\n<p><strong>C</strong></p>\r\n<p>But how is talc actually used in the manufacture of chewing gum? Patrick Delord, an engineer with a degree in agronomics, who has been with Luzenac for 22 years and is now senior market development manager, Agriculture and Food, in Europe, explains that chewing gums has four main components. &ldquo;The most important of them is the gum base,&rdquo; he says. &ldquo;It&rsquo;s the gum base that puts the chew into chewing gum. It binds all the ingredients together, creating a soft, smooth texture. To this the manufacturer the adds sweeteners, softeners and flavourings. Our talc is used as a filler in the gum base. The amount varies between, say, ten and 35 per cent, depending on the type of gum. Fruit flavoured chewing gum, for example, is slightly acidic and would react with the calcium carbonate that the manufacturer might otherwise use as a filler. Talc, on the other hand, makes an ideal filler because it&rsquo;s non-reactive chemically. In the factory, talc is also used to dust the gum base pellets and to stop the chewing gum sticking during the lamination and packing process,&rdquo; Delord adds.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>D</strong></p>\r\n<p>The chewing gum business is, however, just one example of talc&rsquo;s use in the food sector. For the past 20 years or so, olive oil processors in Spain have been taking advantage of talc&rsquo;s unique characteristics to help them boost the amount of oil they extract from crushed olives. According to Patrick Delord, talc is especially useful for treating what he calls &ldquo;difficult&rdquo; olives. After the olives are harvested &ndash; preferably early in the morning because their taste is better if they are gathered in the cool of the day &ndash; they are taken to the processing plant. There they are crushed and then stirred for 30-45 minutes. In the old days, the resulting paste was passed through an olive press but nowadays it&rsquo;s more common to add water and centrifuge the mixture to separate the water and oil from the solid matter. The oil and water are then allowed to settle so that the olive oil layer can be decanted off and bottle. &ldquo;Difficult&rdquo; olives are those that are more reluctant than the norm to yield up their full oil content. This may be attributable to the particular species of olive, or to its water content and the time of year the olives are collected &ndash; at the beginning and the end of the season their water content is often either too high or too low. These olives are easy to recognize because they produce a lot of extra foam during the stirring process, a consequence of an excess of a fine sold that acts as a natural emulsifier. The oil in this emulsion is lost when the water is disposed of. Not only that, if the waste water is disposed of directly into local fields &ndash; often the case in many smaller processing operations &ndash; the emulsified oil may take some time to biodegrade and so be harmful to the environment.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>E</strong></p>\r\n<p>&ldquo;If you add between a half and two per cent of talc by weight during the stirring process, it absorbs the natural emulsifier in the olives and so boosts the amount of oil you can extract,&rdquo; says Delord. &ldquo;In addition, talc&rsquo;s flat, &lsquo;platey&rsquo; structure helps increase the size of the oil droplets liberated during stirring, which again improves the yield. However, because talc is chemically inert, it doesn&rsquo;t affect the colour, taste, appearance or composition of the resulting olive oil.&rdquo;</p>\r\n<p>&nbsp;</p>\r\n<p><strong>F</strong></p>\r\n<p>If the use of talc in olive oil processing and in chewing gum is long established, new applications in the food and agriculture industries are also constantly being sought by Luzenac. One such promising new market is fruit crop protection, being pioneered in the US. Just like people, fruit can get sunburned. In fact, in very sunny regions up to 45 per cent of a typical crop can be affected by heat stress and sunburn. However, in the case of fruit, it&rsquo;s not so much the ultra violet rays which harm the crop as the high surface temperature that the sun&rsquo;s rays create.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>G</strong></p>\r\n<p>To combat this, farmers normally use either chemicals or spray a continuous fine canopy of mist above the fruit trees or bushes. The trouble is, this uses a lot of water &ndash; normally a precious commodity in hot, sunny areas &ndash; and it is therefore expensive. What&rsquo;s more, the ground can quickly become waterlogged. &ldquo;So our idea was to coat the fruit with talc to protect it from the sun,&rdquo; says Greg Hunter, a marketing specialist who has been with Luzenac for ten years. &ldquo;But to do this, several technical challenges had first to be overcome. Talc is very hydrophobic: it doesn&rsquo;t like water. So in order to have a viable product we needed a wettable powder &ndash; something that would go readily into suspension so that is could be sprayed onto the fruit. It also had to break the surface tension of the cutin (the natural waxy, waterproof layer on the fruit) and of course it had to wash off easily when the fruit was harvested. No-one&rsquo;s going to want an apple that&rsquo;s covered in talc.&rdquo;</p>\r\n<p>&nbsp;</p>\r\n<p><strong>H</strong></p>\r\n<p>Initial trials in the state of Washington in 2003 showed that when the product was sprayed onto Granny Smith apples, it reduced their surface temperature and lowered the incidence of sunburn by up to 60 per cent. Today the new product, known as Invelop Maximum SPF, is in its second commercial year on the US market. Apple growers are the primary target although Hunter believes grape growers represent another sector with long term potential. He is also hopeful of extending sales to overseas markets such as Australia, South America and southern Europe.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900080,
+                      1724900081,
+                      1724900082
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "is_convert_file": 1
+              },
+              "1624887674": {
+                "_id": 1624887674,
+                "title": "IELTS Mock Test - Listening 07",
+                "times": 32,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "listening",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "1xk6okryxm",
+                "created_by": 15069,
+                "created_time": 1745567554,
+                "updated_time": 1766569187,
+                "question": [
+                  {
+                    "title": "PART 1",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p>You will hear a survey company representative ringing a person to obtain some information.</p>\r\n<p>Rep.: Hello?</p>\r\n<p>Person: Hello? Who is this?</p>\r\n<p>Rep.: Hello. I&rsquo;m a representative of the Tallyho Survey Company, and I&rsquo;d like to ask you a few questions regarding&nbsp;<strong>exercise (Example)</strong>.</p>\r\n<p>Person: Oh, that&rsquo;s an interesting subject.</p>\r\n<p>Rep.: Yes, we think so, too.</p>\r\n<p>Person: But I&rsquo;m afraid I&rsquo;m a bit busy at the moment.</p>\r\n<p>Rep.: Don&rsquo;t worry. This will only take about four minutes at the most. It&rsquo;s&nbsp;<strong>10:25 (Q1)</strong></p>\r\n<p>now, so it will all be over by 10:30.</p>\r\n<p>Person: Well ... alright, if it&rsquo;s that short.</p>\r\n<p>Rep.: It will be. So, one of the first things I need to know is where you are &mdash; that is, which suburb or area of the city? The last client was in Blackburn, for example.</p>\r\n<p>Person: Blackburn. That&rsquo;s close to me. I&rsquo;m in&nbsp;<strong>Box Hill (Q2)</strong>.</p>\r\n<p>Rep.: Another eastern suburb then. I have a friend in Box Hill, too. Interesting place. Now, I need your approximate age for this survey. Are you younger than 20, between 20 and 29, 30 and 39, and so on?</p>\r\n<p>Person: I&rsquo;ll turn 40 in a few months, so that puts me in the 40 to 49 age group. Rep.: Well, that&rsquo;s in a few months, so right now you&rsquo;re in the&nbsp;<strong>30 to 39 (Q3)</strong>.</p>\r\n<p>Person: Oh, right. So put that then.</p>\r\n<p>Rep.: Okay. Now, I need to know your occupation. The last caller was a housewife, for example; the one before that a teacher.</p>\r\n<p>Person: I used to be a teacher, too, teaching cookery. Rep.: And now?</p>\r\n<p>&nbsp;</p>\r\n<p>Person: Now you can just put &lsquo;<strong>domestic duties (Q4)</strong>&rsquo;. Actually, I hope to begin a new job soon, as a cook, but that won&rsquo;t be for some time yet. I have to wait for my husband&rsquo;s restaurant to open.</p>\r\n<p>Rep.: Cook? That sounds interesting, but it&rsquo;s &lsquo;domestic duties&rsquo; for now. Okay, that just leaves some information about your family. This is not obligatory at all, so if you don&rsquo;t want to answer, that&rsquo;s fine.</p>\r\n<p>Person: What sort of information, exactly?</p>\r\n<p>Rep.: Oh, it&rsquo;s very broad. Married, with children; single mother, that sort of thing. The last customer said she was a single mother.</p>\r\n<p>Person: I&rsquo;m married, and not a mother. Put &lsquo;<strong>married, no children (Q5)</strong>&rsquo;.</p>\r\n<p>Rep.: I&rsquo;m married with children, myself. But I&rsquo;ll put in your details, and that finishes the</p>\r\n<p>profile, and just l eaves the actual survey itself, if you&rsquo;re ready to proceed.</p>\r\n<p>Rep.: Alright, let&rsquo;s begin the survey now, about your exercise habits. Person: I&rsquo;m afraid I don&rsquo;t exercise much at all.</p>\r\n<p>Rep.: Well, the main question is in what form you take your exercise, however little that may be &mdash; for example, in just cleaning. Do you clean the house?</p>\r\n<p>Person: My husband does the cleaning, actually, but I&nbsp;<strong>walk (Q6)&nbsp;</strong>to the supermarket and shops very often, up to four times a week.</p>\r\n<p>Rep.: I&rsquo;ll put that then, unless there&rsquo;s something else.</p>\r\n<p>Person: Nothing else, really. But I diet. I&rsquo;m very strict about what I eat. Oh, and I do yoga, although that&rsquo;s not very energetic&mdash;more a form of relaxation, and to&nbsp;<strong>tighten (Q7)&nbsp;</strong>my muscles.</p>\r\n<p>Rep.: They&rsquo;re both important, of course, but what about sport? Do you undertake any sporting activities? This could be very infrequent. In the past, for example.</p>\r\n<p>Person: My husband plays basketball at the local school, and I sometimes watch. When he was younger he was in a basketball team, but I never participated.</p>\r\n<p>Rep.: Have you done anything at all?</p>\r\n<p>Person: I used to&nbsp;<strong>hike (Q8)&nbsp;</strong>in a nearby national park.</p>\r\n<p>&nbsp;</p>\r\n<p>Rep.: Well that&rsquo;s a definite physical activity, so I&rsquo;ll put that&mdash;but not basketball. Alright, that just leaves future exercise intentions. Do you plan, or expect to do, at some stage, any form of exercise?</p>\r\n<p>Person: I once dreamt of doing modern dance, but that&rsquo;s never going to happen.</p>\r\n<p>Realistically, I&rsquo;m thinking about going&nbsp;<strong>swimming (Q9)</strong>, at the local aquatic centre,</p>\r\n<p>although my husband thinks we should just jog. I can&rsquo;t see myself doing that, though&mdash; too tiring.</p>\r\n<p>Rep.: I can understand. I used to jog, too, and it really makes you sweat. I&rsquo;d say swimming&rsquo;s a much better option.</p>\r\n<p>Person: But I&rsquo;ll be starting this job as a cook in my husband&rsquo;s restaurant. I imagine I&rsquo;ll be very tired doing all those late shifts. But if I have any&nbsp;<strong>energy(Q10)&nbsp;</strong>left over, I might go to the aquatic centre to release some stress.</p>\r\n<p>Rep.: Alright. Well, that&rsquo;s the end of the survey. Thank you very much for your time.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+                    "images": "",
+                    "sound": "",
+                    "transcript": "",
+                    "question_id": [
+                      1724900083,
+                      1724900084
+                    ]
+                  },
+                  {
+                    "title": "PART 2",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p>You will hear the director of a language-centre library explaining about its facilities to some new students.</p>\r\n<p>Welcome to the library, or the I.L.C.. which means Independent Learning Centre, and let me explain about some of its facilities. We're standing here at the entry gales, next to the borrowing desk. That's where you check out any books, but you are also advised to study in the library here, since most of our material cannot be borrowed. Thus, we have Seating along the middle of the library, and in&nbsp;<strong>that far corner in front of us. on the left, we have the Quiet Reading Section (Q11)</strong>, for some serious reading activity.</p>\r\n<p>We used to have the computers there but then realised that that corner was very quiet, and thus better suited for the purpose it now has. The computers were instead shifled to a more central location,&nbsp;<strong>right beside us here, on the left (Q12)</strong>. Again, somewhat confusingly, this area once housed the Newspaper and Magazine Section, but the people in the Quiet Reading Area had to walk loo far to collect this literature,&nbsp;<strong>so it was moved to right beside them, in the adjacent corner (Q13)</strong>. So, feel free to read the newspapers there. But the reference books, those huge weighty dictionaries, atlases, and encyclopedias, were all situated at&nbsp;<strong>the opposite end of the building, against the wall (Q14)</strong>. This was because they weren't generally that popular, and we wanted more space for the magazine racks, always a favourite with readers.</p>\r\n<p>&nbsp;</p>\r\n<p>Okay, as well as reading, you need to work on your listening skills, and for that you need the Audio Section. Again, such an activity needs a quiet area, so we put this in the&nbsp;<strong>last remaining corner, up there on your right, as you can see (Q15)</strong>. There are CD players and headphones, so just borrow the listening packs, sit down there, and listen away.</p>\r\n<p>Right, that just leaves the main library. In other libraries, that's often right beside the Newspaper and Magazine Section, allowing freedom to choose from all genres of literature, but here, we've got them further apart. For the&nbsp;<strong>main library, just follow your nose, past the central settling there, and it&rsquo;s there among all that shelving (Q16)</strong>, upon which you&rsquo;ll find an abundance of interesting hooks and listening packs to use.</p>\r\n<p>Now, I&rsquo;d like to tell you a bit more about an excellent service offered in the I.L.C. here that we call the 'Special Sessions'. What can you do in them? For a start, many of you need practice in speaking English. and for that we hold a special Discussion Session, led by a teacher. That can be noisy, in fact, we hope that it is noisy, since that would mean many people are talking. It's in the Central Seating area, and it used to be from 10.30 to</p>\r\n<p>1.30. but we found that the noise was disturbing the regular I.L.C patrons, so we shortened and moved this discussion to&nbsp;<strong>the morning, 9.00 am time slot (Q17)</strong>, when fewer people tire</p>\r\n<p>in the centre. It goes for one and a half hours.</p>\r\n<p>Alright, what about Writing Skills? Well, we can help you there with another teacher. Now, writing is a fairly quiet activity, so that teacher stations him or herself in the&nbsp;<strong>Quiet Reading area from 1.30 until three (Q18)</strong>. The 10.30-tomidday time slot cannot have a teacher for such writing skills, as they are all teaching in the morning. For this reason, of course, there cannot be an on-call teacher in the morning either, although many people would like one,</p>\r\n<p>particularly the 10.30-to-noon crowd, having just finished their early morning class. These students all have to wait until midday onwards, when, for three hours, a teacher will be stationed in the&nbsp;<strong>Audio Section (Q19)</strong>, ready to deal with all those questions.</p>\r\n<p>Until recently, we had another teacher doing the 3-pm-to-6-pm time slot, in the Central Settling, but all the noise interfered with the late users of the I.L.C., so we had to cancel that. Also noisy can be the Language Exchange, where local students who want to learn your language will help you practise English. This is generally done in pairs, so the noise level is low enough not to need this exchange lo run at 9 am, but at a more congenial&nbsp;<strong>time of 10.30, among the Central Seating (Q20)</strong>. That must finish by 1.30 though, tiller which quieter and more individual activities take place.</p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/25/8d43222f-7e2c-40cc-92fd-78af16f62ef7.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900085,
+                      1724900086
+                    ]
+                  },
+                  {
+                    "title": "PART 3",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p>Dylan: Hi, Emily. What did you think of that lecture?</p>\r\n<p>Emily: A bit hard to follow, but I have some good lecture-listening note-taking strategies</p>\r\n<p>which really help, so I can review the lecturer&rsquo;s message later.</p>\r\n<p>Dylan: Lecture-listening note-taking strategies? Review it later? That sounds interesting. I must admit, I struggle a bit to take down the gist of what I hear. Look at my notes.</p>\r\n<p>Emily: Well, I can see a basic problem immediately. You&rsquo;re writing full words, such as</p>\r\n<p>&lsquo;century&rsquo; when all you need is a &lsquo;C&rsquo;, And don&rsquo;t write &lsquo;increase&rsquo;; just draw an &lsquo;up&rsquo; arrow. And why write &lsquo;thousand&rsquo; when a &lsquo;th&rsquo; will do?</p>\r\n<p>Dylan: I see. Just use&nbsp;<strong>symbols (Q21)</strong>. That&rsquo;s not a bad idea at all.</p>\r\n<p>Emily: It&rsquo;s the most basic strategy, allowing you to record information at a faster pace. These lecturers can talk faster than others, too, so you don&rsquo;t want to waste any time. But you need to be very familiar with your set of symbols.</p>\r\n<p>Dylan: Why?</p>\r\n<p>Emily: Because you&rsquo;ll have to look at these notes days, weeks, or even months</p>\r\n<p>afterwards, when you begin writing your essay, so you&rsquo;ll need to be able to&nbsp;<strong>interpret (Q22)&nbsp;</strong>them at a later stage.</p>\r\n<p>Dylan: I think I can do this, even by looking at your notes. &lsquo;Immed&rsquo; must mean</p>\r\n<p>immediately.</p>\r\n<p>Emily: But regarding the lecture as a whole, I knew the professor would be giving a set of specific recommendations, and comparing two alternative approaches, so I formatted my page in advance, adding the features consistent with the&nbsp;<strong>nature (Q23)&nbsp;</strong>of what I was going to hear.</p>\r\n<p>Dylan: Ah ... I think I need an example of what you mean.</p>\r\n<p>Emily: Well, look at my page. Before the lecture, I drew large&nbsp;<strong>headings (Q24)&nbsp;</strong>saying</p>\r\n<p>&lsquo;recommendations&rsquo;. You should always draw these, and I drew a table saying, &lsquo;Approach 1&rsquo; and &lsquo;Approach 2&rsquo;. At the end I drew a flowchart, as obviously the final recommendation would be a step-by-step approach. Then I was prepared in advance to simply fill in the spaces.</p>\r\n<p>Dylan: Wow! Now that&rsquo;s clever.</p>\r\n<p>&nbsp;</p>\r\n<p>Dylan: Your advice about note taking sounds great, but I still have one question, Emily. How are you able to design your page in advance? I mean, how can you predict the nature of the talk, and know which design is likely to work best?</p>\r\n<p>Emily: It&rsquo;s rather obvious when you think about it. What&rsquo;s your next lecture about? Dylan:&nbsp;<strong>Legal Studies (Q25)</strong>.</p>\r\n<p>Emily: Well, that suggests to me that you&rsquo;ll need a flowchart, since the judicial system has a very logical &lsquo;do this first, do that second&rsquo; approach, which must be followed in that order&mdash;y&rsquo;know, all the processes that happen in the courtroom, and the&nbsp;<strong>procedures (Q26)&nbsp;</strong>that must take place to ensure complete legality.</p>\r\n<p>Dylan: Sure. That&rsquo;s the way law is, very linear and orderly, but what about Culture</p>\r\n<p>Studies? That&rsquo;s just a mass of comparisons of different cultures.</p>\r\n<p>Emily: Which tells you that you will need a table, where, in tabular form, you can efficiently write down information.</p>\r\n<p>Dylan: But often the lecture&rsquo;s not that simple. The professor throws in a really complex mix of ideas.</p>\r\n<p>Emily: Then use a spider graph&mdash;like the web a spider makes, where there&rsquo;s a central idea around which you attach all the&nbsp;<strong>associated (Q27)&nbsp;</strong>thoughts, and ideas, and impressions.</p>\r\n<p>Dylan: I see. I think I understand. And that would be very quick, too; very efficient. I like that. But what about Management Theory? How would you approach that?</p>\r\n<p>Emily: The same as with Culture Studies. I&rsquo;d use a network, which is basically the same as a spider graph, linking thoughts, although this time there are&nbsp;<strong>directions (Q28)&nbsp;</strong>involved. It is this element that makes it different&mdash;the fact that the thoughts go one way and not the other.</p>\r\n<p>Dylan: Okay ... has directions. It sounds logical. And what about the other subjects, such</p>\r\n<p>as Political Science? There&rsquo;s no predictable order to that.</p>\r\n<p>Emily: Well, for that I&rsquo;d just put my&nbsp;<strong>notes (Q29)&nbsp;</strong>in a line, that is, in linear, or straight-line fashion, and these notes would use symbols, of course, to save time.</p>\r\n<p>Dylan: Okay, that just leaves Mass Media.</p>\r\n<p>Emily: For that, I wouldn&rsquo;t have any special design at all. As you say, sometimes it&rsquo;s</p>\r\n<p>impossible to predict in what way lecturers will present their information, in which case</p>\r\n<p>&nbsp;</p>\r\n<p>the best you can do is pre-write&nbsp;<strong>headings (Q30)</strong>, but not specific, just general, as in Main One, Main Two, Sub One, Two, and Three, and so on.</p>\r\n<p>Dylan: Okay.</p>\r\n<p>Emily: But always be prepared to adapt to the nature of the talk, using any one of the other methods if it becomes appropriate at the time.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/25/68173497-7a12-4978-82d3-aca81767da22.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900087,
+                      1724900088
+                    ]
+                  },
+                  {
+                    "title": "PART 4",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/25/cd013a65-7668-4917-be7f-066681f4cd76.mp3",
+                    "question_id": [
+                      1724900089,
+                      1724900090
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "no_control": 0
+              },
+              "1624887804": {
+                "_id": 1624887804,
+                "title": "IELTS Mock Test - Writing 07",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "writing",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "a4btjr6sib",
+                "created_by": 15069,
+                "created_time": 1748247581,
+                "updated_time": 1750871144,
+                "question": [
+                  {
+                    "title": "TASK 1",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900718
+                    ]
+                  },
+                  {
+                    "title": "TASK 2",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900720
+                    ]
+                  }
+                ],
+                "is_mark": 1,
+                "number_question": 2,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1
+              }
+            },
+            "logs_detail": [],
+            "logs": [],
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887672?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887672?site=ielts-fighter",
+      "title": "IELTS Mock Test 06"
+    },
+    "captures": []
+  },
+  "https://test.ebomb.edu.vn/tests/1624887664?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887664?site=ielts-fighter",
+      "title": "IELTS Mock Test 05"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887664/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887664",
+            "test_detail": {
+              "_id": 1624887664,
+              "title": "IELTS Mock Test 05",
+              "times": 160,
+              "score_type": "ielts",
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "pass_score": null,
+              "is_group": 1,
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "no_repeat": 1,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "4h5lhfyh57",
+              "created_by": 15069,
+              "created_time": 1745202429,
+              "updated_time": 1783156191,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "seo_description": null,
+              "seo_keyword": null,
+              "seo_title": null,
+              "title_show": null,
+              "tests": [
+                1624887665,
+                1624887666,
+                1624887833
+              ],
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 1,
+              "question": null,
+              "link_solution": null
+            },
+            "tests": {
+              "1624887665": {
+                "_id": 1624887665,
+                "title": "IELTS Mock Test - Listening 05",
+                "times": 32,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "listening",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 1,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "55a2wjrlvs",
+                "created_by": 15069,
+                "created_time": 1745203054,
+                "updated_time": 1783156209,
+                "question": [
+                  {
+                    "title": "PART 1",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p><span class=\"fontstyle0\">SECTION 1<br /></span><span class=\"fontstyle2\">You will hear two teachers, Andrew and Katie, discussing the coming excursion of their<br />language class.<br />Andrew: Well, we have this school excursion planned, but when exactly is it? Is it this<br />Tuesday or Wednesday?<br />Katie: Well it can&rsquo;t be Tuesday, with the English tests taking place.<br />Andrew: Ah, right. Not Tuesday, but </span><span class=\"fontstyle3\">Wednesday (</span><span class=\"fontstyle0\">Example</span><span class=\"fontstyle3\">)</span><span class=\"fontstyle2\">.<br />Katie: That&rsquo;s right - all day Wednesday - taking a bus outside the city.<br />Andrew: And where are we going?<br />Katie: Ah, last month we went to Arthur Island, so this time we&rsquo;re going to </span><span class=\"fontstyle0\">the... Animal<br />Park (Q1)</span><span class=\"fontstyle2\">.<br />Andrew: Arthur Island was okay, but it was too cold. Let&rsquo;s hope the weather for this<br />week&rsquo;s excursion is better. I don&rsquo;t suppose animals care about bad weather, but I<br />certainly do. Have you heard the forecast?<br />Katie: Yes, and it&rsquo;s not too bad. Basically, they&rsquo;re saying Monday will be sunny.<br />Andrew: Good...<br />Katie: But then the weather will change.<br />Andrew: Not so good.<br />Katie: Yes, Tuesday we&rsquo;ll have some showers, but by Wednesday, the day of our<br />excursion, it will be... well, their words are &lsquo;</span><span class=\"fontstyle0\">old and cloudy</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q2</span><span class=\"fontstyle2\">).<br />Andrew: Cold and cloudy. Well, as long as it isn&rsquo;t &lsquo;wet and rainy&rsquo;, I&rsquo;m happy enough. We<br />won&rsquo;t need umbrellas, just warm clothing. And what time will we get there?<br />Katie: Let&rsquo;s see. The bus picks us up at 8.30 am, and then it&rsquo;s an hour and a half on the<br />road, so we arrive at 10 am... sorry, with the 15 minutes break, that will actually be<br /></span><span class=\"fontstyle0\">10.15 am (Q3)</span><span class=\"fontstyle2\">.<br />Andrew: That&rsquo;s early enough. Then all our students can see the animals, have their fun,<br />and do whatever they want to do.<br />Katie: Well, one fun event planned that day is &lsquo;</span><span class=\"fontstyle0\">Birds of Prey</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q4</span><span class=\"fontstyle2\">).</span><br /><span class=\"fontstyle2\">ieltstrainingonline.com<br />9<br /></span><span class=\"fontstyle2\">Andrew: What&rsquo;s that?<br />Katie: That&rsquo;s when they bring out several birds of prey: eagles, falcons, kites, those sorts<br />of birds, and throw pieces of meat into the air, and the birds swoop down and eat them.<br />It&rsquo;s quite impressive.<br />Andrew: Sounds great. &lsquo;Birds of Prey&rsquo;. Are there any other activities?<br />Katie: There&rsquo;s a catered lunch, at the park restaurant. We&rsquo;ve already paid for that, and<br />in the afternoon there&rsquo;s... well, I had a choice between the &lsquo;Reptile Display&rsquo; and the<br />&lsquo;Koala Handling&rsquo;. In the reptile display, the students can handle live pythons and various<br />other snakes.<br />Andrew: Surely they&rsquo;d rather hold koalas?<br />Katie: I&rsquo;m sure, but the koalas can&rsquo;t be handled unless the weather&rsquo;s sunny, and given<br />the forecast, I thought it better to choose </span><span class=\"fontstyle0\">the reptile display (Q5)</span><span class=\"fontstyle2\">.<br />Andrew: Ummm, that&rsquo;s a shame. These Asian students would love the &lsquo;Koala Handling&rsquo;.<br />Katie: Yes, I know, but we can&rsquo;t control the weather.<br />Andrew: And, then we get back. What time will that be?<br />Katie: We leave the park at 4.30, but then we face traffic, so wo won't get back until well<br />after 6pm. It will most likely be </span><span class=\"fontstyle0\">6.30 (Q6)</span><span class=\"fontstyle2\">. But that&rsquo;s better than the last trip: we didn&rsquo;t<br />get home until 8.30 that time.<br />Andrew: Yes, that was a bit too late, wasn&rsquo;t it?<br />Katie: Andrew, I understand you&rsquo;ve been doing some research regarding the<br />breakdown, by nationality of our student body. That must have produced some<br />interesting results.<br />Andrew: You&rsquo;re right. I got some statistics from head office.<br />Katie: I would imagine that most of our students are either Japanese or Chinese.<br />Andrew: You imagine right. But it&rsquo;s the </span><span class=\"fontstyle0\">Chinese (Q7) </span><span class=\"fontstyle2\">who constitute the majority, but<br />only just. I had thought Koreans might be second, but it&rsquo;s actually the </span><span class=\"fontstyle0\">Japanese (Q8)</span><span class=\"fontstyle2\">,<br />quite close behind. It&rsquo;s somewhat surprising, but obviously all those Study Tours that<br />our university markets in Japan are bringing in students.<br />Katie: What&rsquo;s the breakdown exactly?</span><br /><span class=\"fontstyle2\">ieltstrainingonline.com<br />10<br /></span><span class=\"fontstyle2\">Andrew: Japanese are a quarter of the whole, which is considerable. Last year they were<br />only 16%, so that market has grown nicely. Ah, the only other proportions of some<br />weight are the Indonesians and Koreans - about the same. Indonesians at 15%, and...<br />ah... the </span><span class=\"fontstyle0\">Koreans (Q9) </span><span class=\"fontstyle2\">are a little higher -not like last year when they were less than<br />10%.<br />Katie: I thought we&rsquo;d have more Indonesians than Koreans?<br />Andrew: Well, as I said, they&rsquo;re about the same - just like the Saudi and Thai student<br />numbers, almost the same also - both just under 10.<br />Katie: Which one is bigger?<br />Andrew: Ah, </span><span class=\"fontstyle0\">Thai (Q10) </span><span class=\"fontstyle2\">students number just a fraction more. As for the other<br />nationalities, collectively they&rsquo;re only 3%, so it wasn&rsquo;t worth giving each of them a<br />separate category. I just grouped them under &lsquo;other&rsquo; - that&rsquo;s Vietnamese, South<br />American, a couple of Russians, and so on.</span></p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/21/e8cc8f79-fcbf-410e-9e2e-8ed2f540ad62.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900019
+                    ]
+                  },
+                  {
+                    "title": "PART 2",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p><span class=\"fontstyle0\">SECTION 1<br /></span><span class=\"fontstyle2\">You will hear two teachers, Andrew and Katie, discussing the coming excursion of their<br />language class.<br />Andrew: Well, we have this school excursion planned, but when exactly is it? Is it this<br />Tuesday or Wednesday?<br />Katie: Well it can&rsquo;t be Tuesday, with the English tests taking place.<br />Andrew: Ah, right. Not Tuesday, but </span><span class=\"fontstyle3\">Wednesday (</span><span class=\"fontstyle0\">Example</span><span class=\"fontstyle3\">)</span><span class=\"fontstyle2\">.<br />Katie: That&rsquo;s right - all day Wednesday - taking a bus outside the city.<br />Andrew: And where are we going?<br />Katie: Ah, last month we went to Arthur Island, so this time we&rsquo;re going to </span><span class=\"fontstyle0\">the... Animal<br />Park (Q1)</span><span class=\"fontstyle2\">.<br />Andrew: Arthur Island was okay, but it was too cold. Let&rsquo;s hope the weather for this<br />week&rsquo;s excursion is better. I don&rsquo;t suppose animals care about bad weather, but I<br />certainly do. Have you heard the forecast?<br />Katie: Yes, and it&rsquo;s not too bad. Basically, they&rsquo;re saying Monday will be sunny.<br />Andrew: Good...<br />Katie: But then the weather will change.<br />Andrew: Not so good.<br />Katie: Yes, Tuesday we&rsquo;ll have some showers, but by Wednesday, the day of our<br />excursion, it will be... well, their words are &lsquo;</span><span class=\"fontstyle0\">old and cloudy</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q2</span><span class=\"fontstyle2\">).<br />Andrew: Cold and cloudy. Well, as long as it isn&rsquo;t &lsquo;wet and rainy&rsquo;, I&rsquo;m happy enough. We<br />won&rsquo;t need umbrellas, just warm clothing. And what time will we get there?<br />Katie: Let&rsquo;s see. The bus picks us up at 8.30 am, and then it&rsquo;s an hour and a half on the<br />road, so we arrive at 10 am... sorry, with the 15 minutes break, that will actually be<br /></span><span class=\"fontstyle0\">10.15 am (Q3)</span><span class=\"fontstyle2\">.<br />Andrew: That&rsquo;s early enough. Then all our students can see the animals, have their fun,<br />and do whatever they want to do.<br />Katie: Well, one fun event planned that day is &lsquo;</span><span class=\"fontstyle0\">Birds of Prey</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q4</span><span class=\"fontstyle2\">).</span><br /><span class=\"fontstyle2\"><br /></span><span class=\"fontstyle2\">Andrew: What&rsquo;s that?<br />Katie: That&rsquo;s when they bring out several birds of prey: eagles, falcons, kites, those sorts<br />of birds, and throw pieces of meat into the air, and the birds swoop down and eat them.<br />It&rsquo;s quite impressive.<br />Andrew: Sounds great. &lsquo;Birds of Prey&rsquo;. Are there any other activities?<br />Katie: There&rsquo;s a catered lunch, at the park restaurant. We&rsquo;ve already paid for that, and<br />in the afternoon there&rsquo;s... well, I had a choice between the &lsquo;Reptile Display&rsquo; and the<br />&lsquo;Koala Handling&rsquo;. In the reptile display, the students can handle live pythons and various<br />other snakes.<br />Andrew: Surely they&rsquo;d rather hold koalas?<br />Katie: I&rsquo;m sure, but the koalas can&rsquo;t be handled unless the weather&rsquo;s sunny, and given<br />the forecast, I thought it better to choose </span><span class=\"fontstyle0\">the reptile display (Q5)</span><span class=\"fontstyle2\">.<br />Andrew: Ummm, that&rsquo;s a shame. These Asian students would love the &lsquo;Koala Handling&rsquo;.<br />Katie: Yes, I know, but we can&rsquo;t control the weather.<br />Andrew: And, then we get back. What time will that be?<br />Katie: We leave the park at 4.30, but then we face traffic, so wo won't get back until well<br />after 6pm. It will most likely be </span><span class=\"fontstyle0\">6.30 (Q6)</span><span class=\"fontstyle2\">. But that&rsquo;s better than the last trip: we didn&rsquo;t<br />get home until 8.30 that time.<br />Andrew: Yes, that was a bit too late, wasn&rsquo;t it?<br />Katie: Andrew, I understand you&rsquo;ve been doing some research regarding the<br />breakdown, by nationality of our student body. That must have produced some<br />interesting results.<br />Andrew: You&rsquo;re right. I got some statistics from head office.<br />Katie: I would imagine that most of our students are either Japanese or Chinese.<br />Andrew: You imagine right. But it&rsquo;s the </span><span class=\"fontstyle0\">Chinese (Q7) </span><span class=\"fontstyle2\">who constitute the majority, but<br />only just. I had thought Koreans might be second, but it&rsquo;s actually the </span><span class=\"fontstyle0\">Japanese (Q8)</span><span class=\"fontstyle2\">,<br />quite close behind. It&rsquo;s somewhat surprising, but obviously all those Study Tours that<br />our university markets in Japan are bringing in students.<br />Katie: What&rsquo;s the breakdown exactly?</span><br /><span class=\"fontstyle2\"><br /></span><span class=\"fontstyle2\">Andrew: Japanese are a quarter of the whole, which is considerable. Last year they were<br />only 16%, so that market has grown nicely. Ah, the only other proportions of some<br />weight are the Indonesians and Koreans - about the same. Indonesians at 15%, and...<br />ah... the </span><span class=\"fontstyle0\">Koreans (Q9) </span><span class=\"fontstyle2\">are a little higher -not like last year when they were less than<br />10%.<br />Katie: I thought we&rsquo;d have more Indonesians than Koreans?<br />Andrew: Well, as I said, they&rsquo;re about the same - just like the Saudi and Thai student<br />numbers, almost the same also - both just under 10.<br />Katie: Which one is bigger?<br />Andrew: Ah, </span><span class=\"fontstyle0\">Thai (Q10) </span><span class=\"fontstyle2\">students number just a fraction more. As for the other<br />nationalities, collectively they&rsquo;re only 3%, so it wasn&rsquo;t worth giving each of them a<br />separate category. I just grouped them under &lsquo;other&rsquo; - that&rsquo;s Vietnamese, South<br />American, a couple of Russians, and so on.</span></p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/21/ffbce414-10eb-42ef-bc36-e577dc1f45e5.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900021,
+                      1724900022
+                    ]
+                  },
+                  {
+                    "title": "PART 3",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p><span class=\"fontstyle0\">SECTION 1<br /></span><span class=\"fontstyle2\">You will hear two teachers, Andrew and Katie, discussing the coming excursion of their<br />language class.<br />Andrew: Well, we have this school excursion planned, but when exactly is it? Is it this<br />Tuesday or Wednesday?<br />Katie: Well it can&rsquo;t be Tuesday, with the English tests taking place.<br />Andrew: Ah, right. Not Tuesday, but </span><span class=\"fontstyle3\">Wednesday (</span><span class=\"fontstyle0\">Example</span><span class=\"fontstyle3\">)</span><span class=\"fontstyle2\">.<br />Katie: That&rsquo;s right - all day Wednesday - taking a bus outside the city.<br />Andrew: And where are we going?<br />Katie: Ah, last month we went to Arthur Island, so this time we&rsquo;re going to </span><span class=\"fontstyle0\">the... Animal<br />Park (Q1)</span><span class=\"fontstyle2\">.<br />Andrew: Arthur Island was okay, but it was too cold. Let&rsquo;s hope the weather for this<br />week&rsquo;s excursion is better. I don&rsquo;t suppose animals care about bad weather, but I<br />certainly do. Have you heard the forecast?<br />Katie: Yes, and it&rsquo;s not too bad. Basically, they&rsquo;re saying Monday will be sunny.<br />Andrew: Good...<br />Katie: But then the weather will change.<br />Andrew: Not so good.<br />Katie: Yes, Tuesday we&rsquo;ll have some showers, but by Wednesday, the day of our<br />excursion, it will be... well, their words are &lsquo;</span><span class=\"fontstyle0\">old and cloudy</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q2</span><span class=\"fontstyle2\">).<br />Andrew: Cold and cloudy. Well, as long as it isn&rsquo;t &lsquo;wet and rainy&rsquo;, I&rsquo;m happy enough. We<br />won&rsquo;t need umbrellas, just warm clothing. And what time will we get there?<br />Katie: Let&rsquo;s see. The bus picks us up at 8.30 am, and then it&rsquo;s an hour and a half on the<br />road, so we arrive at 10 am... sorry, with the 15 minutes break, that will actually be<br /></span><span class=\"fontstyle0\">10.15 am (Q3)</span><span class=\"fontstyle2\">.<br />Andrew: That&rsquo;s early enough. Then all our students can see the animals, have their fun,<br />and do whatever they want to do.<br />Katie: Well, one fun event planned that day is &lsquo;</span><span class=\"fontstyle0\">Birds of Prey</span><span class=\"fontstyle2\">&rsquo; (</span><span class=\"fontstyle0\">Q4</span><span class=\"fontstyle2\">).</span><br /><span class=\"fontstyle2\">ieltstrainingonline.com<br />9<br /></span><span class=\"fontstyle2\">Andrew: What&rsquo;s that?<br />Katie: That&rsquo;s when they bring out several birds of prey: eagles, falcons, kites, those sorts<br />of birds, and throw pieces of meat into the air, and the birds swoop down and eat them.<br />It&rsquo;s quite impressive.<br />Andrew: Sounds great. &lsquo;Birds of Prey&rsquo;. Are there any other activities?<br />Katie: There&rsquo;s a catered lunch, at the park restaurant. We&rsquo;ve already paid for that, and<br />in the afternoon there&rsquo;s... well, I had a choice between the &lsquo;Reptile Display&rsquo; and the<br />&lsquo;Koala Handling&rsquo;. In the reptile display, the students can handle live pythons and various<br />other snakes.<br />Andrew: Surely they&rsquo;d rather hold koalas?<br />Katie: I&rsquo;m sure, but the koalas can&rsquo;t be handled unless the weather&rsquo;s sunny, and given<br />the forecast, I thought it better to choose </span><span class=\"fontstyle0\">the reptile display (Q5)</span><span class=\"fontstyle2\">.<br />Andrew: Ummm, that&rsquo;s a shame. These Asian students would love the &lsquo;Koala Handling&rsquo;.<br />Katie: Yes, I know, but we can&rsquo;t control the weather.<br />Andrew: And, then we get back. What time will that be?<br />Katie: We leave the park at 4.30, but then we face traffic, so wo won't get back until well<br />after 6pm. It will most likely be </span><span class=\"fontstyle0\">6.30 (Q6)</span><span class=\"fontstyle2\">. But that&rsquo;s better than the last trip: we didn&rsquo;t<br />get home until 8.30 that time.<br />Andrew: Yes, that was a bit too late, wasn&rsquo;t it?<br />Katie: Andrew, I understand you&rsquo;ve been doing some research regarding the<br />breakdown, by nationality of our student body. That must have produced some<br />interesting results.<br />Andrew: You&rsquo;re right. I got some statistics from head office.<br />Katie: I would imagine that most of our students are either Japanese or Chinese.<br />Andrew: You imagine right. But it&rsquo;s the </span><span class=\"fontstyle0\">Chinese (Q7) </span><span class=\"fontstyle2\">who constitute the majority, but<br />only just. I had thought Koreans might be second, but it&rsquo;s actually the </span><span class=\"fontstyle0\">Japanese (Q8)</span><span class=\"fontstyle2\">,<br />quite close behind. It&rsquo;s somewhat surprising, but obviously all those Study Tours that<br />our university markets in Japan are bringing in students.<br />Katie: What&rsquo;s the breakdown exactly?</span><br /><span class=\"fontstyle2\">ieltstrainingonline.com<br />10<br /></span><span class=\"fontstyle2\">Andrew: Japanese are a quarter of the whole, which is considerable. Last year they were<br />only 16%, so that market has grown nicely. Ah, the only other proportions of some<br />weight are the Indonesians and Koreans - about the same. Indonesians at 15%, and...<br />ah... the </span><span class=\"fontstyle0\">Koreans (Q9) </span><span class=\"fontstyle2\">are a little higher -not like last year when they were less than<br />10%.<br />Katie: I thought we&rsquo;d have more Indonesians than Koreans?<br />Andrew: Well, as I said, they&rsquo;re about the same - just like the Saudi and Thai student<br />numbers, almost the same also - both just under 10.<br />Katie: Which one is bigger?<br />Andrew: Ah, </span><span class=\"fontstyle0\">Thai (Q10) </span><span class=\"fontstyle2\">students number just a fraction more. As for the other<br />nationalities, collectively they&rsquo;re only 3%, so it wasn&rsquo;t worth giving each of them a<br />separate category. I just grouped them under &lsquo;other&rsquo; - that&rsquo;s Vietnamese, South<br />American, a couple of Russians, and so on.</span></p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/21/eeb3606c-c3f4-4b53-94cc-321ffc1c5247.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900023,
+                      1724900024
+                    ]
+                  },
+                  {
+                    "title": "PART 4",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "<p>SECTION 4<br />You will hear a lecturer discussing public parks.<br />Most of us are familiar with a local park. We spend time there, play there, and have some of our best memories in these places. But what is a park? Basically, it can be defined as a natural, or at least semi-natural, piece of land, planted with a variety of trees, bushes, and flowers, protected and reserved for the enjoyment of all citizens.<br />There are usually regulations (Q31) about the sorts of behaviour that can take place within. And sometimes there are facilities such as children&rsquo;s playgrounds, or fields for ball games and other sorts of activities. For this reason, if there is grass, it is kept short<br />(Q32), and this also discourages the breeding of insect pests. A well-maintained park actually needs a lot of people to look after it, and more so if the park showcases special plants, flowers, or trees, in which ease it is called a &lsquo;botanic garden&rsquo;. In complete<br />contrast, if the park is big and remote enough, it is sometimes designated as a wilderness park, to be left completely alone and untouched, protected from all development (Q33) in order to allow wild species, both plant and animal, to live undisturbed.<br />But it is the urban park - the sort of park that most people are familiar with, that I want to talk about now. These preserve natural landscapes for the pleasure of the urban population, most commonly just for passive recreation - in other words, allowing people just to observe the trees, and lie in the grass, and such passive recreation (Q34) is<br />certainly needed.<br />Continuing on the subject of parks, it might surprise you to know that once there were none. A thousand years ago, there was no need, since there were already extensive open spaces, forests, and wilderness surrounding most cities and towns - for example, in Europe. These dark dank forests were large and even dangerous, full of wild animals and<br />with the potentially fatal result of getting lost (Q35). Hence, fairy tales evolved about witches living in these areas, and the wolves and bears, which could threaten young children.</p>\r\n<p>However, with the rapidly increasing human population, the original wilderness and natural open spaces were intruded upon. Forests were cut down as populations spread, and with them, urban pollution and further deforestation. But it was only with the advent of the Industrial Revolution (Q36) that people realised natural areas needed to<br />be preserved, to give the populace access to the sort of nature that was fast disappearing due to the uncontrolled development and demand for resources. The first park, expressly designed for that purpose, is usually considered to be Princes Park in Liverpool. This was in 1841, on land donated to the public by a rich iron<br />merchant. With such a generous donation (worth about &pound; 50,000 (Q37)), the council decided to invest &pound;5,000 of its own money in making it look good. Consequently, they hired a landscape designer, Joseph Paxton, who designed twisting turning pathways<br />among shade-giving trees, all based around a central lake (Q38). In many ways, it became the prototype for all later large parks, including the famous Central Park in New York.</p>\r\n<p>But, if we were to pick the park that most people are familiar with, it would be the much smaller neighbourhood park. These can be tiny, but, by being in the midst of extensive development and dense populations, they are increasingly seen as a refuge (Q39), where one can get a glimpse of true nature. Many psychologists now maintain that this<br />glimpse is necessary, for ultimately, as a species, we have an innate affinity for nature, and the concrete urban zoo clashes with our inner being. This has seen the rejuvenation of many urban parks that were once left to decay, for example, in New York or London, and indeed, some cities, such as Melbourne (Q40), are known all over the world for their abundance of carefully maintained parks, including a world famous botanic garden.</p>",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/21/d742338e-cae7-4bda-a511-d19c443dc451.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900025
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "no_control": 1,
+                "link_solution": null
+              },
+              "1624887666": {
+                "_id": 1624887666,
+                "title": "IELTS Mock Test - Reading 05",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "reading",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "n7rxf1vxtx",
+                "created_by": 15069,
+                "created_time": 1745209432,
+                "updated_time": 1766563716,
+                "question": [
+                  {
+                    "title": "PASSAGE 1",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>READING PASSAGE 1<br /><em>You should spend about 20 minutes on Questions 1-13 which are based on Reading Passage 1 below.</em></p>\r\n<h2 style=\"text-align: center;\"><br />Andrea Palladio. Italian architect</h2>\r\n<p style=\"text-align: center;\"><em>A new exhibition celebrates Palladio&rsquo;s architecture 500 years on</em></p>\r\n<p data-start=\"161\" data-end=\"716\"><strong data-start=\"161\" data-end=\"166\">A</strong> Vicenza is a pleasant, prosperous city in the Veneto, 60km west of Venice. Its grand families settled and farmed the area from the 16th century. But its principal claim to fame is Andrea Palladio, who is such an influential architect that a neoclassical style is known as Palladian. The city is a permanent exhibition of some of his finest buildings, and as he was born &ndash; in Padua, to be precise &ndash; 500 years ago, the International Centre for the Study of Palladio&rsquo;s Architecture has an excellent excuse for mounting la grande mostra, the big show.</p>\r\n<p data-start=\"718\" data-end=\"1348\"><strong data-start=\"718\" data-end=\"723\">B</strong> The exhibition has the special advantage of being held in one of Palladio&rsquo;s buildings, Palazzo Barbaran da Porto. Its bold fa&ccedil;ade is a mixture of rustication and decoration set between two rows of elegant columns. On the second floor the pediments are alternately curved or pointed, a Palladian trademark. The harmonious proportions of the atrium at the entrance lead through to a dramatic interior of fine fireplaces and painted ceilings. Palladio&rsquo;s design is simple, clear and not over-crowded. The show has been organised on the same principles, according to Howard Burns, the architectural historian who co-curated it.</p>\r\n<p data-start=\"1350\" data-end=\"2038\"><strong data-start=\"1350\" data-end=\"1355\">C</strong> Palladio&rsquo;s father was a miller who settled in Vicenza, where the young Andrea was apprenticed to a skilled stonemason. How did a humble miller&rsquo;s son become a world renowned architect? The answer in the exhibition is that, as a young man, Palladio excelled at carving decorative stonework on columns, doorways and fireplaces. He was plainly intelligent, and lucky enough to come across a rich patron, Gian Giorgio Trissino, a landowner and scholar, who organised his education, taking him to Rome in the 1540s, where he studied the masterpieces of classical Roman and Greek architecture and the work of other influential architects of the time, such as Donato Bramante and Raphael.</p>\r\n<p data-start=\"2040\" data-end=\"2574\"><strong data-start=\"2040\" data-end=\"2045\">D</strong> Burns argues that social mobility was also important. Entrepreneurs, prosperous from agriculture in the Veneto, commissioned the promising local architect to design their country villas and their urban mansions. In Venice the aristocracy were anxious to co-opt talented artists, and Palladio was given the chance to design the buildings that have made him famous &ndash; the churches of San Giorgio Maggiore and the Redentore, both easy to admire because they can be seen from the city&rsquo;s historical centre across a stretch of water.</p>\r\n<p data-start=\"2576\" data-end=\"2987\"><strong data-start=\"2576\" data-end=\"2581\">E</strong> He tried his hand at bridges &ndash; his unbuilt version of the Rialto Bridge was decorated with the large pediment and columns of a temple &ndash; and, after a fire at the Ducal Palace, he offered an alternative design which bears an uncanny resemblance to the Banqueting House in Whitehall in London. Since it was designed by Inigo Jones, Palladio&rsquo;s first foreign disciple, this is not as surprising as it sounds.</p>\r\n<p data-start=\"2989\" data-end=\"3513\"><strong data-start=\"2989\" data-end=\"2994\">F</strong> Jones, who visited Italy in 1614, bought a trunk full of the master&rsquo;s architectural drawings; they passed through the hands of Dukes of Burlington and Devonshire before settling at the Royal Institute of British Architects in 1894. Many are now on display at Palazzo Barbaran. What they show is how Palladio drew on the buildings of ancient Rome as models. The major theme of both his rural and urban building was temple architecture, with a strong pointed pediment supported by columns and approached by wide steps.</p>\r\n<p data-start=\"3515\" data-end=\"3969\"><strong data-start=\"3515\" data-end=\"3520\">G</strong> Palladio&rsquo;s work for rich landowners alienates unreconstructed critics on the Italian left, but among the papers in the show are designs for cheap housing in Venice. In the wider world, Palladio&rsquo;s reputation has been nurtured by a text he wrote and illustrated, &ldquo;Quattro Libri dell&rsquo; Architettura&rdquo;. His influence spread to St Petersburg and to Charlottesville in Virginia, where Thomas Jefferson commissioned a Palladian villa he called Monticello.</p>\r\n<p data-start=\"3971\" data-end=\"4500\"><strong data-start=\"3971\" data-end=\"3976\">H</strong> Vicenza&rsquo;s show contains detailed models of the major buildings and is leavened by portraits of Palladio&rsquo;s teachers and clients by Titian, Veronese and Tintoretto; the paintings of his Venetian buildings are all by Canaletto, no less. This is an uncompromising exhibition; many of the drawings are small and faint, and there are no sideshows for children, but the impact of harmonious lines and satisfying proportions is to impart in a viewer a feeling of benevolent calm. Palladio is history&rsquo;s most therapeutic architect.</p>\r\n<p data-start=\"4502\" data-end=\"4758\"><strong data-start=\"4502\" data-end=\"4507\">I</strong> &ldquo;Palladio, 500 Anni: La Grande Mostra&rdquo; is at Palazzo Barbaran da Porto, Vicenza, until January 6th 2009. The exhibition continues at the Royal Academy of Arts, London, from January 31st to April 13th, and travels afterwards to Barcelona and Madrid.</p>\r\n<p><br /><br /></p>",
+                    "images": "",
+                    "sound": "",
+                    "transcript": "",
+                    "question_id": [
+                      1724900026,
+                      1724900027
+                    ]
+                  },
+                  {
+                    "title": "PASSAGE 2",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should spend about 20 minutes on Questions 14-26 which are based on Reading Passage 2 below.</p>\r\n<h2 style=\"text-align: center;\">The future never dies?</h2>\r\n<p style=\"text-align: center;\"><em>The prospects for humanity and for the world as a whole are somewhere between glorious and dire. It is hard to be much more precise.</em></p>\r\n<p data-start=\"116\" data-end=\"967\"><strong data-start=\"116\" data-end=\"121\">A</strong> By &lsquo;glorious&rsquo;, I mean that our descendants &ndash; all who are born on to this Earth &ndash; could live very comfortably and securely, and could continue to do so for as long as the Earth can support life, which should be for a very long time indeed. We should at least be thinking in terms of the next million years. Furthermore, our descendants could continue to enjoy the company of other species &ndash; establishing a much better relationship with them than we have now. Other animals need not live in constant fear of us. Many of those fellow species now seem bound to become extinct, but a significant proportion could and should continue to live alongside us. Such a future may seem ideal, and so it is. Yet I do not believe it is fanciful. There is nothing in the physical fabric of the Earth or in our own biology to suggest that this is not possible.</p>\r\n<p data-start=\"969\" data-end=\"1388\"><strong data-start=\"969\" data-end=\"974\">B</strong> &lsquo;Dire&rsquo; means that we human beings could be in deep trouble within the next few centuries, living but also dying in large numbers in political terror and from starvation, while huge numbers of our fellow creatures would simply disappear, leaving only the ones that we find convenient &ndash; chickens, cattle &ndash; or that we can&rsquo;t shake off, like flies and mice. I&rsquo;m taking it to be self-evident that glory is preferable.</p>\r\n<p data-start=\"1390\" data-end=\"2389\"><strong data-start=\"1390\" data-end=\"1395\">C</strong> Our future is not entirely in our own hands because the Earth has its own rules, is part of the solar system and is neither stable nor innately safe. Other planets in the solar system are quite beyond habitation, because their temperature is far too high or too low to be endured, and ours, too, in principle could tip either way. Even relatively unspectacular changes in the atmosphere could do the trick. The core of the Earth is hot, which in many ways is good for living creatures, but every now and again, the molten rock bursts through volcanoes on the surface. Among the biggest volcanic eruptions in recent memory was Mount St Helens, in the USA, which threw out a cubic kilometer of ash &ndash; fortunately in an area where very few people live. In 1815, Tambora (in present-day Indonesia) expelled so much ash into the upper atmosphere that climatic effects seriously harmed food production around the world for season after season. Entire civilisations have been destroyed by volcanoes.</p>\r\n<p data-start=\"2391\" data-end=\"3026\"><strong data-start=\"2391\" data-end=\"2396\">D</strong> Yet nothing we have so far experienced shows what volcanoes can really do. Yellowstone National Park in the USA occupies the caldera (the crater formed when a volcano collapses) of an exceedingly ancient volcano of extraordinary magnitude. Modem surveys show that its centre is now rising. Sometime in the next 200 million years, Yellowstone could erupt again, and when it does, the whole world will be transformed. Yellowstone could erupt tomorrow. But there&rsquo;s a very good chance that it will give us another million years, and that surely is enough to be going on with. It seems sensible to assume that this will be the case.</p>\r\n<p data-start=\"3028\" data-end=\"3709\"><strong data-start=\"3028\" data-end=\"3033\">E</strong> The universe at large is dangerous, too: in particular, we share the sky with vast numbers of asteroids, and every now and again, they come into our planet&rsquo;s atmosphere. An asteroid the size of a small island, hitting the Earth at 15,000 kilometres an hour (a relatively modest speed by the standards of heavenly bodies), would strike the ocean bed like a rock in a puddle, send a tidal wave around the world as high as a small mountain and as fast as a jumbo jet, and propel us into an ice age that could last for centuries. There are plans to head off such disasters (including rockets to push approaching asteroids into new trajectories), but in truth it&rsquo;s down to luck.</p>\r\n<p data-start=\"3711\" data-end=\"4352\"><strong data-start=\"3711\" data-end=\"3716\">F</strong> On the other hand, the archaeological and the fossil evidence shows that no truly devastating asteroid has struck since the one that seems to have accounted for the extinction of the dinosaurs 65 million years ago. So again, there seems no immediate reason for despair. The Earth is indeed an uncertain place, in an uncertain universe, but with average luck, it should do us well enough. If the world does become inhospitable in the next few thousand or million years, then it will probably be our own fault. In short, despite the underlying uncertainty, our own future and that of our fellow creatures is very much in our own hands.</p>\r\n<p data-start=\"4354\" data-end=\"5122\"><strong data-start=\"4354\" data-end=\"4359\">G</strong> Given average luck on the geological and the cosmic scale, the difference between glory and disaster will be made, and is being made, by politics. Certain kinds of political systems and strategies would predispose us to long-term survival (and indeed to comfort and security and pleasure of being alive), while others would take us more and more frenetically towards collapse. The broad point is, though, that we need to look at ourselves &ndash; humanity &ndash; and at the world in general in a quite new light. Our material problems are fundamentally those of biology. We need to think, and we need our politicians to think, biologically. Do that, and take the ideas seriously, and we are in with a chance. Ignore biology and we and our fellow creatures haven&rsquo;t a hope.</p>\r\n<p>&nbsp;</p>",
+                    "images": "",
+                    "sound": "",
+                    "transcript": "",
+                    "question_id": [
+                      1724900051,
+                      1724900052,
+                      1724900053
+                    ]
+                  },
+                  {
+                    "title": "PASSAGE 3",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should spend about 20 minutes on Questions 27-40 which are based on Reading Passage 3 below.</p>\r\n<h2 style=\"text-align: center;\">Pottery production in ancient Akrotiri</h2>\r\n<p data-start=\"0\" data-end=\"325\"><strong>A </strong>Excavations at the site of prehistoric Akrotiri, on the coast of the Aegean Sea, have revealed much about the technical aspects of pottery manufacture, indisputably one of the basic industries of this Greek city. However, considerably less is known about the socio-economic context and the way production was organised.</p>\r\n<p data-start=\"327\" data-end=\"1446\"><strong>B </strong>The bulk of pottery found at Akrotiri is locally made, and dates from the late fifteenth century BC. It clearly fulfilled a vast range of the settlement&rsquo;s requirements: more than fifty different types of pots can be distinguished. The pottery found includes a wide variety of functional types like storage jars, smaller containers, pouring vessels, cooking pots, drinking vessels and so on, which all relate to specific activities and which would have been made and distributed with those activities in mind. Given the large number of shapes produced and the relatively high degree of standardisation, it has generally been assumed that most, if not all, of Akrotiri pottery was produced by specialised craftsmen in a non-domestic context. Unfortunately neither the potters&rsquo; workshops nor kilns have been found within the excavated area. The reason may be that the ceramic workshops were located on the periphery of the site, which has not yet been excavated. In any event, the ubiquity of the pottery, and the consistent repetition of the same types in different sizes, suggest production on an industrial scale.</p>\r\n<p data-start=\"1448\" data-end=\"2219\"><strong>C </strong>The Akrotirian potters seem to have responded to pressures beyond their households, namely to the increasing complexity of regional distribution and exchange systems. We can imagine them as full-time craftsmen working permanently in a high production-rate craft such as pottery manufacture, and supporting themselves entirely from the proceeds of their craft. In view of the above, one can begin to speak in terms of mass-produced pottery and the existence of organised workshops of craftsmen during the period 1550-1500 BC. Yet, how pottery production was organised at Akrotiri remains an open question, as there is no real documentary evidence. Our entire knowledge comes from the ceramic material itself, and the tentative conclusions which can be drawn from it.</p>\r\n<p data-start=\"2221\" data-end=\"2861\"><strong>D </strong>The invention of units of quantity and of a numerical system to count them was of capital importance of an exchange-geared society such as that of Akrotiri. In spite of the absence of any written records, the archaeological evidence reveals that concepts of measurements, both of weight and number, had been formulated. Standard measures may already have been in operation, such as those evidenced by a graduated series of lead weights &ndash; made in disc form &ndash; found at the site. The existence of units of capacity in Late Bronze Age times is also evidenced, by the notation of units of a liquid measure for wine on excavated containers.</p>\r\n<p data-start=\"2863\" data-end=\"3404\"><strong>E </strong>It must be recognised that the function of pottery vessels plays a very important role in determining their characteristics. The intended function affects the choice of clay, the production technique, and the shape and the size of the pots. For example, large storage jars (pithoi) would be needed to store commodities, whereas smaller containers would be used for transport. In fact, the length of a man&rsquo;s arm limits the size of a smaller pot to a capacity of about twenty litres; that is also the maximum a man can comfortably carry.</p>\r\n<p data-start=\"3406\" data-end=\"3927\"><strong>F </strong>The various sizes of container would thus represent standard quantities of a commodity, which is a fundamental element in the function of exchange. Akrotirian merchants handling a commodity such as wine would have been able to determine easily the amount of wine they were transporting from the number of containers they carried in their ships, since the capacity of each container was known to be 14-18 litres. (We could draw a parallel here with the current practice in Greece of selling oil in 17 kilogram tins.)</p>\r\n<p data-start=\"3929\" data-end=\"4257\"><strong>G </strong>We may therefore assume that the shape, capacity, and, sometimes decoration of vessels are indicative of the commodity contained by them. Since individual transactions would normally involve different quantities of a given commodity, a range of &lsquo;standardised&rsquo; types of vessel would be needed to meet traders&rsquo; requirements.</p>\r\n<p data-start=\"4259\" data-end=\"5367\"><strong>H </strong>In trying to reconstruct systems of capacity by measuring the volume of excavated pottery, a rather generous range of tolerances must be allowed. It seems possible that the potters of that time had specific sizes of vessel in mind, and tried to reproduce them using a specific type and amount of clay. However, it would be quite difficult for them to achieve the exact size required every time, without any mechanical means of regulating symmetry and wall thickness, and some potters would be more skilled than others. In addition, variations in the repetition of types and size may also occur because of unforeseen circumstances during the throwing process. For instance, instead of destroying the entire pot if the clay in the rim contained a piece of grit, a potter might produce a smaller pot by simply cutting off the rim. Even where there is no noticeable external difference between pots meant to contain the same quantity of a commodity, differences in their capacity can actually reach one or two litres. In one case the deviation from the required size appears to be as much as 10-20 percent.</p>\r\n<p data-start=\"5369\" data-end=\"6020\" data-is-last-node=\"\" data-is-only-node=\"\"><strong>I</strong> The establishment of regular trade routes within the Aegean led to increased movement of goods; consequently a regular exchange of local, luxury and surplus goods, including metals, would have become feasible as result of the advances in transport technology. The increased demand for standardised exchanges, inextricably linked to commercial transactions, might have been one of the main factors which led to the standardisation of pottery production. Thus, the whole network of ceramic production and exchange would have depended on specific regional economic conditions, and would reflect the socio-economic structure of prehistoric Akrotiri.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900054,
+                      1724900055,
+                      1724900056,
+                      1724900057
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "no_control": 0
+              },
+              "1624887833": {
+                "_id": 1624887833,
+                "title": "IELTS Mock Test - Writing 05",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "writing",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "s7g6fdim86",
+                "created_by": 15069,
+                "created_time": 1748331707,
+                "updated_time": 1783156236,
+                "question": [
+                  {
+                    "title": "TASK 1",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900767
+                    ]
+                  },
+                  {
+                    "title": "TASK 2",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900768
+                    ]
+                  }
+                ],
+                "is_mark": 1,
+                "number_question": 2,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "link_solution": null,
+                "no_control": 0
+              }
+            },
+            "logs_detail": [],
+            "logs": [],
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887662?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887662?site=ielts-fighter",
+      "title": "IELTS Mock Test 04"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887662/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887662",
+            "test_detail": {
+              "_id": 1624887662,
+              "title": "IELTS Mock Test 04",
+              "times": 160,
+              "score_type": "ielts",
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "is_group": 1,
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "no_repeat": 1,
+              "listen_order": 1,
+              "status": "active",
+              "access_code": "c1ftuylzfb",
+              "created_by": 20094,
+              "created_time": 1744973432,
+              "updated_time": 1772439461,
+              "tests": [
+                1624887661,
+                1624887660,
+                1624887752
+              ],
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_description": null,
+              "seo_keyword": null,
+              "seo_title": null,
+              "title_show": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0,
+              "question": null
+            },
+            "tests": {
+              "1624887660": {
+                "_id": 1624887660,
+                "title": "IELTS Mock Test - Reading 04",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "reading",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "ikloy5wro9",
+                "created_by": 20094,
+                "created_time": 1744959472,
+                "updated_time": 1781001718,
+                "question": [
+                  {
+                    "title": "READING PASSAGE 1",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p class=\"\" data-start=\"91\" data-end=\"190\"><em>You should spend about 20 minutes on Questions 1&ndash;13, which are based on Passage 1 below.</em></p>\r\n<h3 class=\"\" style=\"text-align: center;\" data-start=\"192\" data-end=\"221\">The history of the Pencil</h3>\r\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/18/4486eeaa-678f-4909-a701-5b9589b506a5.jpeg\" alt=\"\" width=\"300\" height=\"300\" /></p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"223\" data-end=\"645\">The history of the pencil starts with a violent thunderstorm. When some particularly ferocious weather struck the Lake District in North West England in the sixteenth century, locals in the village of Borrowdale discovered large uprooted trees. Underneath the tree lay an unknown black substance which we now easily, was slightly shiny and smooth to the touch. And it left a black smear on the hands of all who touched it.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"647\" data-end=\"1461\">Initially, the local farmers used the newly discovered material as a handy way to identify their sheep. However, others quickly realised the potential for using this intriguing substance to write on paper. When it was untreated the material was very soft, which meant that it was messy to handle. To make it fit for use with paper, people enclosed a thin core of the substance in stiff sheep hides or rope. At this time chemistry was still in its infancy. People searched for a word to describe this increasingly useful substance and came up with plumbago which, in Latin, means acts or writes like lead. Later the name was changed to graphite. But because words have remarkable staying power, we still call graphite the lead of a pencil even though it is now known that there is no trace of real lead in graphite.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1463\" data-end=\"2396\">Graphite has a very high melting point at around 3,500 degrees Celsius. This made it invaluable to the British army and navy as a secret ingredient in the manufacture of cannon balls. The Royal Ordnance, or weaponry section of the British armed forces, used graphite as a lining inside the moulds for cannon balls, which as a result the British could turn out faster and more cheaply than their European rivals. In addition to its value to the armed forces, the government quickly realised the commercial potential of the graphite at Borrowdale, and assumed control of all the mines there during the sixteenth century. Armed guards accompanied the precious graphite all the way down to the metal foundries by the naval shipyards in the south of England. The graphite was so valuable that the locals, who called it wadd, started to steal it. As a deterrent, an act of parliament in 1752 made this offence punishable by time in prison.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2398\" data-end=\"3251\">The Italians originally invented the wooden casing to hold a thin rod of plumbago firmly in place for ease of writing. Italian craftsmen hollowed out two small sections of cedar wood, into one of which they laid the lead. They then glued the other section over the top and left the two halves to set. When dry, the whole apparatus formed what today we know as a pencil. The Germans took this technique and developed it further by applying mass-production techniques to pencils. At the same time Nicolas-Jacques Conte, a French officer in Napoleon Bonaparte&rsquo;s army during the late 1700s, developed a method of mixing powdered graphite and clay together for firming in a kiln. Adding more clay to the mixture helped make the pencil harder, sharper, and more precise in its mark. More graphite helped make a pencil mark that was softer, thicker and darker.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"3253\" data-end=\"3661\">The varying quality of pencil leads eventually gave rise to a system for categorizing the fineness of the pencil mark. Pencil manufacturers all over the world still use this so-called HB grading system today. The H stands for the Hardness of the pencil while the B stands for its Blackness. An HB pencil is a standard pencil and a variety of letters and numbers are used to designate different types of lead.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"3253\" data-end=\"3661\">Significant seams of graphite exist in parts of China, which now produces most of the world&rsquo;s pencils. Interestingly, the Borrowdale mine in the Lake District remains the only significant source of graphite in its near-pure form in the world. Nowadays the highest grade of graphite at Borrowdale is totally exhausted, although other grades can still be found, and England&rsquo;s pencil industry continues to thrive in the nearby town of Keswick.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"461\" data-end=\"1540\">The pencil has turned out to be a remarkably resilient and valuable tool whose use has survived well into our high-tech times, as a well-known story shows. It is sometimes said that the American space programme spent millions of dollars to invent a pen capable of writing in the zero gravity of space. The Russians, by contrast, simply equipped their astronauts with good old-fashioned pencils that never let them down. It should be pointed out though, that the popular myth about Americans overlooking the practical advantages of pencils in zero gravity is merely fiction. In actual fact, both American and Russian astronauts were equipped with pencils in their respective country&rsquo;s first space flights. A private company later developed pens for writing in zero gravity. In fact, astronauts of every nation now use pens. But no matter &ndash; pencils remain in use in every classroom, every planning, building and drawing office, and in every art studio in the world. And there is nothing to suggest that we are likely to invent anything better than graphite to use in our pencils.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900005,
+                      1724900006
+                    ]
+                  },
+                  {
+                    "title": "READING PASSAGE 2",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p><em>You should spend about 20 minutes on Questions 14&ndash;26, which are based on Reading Passage 2 below.</em></p>\r\n<h3 style=\"text-align: center;\" data-start=\"78\" data-end=\"211\"><strong data-start=\"78\" data-end=\"119\">What is an unfair advantage in sport?</strong></h3>\r\n<p style=\"text-align: center;\" data-start=\"78\" data-end=\"211\"><br data-start=\"119\" data-end=\"122\" /><em data-start=\"122\" data-end=\"211\">Olympic athletes increasingly depend on technology to help them win &ndash; but is that fair?</em></p>\r\n<p class=\"\" style=\"text-align: center;\" data-start=\"78\" data-end=\"211\"><em data-start=\"122\" data-end=\"211\"><img src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/18/de2c31f1-79d4-4647-a244-86d5646f8287.png\" alt=\"\" width=\"300\" height=\"169\" /></em></p>\r\n<hr class=\"\" data-start=\"213\" data-end=\"216\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"218\" data-end=\"1235\"><strong data-start=\"218\" data-end=\"223\">A</strong><br data-start=\"223\" data-end=\"226\" />What happened to the Australian athlete Ron Clarke in the 10,000 metres at the Mexico City Olympics of 1968 is now virtually forgotten, though at the time it was headline news. Clarke was the greatest distance runner in history - he&rsquo;d broken more world records than anybody else. But in front of 55,000 horrified spectators, the event went disastrously wrong. In the third lap, one runner keeled over and with six laps to go, two more were carried away. Yet the race was being conducted at a relatively leisurely speed: the halfway time was the slowest since the Paris Olympics of 1924. With two laps to go, Clarke was in the leading pack. &lsquo;I&rsquo;d never felt better in a race,&rsquo; he says. But suddenly he too began to struggle, and as the frontrunners moved up a gear, a gap opened up. Clarke remembers nothing of his last lap which he ran in 90 seconds. &lsquo;Normally I would run it in 64,&rsquo; he explains. He stumbled across the line in sixth place and collapsed. He was administered oxygen and stretchered off the track.</p>\r\n<hr class=\"\" data-start=\"1237\" data-end=\"1240\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1242\" data-end=\"1678\"><strong data-start=\"1242\" data-end=\"1247\">B</strong><br data-start=\"1247\" data-end=\"1250\" />Mexico City is surrounded by mountains and is over 2,240 metres above sea level. That the altitude would have an impact on the Games was predicted. Clarke had raised the issue himself, but had been told by the Australian sports authorities that complaining was regarded as bad sportsmanship. As it turned out, he had good reason to do so. Clearly, the link between athletic performance and altitude needed further investigation.</p>\r\n<hr class=\"\" data-start=\"1680\" data-end=\"1683\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1685\" data-end=\"2632\"><strong data-start=\"1685\" data-end=\"1690\">C</strong><br data-start=\"1690\" data-end=\"1693\" />Although there were few standout performances in distance running at the Mexico Games, they marked a turning point: the start of an astonishing record of success by east Africans. While Clarke lay crumpled in a heap, runners from Kenya and Ethiopia were celebrating their gold and silver medals. The record books confirm how entrenched this pattern has become. The names of the seven fastest men in history over 5,000 metres are Bekele, Gebrselassie, Komen, Kipchoge, Sihine, Songkok and Chereno. They are all from either Kenya or Ethiopia. Between 1997 and 2011 the 10,000 metres men&rsquo;s world record was smashed five times, dropping from 26:31.32 to 26:17.53. Each time, the record was broken by a Kenyan or an Ethiopian. While there is a complex mix of economic, political, social and cultural explanations for the pre-eminence of east Africans, one factor is surely that many of these athletes have lived most of their lives in thin air.</p>\r\n<hr class=\"\" data-start=\"2634\" data-end=\"2637\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2639\" data-end=\"3414\"><strong data-start=\"2639\" data-end=\"2644\">D</strong><br data-start=\"2644\" data-end=\"2647\" />At high altitudes, a number of physiological alterations occur, most importantly, more red blood cells and haemoglobin are produced. This, in turn, increases the capacity of the blood to carry oxygen, which feeds the muscles and which gives an advantage to the athletes when they return to sea level. However, it is impossible to train with the same level of intensity in the mountains &ndash; aerobic capacity and cardio-respiratory function both suffer at altitude. As a result, the consensus is that the optimum approach to athletic preparation is: Live High, Train Low (LHTL). Yet that has obvious practical drawbacks. Not many people live in the mountains and those who do would prefer not to spend several hours each day driving up and down winding treacherous roads.</p>\r\n<hr class=\"\" data-start=\"3416\" data-end=\"3419\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"3421\" data-end=\"3777\"><strong data-start=\"3421\" data-end=\"3426\">E</strong><br data-start=\"3426\" data-end=\"3429\" />That&rsquo;s where the altitude tent &ndash; sometimes called the hypoxic tent &ndash; comes in. Around two decades ago, two different scientists had the same exciting thought. If they could artificially control the atmosphere within a confined space, they could simulate the effects of high altitude and save an athlete at sea-level from the time and expense of travelling to higher ground. Altitude tents have improved over the years: they&rsquo;re not as hot or as noisy as the early prototypes, and are much cheaper too. They are also perfectly lawful. Five years ago when the tents were investigated by Wada (the World Anti Doping Agency), it was ruled that they did not violate the spirit of distance running. It is now routine for athletes to sleep in them in preparation for an event.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"86\" data-end=\"722\"><strong data-start=\"86\" data-end=\"91\">F</strong><br data-start=\"91\" data-end=\"94\" />However, it is not the case that all new technologies gain approval. In 2008, a staggering 105 world records were broken in swimming, the vast majority achieved by competitors wearing the new Speedo LZR Racer suit. These suits use a high-tech fabric tested in Nasa&rsquo;s wind tunnels, which reduces drag and improves buoyancy. The LZR was initially sanctioned by Fina, the international swimming body. But as better suits were produced by Speedo and other manufacturers, and more records were broken, they became increasingly controversial. In a 2009 ruling, Fina changed its mind, banning all suits made with this high-tech fabric.</p>\r\n<hr class=\"\" data-start=\"724\" data-end=\"727\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"729\" data-end=\"1324\"><strong data-start=\"729\" data-end=\"734\">G</strong><br data-start=\"734\" data-end=\"737\" />Going faster, higher, stronger is integral to the logic of athletics in general, and the Olympics in particular. Athletes believe they need records all the time. And the only way they can achieve records is by improving the clothing, the kit, the training, the nutrition&mdash;all to identify minute distinctions between people of 0.0001 of a second. But when a new technology is invented, the relevant sports authority has to consider whether to embrace or reject it. In some cases, athletes are granted permission to use the technology; in others, it is banned. But whatever the outcome, rulings should not appear arbitrary: arguments have to be examined and weighed and the rules of logic ought to apply in every case.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900007,
+                      1724900008,
+                      1724900009
+                    ]
+                  },
+                  {
+                    "title": "READING PASSAGE 3",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p class=\"\" data-start=\"98\" data-end=\"212\"><em>You should spend about 20 minutes on <strong data-start=\"135\" data-end=\"154\">Questions 27&ndash;40</strong>, which are based on Reading Passage 3 below.</em></p>\r\n<hr class=\"\" data-start=\"214\" data-end=\"217\" />\r\n<h3 class=\"\" style=\"text-align: center;\" data-start=\"219\" data-end=\"262\">Theories of planet formation questioned</h3>\r\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/18/3128ebaf-3478-4e61-969a-e20e12c7dd35.jpg\" alt=\"\" width=\"300\" height=\"169\" /></p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"264\" data-end=\"983\"><strong data-start=\"264\" data-end=\"269\">A</strong><br data-start=\"269\" data-end=\"272\" />The traditional view of astronomy has been that Planets form slowly as material congeals within the disk of gas, dust and ice known to surround young stars. First, gravity gathers together bits of dust that merge to form boulder-sized bodies, which themselves coalesce into bigger and bigger objects. In about a million years, these form rocky planets like Earth and Mars. Over the next few million years, gas from the disk settles around some of these solid bodies and they grow far larger, becoming giants like gaseous Saturn and Jupiter. This theory of planet formation is known as the core-accretion model. However, several astronomers now say that this model for making planets may not be entirely correct.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"985\" data-end=\"1681\"><strong data-start=\"985\" data-end=\"990\">B</strong><br data-start=\"990\" data-end=\"993\" />These astronomers have devised an alternative theory in which planets as massive as Jupiter, whether orbiting our sun or a distant star, would form completely within a few hundred years, rather than millions of years as previously believed. Both theories for planet formation start with the same reservoir of planet-making materials. The spinning cloud of gas, dust and ice rapidly flattens into disk-like shapes known as proto-planetary disks: and, as time goes by, gravity causes material in these disks to clump into planet-sized objects. However, it is the speed of the clustering, and the size of the initial clumps, that provide the disparity in the two models for planet formation.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1683\" data-end=\"2174\"><strong data-start=\"1683\" data-end=\"1688\">C</strong><br data-start=\"1688\" data-end=\"1691\" />According to the core-accretion model, the making of Jupiter required the initial formation of a solid core five to ten times Earth&rsquo;s mass. It would have taken about a million years to achieve this. Most astronomers believe that the large core then had enough gravity to attract a huge amount of gas from the proto-planetary disk to create a planet of the massive proportions of Jupiter. In this core-accretion model, these &lsquo;gas giants&rsquo; may take as long as ten million years to form.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2176\" data-end=\"2823\"><strong data-start=\"2176\" data-end=\"2181\">D</strong><br data-start=\"2181\" data-end=\"2184\" />That is several million years too long in the opinion of Lucio Mayer of Zurich University. Direct telescope sightings suggest that the proto-planetary disks do not last more than about seven million years, and studies of the environment in which stars form suggest that many disks may evaporate in much less time. Mayer asserts that most stars in the Milky Way form in dense clouds of gas, dust and ice. Their temperatures are very intense and the ultraviolet light they send into space can evaporate a proto-planetary disk in less than 100,000 years. In the core-accretion model, that is not enough time for a Jupiter-like planet to form.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2825\" data-end=\"3411\"><strong data-start=\"2825\" data-end=\"2830\">E</strong><br data-start=\"2830\" data-end=\"2833\" />Recent computer simulations show that when individual stars form, the gravitational pull between them can result in the outer gaseous parts of the proto-planetary disks being destroyed in 100,000 years or less. Thus, Thomas Quinn of the University of Washington concludes that if a &lsquo;gas giant&rsquo; planet cannot form quickly, it will probably never form. He also asserts that if the core-accretion model is correct. Gas giant planets like Jupiter should be rare. However, since 1995, astronomers have found more than one hundred planets as large as Jupiter outside our solar system.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"86\" data-end=\"760\"><strong data-start=\"86\" data-end=\"91\">F</strong><br data-start=\"91\" data-end=\"94\" />Quinn and his colleagues recently analysed the standard core-accretion model of planet formation and investigated whether giant planets could form quickly. They looked at the work of Gerard Kuiper who, in the 1950s, proposed that they could. Alan P. Boss of the Carnegie Institute did more extensive work on the subject in the late 1980s. Using computer simulations, he was surprised to find that gravity could cause a proto-planetary disk, after a few orbits of its parent star, to break into clumps as big as an average-sized planet. The clumps would continue to pull in gas, ice and dust. This is called the gravitational-instability model of planet formation.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"762\" data-end=\"1386\"><strong data-start=\"762\" data-end=\"767\">G</strong><br data-start=\"767\" data-end=\"770\" />Recent calculations have suggested that many of the solid bodies that might be the rocky core for Jupiter-size planets in the traditional theory would pin into the parent star before the massive planet could form. Moreover, further analysis has shown that other effects could also cause a proto-planetary disk to become unstable and split into large fragments. For instance, within the disk, electrically charged material might accumulate, leading to fragmentation of the disk. Or a powerful gravitational disturbance, such as the pull of a star passing nearby, could produce instability in the proto-planetary disk.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1388\" data-end=\"1691\"><strong data-start=\"1388\" data-end=\"1393\">H</strong><br data-start=\"1393\" data-end=\"1396\" />Nevertheless, the gravitational-instability model has problems of its own, as it is mathematically complicated and requires sophisticated computer use. Therefore, no one has studied the simulations long enough to establish conclusively that the model allows for the formation of massive planets.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1693\" data-end=\"2359\"><strong data-start=\"1693\" data-end=\"1698\">I</strong><br data-start=\"1698\" data-end=\"1701\" />In response, Mayer says that he and his team have described the results of an extensive simulation based on the gravitational-instability model. They spent two years refining calculations to track what would happen to a proto-planetary disk over one thousand years, which is more than any other simulation had done. In addition, over a decade previously Mayer and his team had made simulations of the formation and evolution of galaxies. In doing this, they had already developed a fast computer code that could run in parallel on machines with hundreds of processors, and this knowledge assisted them in investigating their gravitational-instability theory.</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900010,
+                      1724900011,
+                      1724900012
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1
+              },
+              "1624887661": {
+                "_id": 1624887661,
+                "title": "IELTS Mock Test - Listening 04",
+                "times": 32,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "listening",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 1,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "j8ovqjrrcy",
+                "created_by": 20094,
+                "created_time": 1744968753,
+                "updated_time": 1783513765,
+                "question": [
+                  {
+                    "title": "PART 1",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/question/2026/03/02/71aca16a-cd06-4fd8-8e6b-f5f9c991eb08.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724900013
+                    ]
+                  },
+                  {
+                    "title": "PART 2",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/18/7b1ea7b7-73d8-4d9e-ab98-d47f38567cf0.mp3",
+                    "question_id": [
+                      1724900014,
+                      1724900015
+                    ]
+                  },
+                  {
+                    "title": "PART 3",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/18/5e623a8f-0f93-4299-bdef-577495abc7b2.mp3",
+                    "question_id": [
+                      1724900016,
+                      1724900017
+                    ]
+                  },
+                  {
+                    "title": "PART 4",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/18/73b4a00b-3034-46c2-9d8a-b579edf38cb9.mp3",
+                    "question_id": [
+                      1724900018
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "no_control": 1,
+                "link_solution": null
+              },
+              "1624887752": {
+                "_id": 1624887752,
+                "title": "IELTS Mock Test - Writing 04",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "writing",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "vcbdxrhgjn",
+                "created_by": 20094,
+                "created_time": 1747793652,
+                "updated_time": 1750870890,
+                "question": [
+                  {
+                    "title": "TASK 1",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900493
+                    ]
+                  },
+                  {
+                    "title": "TASK 2",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900494
+                    ]
+                  }
+                ],
+                "is_mark": 1,
+                "number_question": 2,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1
+              }
+            },
+            "logs_detail": [],
+            "logs": [],
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887659?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887659?site=ielts-fighter",
+      "title": "IELTS Mock Test 03"
+    },
+    "captures": []
+  },
+  "https://test.ebomb.edu.vn/tests/1624887656?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887656?site=ielts-fighter",
+      "title": "IELTS Mock Test 02"
+    },
+    "captures": []
+  },
+  "https://test.ebomb.edu.vn/tests/1624887645?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887645?site=ielts-fighter",
+      "title": "IELTS Mock Test 01"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887645/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887645",
+            "test_detail": {
+              "_id": 1624887645,
+              "title": "IELTS Mock Test 01",
+              "times": 160,
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "is_group": 1,
+              "is_publish": 0,
+              "is_review": 1,
+              "is_practice": 1,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "jxqb60725b",
+              "created_by": 20094,
+              "created_time": 1744706413,
+              "updated_time": 1774405343,
+              "tests": [
+                1624887647,
+                1624887652,
+                1624887748
+              ],
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "score_type": "ielts",
+              "seo_description": null,
+              "seo_keyword": null,
+              "seo_title": null,
+              "skill": "listening",
+              "title_show": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0,
+              "question": null
+            },
+            "tests": {
+              "1624887647": {
+                "_id": 1624887647,
+                "title": "IELTS Mock Test - Listening 01",
+                "times": 32,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "listening",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 1,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "vgph1j2h5m",
+                "created_by": 20094,
+                "created_time": 1744707162,
+                "updated_time": 1786614403,
+                "question": [
+                  {
+                    "title": "PART 1",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/question/2026/01/08/9de8c0c7-3769-4305-bc7f-62a53ffc8743.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724899923
+                    ]
+                  },
+                  {
+                    "title": "PART 2",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/15/931299e4-8e0b-4c55-bbd6-89fbcbcbe3ed.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724899924,
+                      1724899925,
+                      1724899926
+                    ]
+                  },
+                  {
+                    "title": "PART 3",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/test/2025/04/15/e67737bb-b03c-444a-9a11-2ac0f76ab67e.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724899927,
+                      1724899929
+                    ]
+                  },
+                  {
+                    "title": "PART 4",
+                    "title_show": null,
+                    "skill": "listening",
+                    "description": "",
+                    "images": "",
+                    "sound": "test_audio/question/2026/01/08/46964f04-981c-442a-939a-b004deeff248.mp3",
+                    "transcript": "",
+                    "question_id": [
+                      1724899935
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1,
+                "auto_play": 0,
+                "no_control": 1,
+                "link_solution": null
+              },
+              "1624887652": {
+                "_id": 1624887652,
+                "title": "IELTS Mock Test - Reading 01",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "reading",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "mr1wejy5gd",
+                "created_by": 20094,
+                "created_time": 1744785802,
+                "updated_time": 1766129386,
+                "question": [
+                  {
+                    "title": "READING PASSAGE 1",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p><em>You should spend about 20 minutes on Questions 1-13, which are based on the Reading Passage 1 below.</em></p>\r\n<p class=\"\" style=\"text-align: center;\" data-start=\"51\" data-end=\"196\"><strong data-start=\"51\" data-end=\"87\">The Importance of Business Cards</strong><br data-start=\"87\" data-end=\"90\" /><em data-start=\"90\" data-end=\"196\">The exchanging of business cards is as close to a universal ritual as you can find in the business world</em></p>\r\n<p class=\"\" style=\"text-align: center;\" data-start=\"51\" data-end=\"196\"><em data-start=\"90\" data-end=\"196\"><img src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/16/8cf32357-dab4-471d-8806-47151505ef65.png\" alt=\"\" width=\"250\" height=\"250\" /></em></p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"198\" data-end=\"887\">The ritual may be universal, but the details of business cards and how they are swapped vary across countries. Americans throw their cards casually across a table; the Japanese make the exchange of cards a formal ceremony. While there are cards that are discreet and understated, others are crammed full of details and titles. Some businesspeople hand out 24-carat gold cards, and there are kindergarten children who have cards with not only their own contact details, but also with the job descriptions of their parents and even grandparents. This practice has become so common in parts of New York, for example, that the use of such cards is now prohibited by some of these institutions.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"889\" data-end=\"1521\">Cards have been around a long time in one form or another. The Chinese invented calling cards in the 15th century to give people notice that they intended to pay them a visit, but these were for social purposes only. Then, in the 17th century, European businesspeople invented a new type of card to act as miniature advertisements, signalling the advent of the business card. In today's world, business cards can cause people to have strong emotional reactions. According to one experienced company director, very few things can provoke more heated discussion at a board meeting than the composition of the company&rsquo;s business cards.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1523\" data-end=\"2159\">Lots of companies try to promote themselves by altering the form of the card. Employees at one famous toy company give out little plastic figures with their contact details stamped on them. One fast food company has business cards which are shaped like a portion of French fries. A Canadian divorce lawyer once gave out cards that could be torn in two &ndash; one half for each of the spouses. For many business commentators, such gimmicky business cards prove that the use of a physical business card is nearly at an end. After all, why bother exchanging bits of thick paper at all when you can simply swap electronic versions by smartphone.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2161\" data-end=\"2611\">However, one can just as well argue the opposite: that business cards are here to stay, and in a business world full of meetings and correspondence, it is more important than ever that your card is unique. Attempts to reinvent business cards for the digital age have not been successful. Even at the latest technology conferences, people still greet each other by handing out little rectangles made from paper rather than using a digital alternative.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2613\" data-end=\"3260\">To understand business cards, it is necessary to understand how business works. That business cards are thriving in a digital age is a forceful reminder that there is much about business that is timeless. According to Kate Jones, a business lecturer, there is one eternal and inescapable issue. Her 2006 study of more than 200 business executives in North America found that trust was the key element for running a successful business. It is vital to be able to look someone in the eye and decide what sort of person they are. In this way, you can transform acquaintanceships into relationships. A good proportion of business life will always be about building social connections &ndash; having dinner or playing sport with clients and colleagues &ndash; and while computers can deal with administrative tasks, it is still human beings that have to focus on the emotional.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"272\" data-end=\"1100\">The rapid advance of globalisation means that this relationship building process is becoming ever more demanding. Managers have to put more effort in when dealing with international counterparts, especially when there is not a common language, which is so often the case these days. A recent UK survey showed that chief executives of global organisations now routinely spend three out of every four weeks on international travel. It is in these situations that business cards are doubly useful, as they are a quick way of establishing connections. Cards can also remind you that you have actually met someone in a face to face meeting rather than just searched for them on the internet. Looking through piles of different cards can enhance your memory in ways that simply looking through uniform electronic lists would never do.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1102\" data-end=\"1526\">Janet McIntyre is a leading expert on business cards in today&rsquo;s world. She maintains that as companies become more complex, cards are essential in determining the exact status of every contact you meet in multinational corporations. Janet also explains how exchanging business cards can be an effective way of initiating a conversation, because it gives people a ritual to follow when they first meet a new business contact.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1528\" data-end=\"1924\">The business world is obsessed with the idea of creating and inventing new things that will change the way we do everything, and this does lead to progress. But there are lots of things that do not need to be changed and in Janet McIntyre&rsquo;s view, tradition also has an equally valuable role to play. Therefore the practice of exchanging business cards is likely to continue in the business world.</p>",
+                    "images": "",
+                    "sound": "",
+                    "transcript": "",
+                    "question_id": [
+                      1724899947,
+                      1724899949
+                    ]
+                  },
+                  {
+                    "title": "READING PASSAGE 2",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p>You should <strong data-start=\"85\" data-end=\"130\">spend about 20 minutes on Questions 14&ndash;26</strong>, which are based on Reading Passage 2 below.</p>\r\n<p class=\"\" style=\"text-align: center;\" data-start=\"51\" data-end=\"76\"><strong data-start=\"51\" data-end=\"76\">The importance of law</strong></p>\r\n<p class=\"\" style=\"text-align: center;\" data-start=\"51\" data-end=\"76\"><strong data-start=\"51\" data-end=\"76\"><img src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/16/8f4bd5e3-0570-4aa9-b46e-9f96fa142e64.jpg\" alt=\"\" width=\"417\" height=\"250\" /></strong></p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"78\" data-end=\"807\"><strong data-start=\"78\" data-end=\"83\">A</strong><br data-start=\"83\" data-end=\"86\" />The law influences all of us virtually all the time. It governs almost all aspects of our behavior, and even what happens to us when we are no longer alive. It affects us from the embryo onwards. It governs the air we breathe, the food and drink we consume, our travel, family relationships, and our property. It applies at the bottom of the ocean and in space. Each time we examine a label on a food product, engage in work as an employee or employer, travel on the roads, go to school to learn or to teach, stay in a hotel, borrow a library book, create or dissolve a commercial company, play sports, or engage in the services of someone for anything from plumbing a sink to planning a city, we are in the world of law.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"809\" data-end=\"1586\"><strong data-start=\"809\" data-end=\"814\">B</strong><br data-start=\"814\" data-end=\"817\" />Law has also become much more widely recognised as the standard by which behaviour needs to be judged. A very telling development in recent history is the way in which the idea of law has permeated all parts of social life. The universal standard of whether something is socially tolerated is progressively becoming whether it&rsquo;s legal, rather than something that has always been considered acceptable. In earlier times, most people were illiterate. Today, by contrast, a vast number of people can read, and it is becoming easier for people to take an interest in law, and for the general population to help actually shape the law in many countries. However, law is a versatile instrument that can be used equally well for the improvement or the degradation of humanity.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1588\" data-end=\"2518\"><strong data-start=\"1588\" data-end=\"1593\">C</strong><br data-start=\"1593\" data-end=\"1596\" />This, of course, puts law in a very significant position. In our rapidly developing world, all sorts of skills and knowledge are valuable. Those people, for example, with knowledge of computers, the internet, and communications technology are relied upon by the rest of us. There is now someone with IT skills or an IT help desk in every UK school, every company, every hospital, every local and central government office. Without their knowledge, many parts of commercial and social life today would seize up in minutes. But legal understanding is just as vital and as universally needed. The American comedian Jerry Seinfeld put it like this, &lsquo;We are all throwing the dice, playing the game, moving our pieces around the board, but if there is a problem, the lawyer is the only person who has read the inside of the top of the box.&rsquo; In other words, the lawyer is the only person who has read and made sense of the rules.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"2520\" data-end=\"3320\"><strong data-start=\"2520\" data-end=\"2525\">D</strong><br data-start=\"2525\" data-end=\"2528\" />The number of laws has never been greater. In the UK alone, about 35 new Acts of Parliament are produced every year, thereby delivering thousands of new rules. The legislative output of the British Parliament has more than doubled in recent times from 1,100 pages a year in the early 1970s, to over 2,500 pages a year today. Between 1997 and 2006, the legislature passed 365 Acts of Parliament and more than 32,000 legally binding statutory instruments. In a system with so much law, lawyers do a great deal not just to vindicate the rights of citizens and organizations but also to help develop the law through legal arguments, some of which are adapted by judges to become laws. Law courts can and do produce new law and revise old law, but they do so having heard the arguments of lawyers.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"3322\" data-end=\"3682\"><strong data-start=\"3322\" data-end=\"3327\">E</strong><br data-start=\"3327\" data-end=\"3330\" />However, despite their important role in developing the rules, lawyers are not universally admired. Anti-lawyer jokes have a long history going back to the ancient Greeks. More recently the son of a famous Hollywood actor was asked at his junior school what his father did for a living, to which he replied, &lsquo;My daddy is a movie actor, and sometimes he plays the good guy, and sometimes he plays the lawyer.&rsquo; For balance, though, it is worth remembering that there are, and have been, many heroic and revered lawyers such as the Roman philosopher and politician Cicero, and Mahatma Gandhi, the Indian campaigner for independence.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"449\" data-end=\"1641\"><strong data-start=\"449\" data-end=\"454\">F</strong><br data-start=\"454\" data-end=\"457\" />People sometimes make comments that characterise lawyers as professionals whose concerns put personal reward above truth, or who gain financially from misfortune. There are undoubtedly lawyers that would fit that bill, just as there are some scientists, journalists and others in that category. But, in general, it is no more just to say that lawyers are bad because they make a living from people&rsquo;s problems than it is to make the same accusation in respect of nurses or IT consultants. A great many lawyers are involved in public law work, such as that involving civil liberties, housing and other issues. Such work is not lavishly remunerated and the quality of the service provided by these lawyers relies on considerable professional dedication. Moreover, much legal work has nothing to do with conflict or misfortune, but is primarily concerned with drafting documents. Another source of social disaffection for lawyers, and disaffection for the law, is a limited public understanding of how law works and how it could be changed. Greater clarity about these issues, maybe as a result of better public relations, would reduce many aspects of public dissatisfaction with the law.</p>\r\n<hr class=\"\" data-start=\"1643\" data-end=\"1646\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1648\" data-end=\"1775\">&nbsp;</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724899955,
+                      1724899956,
+                      1724899957
+                    ]
+                  },
+                  {
+                    "title": "READING PASSAGE 3",
+                    "title_show": null,
+                    "skill": "reading",
+                    "description": "<p><em>You should spend about 20 minutes on Questions 27&ndash;40, which are based on Reading Passage 3 below.</em></p>\r\n<h2 class=\"\" style=\"text-align: center;\" data-start=\"185\" data-end=\"210\">The Voynich Manuscript</h2>\r\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://r2.ebomb.edu.vn/test_img/test/2025/04/16/23604318-8b72-4f94-ad04-3bc3c5bec568.jpg\" alt=\"\" width=\"477\" height=\"250\" /></p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"212\" data-end=\"1002\">The starkly modern Beinecke Library at Yale University is home to some of the most valuable books in the world: first folios of Shakespeare, Gutenberg Bibles and manuscripts from the early Middle Ages. Yet the library&rsquo;s most controversial possession is an unprepossessing vellum manuscript about the size of a hardback book, containing 240-odd pages of drawings and text of unknown age and authorship. Catalogued as MS408, the manuscript would attract little attention were it not for the fact that the drawings hint at esoteric knowledge, while the text seems to be some sort of code &ndash; one that no-one has been able to break. It&rsquo;s known to scholars as the Voynich manuscript, after the American book dealer Wilfrid Voynich, who bought the manuscript from a Jesuit college in Italy in 1912.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1004\" data-end=\"1489\">Over the years, the manuscript has attracted the attention of everyone from amateur dabblers to top codebreakers, all determined to succeed where countless others have failed. Academic research papers, books and websites are devoted to making sense of the contents of the manuscript, which are freely available to all. &ldquo;Most other mysteries involve secondhand reports,&rdquo; says Dr Gordon Rugg of Keele University, a leading Voynich expert. &ldquo;But this is one that you can see for yourself.&rdquo;</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1491\" data-end=\"3335\">It is certainly strange: page after page of drawings of weird plants, astrological symbolism and human figures, accompanied by a script that looks like some form of shorthand. What does it say and what are the drawings about? Voynich himself believed that the manuscript was the work of the 13th-century English monk Roger Bacon, famed for his knowledge of alchemy, philosophy and science. In 1921 Voynich&rsquo;s view that Bacon was the writer appeared to win support from the work of William Newbold, Professor of Philosophy at the University of Pennsylvania, who claimed to have found the key to the cipher system used by Bacon. According to Newbold, the manuscript proved that Bacon had access to a microscope centuries before they were supposedly first invented. The claim that this medieval monk had observed living cells created a sensation. It soon became clear, however, that Newbold had fallen victim to wishful thinking. Other scholars showed that his &lsquo;decoding&rsquo; methods produced a host of possible interpretations. The Voynich manuscript has continued to defy the efforts of world-class experts. In 1944, a team was assembled to tackle the mystery, led by William Friedman, the renowned American codebreaker. They began with the most basic codebreaking task: analysing the relative frequencies of the characters making up the text, looking for signs of an underlying structure. Yet Friedman&rsquo;s team soon found themselves in deep water. The precise size of the &lsquo;alphabet&rsquo; of the Voynich manuscript was unclear: it&rsquo;s possible to make out more than 70 distinct symbols among the 170,000-character text. Furthermore, Friedman discovered that some words and phrases appeared more often than expected in a standard language, casting doubt on claims that the manuscript concealed a real language, as encryption typically reduces word frequencies.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"49\" data-end=\"1028\">Friedman concluded that the most plausible resolution of this paradox was that &ldquo;Voynichese&rdquo; is some sort of specially created artificial language, whose words are devised from concepts, rather than linguistics. So, could the Voynich manuscript be the earliest known example of an artificial language? Friedman&rsquo;s hypothesis commands respect because of the lifetime of cryptanalytical expertise he brought to bear,&rsquo; says Rob Churchill, co-author of <em data-start=\"496\" data-end=\"520\">The Voynich Manuscript</em>, that still leaves a host of questions unanswered, however, such as the identity of the author and the meaning of the bizarre drawings. &ldquo;It does little to advance our understanding of the manuscript as a whole,&rdquo; says Churchill. Even though Friedman was working more than 60 years ago, he suspected that major insights would come from using the device that had already transformed codebreaking: the computer. In this he was right &ndash; it is now the key tool for uncovering clues about the manuscript&rsquo;s language.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1030\" data-end=\"1731\">The insights so far have been perplexing. For example, in 2001 another leading Voynich scholar, Dr Gabriel Landin of Birmingham University in the UK, published the results of his study of the manuscript using a pattern-detecting method called spectral analysis. This revealed evidence that the manuscript contains genuine words, rather than random nonsense, consistent with the existence of some underlying natural language. Yet the following year, Voynich expert Ren Zandbergen of the European Space Agency in Darmstadt, Germany showed that the entropy of the text (a measure of the rate of transfer of information) was consistent with Friedman&rsquo;s suspicions that an artificial language had been used.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1733\" data-end=\"1949\">Many are convinced that the Voynich manuscript isn&rsquo;t a hoax. For how could a medieval hoaxer create so many telltale signs of a message from random nonsense? Yet even this has been challenged in new research by Rugg.</p>\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"1951\" data-end=\"2999\">Using a system, first published by the Italian mathematician Girolamo Cardano in 1150 in which a specially constructed grille issued to pick out symbols from a table, Rugg found he could rapidly generate text with many of the basic traits of the Voynich manuscript. Publishing his results in 2004 Rugg stresses that he hadn&rsquo;t set out to prove the manuscript a hoax. &ldquo;I simply demonstrated that it&rsquo;s feasible to hoax something this complex in a few months,&rdquo; he says. Inevitably, others began to differ. Some scholars, such as Zandbergen, still suspect the text has genuine meaning, though believe it may never be decipherable. Others, such as Churchill, have suggested that the sheer weirdness of the illustrations and text hint at an author who had lost touch with reality. What is clear is that the book-sized manuscript kept under lock and key at Yale University has lost none of its fascination. &ldquo;Many derive great intellectual pleasure from solving puzzles,&rdquo; says Rugg. The Voynich manuscript is as challenging a puzzle as anyone could ask for.</p>\r\n<hr class=\"\" data-start=\"3001\" data-end=\"3004\" />\r\n<p class=\"\" style=\"text-align: justify;\" data-start=\"3006\" data-end=\"3091\">&nbsp;</p>",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724899958,
+                      1724899960,
+                      1724899961,
+                      1724899962
+                    ]
+                  }
+                ],
+                "is_mark": 0,
+                "number_question": 40,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "is_convert_file": 1
+              },
+              "1624887748": {
+                "_id": 1624887748,
+                "title": "IELTS Mock Test - Writing 01",
+                "times": 60,
+                "score_type": "ielts",
+                "test_type": "skilltest",
+                "test_code": "ielts",
+                "skill": "writing",
+                "is_publish": 1,
+                "is_review": 1,
+                "is_practice": 1,
+                "is_group": 0,
+                "no_repeat": 0,
+                "listen_order": 0,
+                "status": "active",
+                "access_code": "ntxsvf9mco",
+                "created_by": 20094,
+                "created_time": 1747729384,
+                "updated_time": 1750871088,
+                "description": null,
+                "images": null,
+                "link_document": null,
+                "pass_score": null,
+                "seo_description": null,
+                "seo_keyword": null,
+                "seo_title": null,
+                "title_show": null,
+                "question": [
+                  {
+                    "title": "TASK 1",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900479
+                    ]
+                  },
+                  {
+                    "title": "TASK 2",
+                    "title_show": null,
+                    "skill": "writing",
+                    "description": "",
+                    "images": "",
+                    "sound": "",
+                    "question_id": [
+                      1724900480
+                    ]
+                  }
+                ],
+                "is_mark": 1,
+                "number_question": 2,
+                "is_convert_file": 1
+              }
+            },
+            "logs_detail": [],
+            "logs": [],
+            "params": []
+          }
+        }
+      }
+    ]
+  }
+}

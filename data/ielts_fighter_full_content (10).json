@@ -1,0 +1,68 @@
+{
+  "https://test.ebomb.edu.vn/tests/1624890589?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624890589?site=ielts-fighter",
+      "title": "Đề Writing 01"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624890589/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624890589",
+            "test_detail": {
+              "_id": 1624890589,
+              "title": "Web - Đề Writing thật 1",
+              "description": "<p>Đề thi thật IELTS Writing 11.01.06 k&egrave;m đ&aacute;p &aacute;n giải th&iacute;ch chi tiết để l&agrave;m b&agrave;i hiệu quả, c&aacute;c bạn thử l&agrave;m nh&eacute;.</p>",
+              "times": 60,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi thật IELTS Writing thật mới nhất 01",
+              "seo_description": "Đề thi thật IELTS Writing thật mới nhất 01 kèm đáp án giải thích chi tiết để làm bài hiệu quả, các bạn thử làm nhé.",
+              "skill": "writing",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Đề Writing thật 1",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "ugqnxmvvt5",
+              "created_by": 10057,
+              "created_time": 1773134435,
+              "updated_time": 1773303358,
+              "question": [
+                {
+                  "title": "Writing",
+                  "title_show": "Writing",
+                  "skill": "writing",
+                  "description": "",
+                  "images": "",
+                  "sound": "",
+                  "transcript": "",
+                  "question_id": [
+                    1724916268,
+                    1724916269
+                  ]
+                }
+              ],
+              "is_mark": 1,
+              "number_question": 2,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null
+            },
+            "number_part": 1,
+            "params": []
+          }
+        }
+      }
+    ]
+  }
+}

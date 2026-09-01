@@ -1,0 +1,1064 @@
+[
+  {
+    "n": 781,
+    "question_en": "A company wants to run its experimental workloads in the AWS Cloud. The company has a budget for cloud spending. The company's CFO is concerned about cloud spending accountability for each department. The CFO wants to receive notification when the spending threshold reaches 60% of the budget. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、実験的なワークロードをAWSクラウドで実行したいと考えています。企業はクラウド支出のための予算を持っています。企業のCFOは、各部門のクラウド支出の説明責任について懸念しています。CFOは、支出がしきい値の予算の60%に達した際に通知を受け取りたいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use cost allocation tags on AWS resources to label owners. Create usage budgets in AWS Budgets. Add an alert threshold to receive notification when spending exceeds 60% of the budget.",
+        "text_ja": "AWSリソースにコスト配分タグを使用して所有者をラベル付けする。AWS Budgetsで使用量予算を作成する。支出が予算の60%を超えたときに通知を受け取るためのアラートしきい値を追加する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use AWS Cost Explorer forecasts to determine resource owners. Use AWS Cost Anomaly Detection to create alert threshold notifications when spending exceeds 60% of the budget.",
+        "text_ja": "AWS Cost Explorerの予測を使用してリソースの所有者を特定する。AWS Cost Anomaly Detectionを使用して、支出が予算の60%を超えたときのアラートしきい値通知を作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use cost allocation tags on AWS resources to label owners. Use AWS Support API on AWS Trusted Advisor to create alert threshold notifications when spending exceeds 60% of the budget.",
+        "text_ja": "AWSリソースにコスト配分タグを使用して所有者をラベル付けする。AWS Trusted AdvisorのAWS Support APIを使用して、支出が予算の60%を超えたときのアラートしきい値通知を作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Cost Explorer forecasts to determine resource owners. Create usage budgets in AWS Budgets. Add an alert threshold to receive notification when spending exceeds 60% of the budget.",
+        "text_ja": "AWS Cost Explorerの予測を使用してリソースの所有者を特定する。AWS Budgetsで使用量予算を作成する。支出が予算の60%を超えたときに通知を受け取るためのアラートしきい値を追加する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 782,
+    "question_en": "A company wants to deploy an internal web application on AWS. The web application must be accessible only from the company's office. The company needs to download security patches for the web application from the internet. The company has created a VPC and has configured an AWS Site-to-Site VPN connection to the company's office. A solutions architect must design a secure architecture for the web application. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、社内Webアプリケーションをデプロイしたいと考えています。このWebアプリケーションは、企業のオフィスからのみアクセス可能である必要があります。企業は、インターネットからWebアプリケーション用のセキュリティパッチをダウンロードする必要があります。企業はVPCを作成し、企業のオフィスへのAWS Site-to-Site VPN接続を設定しました。ソリューションアーキテクトは、Webアプリケーション用のセキュアなアーキテクチャを設計する必要があります。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy the web application on Amazon EC2 instances in public subnets behind a public Application Load Balancer (ALB). Attach an internet gateway to the VPC. Set the inbound source of the ALB's security group to 0.0.0.0/0.",
+        "text_ja": "パブリックApplication Load Balancer(ALB)の背後にあるパブリックサブネット内のAmazon EC2インスタンスにWebアプリケーションをデプロイする。VPCにインターネットゲートウェイをアタッチする。ALBのセキュリティグループのインバウンドソースを0.0.0.0/0に設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy the web application on Amazon EC2 instances in private subnets behind an internal Application Load Balancer (ALB). Deploy NAT gateways in public subnets. Attach an internet gateway to the VPC. Set the inbound source of the ALB's security group to the company's office network CIDR block.",
+        "text_ja": "内部Application Load Balancer(ALB)の背後にあるプライベートサブネット内のAmazon EC2インスタンスにWebアプリケーションをデプロイする。パブリックサブネットにNATゲートウェイをデプロイする。VPCにインターネットゲートウェイをアタッチする。ALBのセキュリティグループのインバウンドソースを企業のオフィスネットワークのCIDRブロックに設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy the web application on Amazon EC2 instances in public subnets behind an internal Application Load Balancer (ALB). Deploy NAT gateways in private subnets. Attach an internet gateway to the VPSet the outbound destination of the ALB’s security group to the company's office network CIDR block.",
+        "text_ja": "内部Application Load Balancer(ALB)の背後にあるパブリックサブネット内のAmazon EC2インスタンスにWebアプリケーションをデプロイする。プライベートサブネットにNATゲートウェイをデプロイする。VPCにインターネットゲートウェイをアタッチする。ALBのセキュリティグループのアウトバウンド先を企業のオフィスネットワークのCIDRブロックに設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy the web application on Amazon EC2 instances in private subnets behind a public Application Load Balancer (ALB). Attach an internet gateway to the VPC. Set the outbound destination of the ALB’s security group to 0.0.0.0/0.",
+        "text_ja": "パブリックApplication Load Balancer(ALB)の背後にあるプライベートサブネット内のAmazon EC2インスタンスにWebアプリケーションをデプロイする。VPCにインターネットゲートウェイをアタッチする。ALBのセキュリティグループのアウトバウンド先を0.0.0.0/0に設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 783,
+    "question_en": "A company maintains its accounting records in a custom application that runs on Amazon EC2 instances. The company needs to migrate the data to an AWS managed service for development and maintenance of the application data. The solution must require minimal operational support and provide immutable, cryptographically verifiable logs of data changes. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、Amazon EC2インスタンス上で実行されるカスタムアプリケーションで会計記録を管理しています。企業は、アプリケーションデータの開発と保守のために、AWSマネージドサービスにデータを移行する必要があります。ソリューションは最小限の運用サポートを必要とし、データ変更の不変で暗号学的に検証可能なログを提供する必要があります。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Copy the records from the application into an Amazon Redshift cluster.",
+        "text_ja": "アプリケーションからAmazon Redshiftクラスターにレコードをコピーする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Copy the records from the application into an Amazon Neptune cluster.",
+        "text_ja": "アプリケーションからAmazon Neptuneクラスターにレコードをコピーする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Copy the records from the application into an Amazon Timestream database.",
+        "text_ja": "アプリケーションからAmazon Timestreamデータベースにレコードをコピーする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Copy the records from the application into an Amazon Quantum Ledger Database (Amazon QLDB) ledger.",
+        "text_ja": "アプリケーションからAmazon Quantum Ledger Database(Amazon QLDB)台帳にレコードをコピーする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 784,
+    "question_en": "A company's marketing data is uploaded from multiple sources to an Amazon S3 bucket. A series of data preparation jobs aggregate the data for reporting. The data preparation jobs need to run at regular intervals in parallel. A few jobs need to run in a specific order later. The company wants to remove the operational overhead of job error handling, retry logic, and state management. Which solution will meet these requirements?",
+    "question_ja": "ある企業のマーケティングデータは、複数のソースからAmazon S3バケットにアップロードされます。一連のデータ準備ジョブがレポート用にデータを集計します。データ準備ジョブは、定期的な間隔で並行して実行する必要があります。いくつかのジョブは後で特定の順序で実行する必要があります。企業は、ジョブのエラー処理、リトライロジック、状態管理の運用オーバーヘッドを取り除きたいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use an AWS Lambda function to process the data as soon as the data is uploaded to the S3 bucket. Invoke other Lambda functions at regularly scheduled intervals.",
+        "text_ja": "データがS3バケットにアップロードされるとすぐに処理するAWS Lambda関数を使用する。定期的にスケジュールされた間隔で他のLambda関数を呼び出す。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon Athena to process the data. Use Amazon EventBridge Scheduler to invoke Athena on a regular internal.",
+        "text_ja": "Amazon Athenaを使用してデータを処理する。Amazon EventBridge Schedulerを使用して定期的な間隔でAthenaを呼び出す。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Glue DataBrew to process the data. Use an AWS Step Functions state machine to run the DataBrew data preparation jobs.",
+        "text_ja": "AWS Glue DataBrewを使用してデータを処理する。AWS Step FunctionsステートマシンでDataBrewデータ準備ジョブを実行する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Data Pipeline to process the data. Schedule Data Pipeline to process the data once at midnight.",
+        "text_ja": "AWS Data Pipelineを使用してデータを処理する。Data Pipelineを毎晩深夜に1回データを処理するようスケジュールする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 785,
+    "question_en": "A solutions architect is designing a payment processing application that runs on AWS Lambda in private subnets across multiple Availability Zones. The application uses multiple Lambda functions and processes millions of transactions each day. The architecture must ensure that the application does not process duplicate payments. Which solution will meet these requirements?",
+    "question_ja": "あるソリューションアーキテクトが、複数のアベイラビリティーゾーンにまたがるプライベートサブネット内のAWS Lambda上で実行される決済処理アプリケーションを設計しています。このアプリケーションは複数のLambda関数を使用し、毎日数百万件のトランザクションを処理します。アーキテクチャは、アプリケーションが重複した決済を処理しないようにする必要があります。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Lambda to retrieve all due payments. Publish the due payments to an Amazon S3 bucket. Configure the S3 bucket with an event notification to invoke another Lambda function to process the due payments.",
+        "text_ja": "Lambdaを使用してすべての未払い決済を取得する。未払い決済をAmazon S3バケットに発行する。S3バケットに、別のLambda関数を呼び出すイベント通知を設定して未払い決済を処理する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Lambda to retrieve all due payments. Publish the due payments to an Amazon Simple Queue Service (Amazon SQS) queue. Configure another Lambda function to poll the SQS queue and to process the due payments.",
+        "text_ja": "Lambdaを使用してすべての未払い決済を取得する。未払い決済をAmazon Simple Queue Service(Amazon SQS)キューに発行する。別のLambda関数がSQSキューをポーリングして未払い決済を処理するよう設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use Lambda to retrieve all due payments. Publish the due payments to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Configure another Lambda function to poll the FIFO queue and to process the due payments.",
+        "text_ja": "Lambdaを使用してすべての未払い決済を取得する。未払い決済をAmazon Simple Queue Service(Amazon SQS)FIFOキューに発行する。別のLambda関数がFIFOキューをポーリングして未払い決済を処理するよう設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Lambda to retrieve all due payments. Store the due payments in an Amazon DynamoDB table. Configure streams on the DynamoDB table to invoke another Lambda function to process the due payments.",
+        "text_ja": "Lambdaを使用してすべての未払い決済を取得する。未払い決済をAmazon DynamoDBテーブルに保存する。DynamoDBテーブルにストリームを設定し、別のLambda関数を呼び出して未払い決済を処理する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 786,
+    "question_en": "A company runs multiple workloads in its on-premises data center. The company's data center cannot scale fast enough to meet the company's expanding business needs. The company wants to collect usage and configuration data about the on-premises servers and workloads to plan a migration to AWS. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、オンプレミスのデータセンターで複数のワークロードを実行しています。企業のデータセンターは、企業の拡大するビジネスニーズを満たすのに十分な速さでスケーリングできません。企業は、AWSへの移行を計画するために、オンプレミスサーバーとワークロードに関する使用状況と構成データを収集したいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Set the home AWS Region in AWS Migration Hub. Use AWS Systems Manager to collect data about the on-premises servers.",
+        "text_ja": "AWS Migration HubでホームAWSリージョンを設定する。AWS Systems Managerを使用してオンプレミスサーバーに関するデータを収集する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Set the home AWS Region in AWS Migration Hub. Use AWS Application Discovery Service to collect data about the on-premises servers.",
+        "text_ja": "AWS Migration HubでホームAWSリージョンを設定する。AWS Application Discovery Serviceを使用してオンプレミスサーバーに関するデータを収集する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use the AWS Schema Conversion Tool (AWS SCT) to create the relevant templates. Use AWS Trusted Advisor to collect data about the onpremises servers.",
+        "text_ja": "AWS Schema Conversion Tool(AWS SCT)を使用して関連するテンプレートを作成する。AWS Trusted Advisorを使用してオンプレミスサーバーに関するデータを収集する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use the AWS Schema Conversion Tool (AWS SCT) to create the relevant templates. Use AWS Database Migration Service (AWS DMS) to collect data about the on-premises servers.",
+        "text_ja": "AWS Schema Conversion Tool(AWS SCT)を使用して関連するテンプレートを作成する。AWS Database Migration Service(AWS DMS)を使用してオンプレミスサーバーに関するデータを収集する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 787,
+    "question_en": "A company has an organization in AWS Organizations that has all features enabled. The company requires that all API calls and logins in any existing or new AWS account must be audited. The company needs a managed solution to prevent additional work and to minimize costs. The company also needs to know when any AWS account is not compliant with the AWS Foundational Security Best Practices (FSBP) standard. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業が、すべての機能が有効になっているAWS Organizationsの組織を持っています。企業は、既存または新規のあらゆるAWSアカウントにおいて、すべてのAPI呼び出しとログインを監査する必要があります。企業は、追加の作業を防ぎコストを最小限に抑えるマネージドソリューションを必要としています。企業はまた、どのAWSアカウントがAWS Foundational Security Best Practices(FSBP)標準に準拠していないかを知る必要があります。運用オーバーヘッドが最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy an AWS Control Tower environment in the Organizations management account. Enable AWS Security Hub and AWS Control Tower Account Factory in the environment.",
+        "text_ja": "Organizationsの管理アカウントにAWS Control Tower環境をデプロイする。その環境でAWS Security HubとAWS Control Tower Account Factoryを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy an AWS Control Tower environment in a dedicated Organizations member account. Enable AWS Security Hub and AWS Control Tower Account Factory in the environment.",
+        "text_ja": "専用のOrganizationsメンバーアカウントにAWS Control Tower環境をデプロイする。その環境でAWS Security HubとAWS Control Tower Account Factoryを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Managed Services (AMS) Accelerate to build a multi-account landing zone (MALZ). Submit an RFC to self-service provision Amazon GuardDuty in the MALZ.",
+        "text_ja": "AWS Managed Services(AMS)Accelerateを使用してマルチアカウントランディングゾーン(MALZ)を構築する。MALZでAmazon GuardDutyをセルフサービスプロビジョニングするRFCを提出する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Managed Services (AMS) Accelerate to build a multi-account landing zone (MALZ). Submit an RFC to self-service provision AWS Security Hub in the MALZ.",
+        "text_ja": "AWS Managed Services(AMS)Accelerateを使用してマルチアカウントランディングゾーン(MALZ)を構築する。MALZでAWS Security Hubをセルフサービスプロビジョニングするようリクエストを提出する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 788,
+    "question_en": "A company has stored 10 TB of log files in Apache Parquet format in an Amazon S3 bucket. The company occasionally needs to use SQL to analyze the log files. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、10TBのログファイルをApache Parquet形式でAmazon S3バケットに保存しています。企業は、これらのログファイルを分析するためにときどきSQLを使用する必要があります。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon Aurora MySQL database. Migrate the data from the S3 bucket into Aurora by using AWS Database Migration Service (AWS DMS). Issue SQL statements to the Aurora database.",
+        "text_ja": "Amazon Aurora MySQLデータベースを作成する。AWS Database Migration Service(AWS DMS)を使用してデータをS3バケットからAuroraに移行する。Auroraデータベースに対してSQL文を発行する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon Redshift cluster. Use Redshift Spectrum to run SQL statements directly on the data in the S3 bucket.",
+        "text_ja": "Amazon Redshiftクラスターを作成する。Redshift Spectrumを使用して、S3バケット内のデータに対して直接SQL文を実行する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an AWS Glue crawler to store and retrieve table metadata from the S3 bucket. Use Amazon Athena to run SQL statements directly on the data in the S3 bucket.",
+        "text_ja": "AWS Glueクローラーを作成して、S3バケットからテーブルメタデータを保存・取得する。Amazon Athenaを使用して、S3バケット内のデータに対して直接SQL文を実行する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Amazon EMR cluster. Use Apache Spark SQL to run SQL statements directly on the data in the S3 bucket.",
+        "text_ja": "Amazon EMRクラスターを作成する。Apache Spark SQLを使用して、S3バケット内のデータに対して直接SQL文を実行する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 789,
+    "question_en": "A company needs a solution to prevent AWS CloudFormation stacks from deploying AWS Identity and Access Management (IAM) resources that include an inline policy or “*” in the statement. The solution must also prohibit deployment of Amazon EC2 instances with public IP addresses. The company has AWS Control Tower enabled in its organization in AWS Organizations. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、インラインポリシーまたはステートメント内に「*」を含むAWS Identity and Access Management(IAM)リソースをAWS CloudFormationスタックがデプロイすることを防ぐソリューションを必要としています。ソリューションはまた、パブリックIPアドレスを持つAmazon EC2インスタンスのデプロイも禁止する必要があります。企業は、AWS Organizations内の組織でAWS Control Towerを有効にしています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS Control Tower proactive controls to block deployment of EC2 instances with public IP addresses and inline policies with elevated access or “*”.",
+        "text_ja": "AWS Control Towerのプロアクティブコントロールを使用して、パブリックIPアドレスを持つEC2インスタンスと、昇格したアクセス権または「*」を持つインラインポリシーのデプロイをブロックする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use AWS Control Tower detective controls to block deployment of EC2 instances with public IP addresses and inline policies with elevated access or “*”.",
+        "text_ja": "AWS Control Towerの検知コントロールを使用して、パブリックIPアドレスを持つEC2インスタンスと、昇格したアクセス権または「*」を持つインラインポリシーのデプロイをブロックする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Config to create rules for EC2 and IAM compliance. Configure the rules to run an AWS Systems Manager Session Manager automation to delete a resource when it is not compliant.",
+        "text_ja": "AWS Configを使用してEC2とIAMのコンプライアンス用のルールを作成する。ルールが非準拠のリソースを検出した際にそれを削除するAWS Systems Manager Session Managerオートメーションを実行するよう設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use a service control policy (SCP) to block actions for the EC2 instances and IAM resources if the actions lead to noncompliance.",
+        "text_ja": "サービスコントロールポリシー(SCP)を使用して、非準拠につながるアクションであればEC2インスタンスとIAMリソースへのアクションをブロックする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 790,
+    "question_en": "A company's web application that is hosted in the AWS Cloud recently increased in popularity. The web application currently exists on a single Amazon EC2 instance in a single public subnet. The web application has not been able to meet the demand of the increased web traffic. The company needs a solution that will provide high availability and scalability to meet the increased user demand without rewriting the web application. Which combination of steps will meet these requirements? (Choose two.)",
+    "question_ja": "ある企業のAWSクラウドでホストされているWebアプリケーションが最近人気を博しました。このWebアプリケーションは現在、単一のパブリックサブネット内の単一のAmazon EC2インスタンス上に存在しています。Webアプリケーションは、増加したWebトラフィックの需要に応えられていません。企業は、Webアプリケーションを書き直すことなく、増加したユーザー需要を満たすための可用性とスケーラビリティを提供するソリューションを必要としています。これらの要件を満たすステップの組み合わせはどれですか?(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "BE",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Replace the EC2 instance with a larger compute optimized instance.",
+        "text_ja": "EC2インスタンスをより大きなコンピューティング最適化インスタンスに置き換える。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure Amazon EC2 Auto Scaling with multiple Availability Zones in private subnets.",
+        "text_ja": "プライベートサブネット内の複数のアベイラビリティーゾーンでAmazon EC2 Auto Scalingを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure a NAT gateway in a public subnet to handle web requests.",
+        "text_ja": "Web要求を処理するために、パブリックサブネットにNATゲートウェイを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Replace the EC2 instance with a larger memory optimized instance.",
+        "text_ja": "EC2インスタンスをより大きなメモリ最適化インスタンスに置き換える。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Configure an Application Load Balancer in a public subnet to distribute web traffic.",
+        "text_ja": "Webトラフィックを分散するために、パブリックサブネットにApplication Load Balancerを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 791,
+    "question_en": "A company has AWS Lambda functions that use environment variables. The company does not want its developers to see environment variables in plaintext. Which solution will meet these requirements?",
+    "question_ja": "ある企業に、環境変数を使用するAWS Lambda関数があります。企業は、開発者が環境変数を平文で見ることを望んでいません。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy code to Amazon EC2 instances instead of using Lambda functions.",
+        "text_ja": "Lambda関数を使用する代わりに、コードをAmazon EC2インスタンスにデプロイする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure SSL encryption on the Lambda functions to use AWS CloudHSM to store and encrypt the environment variables.",
+        "text_ja": "環境変数を保存・暗号化するためにAWS CloudHSMを使用するようLambda関数にSSL暗号化を設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create a certificate in AWS Certificate Manager (ACM). Configure the Lambda functions to use the certificate to encrypt the environment variables.",
+        "text_ja": "AWS Certificate Manager(ACM)で証明書を作成する。環境変数を暗号化するためにその証明書を使用するようLambda関数を設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an AWS Key Management Service (AWS KMS) key. Enable encryption helpers on the Lambda functions to use the KMS key to store and encrypt the environment variables.",
+        "text_ja": "AWS Key Management Service(AWS KMS)キーを作成する。KMSキーを使用して環境変数を保存・暗号化する暗号化ヘルパーをLambda関数で有効にする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 792,
+    "question_en": "An analytics company uses Amazon VPC to run its multi-tier services. The company wants to use RESTful APIs to offer a web analytics service to millions of users. Users must be verified by using an authentication service to access the APIs. Which solution will meet these requirements with the MOST operational efficiency?",
+    "question_ja": "ある分析企業が、マルチ層サービスを実行するためにAmazon VPCを使用しています。企業は、数百万人のユーザーにWeb分析サービスを提供するためにRESTful APIを使用したいと考えています。ユーザーは、APIにアクセスするために認証サービスを使用して検証される必要があります。運用効率が最も高い方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure an Amazon Cognito user pool for user authentication. Implement Amazon API Gateway REST APIs with a Cognito authorizer.",
+        "text_ja": "ユーザー認証用にAmazon Cognitoユーザープールを設定する。Cognitoオーソライザーを使用してAmazon API Gateway REST APIを実装する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure an Amazon Cognito identity pool for user authentication. Implement Amazon API Gateway HTTP APIs with a Cognito authorizer.",
+        "text_ja": "ユーザー認証用にAmazon Cognito IDプールを設定する。Cognitoオーソライザーを使用してAmazon API Gateway HTTP APIを実装する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure an AWS Lambda function to handle user authentication. Implement Amazon API Gateway REST APIs with a Lambda authorizer.",
+        "text_ja": "ユーザー認証を処理するAWS Lambda関数を設定する。Lambdaオーソライザーを使用してAmazon API Gateway REST APIを実装する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure an IAM user to handle user authentication. Implement Amazon API Gateway HTTP APIs with an IAM authorizer.",
+        "text_ja": "ユーザー認証を処理するIAMユーザーを設定する。IAMオーソライザーを使用してAmazon API Gateway HTTP APIを実装する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 793,
+    "question_en": "A company has a mobile app for customers. The app’s data is sensitive and must be encrypted at rest. The company uses AWS Key Management Service (AWS KMS). The company needs a solution that prevents the accidental deletion of KMS keys. The solution must use Amazon Simple Notification Service (Amazon SNS) to send an email notification to administrators when a user attempts to delete a KMS key. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業に、顧客向けのモバイルアプリがあります。このアプリのデータは機密性が高く、保管中は暗号化する必要があります。企業はAWS Key Management Service(AWS KMS)を使用しています。企業は、KMSキーの誤った削除を防ぐソリューションを必要としています。ソリューションは、ユーザーがKMSキーの削除を試みた際に、管理者にメール通知を送信するためにAmazon Simple Notification Service(Amazon SNS)を使用する必要があります。運用オーバーヘッドが最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon EventBridge rule that reacts when a user tries to delete a KMS key. Configure an AWS Config rule that cancels any deletion of a KMS key. Add the AWS Config rule as a target of the EventBridge rule. Create an SNS topic that notifies the administrators.",
+        "text_ja": "ユーザーがKMSキーを削除しようとしたときに反応するAmazon EventBridgeルールを作成する。KMSキーの削除をキャンセルするAWS Configルールを設定する。AWS ConfigルールをEventBridgeルールのターゲットとして追加する。管理者に通知するSNSトピックを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an AWS Lambda function that has custom logic to prevent KMS key deletion. Create an Amazon CloudWatch alarm that is activated when a user tries to delete a KMS key. Create an Amazon EventBridge rule that invokes the Lambda function when the DeleteKey operation is performed. Create an SNS topic. Configure the EventBridge rule to publish an SNS message that notifies the administrators.",
+        "text_ja": "KMSキーの削除を防ぐカスタムロジックを持つAWS Lambda関数を作成する。ユーザーがKMSキーを削除しようとしたときにアクティブになるAmazon CloudWatchアラームを作成する。DeleteKey操作が実行されたときにLambda関数を呼び出すAmazon EventBridgeルールを作成する。SNSトピックを作成する。EventBridgeルールを設定して、管理者に通知するSNSメッセージを発行する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon EventBridge rule that reacts when the KMS DeleteKey operation is performed. Configure the rule to initiate an AWS Systems Manager Automation runbook. Configure the runbook to cancel the deletion of the KMS key. Create an SNS topic. Configure the EventBridge rule to publish an SNS message that notifies the administrators.",
+        "text_ja": "KMSのDeleteKey操作が実行されたときに反応するAmazon EventBridgeルールを作成する。AWS Systems Manager Automationランブックを開始するようルールを設定する。KMSキーの削除をキャンセルするようランブックを設定する。SNSトピックを作成する。EventBridgeルールを設定して、管理者に通知するSNSメッセージを発行する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an AWS CloudTrail trail. Configure the trail to deliver logs to a new Amazon CloudWatch log group. Create a CloudWatch alarm based on the metric filter for the CloudWatch log group. Configure the alarm to use Amazon SNS to notify the administrators when the KMS DeleteKey operation is performed.",
+        "text_ja": "AWS CloudTrailトレイルを作成する。ログを新しいAmazon CloudWatchロググループに配信するようトレイルを設定する。CloudWatchロググループのメトリクスフィルタに基づいてCloudWatchアラームを作成する。KMSのDeleteKey操作が実行されたときにAmazon SNSを使用して管理者に通知するようアラームを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 794,
+    "question_en": "A company wants to analyze and generate reports to track the usage of its mobile app. The app is popular and has a global user base. The company uses a custom report building program to analyze application usage. The program generates multiple reports during the last week of each month. The program takes less than 10 minutes to produce each report. The company rarely uses the program to generate reports outside of the last week of each month The company wants to generate reports in the least amount of time when the reports are requested. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、モバイルアプリの使用状況を追跡するために分析とレポートを生成したいと考えています。このアプリは人気があり、グローバルなユーザーベースを持っています。企業は、アプリケーションの使用状況を分析するためにカスタムレポート作成プログラムを使用しています。このプログラムは、毎月の最終週に複数のレポートを生成します。各レポートの生成には10分未満しかかかりません。企業は、毎月の最終週以外にこのプログラムを使用してレポートを生成することはほとんどありません。企業は、レポートがリクエストされたときに最短時間でレポートを生成したいと考えています。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Run the program by using Amazon EC2 On-Demand Instances. Create an Amazon EventBridge rule to start the EC2 instances when reports are requested. Run the EC2 instances continuously during the last week of each month.",
+        "text_ja": "Amazon EC2オンデマンドインスタンスを使用してプログラムを実行する。レポートがリクエストされたときにEC2インスタンスを起動するAmazon EventBridgeルールを作成する。毎月の最終週の間、EC2インスタンスを継続的に実行する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Run the program in AWS Lambda. Create an Amazon EventBridge rule to run a Lambda function when reports are requested.",
+        "text_ja": "AWS Lambdaでプログラムを実行する。レポートがリクエストされたときにLambda関数を実行するAmazon EventBridgeルールを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Run the program in Amazon Elastic Container Service (Amazon ECS). Schedule Amazon ECS to run the program when reports are requested.",
+        "text_ja": "Amazon Elastic Container Service(Amazon ECS)でプログラムを実行する。レポートがリクエストされたときにプログラムを実行するようAmazon ECSをスケジュールする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Run the program by using Amazon EC2 Spot Instances. Create an Amazon EventBndge rule to start the EC2 instances when reports are requested. Run the EC2 instances continuously during the last week of each month.",
+        "text_ja": "Amazon EC2スポットインスタンスを使用してプログラムを実行する。レポートがリクエストされたときにEC2インスタンスを起動するAmazon EventBridgeルールを作成する。毎月の最終週の間、EC2インスタンスを継続的に実行する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 795,
+    "question_en": "A company is designing a tightly coupled high performance computing (HPC) environment in the AWS Cloud. The company needs to include features that will optimize the HPC environment for networking and storage. Which combination of solutions will meet these requirements? (Choose two.)",
+    "question_ja": "ある企業が、AWSクラウドで密結合のハイパフォーマンスコンピューティング(HPC)環境を設計しています。企業は、HPC環境をネットワーキングとストレージの観点で最適化する機能を含める必要があります。これらの要件を満たすソリューションの組み合わせはどれですか?(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "BD",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an accelerator in AWS Global Accelerator. Configure custom routing for the accelerator.",
+        "text_ja": "AWS Global Acceleratorでアクセラレーターを作成する。アクセラレーター用にカスタムルーティングを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon FSx for Lustre file system. Configure the file system with scratch storage.",
+        "text_ja": "Amazon FSx for Lustreファイルシステムを作成する。ファイルシステムをスクラッチストレージで設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon CloudFront distribution. Configure the viewer protocol policy to be HTTP and HTTPS.",
+        "text_ja": "Amazon CloudFrontディストリビューションを作成する。ビューアープロトコルポリシーをHTTPとHTTPSに設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Launch Amazon EC2 instances. Attach an Elastic Fabric Adapter (EFA) to the instances.",
+        "text_ja": "Amazon EC2インスタンスを起動する。インスタンスにElastic Fabric Adapter(EFA)をアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Create an AWS Elastic Beanstalk deployment to manage the environment.",
+        "text_ja": "環境を管理するためにAWS Elastic Beanstalkデプロイを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 796,
+    "question_en": "A company needs a solution to prevent photos with unwanted content from being uploaded to the company's web application. The solution must not involve training a machine learning (ML) model. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、望ましくないコンテンツを含む写真が企業のWebアプリケーションにアップロードされるのを防ぐソリューションを必要としています。ソリューションは、機械学習(ML)モデルのトレーニングを伴ってはいけません。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create and deploy a model by using Amazon SageMaker Autopilot. Create a real-time endpoint that the web application invokes when new photos are uploaded.",
+        "text_ja": "Amazon SageMaker Autopilotを使用してモデルを作成しデプロイする。新しい写真がアップロードされたときにWebアプリケーションが呼び出すリアルタイムエンドポイントを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an AWS Lambda function that uses Amazon Rekognition to detect unwanted content. Create a Lambda function URL that the web application invokes when new photos are uploaded.",
+        "text_ja": "Amazon Rekognitionを使用して望ましくないコンテンツを検出するAWS Lambda関数を作成する。新しい写真がアップロードされたときにWebアプリケーションが呼び出すLambda関数URLを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon CloudFront function that uses Amazon Comprehend to detect unwanted content. Associate the function with the web application.",
+        "text_ja": "Amazon Comprehendを使用して望ましくないコンテンツを検出するAmazon CloudFront関数を作成する。その関数をWebアプリケーションに関連付ける。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an AWS Lambda function that uses Amazon Rekognition Video to detect unwanted content. Create a Lambda function URL that the web application invokes when new photos are uploaded.",
+        "text_ja": "Amazon Rekognition Videoを使用して望ましくないコンテンツを検出するAWS Lambda関数を作成する。新しい写真がアップロードされたときにWebアプリケーションが呼び出すLambda関数URLを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 797,
+    "question_en": "A company uses AWS to run its ecommerce platform. The platform is critical to the company's operations and has a high volume of traffic and transactions. The company configures a multi-factor authentication (MFA) device to secure its AWS account root user credentials. The company wants to ensure that it will not lose access to the root user account if the MFA device is lost. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、eコマースプラットフォームを実行するためにAWSを使用しています。このプラットフォームは企業の業務にとって重要であり、トラフィックとトランザクションの量が多くなっています。企業は、AWSアカウントのルートユーザー認証情報を保護するために多要素認証(MFA)デバイスを設定しています。企業は、MFAデバイスを紛失した場合でもルートユーザーアカウントへのアクセスを失わないようにしたいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Set up a backup administrator account that the company can use to log in if the company loses the MFA device.",
+        "text_ja": "企業がMFAデバイスを紛失した場合にログインできるバックアップ管理者アカウントを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Add multiple MFA devices for the root user account to handle the disaster scenario.",
+        "text_ja": "災害シナリオに対応するために、ルートユーザーアカウント用に複数のMFAデバイスを追加する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create a new administrator account when the company cannot access the root account.",
+        "text_ja": "企業がルートアカウントにアクセスできない場合に、新しい管理者アカウントを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Attach the administrator policy to another IAM user when the company cannot access the root account.",
+        "text_ja": "企業がルートアカウントにアクセスできない場合に、別のIAMユーザーに管理者ポリシーをアタッチする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 798,
+    "question_en": "A social media company is creating a rewards program website for its users. The company gives users points when users create and upload videos to the website. Users redeem their points for gifts or discounts from the company's affiliated partners. A unique ID identifies users. The partners refer to this ID to verify user eligibility for rewards. The partners want to receive notification of user IDs through an HTTP endpoint when the company gives users points. Hundreds of vendors are interested in becoming affiliated partners every day. The company wants to design an architecture that gives the website the ability to add partners rapidly in a scalable way. Which solution will meet these requirements with the LEAST implementation effort?",
+    "question_ja": "あるソーシャルメディア企業が、ユーザー向けの特典プログラムのWebサイトを作成しています。企業は、ユーザーが動画を作成してWebサイトにアップロードすると、ユーザーにポイントを付与します。ユーザーはポイントを、企業の提携パートナーからのギフトや割引と交換できます。ユーザーは固有のIDによって識別されます。パートナーは、ユーザーが特典を受ける資格があるかを確認するためにこのIDを参照します。パートナーは、企業がユーザーにポイントを付与したときに、HTTPエンドポイントを通じてユーザーIDの通知を受け取りたいと考えています。毎日何百ものベンダーが提携パートナーになることに関心を示しています。企業は、パートナーをスケーラブルな方法で迅速に追加できるアーキテクチャを設計したいと考えています。実装作業が最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon Timestream database to keep a list of affiliated partners. Implement an AWS Lambda function to read the list. Configure the Lambda function to send user IDs to each partner when the company gives users points.",
+        "text_ja": "提携パートナーのリストを保持するAmazon Timestreamデータベースを作成する。リストを読み取るAWS Lambda関数を実装する。企業がユーザーにポイントを付与したときに、各パートナーにユーザーIDを送信するようLambda関数を設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon Simple Notification Service (Amazon SNS) topic. Choose an endpoint protocol. Subscribe the partners to the topic. Publish user IDs to the topic when the company gives users points.",
+        "text_ja": "Amazon Simple Notification Service(Amazon SNS)トピックを作成する。エンドポイントプロトコルを選択する。パートナーをそのトピックにサブスクライブさせる。企業がユーザーにポイントを付与したときに、ユーザーIDをトピックに発行する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an AWS Step Functions state machine. Create a task for every affiliated partner. Invoke the state machine with user IDs as input when the company gives users points.",
+        "text_ja": "AWS Step Functionsステートマシンを作成する。提携パートナーごとにタスクを作成する。企業がユーザーにポイントを付与したときに、ユーザーIDを入力としてステートマシンを呼び出す。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create a data stream in Amazon Kinesis Data Streams. Implement producer and consumer applications. Store a list of affiliated partners in the data stream. Send user IDs when the company gives users points.",
+        "text_ja": "Amazon Kinesis Data Streamsでデータストリームを作成する。プロデューサーアプリケーションとコンシューマーアプリケーションを実装する。提携パートナーのリストをデータストリームに保存する。企業がユーザーにポイントを付与したときにユーザーIDを送信する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 799,
+    "question_en": "A company needs to extract the names of ingredients from recipe records that are stored as text files in an Amazon S3 bucket. A web application will use the ingredient names to query an Amazon DynamoDB table and determine a nutrition score. The application can handle non-food records and errors. The company does not have any employees who have machine learning knowledge to develop this solution. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、Amazon S3バケットにテキストファイルとして保存されているレシピ記録から材料名を抽出する必要があります。Webアプリケーションは、材料名を使用してAmazon DynamoDBテーブルにクエリを実行し、栄養スコアを判定します。このアプリケーションは、食品以外の記録やエラーを処理できます。企業には、このソリューションを開発するための機械学習の知識を持つ従業員がいません。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use S3 Event Notifications to invoke an AWS Lambda function when PutObject requests occur. Program the Lambda function to analyze the object and extract the ingredient names by using Amazon Comprehend. Store the Amazon Comprehend output in the DynamoDB table.",
+        "text_ja": "PutObjectリクエストが発生したときにAWS Lambda関数を呼び出すためにS3イベント通知を使用する。Amazon Comprehendを使用してオブジェクトを分析し材料名を抽出するようLambda関数をプログラムする。Amazon Comprehendの出力をDynamoDBテーブルに保存する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use an Amazon EventBridge rule to invoke an AWS Lambda function when PutObject requests occur. Program the Lambda function to analyze the object by using Amazon Forecast to extract the ingredient names. Store the Forecast output in the DynamoDB table.",
+        "text_ja": "PutObjectリクエストが発生したときにAWS Lambda関数を呼び出すためにAmazon EventBridgeルールを使用する。Amazon Forecastを使用してオブジェクトを分析し材料名を抽出するようLambda関数をプログラムする。Forecastの出力をDynamoDBテーブルに保存する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use S3 Event Notifications to invoke an AWS Lambda function when PutObject requests occur. Use Amazon Polly to create audio recordings of the recipe records. Save the audio files in the S3 bucket. Use Amazon Simple Notification Service (Amazon SNS) to send a URL as a message to employees. Instruct the employees to listen to the audio files and calculate the nutrition score. Store the ingredient names in the DynamoDB table.",
+        "text_ja": "PutObjectリクエストが発生したときにAWS Lambda関数を呼び出すためにS3イベント通知を使用する。Amazon Pollyを使用してレシピ記録の音声録音を作成する。音声ファイルをS3バケットに保存する。Amazon Simple Notification Service(Amazon SNS)を使用してURLをメッセージとして従業員に送信する。従業員に音声ファイルを聞いて栄養スコアを計算するよう指示する。材料名をDynamoDBテーブルに保存する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use an Amazon EventBridge rule to invoke an AWS Lambda function when a PutObject request occurs. Program the Lambda function to analyze the object and extract the ingredient names by using Amazon SageMaker. Store the inference output from the SageMaker endpoint in the DynamoDB table.",
+        "text_ja": "PutObjectリクエストが発生したときにAWS Lambda関数を呼び出すためにAmazon EventBridgeルールを使用する。Amazon SageMakerを使用してオブジェクトを分析し材料名を抽出するようLambda関数をプログラムする。SageMakerエンドポイントからの推論出力をDynamoDBテーブルに保存する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 800,
+    "question_en": "A company needs to create an AWS Lambda function that will run in a VPC in the company's primary AWS account. The Lambda function needs to access files that the company stores in an Amazon Elastic File System (Amazon EFS) file system. The EFS file system is located in a secondary AWS account. As the company adds files to the file system, the solution must scale to meet the demand. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、企業のプライマリAWSアカウント内のVPCで実行されるAWS Lambda関数を作成する必要があります。このLambda関数は、企業がAmazon Elastic File System(Amazon EFS)ファイルシステムに保存しているファイルにアクセスする必要があります。このEFSファイルシステムは、セカンダリAWSアカウントにあります。企業がファイルシステムにファイルを追加するにつれ、ソリューションは需要に応じてスケーリングする必要があります。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create a new EFS file system in the primary account. Use AWS DataSync to copy the contents of the original EFS file system to the new EFS file system.",
+        "text_ja": "プライマリアカウントに新しいEFSファイルシステムを作成する。AWS DataSyncを使用して、元のEFSファイルシステムの内容を新しいEFSファイルシステムにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create a VPC peering connection between the VPCs that are in the primary account and the secondary account.",
+        "text_ja": "プライマリアカウントとセカンダリアカウントにあるVPC間でVPCピアリング接続を作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create a second Lambda function in the secondary account that has a mount that is configured for the file system. Use the primary account's Lambda function to invoke the secondary account's Lambda function.",
+        "text_ja": "ファイルシステム用に設定されたマウントを持つ2つ目のLambda関数をセカンダリアカウントに作成する。プライマリアカウントのLambda関数を使用してセカンダリアカウントのLambda関数を呼び出す。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Move the contents of the file system to a Lambda layer. Configure the Lambda layer's permissions to allow the company's secondary account to use the Lambda layer.",
+        "text_ja": "ファイルシステムの内容をLambdaレイヤーに移動する。企業のセカンダリアカウントがLambdaレイヤーを使用できるようにLambdaレイヤーの権限を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 801,
+    "question_en": "A financial company needs to handle highly sensitive data. The company will store the data in an Amazon S3 bucket. The company needs to ensure that the data is encrypted in transit and at rest. The company must manage the encryption keys outside the AWS Cloud. Which solution will meet these requirements?",
+    "question_ja": "ある金融企業が、極めて機密性の高いデータを扱う必要があります。企業はこのデータをAmazon S3バケットに保存します。企業は、データが転送中および保管中に暗号化されることを確保する必要があります。企業は、暗号化キーをAWSクラウドの外部で管理する必要があります。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Encrypt the data in the S3 bucket with server-side encryption (SSE) that uses an AWS Key Management Service (AWS KMS) customer managed key.",
+        "text_ja": "AWS Key Management Service(AWS KMS)のカスタマー管理キーを使用するサーバーサイド暗号化(SSE)でS3バケット内のデータを暗号化する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Encrypt the data in the S3 bucket with server-side encryption (SSE) that uses an AWS Key Management Service (AWS KMS) AWS managed key.",
+        "text_ja": "AWS Key Management Service(AWS KMS)のAWS管理キーを使用するサーバーサイド暗号化(SSE)でS3バケット内のデータを暗号化する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Encrypt the data in the S3 bucket with the default server-side encryption (SSE).",
+        "text_ja": "デフォルトのサーバーサイド暗号化(SSE)でS3バケット内のデータを暗号化する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Encrypt the data at the company's data center before storing the data in the S3 bucket.",
+        "text_ja": "S3バケットに保存する前に企業のデータセンターでデータを暗号化する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 802,
+    "question_en": "A company wants to run its payment application on AWS. The application receives payment notifications from mobile devices. Payment notifications require a basic validation before they are sent for further processing. The backend processing application is long running and requires compute and memory to be adjusted. The company does not want to manage the infrastructure. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業が、決済アプリケーションをAWS上で実行したいと考えています。このアプリケーションは、モバイルデバイスから決済通知を受信します。決済通知は、さらなる処理のために送信される前に基本的な検証を必要とします。バックエンド処理アプリケーションは長時間実行され、コンピューティングとメモリの調整を必要とします。企業はインフラストラクチャを管理したくありません。運用オーバーヘッドが最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Integrate the queue with an Amazon EventBridge rule to receive payment notifications from mobile devices. Configure the rule to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon Elastic Kubernetes Service (Amazon EKS) Anywhere. Create a standalone cluster.",
+        "text_ja": "Amazon Simple Queue Service(Amazon SQS)キューを作成する。モバイルデバイスから決済通知を受信するためにAmazon EventBridgeルールとキューを統合する。決済通知を検証し、バックエンドアプリケーションに送信するようルールを設定する。Amazon Elastic Kubernetes Service(Amazon EKS)Anywhereにバックエンドアプリケーションをデプロイする。スタンドアロンクラスターを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon API Gateway API. Integrate the API with an AWS Step Functions state machine to receive payment notifications from mobile devices. Invoke the state machine to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon Elastic Kubernetes Service (Amazon EKS). Configure an EKS cluster with self-managed nodes.",
+        "text_ja": "Amazon API Gateway APIを作成する。モバイルデバイスから決済通知を受信するためにAWS Step Functionsステートマシンとそのapiを統合する。決済通知を検証し、バックエンドアプリケーションに送信するようステートマシンを呼び出す。Amazon Elastic Kubernetes Service(Amazon EKS)にバックエンドアプリケーションをデプロイする。自己管理ノードでEKSクラスターを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Integrate the queue with an Amazon EventBridge rule to receive payment notifications from mobile devices. Configure the rule to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon EC2 Spot Instances. Configure a Spot Fleet with a default allocation strategy.",
+        "text_ja": "Amazon Simple Queue Service(Amazon SQS)キューを作成する。モバイルデバイスから決済通知を受信するためにAmazon EventBridgeルールとキューを統合する。決済通知を検証し、バックエンドアプリケーションに送信するようルールを設定する。Amazon EC2スポットインスタンスにバックエンドアプリケーションをデプロイする。デフォルトの割り当て戦略でSpot Fleetを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Amazon API Gateway API. Integrate the API with AWS Lambda to receive payment notifications from mobile devices. Invoke a Lambda function to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon ECS with an AWS Fargate launch type.",
+        "text_ja": "Amazon API Gateway APIを作成する。モバイルデバイスから決済通知を受信するためにAWS Lambdaとそのapiを統合する。決済通知を検証し、バックエンドアプリケーションに送信するようLambda関数を呼び出す。Amazon Elastic Container Service(Amazon ECS)にバックエンドアプリケーションをデプロイする。AWS Fargate起動タイプでAmazon ECSを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 803,
+    "question_en": "A solutions architect is designing a user authentication solution for a company. The solution must invoke two-factor authentication for users that log in from inconsistent geographical locations, IP addresses, or devices. The solution must also be able to scale up to accommodate millions of users. Which solution will meet these requirements?",
+    "question_ja": "あるソリューションアーキテクトが、企業のユーザー認証ソリューションを設計しています。ソリューションは、一貫性のない地理的位置、IPアドレス、またはデバイスからログインするユーザーに対して二要素認証を発動する必要があります。ソリューションはまた、数百万人のユーザーに対応できるようスケールできる必要があります。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure Amazon Cognito user pools for user authentication. Enable the risk-based adaptive authentication feature with multifactor authentication (MFA).",
+        "text_ja": "ユーザー認証用にAmazon Cognitoユーザープールを設定する。多要素認証(MFA)を備えたリスクベースの適応型認証機能を有効にする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure Amazon Cognito identity pools for user authentication. Enable multi-factor authentication (MFA).",
+        "text_ja": "ユーザー認証用にAmazon Cognito IDプールを設定する。多要素認証(MFA)を有効にする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure AWS Identity and Access Management (IAM) users for user authentication. Attach an IAM policy that allows the AllowManageOwnUserMFA action.",
+        "text_ja": "ユーザー認証用にAWS Identity and Access Management(IAM)ユーザーを設定する。AllowManageOwnUserMFAアクションを許可するIAMポリシーをアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure AWS IAM Identity Center (AWS Single Sign-On) authentication for user authentication. Configure the permission sets to require multi-factor authentication (MFA).",
+        "text_ja": "ユーザー認証用にAWS IAM Identity Center(AWS Single Sign-On)認証を設定する。多要素認証(MFA)を必須とするようパーミッションセットを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 804,
+    "question_en": "A company has an Amazon S3 data lake. The company needs a solution that transforms the data from the data lake and loads the data into a data warehouse every day. The data warehouse must have massively parallel processing (MPP) capabilities. Data analysts then need to create and train machine learning (ML) models by using SQL commands on the data. The solution must use serverless AWS services wherever possible. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、Amazon S3データレイクを持っています。企業は、データレイクからデータを変換し、毎日データウェアハウスにロードするソリューションを必要としています。データウェアハウスは、大規模並列処理(MPP)機能を持つ必要があります。その後、データアナリストはSQLコマンドを使用してデータに対して機械学習(ML)モデルを作成・トレーニングする必要があります。ソリューションは、可能な限りサーバーレスのAWSサービスを使用する必要があります。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Run a daily Amazon EMR job to transform the data and load the data into Amazon Redshift. Use Amazon Redshift ML to create and train the ML models.",
+        "text_ja": "毎日のAmazon EMRジョブを実行してデータを変換し、Amazon Redshiftにロードする。Amazon Redshift MLを使用してMLモデルを作成・トレーニングする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Run a daily Amazon EMR job to transform the data and load the data into Amazon Aurora Serverless. Use Amazon Aurora ML to create and train the ML models.",
+        "text_ja": "毎日のAmazon EMRジョブを実行してデータを変換し、Amazon Aurora Serverlessにロードする。Amazon Aurora MLを使用してMLモデルを作成・トレーニングする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Run a daily AWS Glue job to transform the data and load the data into Amazon Redshift Serverless. Use Amazon Redshift ML to create and train the ML models.",
+        "text_ja": "毎日のAWS Glueジョブを実行してデータを変換し、Amazon Redshift Serverlessにロードする。Amazon Redshift MLを使用してMLモデルを作成・トレーニングする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Run a daily AWS Glue job to transform the data and load the data into Amazon Athena tables. Use Amazon Athena ML to create and train the ML models.",
+        "text_ja": "毎日のAWS Glueジョブを実行してデータを変換し、Amazon Athenaテーブルにロードする。Amazon Athena MLを使用してMLモデルを作成・トレーニングする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 805,
+    "question_en": "A company runs containers in a Kubernetes environment in the company's local data center. The company wants to use Amazon Elastic Kubernetes Service (Amazon EKS) and other AWS managed services. Data must remain locally in the company's data center and cannot be stored in any remote site or cloud to maintain compliance. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、企業のローカルデータセンター内のKubernetes環境でコンテナを実行しています。企業は、Amazon Elastic Kubernetes Service(Amazon EKS)と他のAWSマネージドサービスを使用したいと考えています。コンプライアンスを維持するため、データは企業のデータセンター内にローカルに留まる必要があり、いかなるリモートサイトやクラウドにも保存できません。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy AWS Local Zones in the company's data center.",
+        "text_ja": "企業のデータセンターにAWS Local Zonesをデプロイする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use an AWS Snowmobile in the company's data center.",
+        "text_ja": "企業のデータセンターでAWS Snowmobileを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Install an AWS Outposts rack in the company's data center.",
+        "text_ja": "企業のデータセンターにAWS Outpostsラックをインストールする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Install an AWS Snowball Edge Storage Optimized node in the data center.",
+        "text_ja": "データセンターにAWS Snowball Edge Storage Optimizedノードをインストールする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 806,
+    "question_en": "A social media company has workloads that collect and process data. The workloads store the data in on-premises NFS storage. The data store cannot scale fast enough to meet the company’s expanding business needs. The company wants to migrate the current data store to AWS. Which solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "あるソーシャルメディア企業が、データを収集・処理するワークロードを持っています。これらのワークロードは、データをオンプレミスのNFSストレージに保存します。データストアは、企業の拡大するビジネスニーズを満たすのに十分な速さでスケーリングできません。企業は、現在のデータストアをAWSに移行したいと考えています。これらの要件を最もコスト効率よく満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Set up an AWS Storage Gateway Volume Gateway. Use an Amazon S3 Lifecycle policy to transition the data to the appropriate storage class.",
+        "text_ja": "AWS Storage Gateway Volume Gatewayを設定する。データを適切なストレージクラスに移行するためにAmazon S3ライフサイクルポリシーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Set up an AWS Storage Gateway Amazon S3 File Gateway. Use an Amazon S3 Lifecycle policy to transition the data to the appropriate storage class.",
+        "text_ja": "AWS Storage Gateway Amazon S3 File Gatewayを設定する。データを適切なストレージクラスに移行するためにAmazon S3ライフサイクルポリシーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use the Amazon Elastic File System (Amazon EFS) Standard-Infrequent Access (Standard-IA) storage class. Activate the infrequent access lifecycle policy.",
+        "text_ja": "Amazon Elastic File System(Amazon EFS)Standard-Infrequent Access(Standard-IA)ストレージクラスを使用する。低頻度アクセスのライフサイクルポリシーを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use the Amazon Elastic File System (Amazon EFS) One Zone-Infrequent Access (One Zone-IA) storage class. Activate the infrequent access lifecycle policy.",
+        "text_ja": "Amazon Elastic File System(Amazon EFS)One Zone-Infrequent Access(One Zone-IA)ストレージクラスを使用する。低頻度アクセスのライフサイクルポリシーを有効にする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 807,
+    "question_en": "A company uses high concurrency AWS Lambda functions to process a constantly increasing number of messages in a message queue during marketing events. The Lambda functions use CPU intensive code to process the messages. The company wants to reduce the compute costs and to maintain service latency for its customers. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、マーケティングイベント中にメッセージキュー内で常に増加するメッセージ数を処理するために、高い同時実行数のAWS Lambda関数を使用しています。Lambda関数は、CPUを大量に使用するコードでメッセージを処理します。企業は、コンピューティングコストを削減しつつ、顧客に対するサービスのレイテンシを維持したいと考えています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure reserved concurrency for the Lambda functions. Decrease the memory allocated to the Lambda functions.",
+        "text_ja": "Lambda関数にリザーブド同時実行数を設定する。Lambda関数に割り当てられたメモリを減らす。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure reserved concurrency for the Lambda functions. Increase the memory according to AWS Compute Optimizer recommendations.",
+        "text_ja": "Lambda関数にリザーブド同時実行数を設定する。AWS Compute Optimizerの推奨に従ってメモリを増やす。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure provisioned concurrency for the Lambda functions. Decrease the memory allocated to the Lambda functions.",
+        "text_ja": "Lambda関数にプロビジョンド同時実行数を設定する。Lambda関数に割り当てられたメモリを減らす。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure provisioned concurrency for the Lambda functions. Increase the memory according to AWS Compute Optimizer recommendations.",
+        "text_ja": "Lambda関数にプロビジョンド同時実行数を設定する。AWS Compute Optimizerの推奨に従ってメモリを増やす。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 808,
+    "question_en": "A company runs its workloads on Amazon Elastic Container Service (Amazon ECS). The container images that the ECS task definition uses need to be scanned for Common Vulnerabilities and Exposures (CVEs). New container images that are created also need to be scanned. Which solution will meet these requirements with the FEWEST changes to the workloads?",
+    "question_ja": "ある企業が、Amazon Elastic Container Service(Amazon ECS)上でワークロードを実行しています。ECSタスク定義が使用するコンテナイメージは、既知の脆弱性と露出(CVE)についてスキャンされる必要があります。新しく作成されるコンテナイメージもスキャンされる必要があります。ワークロードへの変更が最も少ない方法でこれらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon Elastic Container Registry (Amazon ECR) as a private image repository to store the container images. Specify scan on push filters for the ECR basic scan.",
+        "text_ja": "Amazon Elastic Container Registry(Amazon ECR)をプライベートイメージリポジトリとして使用してコンテナイメージを保存する。ECR基本スキャン用にプッシュ時スキャンフィルターを指定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Store the container images in an Amazon S3 bucket. Use Amazon Macie to scan the images. Use an S3 Event Notification to initiate a Macie scan for every event with an s3:ObjectCreated:Put event type.",
+        "text_ja": "コンテナイメージをAmazon S3バケットに保存する。Amazon Macieを使用してイメージをスキャンする。s3:ObjectCreated:Putイベントタイプを持つすべてのイベントに対してMacieスキャンを開始するようS3イベント通知を使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy the workloads to Amazon Elastic Kubernetes Service (Amazon EKS). Use Amazon Elastic Container Registry (Amazon ECR) as a private image repository. Specify scan on push filters for the ECR enhanced scan.",
+        "text_ja": "ワークロードをAmazon Elastic Kubernetes Service(Amazon EKS)にデプロイする。Amazon Elastic Container Registry(Amazon ECR)をプライベートイメージリポジトリとして使用する。ECR拡張スキャン用にプッシュ時スキャンフィルターを指定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Store the container images in an Amazon S3 bucket that has versioning enabled. Configure an S3 Event Notification for s3:ObjectCreated:* events to invoke an AWS Lambda function. Configure the Lambda function to initiate an Amazon Inspector scan.",
+        "text_ja": "バージョニングが有効なAmazon S3バケットにコンテナイメージを保存する。AWS Lambda関数を呼び出すためにs3:ObjectCreated:*イベント用のS3イベント通知を設定する。Amazon Inspectorスキャンを開始するようLambda関数を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 809,
+    "question_en": "A company uses an AWS Batch job to run its end-of-day sales process. The company needs a serverless solution that will invoke a third-party reporting application when the AWS Batch job is successful. The reporting application has an HTTP API interface that uses username and password authentication. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、日次の売上処理にAWS Batchジョブを使用しています。企業は、AWS Batchジョブが成功したときにサードパーティのレポートアプリケーションを呼び出すサーバーレスソリューションを必要としています。このレポートアプリケーションは、ユーザー名とパスワード認証を使用するHTTP APIインターフェースを持っています。これらの要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure an Amazon EventBridge rule to match incoming AWS Batch job SUCCEEDED events. Configure the third-party API as an EventBridge API destination with a username and password. Set the API destination as the EventBridge rule target.",
+        "text_ja": "受信するAWS BatchジョブのSUCCEEDEDイベントに一致するAmazon EventBridgeルールを設定する。サードパーティAPIを、ユーザー名とパスワードを持つEventBridge APIデスティネーションとして設定する。そのAPIデスティネーションをEventBridgeルールのターゲットとして設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure Amazon EventBridge Scheduler to match incoming AWS Batch job SUCCEEDED events. Configure an AWS Lambda function to invoke the third-party API by using a username and password. Set the Lambda function as the EventBridge rule target.",
+        "text_ja": "受信するAWS BatchジョブのSUCCEEDEDイベントに一致するAmazon EventBridge Schedulerを設定する。ユーザー名とパスワードを使用してサードパーティAPIを呼び出すAWS Lambda関数を設定する。そのLambda関数をEventBridgeルールのターゲットとして設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure an AWS Batch job to publish job SUCCEEDED events to an Amazon API Gateway REST API. Configure an HTTP proxy integration on the API Gateway REST API to invoke the third-party API by using a username and password.",
+        "text_ja": "AWS BatchジョブがジョブSUCCEEDEDイベントをAmazon API Gateway REST APIに発行するよう設定する。ユーザー名とパスワードを使用してサードパーティAPIを呼び出すために、API Gateway REST APIにHTTPプロキシ統合を設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure an AWS Batch job to publish job SUCCEEDED events to an Amazon API Gateway REST API. Configure a proxy integration on the API Gateway REST API to an AWS Lambda function. Configure the Lambda function to invoke the third-party API by using a username and password.",
+        "text_ja": "AWS BatchジョブがジョブSUCCEEDEDイベントをAmazon API Gateway REST APIに発行するよう設定する。API Gateway REST APIにAWS Lambda関数へのプロキシ統合を設定する。ユーザー名とパスワードを使用してサードパーティAPIを呼び出すようLambda関数を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 810,
+    "question_en": "A company collects and processes data from a vendor. The vendor stores its data in an Amazon RDS for MySQL database in the vendor's own AWS account. The company’s VPC does not have an internet gateway, an AWS Direct Connect connection, or an AWS Site-to-Site VPN connection. The company needs to access the data that is in the vendor database. Which solution will meet this requirement?",
+    "question_ja": "ある企業が、あるベンダーからデータを収集・処理しています。このベンダーは、そのベンダー自身のAWSアカウント内のAmazon RDS for MySQLデータベースにデータを保存しています。企業のVPCには、インターネットゲートウェイ、AWS Direct Connect接続、AWS Site-to-Site VPN接続のいずれもありません。企業は、ベンダーのデータベース内にあるデータにアクセスする必要があります。この要件を満たすソリューションはどれですか?",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Instruct the vendor to sign up for the AWS Hosted Connection Direct Connect Program. Use VPC peering to connect the company's VPC and the vendor's VPC.",
+        "text_ja": "ベンダーにAWS Hosted Connection Direct Connectプログラムへの登録を指示する。企業のVPCとベンダーのVPCを接続するためにVPCピアリングを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure a client VPN connection between the company's VPC and the vendor's VPC. Use VPC peering to connect the company's VPC and the vendor's VPC.",
+        "text_ja": "企業のVPCとベンダーのVPCの間にクライアントVPN接続を設定する。企業のVPCとベンダーのVPCを接続するためにVPCピアリングを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Instruct the vendor to create a Network Load Balancer (NLB). Place the NLB in front of the Amazon RDS for MySQL database. Use AWS PrivateLink to integrate the company's VPC and the vendor's VPC.",
+        "text_ja": "ベンダーにNetwork Load Balancer(NLB)の作成を指示する。Amazon RDS for MySQLデータベースの前段にNLBを配置する。企業のVPCとベンダーのVPCを統合するためにAWS PrivateLinkを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Transit Gateway to integrate the company's VPC and the vendor's VPC. Use VPC peering to connect the company’s VPC and the vendor's VPC.",
+        "text_ja": "企業のVPCとベンダーのVPCを統合するためにAWS Transit Gatewayを使用する。企業のVPCとベンダーのVPCを接続するためにVPCピアリングを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  }
+]

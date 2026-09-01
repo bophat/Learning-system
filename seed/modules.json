@@ -1,48 +1,2648 @@
 [
   {
+    "id": "ielts",
+    "short_name": "IELTS",
+    "short_label": "Academic & General",
+    "full_name": "International English Language Testing System (IELTS)",
+    "tagline": "4 Kỹ năng: Listening (40' · 40 câu), Reading (60' · 40 câu), Writing (60' · 2 bài), Speaking (11–14').",
+    "description": "Hệ thống kiểm tra tiếng Anh quốc tế uy tín hàng đầu thế giới do Cambridge Assessment English, IDP và British Council đồng sáng lập. Kiểm tra toàn diện 4 kỹ năng Nghe, Đọc, Viết, Nói trên thang điểm Band 0 đến 9.0.",
+    "icon_name": "globe",
+    "provider": "Cambridge · IDP · British Council",
+    "level": "Band 6.0 – 9.0",
+    "exam_minutes": 174,
+    "pass_note": "Mục tiêu chuẩn Band ≥ 6.5 / 9.0 (Overal 4 kỹ năng)",
+    "pass_pct": 72,
+    "accent_hue": 215,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "161 bộ đề thi IELTS: Cambridge IELTS C10–C21 và Actual Tests.",
+      "Listening: 40 phút, 4 Sections có audio MP3 trực tiếp và transcript.",
+      "Reading: 60 phút, 3 Passages học thuật dài 800–1200 từ/bài.",
+      "Writing: 60 phút (Task 1 mô tả biểu đồ 150 từ, Task 2 nghị luận 250 từ).",
+      "Speaking: 11–14 phút phỏng vấn trực tiếp 3 phần."
+    ],
+    "facts": [
+      {
+        "label": "Phần Listening",
+        "value": "40 câu (40 phút · 4 Sections có Audio)"
+      },
+      {
+        "label": "Phần Reading",
+        "value": "40 câu (60 phút · 3 Passages học thuật)"
+      },
+      {
+        "label": "Phần Writing",
+        "value": "2 bài (60 phút · Task 1 150 từ + Task 2 250 từ)"
+      },
+      {
+        "label": "Phần Speaking",
+        "value": "11 – 14 phút (Phỏng vấn trực tiếp 3 Parts)"
+      },
+      {
+        "label": "Thang điểm chuẩn",
+        "value": "Band 0.0 – 9.0 (làm tròn 0.5)"
+      },
+      {
+        "label": "Tổng thời gian",
+        "value": "~174 phút (~2 giờ 54 phút)"
+      },
+      {
+        "label": "Bộ đề nguồn",
+        "value": "Cambridge IELTS C10–C21 & Actual Tests"
+      }
+    ],
+    "levels": [
+      {
+        "id": "listening",
+        "label": "Listening (40 câu · 40')",
+        "examMinutes": 40,
+        "passNote": "Band 6.5+ (27/40 câu)",
+        "passPct": 68,
+        "sortOrder": 1
+      },
+      {
+        "id": "reading",
+        "label": "Reading (40 câu · 60')",
+        "examMinutes": 60,
+        "passNote": "Band 6.5+ (27/40 câu)",
+        "passPct": 68,
+        "sortOrder": 2
+      },
+      {
+        "id": "writing",
+        "label": "Writing (2 Tasks · 60')",
+        "examMinutes": 60,
+        "passNote": "Task 1 (150 từ) & Task 2 (250 từ)",
+        "passPct": 70,
+        "sortOrder": 3
+      },
+      {
+        "id": "speaking",
+        "label": "Speaking (3 Parts · 14')",
+        "examMinutes": 14,
+        "passNote": "Part 1, Part 2, Part 3",
+        "passPct": 70,
+        "sortOrder": 4
+      }
+    ],
+    "stages": [
+      {
+        "id": "ielts-ielts-cambridge-21-test-4",
+        "name": "IELTS Cambridge 21 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-21-test-3",
+        "name": "IELTS Cambridge 21 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-21-test-2",
+        "name": "IELTS Cambridge 21 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-21-test-1",
+        "name": "IELTS Cambridge 21 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-21-test-2",
+        "name": "IELTS Cambridge 21 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-21-test-1",
+        "name": "IELTS Cambridge 21 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-20-test-4",
+        "name": "IELTS Cambridge 20 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-20-test-3",
+        "name": "IELTS Cambridge 20 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-20-test-2",
+        "name": "IELTS Cambridge 20 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-20-test-1",
+        "name": "IELTS Cambridge 20 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-thi-practice-ielts-cambridge-20-test-2",
+        "name": "IELTS Đề thi Practice IELTS Cambridge 20 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-19-test-4",
+        "name": "IELTS Cambridge 19 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-19-test-3",
+        "name": "IELTS Cambridge 19 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-19-test-2",
+        "name": "IELTS Cambridge 19 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-19-test-4",
+        "name": "IELTS Test for IELTS Cambridge 19 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-19-test-3",
+        "name": "IELTS Test for IELTS Cambridge 19 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-19-test-2",
+        "name": "IELTS Test for IELTS Cambridge 19 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-19-test-1",
+        "name": "IELTS Test for IELTS Cambridge 19 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-19-test-1",
+        "name": "IELTS Cambridge 19 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-19-test-1",
+        "name": "IELTS Cambridge 19 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-18-test-4",
+        "name": "IELTS Test for IELTS Cambridge 18 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-18-test-3",
+        "name": "IELTS Test for IELTS Cambridge 18 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-18-test-2",
+        "name": "IELTS Test for IELTS Cambridge 18 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-18-test-1",
+        "name": "IELTS Test for IELTS Cambridge 18 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-18-test-4",
+        "name": "IELTS Cambridge 18 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-18-test-3",
+        "name": "IELTS Cambridge 18 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-18-test-2",
+        "name": "IELTS Cambridge 18 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-18-test-1",
+        "name": "IELTS Cambridge 18 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-17-test-4",
+        "name": "IELTS Test for IELTS Cambridge 17 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-17-test-3",
+        "name": "IELTS Test for IELTS Cambridge 17 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-17-test-2",
+        "name": "IELTS Test for IELTS Cambridge 17 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-17-test-1",
+        "name": "IELTS Test for IELTS Cambridge 17 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-17-test-4",
+        "name": "IELTS Cambridge 17 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-17-test-3",
+        "name": "IELTS Cambridge 17 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-17-test-2",
+        "name": "IELTS Cambridge 17 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-17-test-1",
+        "name": "IELTS Cambridge 17 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-16-test-4",
+        "name": "IELTS Test for IELTS Cambridge 16 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-16-test-3",
+        "name": "IELTS Test for IELTS Cambridge 16 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-16-test-2",
+        "name": "IELTS Test for IELTS Cambridge 16 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-16-test-1",
+        "name": "IELTS Test for IELTS Cambridge 16 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-16-test-4",
+        "name": "IELTS Cambridge 16 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-16-test-3",
+        "name": "IELTS Cambridge 16 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-16-test-2",
+        "name": "IELTS Cambridge 16 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-16-test-1",
+        "name": "IELTS Cambridge 16 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-15-test-4",
+        "name": "IELTS Test for IELTS Cambridge 15 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-15-test-3",
+        "name": "IELTS Test for IELTS Cambridge 15 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-15-test-2",
+        "name": "IELTS Test for IELTS Cambridge 15 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-15-test-1",
+        "name": "IELTS Test for IELTS Cambridge 15 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-15-test-4",
+        "name": "IELTS Cambridge 15 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-15-test-3",
+        "name": "IELTS Cambridge 15 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-15-test-2",
+        "name": "IELTS Cambridge 15 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-15-test-1",
+        "name": "IELTS Cambridge 15 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-cambridge-15-test-4",
+        "name": "IELTS Cambridge 15 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-15-test-3",
+        "name": "IELTS Cambridge 15 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-15-test-2",
+        "name": "IELTS Cambridge 15 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-cambridge-15-test-1",
+        "name": "IELTS Cambridge 15 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-14-test-4",
+        "name": "IELTS Test for IELTS Cambridge 14 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-14-test-3",
+        "name": "IELTS Test for IELTS Cambridge 14 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-14-test-2",
+        "name": "IELTS Test for IELTS Cambridge 14 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-14-test-1",
+        "name": "IELTS Test for IELTS Cambridge 14 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-14-test-4",
+        "name": "IELTS Cambridge 14 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-14-test-3",
+        "name": "IELTS Cambridge 14 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-14-test-2",
+        "name": "IELTS Cambridge 14 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-14-test-1",
+        "name": "IELTS Cambridge 14 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-13-test-4",
+        "name": "IELTS Test for IELTS Cambridge 13 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-13-test-3",
+        "name": "IELTS Test for IELTS Cambridge 13 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-13-test-1",
+        "name": "IELTS Test for IELTS Cambridge 13 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-13-test-4",
+        "name": "IELTS Cambridge 13 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-13-test-3",
+        "name": "IELTS Cambridge 13 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-13-test-2",
+        "name": "IELTS Cambridge 13 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-13-test-1",
+        "name": "IELTS Cambridge 13 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-12-test-4",
+        "name": "IELTS Test for IELTS Cambridge 12 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-12-test-3",
+        "name": "IELTS Test for IELTS Cambridge 12 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-12-test-2",
+        "name": "IELTS Test for IELTS Cambridge 12 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-12-test-1",
+        "name": "IELTS Test for IELTS Cambridge 12 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-12-test-4",
+        "name": "IELTS Cambridge 12 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-12-test-3",
+        "name": "IELTS Cambridge 12 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-12-test-2",
+        "name": "IELTS Cambridge 12 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-12-test-1",
+        "name": "IELTS Cambridge 12 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-11-test-4",
+        "name": "IELTS Test for IELTS Cambridge 11 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-11-test-3",
+        "name": "IELTS Test for IELTS Cambridge 11 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-11-test-2",
+        "name": "IELTS Test for IELTS Cambridge 11 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-11-test-1",
+        "name": "IELTS Test for IELTS Cambridge 11 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-11-test-4",
+        "name": "IELTS Cambridge 11 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-11-test-3",
+        "name": "IELTS Cambridge 11 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-11-test-2",
+        "name": "IELTS Cambridge 11 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-11-test-1",
+        "name": "IELTS Cambridge 11 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-10-test-4",
+        "name": "IELTS Test for IELTS Cambridge 10 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-10-test-3",
+        "name": "IELTS Test for IELTS Cambridge 10 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-10-test-2",
+        "name": "IELTS Test for IELTS Cambridge 10 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-test-for-ielts-cambridge-10-test-1",
+        "name": "IELTS Test for IELTS Cambridge 10 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-cambridge-10-test-4",
+        "name": "IELTS Cambridge 10 Test 4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-10-test-3",
+        "name": "IELTS Cambridge 10 Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-10-test-2",
+        "name": "IELTS Cambridge 10 Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-cambridge-10-test-1",
+        "name": "IELTS Cambridge 10 Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 39,
+        "readingPassages": 3,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts",
+        "name": "IELTS",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-actual-test",
+        "name": "IELTS Actual Test",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 79,
+        "readingPassages": 3,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-",
+        "name": "IELTS Đề",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-th-t-actual-test-4",
+        "name": "IELTS đề thật Actual Test  4",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-th-t-actual-test-1",
+        "name": "IELTS đề thật Actual Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-thi-actual-test-2",
+        "name": "IELTS Đề thi Actual Test 2",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-thi-actual-test-3",
+        "name": "IELTS Đề thi Actual Test 3",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-mock-test",
+        "name": "IELTS Mock Test",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 40,
+        "readingPassages": 0,
+        "listeningParts": 4
+      },
+      {
+        "id": "ielts-ielts-mock-test-01",
+        "name": "IELTS Mock Test 01",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-mock-test-04",
+        "name": "IELTS Mock Test 04",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-mock-test-05",
+        "name": "IELTS Mock Test 05",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-ielts-mock-test-07",
+        "name": "IELTS Mock Test 07",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      },
+      {
+        "id": "ielts-speaking-test-1",
+        "name": "IELTS Speaking Test 1",
+        "durationMinutes": 100,
+        "kind": "mc-test",
+        "questionCount": 0,
+        "readingPassages": 0,
+        "listeningParts": 0
+      }
+    ],
+    "sort_order": 2
+  },
+  {
+    "id": "jlpt",
+    "short_name": "JLPT",
+    "short_label": "N1 → N5",
+    "full_name": "Japanese-Language Proficiency Test (Năng lực Nhật ngữ)",
+    "tagline": "6,692 câu hỏi từ 75 đề thi thật đầy đủ 5 cấp độ từ N5 đến N1 kèm đáp án và giải thích tiếng Việt.",
+    "description": "Kỳ thi năng lực tiếng Nhật quốc tế với 5 cấp độ từ N5 (sơ cấp) đến N1 (cao cấp). Chọn cấp độ để vào ngân hàng đề thi chính thức, luyện tập từng phần và thi thử tính giờ.",
+    "icon_name": "language",
+    "provider": "Japan Foundation · JEES",
+    "level": "N5 · N4 · N3 · N2 · N1",
+    "exam_minutes": 170,
+    "pass_note": "Tổng điểm + ngưỡng từng phần",
+    "pass_pct": 50,
+    "accent_hue": 348,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Ngân hàng 6,692 câu hỏi thật qua các kỳ thi từ 2014 đến 2024.",
+      "Chia rõ ràng 5 cấp độ N1, N2, N3, N4, N5.",
+      "Đầy đủ bài đọc, lời thoại, file âm thanh nghe hiểu và giải thích tiếng Việt."
+    ],
+    "facts": [
+      {
+        "label": "Cấp độ hỗ trợ",
+        "value": "N1, N2, N3, N4, N5"
+      },
+      {
+        "label": "Tổng số đề thi",
+        "value": "75 đề thi thật"
+      },
+      {
+        "label": "Tổng số câu hỏi",
+        "value": "6,692 câu"
+      },
+      {
+        "label": "Các phần thi",
+        "value": "Từ vựng, Ngữ pháp, Đọc hiểu, Nghe hiểu"
+      },
+      {
+        "label": "Điểm đậu",
+        "value": "Tổng điểm ≥ ngưỡng + từng phần ≥ 19/60"
+      }
+    ],
+    "stages": [
+      {
+        "id": "2024-07",
+        "name": "Đề thi 07/2024",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 96
+      },
+      {
+        "id": "2023-12",
+        "name": "Đề thi 12/2023",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 96
+      },
+      {
+        "id": "2023-07",
+        "name": "Đề thi 07/2023",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 96
+      },
+      {
+        "id": "2022-12",
+        "name": "Đề thi 12/2022",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 97
+      },
+      {
+        "id": "2022-07",
+        "name": "Đề thi 07/2022",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 103
+      },
+      {
+        "id": "2021-12",
+        "name": "Đề thi 12/2021",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 104
+      },
+      {
+        "id": "2021-07",
+        "name": "Đề thi 07/2021",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 94
+      },
+      {
+        "id": "2020-12",
+        "name": "Đề thi 12/2020",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 68
+      },
+      {
+        "id": "2019-12",
+        "name": "Đề thi 12/2019",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 104
+      },
+      {
+        "id": "2019-07",
+        "name": "Đề thi 07/2019",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 104
+      },
+      {
+        "id": "2018-12",
+        "name": "Đề thi 12/2018",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 105
+      },
+      {
+        "id": "2018-07",
+        "name": "Đề thi 07/2018",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 105
+      },
+      {
+        "id": "2017-12",
+        "name": "Đề thi 12/2017",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 105
+      },
+      {
+        "id": "2017-07",
+        "name": "Đề thi 07/2017",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 105
+      },
+      {
+        "id": "2016-12",
+        "name": "Đề thi 12/2016",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2016-07",
+        "name": "Đề thi 07/2016",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 106
+      },
+      {
+        "id": "2015-12",
+        "name": "Đề thi 12/2015",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2015-07",
+        "name": "Đề thi 07/2015",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2014-12",
+        "name": "Đề thi 12/2014",
+        "durationMinutes": 165,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2024-07",
+        "name": "Đề thi 07/2024",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2023-12",
+        "name": "Đề thi 12/2023",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2023-07",
+        "name": "Đề thi 07/2023",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2022-12",
+        "name": "Đề thi 12/2022",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2022-07",
+        "name": "Đề thi 07/2022",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2021-12",
+        "name": "Đề thi 12/2021",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2021-07",
+        "name": "Đề thi 07/2021",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2020-12",
+        "name": "Đề thi 12/2020",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2019-12",
+        "name": "Đề thi 12/2019",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2019-07",
+        "name": "Đề thi 07/2019",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 103
+      },
+      {
+        "id": "2018-12",
+        "name": "Đề thi 12/2018",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 103
+      },
+      {
+        "id": "2018-07",
+        "name": "Đề thi 07/2018",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2017-12",
+        "name": "Đề thi 12/2017",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2017-07",
+        "name": "Đề thi 07/2017",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2016-12",
+        "name": "Đề thi 12/2016",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2016-07",
+        "name": "Đề thi 07/2016",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2015-12",
+        "name": "Đề thi 12/2015",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2015-07",
+        "name": "Đề thi 07/2015",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2014-12",
+        "name": "Đề thi 12/2014",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2014-07",
+        "name": "Đề thi 07/2014",
+        "durationMinutes": 155,
+        "kind": "mc-test",
+        "questionCount": 107
+      },
+      {
+        "id": "2024-07",
+        "name": "Đề thi 07/2024",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2023-12",
+        "name": "Đề thi 12/2023",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2023-07",
+        "name": "Đề thi 07/2023",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2022-12",
+        "name": "Đề thi 12/2022",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2022-07",
+        "name": "Đề thi 07/2022",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 100
+      },
+      {
+        "id": "2021-12",
+        "name": "Đề thi 12/2021",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2021-07",
+        "name": "Đề thi 07/2021",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2020-12",
+        "name": "Đề thi 12/2020",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 101
+      },
+      {
+        "id": "2019-12",
+        "name": "Đề thi 12/2019",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2019-07",
+        "name": "Đề thi 07/2019",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2018-12",
+        "name": "Đề thi 12/2018",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2018-07",
+        "name": "Đề thi 07/2018",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2017-12",
+        "name": "Đề thi 12/2017",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2017-07",
+        "name": "Đề thi 07/2017",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2016-12",
+        "name": "Đề thi 12/2016",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2016-07",
+        "name": "Đề thi 07/2016",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2015-12",
+        "name": "Đề thi 12/2015",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 102
+      },
+      {
+        "id": "2015-07",
+        "name": "Đề thi 07/2015",
+        "durationMinutes": 140,
+        "kind": "mc-test",
+        "questionCount": 74
+      },
+      {
+        "id": "de-7",
+        "name": "Đề số 7",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 70
+      },
+      {
+        "id": "de-6",
+        "name": "Đề số 6",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 70
+      },
+      {
+        "id": "de-5",
+        "name": "Đề số 5",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 70
+      },
+      {
+        "id": "de-4",
+        "name": "Đề số 4",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 70
+      },
+      {
+        "id": "de-3",
+        "name": "Đề số 3",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 69
+      },
+      {
+        "id": "de-2",
+        "name": "Đề số 2",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 60
+      },
+      {
+        "id": "de-1",
+        "name": "Đề số 1",
+        "durationMinutes": 125,
+        "kind": "mc-test",
+        "questionCount": 68
+      },
+      {
+        "id": "on-tap-11",
+        "name": "Đề ôn tập 11",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 43
+      },
+      {
+        "id": "on-tap-10",
+        "name": "Đề ôn tập 10",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 44
+      },
+      {
+        "id": "on-tap-9",
+        "name": "Đề ôn tập 9",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 32
+      },
+      {
+        "id": "on-tap-8",
+        "name": "Đề ôn tập 8",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 35
+      },
+      {
+        "id": "on-tap-7",
+        "name": "Đề ôn tập 7",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 30
+      },
+      {
+        "id": "on-tap-6",
+        "name": "Đề ôn tập 6",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 30
+      },
+      {
+        "id": "on-tap-5",
+        "name": "Đề ôn tập 5",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 31
+      },
+      {
+        "id": "on-tap-4",
+        "name": "Đề ôn tập 4",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 75
+      },
+      {
+        "id": "on-tap-3",
+        "name": "Đề ôn tập 3",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 32
+      },
+      {
+        "id": "on-tap-2",
+        "name": "Đề ôn tập 2",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 32
+      },
+      {
+        "id": "on-tap-1",
+        "name": "Đề ôn tập 1",
+        "durationMinutes": 105,
+        "kind": "mc-test",
+        "questionCount": 35
+      }
+    ],
+    "levels": [
+      {
+        "id": "n1",
+        "label": "N1",
+        "sortOrder": 1,
+        "examMinutes": 165,
+        "passNote": "Tổng ≥ 100/180 · mỗi phần ≥ 19/60",
+        "passPct": 56,
+        "questionCount": 1916,
+        "stages": [
+          {
+            "id": "2024-07",
+            "name": "Đề thi 07/2024",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 96
+          },
+          {
+            "id": "2023-12",
+            "name": "Đề thi 12/2023",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 96
+          },
+          {
+            "id": "2023-07",
+            "name": "Đề thi 07/2023",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 96
+          },
+          {
+            "id": "2022-12",
+            "name": "Đề thi 12/2022",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 97
+          },
+          {
+            "id": "2022-07",
+            "name": "Đề thi 07/2022",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 103
+          },
+          {
+            "id": "2021-12",
+            "name": "Đề thi 12/2021",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 104
+          },
+          {
+            "id": "2021-07",
+            "name": "Đề thi 07/2021",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 94
+          },
+          {
+            "id": "2020-12",
+            "name": "Đề thi 12/2020",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 68
+          },
+          {
+            "id": "2019-12",
+            "name": "Đề thi 12/2019",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 104
+          },
+          {
+            "id": "2019-07",
+            "name": "Đề thi 07/2019",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 104
+          },
+          {
+            "id": "2018-12",
+            "name": "Đề thi 12/2018",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 105
+          },
+          {
+            "id": "2018-07",
+            "name": "Đề thi 07/2018",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 105
+          },
+          {
+            "id": "2017-12",
+            "name": "Đề thi 12/2017",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 105
+          },
+          {
+            "id": "2017-07",
+            "name": "Đề thi 07/2017",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 105
+          },
+          {
+            "id": "2016-12",
+            "name": "Đề thi 12/2016",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2016-07",
+            "name": "Đề thi 07/2016",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 106
+          },
+          {
+            "id": "2015-12",
+            "name": "Đề thi 12/2015",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2015-07",
+            "name": "Đề thi 07/2015",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2014-12",
+            "name": "Đề thi 12/2014",
+            "durationMinutes": 165,
+            "kind": "mc-test",
+            "questionCount": 107
+          }
+        ]
+      },
+      {
+        "id": "n2",
+        "label": "N2",
+        "sortOrder": 2,
+        "examMinutes": 155,
+        "passNote": "Tổng ≥ 90/180 · mỗi phần ≥ 19/60",
+        "passPct": 50,
+        "questionCount": 2081,
+        "stages": [
+          {
+            "id": "2024-07",
+            "name": "Đề thi 07/2024",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2023-12",
+            "name": "Đề thi 12/2023",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2023-07",
+            "name": "Đề thi 07/2023",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2022-12",
+            "name": "Đề thi 12/2022",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2022-07",
+            "name": "Đề thi 07/2022",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2021-12",
+            "name": "Đề thi 12/2021",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2021-07",
+            "name": "Đề thi 07/2021",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2020-12",
+            "name": "Đề thi 12/2020",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2019-12",
+            "name": "Đề thi 12/2019",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2019-07",
+            "name": "Đề thi 07/2019",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 103
+          },
+          {
+            "id": "2018-12",
+            "name": "Đề thi 12/2018",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 103
+          },
+          {
+            "id": "2018-07",
+            "name": "Đề thi 07/2018",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2017-12",
+            "name": "Đề thi 12/2017",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2017-07",
+            "name": "Đề thi 07/2017",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2016-12",
+            "name": "Đề thi 12/2016",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2016-07",
+            "name": "Đề thi 07/2016",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2015-12",
+            "name": "Đề thi 12/2015",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2015-07",
+            "name": "Đề thi 07/2015",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2014-12",
+            "name": "Đề thi 12/2014",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          },
+          {
+            "id": "2014-07",
+            "name": "Đề thi 07/2014",
+            "durationMinutes": 155,
+            "kind": "mc-test",
+            "questionCount": 107
+          }
+        ]
+      },
+      {
+        "id": "n3",
+        "label": "N3",
+        "sortOrder": 3,
+        "examMinutes": 140,
+        "passNote": "Tổng ≥ 95/180 · mỗi phần ≥ 19/60",
+        "passPct": 53,
+        "questionCount": 1799,
+        "stages": [
+          {
+            "id": "2024-07",
+            "name": "Đề thi 07/2024",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2023-12",
+            "name": "Đề thi 12/2023",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2023-07",
+            "name": "Đề thi 07/2023",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2022-12",
+            "name": "Đề thi 12/2022",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2022-07",
+            "name": "Đề thi 07/2022",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 100
+          },
+          {
+            "id": "2021-12",
+            "name": "Đề thi 12/2021",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2021-07",
+            "name": "Đề thi 07/2021",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2020-12",
+            "name": "Đề thi 12/2020",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 101
+          },
+          {
+            "id": "2019-12",
+            "name": "Đề thi 12/2019",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2019-07",
+            "name": "Đề thi 07/2019",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2018-12",
+            "name": "Đề thi 12/2018",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2018-07",
+            "name": "Đề thi 07/2018",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2017-12",
+            "name": "Đề thi 12/2017",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2017-07",
+            "name": "Đề thi 07/2017",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2016-12",
+            "name": "Đề thi 12/2016",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2016-07",
+            "name": "Đề thi 07/2016",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2015-12",
+            "name": "Đề thi 12/2015",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 102
+          },
+          {
+            "id": "2015-07",
+            "name": "Đề thi 07/2015",
+            "durationMinutes": 140,
+            "kind": "mc-test",
+            "questionCount": 74
+          }
+        ]
+      },
+      {
+        "id": "n4",
+        "label": "N4",
+        "sortOrder": 4,
+        "examMinutes": 125,
+        "passNote": "Tổng ≥ 90/180 · mỗi phần ≥ 19/60",
+        "passPct": 50,
+        "questionCount": 477,
+        "stages": [
+          {
+            "id": "de-7",
+            "name": "Đề số 7",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 70
+          },
+          {
+            "id": "de-6",
+            "name": "Đề số 6",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 70
+          },
+          {
+            "id": "de-5",
+            "name": "Đề số 5",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 70
+          },
+          {
+            "id": "de-4",
+            "name": "Đề số 4",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 70
+          },
+          {
+            "id": "de-3",
+            "name": "Đề số 3",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 69
+          },
+          {
+            "id": "de-2",
+            "name": "Đề số 2",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 60
+          },
+          {
+            "id": "de-1",
+            "name": "Đề số 1",
+            "durationMinutes": 125,
+            "kind": "mc-test",
+            "questionCount": 68
+          }
+        ]
+      },
+      {
+        "id": "n5",
+        "label": "N5",
+        "sortOrder": 5,
+        "examMinutes": 105,
+        "passNote": "Tổng ≥ 80/180 · mỗi phần ≥ 19/60",
+        "passPct": 44,
+        "questionCount": 419,
+        "stages": [
+          {
+            "id": "on-tap-11",
+            "name": "Đề ôn tập 11",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 43
+          },
+          {
+            "id": "on-tap-10",
+            "name": "Đề ôn tập 10",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 44
+          },
+          {
+            "id": "on-tap-9",
+            "name": "Đề ôn tập 9",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 32
+          },
+          {
+            "id": "on-tap-8",
+            "name": "Đề ôn tập 8",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 35
+          },
+          {
+            "id": "on-tap-7",
+            "name": "Đề ôn tập 7",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 30
+          },
+          {
+            "id": "on-tap-6",
+            "name": "Đề ôn tập 6",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 30
+          },
+          {
+            "id": "on-tap-5",
+            "name": "Đề ôn tập 5",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 31
+          },
+          {
+            "id": "on-tap-4",
+            "name": "Đề ôn tập 4",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 75
+          },
+          {
+            "id": "on-tap-3",
+            "name": "Đề ôn tập 3",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 32
+          },
+          {
+            "id": "on-tap-2",
+            "name": "Đề ôn tập 2",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 32
+          },
+          {
+            "id": "on-tap-1",
+            "name": "Đề ôn tập 1",
+            "durationMinutes": 105,
+            "kind": "mc-test",
+            "questionCount": 35
+          }
+        ]
+      }
+    ],
+    "sort_order": 2
+  },
+  {
+    "id": "toeic",
+    "short_name": "TOEIC",
+    "short_label": "Listening & Reading",
+    "full_name": "Test of English for International Communication (TOEIC)",
+    "tagline": "Chuẩn ETS: 200 câu / 120 phút (Listening 100 câu · 45' + Reading 100 câu · 75'), thang điểm 10–990.",
+    "description": "Bài thi tiếng Anh giao tiếp quốc tế dành cho người đi làm do Viện Khảo thí Giáo dục Hoa Kỳ (ETS) phát triển. Cấu trúc gồm 200 câu trắc nghiệm (100 câu Nghe Part 1–4 trong 45 phút và 100 câu Đọc Part 5–7 trong 75 phút), thi liên tục trong 2 giờ.",
+    "icon_name": "award",
+    "provider": "ETS · IIG Vietnam",
+    "level": "Target 450 – 990+",
+    "exam_minutes": 120,
+    "pass_note": "Mục tiêu phổ biến ≥ 650 / 990 điểm",
+    "pass_pct": 65,
+    "accent_hue": 175,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "40 bộ đề thi TOEIC chuẩn format ETS mới nhất (Parroto Practice Vol 1, TOEIC 2026).",
+      "Listening (45'): Part 1 (6 câu ảnh), Part 2 (25 câu hỏi đáp), Part 3 (39 câu hội thoại), Part 4 (30 câu độc thoại).",
+      "Reading (75'): Part 5 (30 câu điền từ), Part 6 (16 câu đoạn văn), Part 7 (54 câu đọc hiểu đơn/kép/ba).",
+      "Thang điểm chuẩn 10–990 điểm (Listening 5–495, Reading 5–495), không trừ điểm câu sai."
+    ],
+    "facts": [
+      {
+        "label": "Part 1: Photographs",
+        "value": "6 câu (Xem tranh chọn câu mô tả đúng)"
+      },
+      {
+        "label": "Part 2: Question-Response",
+        "value": "25 câu (3 lựa chọn A-B-C)"
+      },
+      {
+        "label": "Part 3: Conversations",
+        "value": "39 câu (13 đoạn hội thoại × 3 câu)"
+      },
+      {
+        "label": "Part 4: Talks",
+        "value": "30 câu (10 bài độc thoại × 3 câu)"
+      },
+      {
+        "label": "Part 5: Incomplete Sentences",
+        "value": "30 câu (Điền từ/ngữ pháp vào câu)"
+      },
+      {
+        "label": "Part 6: Text Completion",
+        "value": "16 câu (4 đoạn văn × 4 câu)"
+      },
+      {
+        "label": "Part 7: Reading Comprehension",
+        "value": "54 câu (29 câu đơn + 25 câu đoạn kép/ba)"
+      },
+      {
+        "label": "Tổng thời gian & Số câu",
+        "value": "120 phút · 200 câu (không nghỉ giữa giờ)"
+      },
+      {
+        "label": "Thang tính điểm",
+        "value": "10 – 990 điểm (Listening 5–495 · Reading 5–495)"
+      }
+    ],
+    "levels": [
+      {
+        "id": "listening",
+        "label": "Listening (Part 1-4 · 100 câu · 45')",
+        "examMinutes": 45,
+        "passNote": "Mục tiêu ≥ 350/495",
+        "passPct": 70,
+        "sortOrder": 1
+      },
+      {
+        "id": "reading",
+        "label": "Reading (Part 5-7 · 100 câu · 75')",
+        "examMinutes": 75,
+        "passNote": "Mục tiêu ≥ 300/495",
+        "passPct": 60,
+        "sortOrder": 2
+      }
+    ],
+    "stages": [
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-1",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 1",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-10",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 10",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-2",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 2",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-3",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 3",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-4",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 4",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-5",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 5",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-6",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 6",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-7",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 7",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-8",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 8",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-parroto-toeic-vol-1-test-9",
+        "name": "Parroto TOEIC Practice Vol. 1 - Test 9",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-1",
+        "name": "TOEIC 2023 - Test 1",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-10",
+        "name": "TOEIC 2023 - Test 10",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-2",
+        "name": "TOEIC 2023 - Test 2",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-3",
+        "name": "TOEIC 2023 - Test 3",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-4",
+        "name": "TOEIC 2023 - Test 4",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-5",
+        "name": "TOEIC 2023 - Test 5",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-6",
+        "name": "TOEIC 2023 - Test 6",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-7",
+        "name": "TOEIC 2023 - Test 7",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-8",
+        "name": "TOEIC 2023 - Test 8",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2023-test-9",
+        "name": "TOEIC 2023 - Test 9",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-1",
+        "name": "TOEIC 2024 - Test 1",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-10",
+        "name": "TOEIC 2024 - Test 10",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-2",
+        "name": "TOEIC 2024 - Test 2",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-3",
+        "name": "TOEIC 2024 - Test 3",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-4",
+        "name": "TOEIC 2024 - Test 4",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-5",
+        "name": "TOEIC 2024 - Test 5",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-6",
+        "name": "TOEIC 2024 - Test 6",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-7",
+        "name": "TOEIC 2024 - Test 7",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-8",
+        "name": "TOEIC 2024 - Test 8",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2024-test-9",
+        "name": "TOEIC 2024 - Test 9",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-1",
+        "name": "TOEIC 2026 - Test 1",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-10",
+        "name": "TOEIC 2026 - Test 10",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-2",
+        "name": "TOEIC 2026 - Test 2",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-3",
+        "name": "TOEIC 2026 - Test 3",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-4",
+        "name": "TOEIC 2026 - Test 4",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-5",
+        "name": "TOEIC 2026 - Test 5",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-6",
+        "name": "TOEIC 2026 - Test 6",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-7",
+        "name": "TOEIC 2026 - Test 7",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-8",
+        "name": "TOEIC 2026 - Test 8",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      },
+      {
+        "id": "toeic-toeic-2026-test-9",
+        "name": "TOEIC 2026 - Test 9",
+        "durationMinutes": 120,
+        "kind": "mc-test",
+        "questionCount": 200
+      }
+    ],
+    "sort_order": 3
+  },
+  {
     "id": "aws",
-    "short_name": "AWS",
+    "short_name": "AWS SAA",
     "short_label": "SAA-C03",
-    "full_name": "AWS Certified Solutions Architect — Associate",
-    "tagline": "904 câu song ngữ Anh/Nhật, có đáp án tham khảo cho 651 câu.",
-    "description": "Chứng chỉ kiến trúc sư giải pháp mức Associate của AWS. Đề thi gồm câu chọn một và chọn nhiều đáp án, xoay quanh việc chọn kiến trúc phù hợp về chi phí, độ sẵn sàng và bảo mật trên AWS.",
+    "full_name": "AWS Certified Solutions Architect – Associate (SAA-C03)",
+    "tagline": "65 câu / 130 phút · Đậu ≥ 720/1000 điểm · Thiết kế kiến trúc đám mây AWS bảo mật, tối ưu chi phí.",
+    "description": "Chứng chỉ kiến trúc sư giải pháp đám mây AWS cấp Associate hàng đầu ngành CNTT. Đánh giá toàn diện năng lực thiết kế hệ thống tối ưu chi phí, hiệu năng cao, độ sẵn sàng cao và an toàn bảo mật trên Amazon Web Services.",
     "icon_name": "cloud",
-    "provider": "Amazon Web Services",
+    "provider": "Amazon Web Services (AWS)",
     "level": "Associate",
     "exam_minutes": 130,
-    "pass_note": "720/1000 điểm",
+    "pass_note": "Điểm chuẩn ≥ 720 / 1000 điểm",
     "pass_pct": 72,
-    "accent_hue": 45,
+    "accent_hue": 38,
     "available": true,
     "sample_data": false,
     "bilingual": true,
     "highlights": [
-      "Ngân hàng 904 câu tổng hợp, hiển thị song song bản tiếng Anh và tiếng Nhật.",
-      "Chế độ thi thử 65 câu / 130 phút mô phỏng đúng bài thi thật.",
-      "Chế độ luyện tập chấm ngay từng câu để hiểu lỗi sai tại chỗ."
+      "904 câu hỏi thi thật sát với đề thi SAA-C03 chính thức.",
+      "Hỗ trợ song ngữ tiếng Anh (English) và tiếng Nhật (日本語).",
+      "4 Domain khảo thí chuẩn AWS: An toàn (30%), Linh hoạt (26%), Hiệu năng (24%), Chi phí (20%).",
+      "Chế độ song ngữ đối chiếu và giải thích chi tiết từng lựa chọn."
     ],
     "facts": [
       {
-        "label": "Số câu đề thật",
-        "value": "65 câu (50 câu tính điểm)"
+        "label": "Mã đề thi",
+        "value": "SAA-C03 (AWS Solutions Architect Associate)"
       },
       {
-        "label": "Thời gian",
-        "value": "130 phút"
+        "label": "Số lượng câu hỏi",
+        "value": "65 câu (50 câu tính điểm + 15 câu thử nghiệm)"
       },
       {
-        "label": "Dạng câu",
-        "value": "Chọn 1 đáp án & chọn nhiều đáp án"
+        "label": "Thời gian làm bài",
+        "value": "130 phút (thêm 30' ESL nếu không phải bản ngữ Anh)"
       },
       {
-        "label": "Điểm đậu",
-        "value": "720 / 1000"
+        "label": "Dạng câu hỏi",
+        "value": "Trắc nghiệm 1 đáp án đúng & Chọn nhiều đáp án đúng"
       },
       {
-        "label": "Ngôn ngữ trong app",
-        "value": "Tiếng Anh · 日本語"
+        "label": "Thang điểm & Điểm đậu",
+        "value": "Thang điểm 100–1000 · Điểm đậu ≥ 720"
+      },
+      {
+        "label": "Domain 1: Bảo mật",
+        "value": "30% (Design Secure Architectures)"
+      },
+      {
+        "label": "Domain 2: Linh hoạt",
+        "value": "26% (Design Resilient Architectures)"
+      },
+      {
+        "label": "Domain 3: Hiệu năng cao",
+        "value": "24% (Design High-Performing Architectures)"
+      },
+      {
+        "label": "Domain 4: Tối ưu chi phí",
+        "value": "20% (Design Cost-Optimized Architectures)"
       }
     ],
+    "levels": [],
     "stages": [
       {
         "id": "exam",
@@ -52,52 +2652,54 @@
         "questionCount": 65
       }
     ],
-    "sort_order": 0
+    "sort_order": 4
   },
   {
     "id": "ap",
     "short_name": "AP",
     "short_label": "応用情報",
-    "full_name": "Kỹ sư CNTT ứng dụng (応用情報技術者試験)",
-    "tagline": "Buổi sáng trắc nghiệm có giờ + buổi chiều tự luận chọn 5/11 câu.",
-    "description": "Kỳ thi kỹ sư CNTT ứng dụng của Nhật (IPA), trình độ Level 3. Một ngày thi hai buổi: buổi sáng 80 câu trắc nghiệm, buổi chiều 11 đề tự luận chọn làm 5 đề, mỗi buổi phải đạt tối thiểu 60 điểm.",
+    "full_name": "Kỹ sư Công nghệ Thông tin Ứng dụng (AP - 応用情報技術者)",
+    "tagline": "Buổi sáng: 80 câu trắc nghiệm (150') · Buổi chiều: 5 bài tự luận chuyên sâu (150') · Đậu ≥ 60/100 mỗi buổi.",
+    "description": "Kỳ thi kỹ sư CNTT ứng dụng cấp quốc gia do IPA (Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản) tổ chức. Đánh giá năng lực thiết kế hệ thống, an toàn thông tin, quản lý dự án và chiến lược kinh doanh CNTT cấp độ 3 theo chuẩn ITSS.",
     "icon_name": "cpu",
-    "provider": "IPA (Nhật Bản) · VITEC (Việt Nam)",
-    "level": "Level 3",
+    "provider": "IPA Nhật Bản (METI)",
+    "level": "ITSS Level 3 (Ứng dụng)",
     "exam_minutes": 300,
-    "pass_note": "Mỗi buổi ≥ 60/100 điểm",
+    "pass_note": "Đạt đồng thời cả 2 buổi: Sáng ≥ 60/100 điểm VÀ Chiều ≥ 60/100 điểm",
     "pass_pct": 60,
-    "accent_hue": 268,
+    "accent_hue": 200,
     "available": true,
-    "sample_data": true,
-    "bilingual": true,
+    "sample_data": false,
+    "bilingual": false,
     "highlights": [
-      "Buổi sáng: đồng hồ đếm ngược, tự do nhảy câu, đánh dấu câu cần xem lại, chấm điểm sau khi nộp toàn bài.",
-      "Buổi chiều: chọn 5 trong 11 đề (đề 1 An toàn thông tin bắt buộc), viết bài rồi tự đối chiếu đáp án mẫu.",
-      "Bản nháp buổi chiều được lưu tự động trên máy bạn."
+      "Kỳ thi kỹ sư CNTT quốc gia cấp 3 theo chuẩn ITSS Nhật Bản.",
+      "Buổi sáng (午前): 80 câu trắc nghiệm 4 lựa chọn (150 phút).",
+      "Buổi chiều (午後): 5 bài tự luận tình huống dài (150 phút).",
+      "Quy chế đậu kép: Bắt buộc đạt ≥ 60/100 ở cả 2 buổi sáng và chiều."
     ],
     "facts": [
       {
-        "label": "Buổi sáng",
-        "value": "80 câu trắc nghiệm · 150 phút"
+        "label": "Buổi sáng (午前)",
+        "value": "80 câu trắc nghiệm / 150 phút (Công nghệ, Quản lý, Chiến lược)"
       },
       {
-        "label": "Buổi chiều",
-        "value": "Chọn 5/11 đề tự luận · 150 phút"
+        "label": "Buổi chiều (午後)",
+        "value": "5 câu tự luận tình huống / 150 phút (1 câu Bảo mật bắt buộc + chọn 4/10 câu)"
       },
       {
-        "label": "Điểm đậu",
-        "value": "Cả hai buổi đều ≥ 60/100"
+        "label": "Tổng thời gian thi",
+        "value": "300 phút (5 giờ thi chia 2 buổi sáng và chiều)"
       },
       {
-        "label": "Đề bắt buộc",
-        "value": "Đề 1 — An toàn thông tin"
+        "label": "Chuẩn đậu chính thức",
+        "value": "Sáng ≥ 60/100 điểm VÀ Chiều ≥ 60/100 điểm"
       },
       {
-        "label": "Dữ liệu trong app",
-        "value": "Câu hỏi minh hoạ"
+        "label": "Tần suất tổ chức",
+        "value": "2 lần/năm (Tháng 4 và Tháng 10)"
       }
     ],
+    "levels": [],
     "stages": [
       {
         "id": "morning",
@@ -116,118 +2718,54 @@
         "note": "Chọn 5 trong 11 đề"
       }
     ],
-    "sort_order": 1
-  },
-  {
-    "id": "jlpt",
-    "short_name": "JLPT",
-    "short_label": "N5 → N1",
-    "full_name": "Japanese-Language Proficiency Test",
-    "tagline": "3 phần thi: Từ vựng/Chữ Hán, Đọc hiểu & Ngữ pháp, Nghe hiểu.",
-    "description": "Kỳ thi năng lực tiếng Nhật với 5 cấp độ từ N5 đến N1. Điểm được chia theo từng phần và mỗi phần đều có ngưỡng tối thiểu riêng — chỉ tổng điểm cao thôi vẫn có thể trượt.",
-    "icon_name": "language",
-    "provider": "Japan Foundation · JEES",
-    "level": "N5 · N4 · N3 · N2 · N1",
-    "exam_minutes": 170,
-    "pass_note": "Tổng điểm + ngưỡng từng phần",
-    "pass_pct": 60,
-    "accent_hue": 348,
-    "available": false,
-    "sample_data": false,
-    "bilingual": false,
-    "highlights": [
-      "Cần giao diện riêng cho phần Nghe (phát audio một lần, không tua lại).",
-      "Chấm điểm tách riêng từng phần kèm ngưỡng đậu của mỗi phần.",
-      "Đang chờ bổ sung ngân hàng câu hỏi và file nghe."
-    ],
-    "facts": [
-      {
-        "label": "Phần 1",
-        "value": "Từ vựng & chữ Hán"
-      },
-      {
-        "label": "Phần 2",
-        "value": "Ngữ pháp & đọc hiểu"
-      },
-      {
-        "label": "Phần 3",
-        "value": "Nghe hiểu (có audio)"
-      },
-      {
-        "label": "Điểm đậu",
-        "value": "Tổng điểm + ngưỡng từng phần"
-      },
-      {
-        "label": "Trạng thái",
-        "value": "Chưa có dữ liệu câu hỏi"
-      }
-    ],
-    "stages": [
-      {
-        "id": "vocab",
-        "name": "Từ vựng & chữ Hán",
-        "durationMinutes": 30,
-        "kind": "mc-test"
-      },
-      {
-        "id": "reading",
-        "name": "Ngữ pháp & đọc hiểu",
-        "durationMinutes": 70,
-        "kind": "mc-test"
-      },
-      {
-        "id": "listening",
-        "name": "Nghe hiểu",
-        "durationMinutes": 50,
-        "kind": "listening-test"
-      }
-    ],
-    "sort_order": 2
+    "sort_order": 5
   },
   {
     "id": "fe",
     "short_name": "FE",
     "short_label": "基本情報",
-    "full_name": "Kỹ sư CNTT cơ bản (基本情報技術者試験)",
-    "tagline": "Khoa A trắc nghiệm kiến thức + Khoa B thuật toán bằng giả ngôn ngữ.",
-    "description": "Kỳ thi kỹ sư CNTT cơ bản của IPA, trình độ Level 2, thi trên máy (CBT). Khoa A kiểm tra kiến thức nền, Khoa B tập trung vào tư duy thuật toán và bảo mật với đoạn mã giả ngôn ngữ kèm nhiều câu hỏi con.",
-    "icon_name": "code",
-    "provider": "IPA (Nhật Bản) · VITEC (Việt Nam)",
-    "level": "Level 2",
+    "full_name": "Kỹ sư Công nghệ Thông tin Cơ bản (FE - 基本情報技術者)",
+    "tagline": "CBT quanh năm: Khoa A (60 câu · 90') + Khoa B (20 câu Thuật toán/Bảo mật · 100') · Đậu ≥ 600/1000.",
+    "description": "Kỳ thi kỹ sư CNTT cơ bản cấp quốc gia do IPA Nhật Bản tổ chức theo hình thức thi máy tính CBT quanh năm. Đánh giá kiến thức nền tảng CNTT ở Khoa A và kỹ năng tư duy thuật toán, an toàn thông tin ở Khoa B.",
+    "icon_name": "terminal",
+    "provider": "IPA Nhật Bản (METI)",
+    "level": "ITSS Level 2 (Cơ bản)",
     "exam_minutes": 190,
-    "pass_note": "Mỗi khoa ≥ 600/1000 điểm",
+    "pass_note": "Đạt đồng thời: Khoa A ≥ 600/1000 VÀ Khoa B ≥ 600/1000 điểm",
     "pass_pct": 60,
-    "accent_hue": 168,
-    "available": false,
+    "accent_hue": 150,
+    "available": true,
     "sample_data": false,
     "bilingual": false,
     "highlights": [
-      "Khoa B cần khung hiển thị mã giả ngôn ngữ cạnh nhiều câu hỏi con của cùng một đề.",
-      "Thi trên máy nên bố cục cần bám sát phần mềm thi thật (CBT).",
-      "Đang chờ bổ sung ngân hàng câu hỏi."
+      "Kỳ thi CBT máy tính tổ chức quanh năm theo chuẩn mới nhất của IPA.",
+      "Khoa A (科目A): 60 câu trắc nghiệm kiến thức tổng quát CNTT (90 phút).",
+      "Khoa B (科目B): 20 câu tình huống (16 câu lập trình giả mã/thuật toán + 4 câu an toàn thông tin) (100 phút).",
+      "Chuẩn đậu kép: Cả 2 phần đều phải đạt ≥ 600/1000 điểm quy đổi."
     ],
     "facts": [
       {
-        "label": "Khoa A",
-        "value": "60 câu trắc nghiệm · 90 phút"
+        "label": "Khoa A (科目A)",
+        "value": "60 câu trắc nghiệm 4 lựa chọn / 90 phút (Kiến thức cơ bản CNTT)"
       },
       {
-        "label": "Khoa B",
-        "value": "20 câu thuật toán · 100 phút"
+        "label": "Khoa B (科目B)",
+        "value": "20 câu / 100 phút (16 câu Thuật toán/Giả mã + 4 câu Bảo mật)"
       },
       {
-        "label": "Điểm đậu",
-        "value": "Mỗi khoa ≥ 600/1000"
+        "label": "Tổng thời gian làm bài",
+        "value": "190 phút (Khoa A 90' + Khoa B 100')"
       },
       {
-        "label": "Hình thức",
-        "value": "Thi trên máy (CBT)"
+        "label": "Chuẩn đậu chính thức",
+        "value": "Khoa A ≥ 600/1000 VÀ Khoa B ≥ 600/1000 điểm"
       },
       {
-        "label": "Trạng thái",
-        "value": "Chưa có dữ liệu câu hỏi"
+        "label": "Hình thức thi",
+        "value": "Thi trên máy tính CBT quanh năm tại các trung tâm khảo thí"
       }
     ],
+    "levels": [],
     "stages": [
       {
         "id": "a",
@@ -244,6 +2782,344 @@
         "questionCount": 20
       }
     ],
-    "sort_order": 3
+    "sort_order": 6
+  },
+  {
+    "id": "hsk",
+    "short_name": "HSK",
+    "short_label": "HSK 1 → 6",
+    "full_name": "Hanyu Shuiping Kaoshi (Kỳ thi Năng lực Hán ngữ)",
+    "tagline": "Chuẩn quốc tế CTI/Hanban: 6 Cấp độ HSK 1–6 (Nghe, Đọc, Viết) · Thang điểm 200–300 · Đậu ≥ 60%.",
+    "description": "Kỳ thi chuẩn hóa quốc tế đánh giá năng lực tiếng Trung dành cho người không sử dụng tiếng Trung là tiếng mẹ đẻ do Trung tâm Khảo thí Quốc tế Trung Quốc (CTI) tổ chức. Gồm 6 cấp độ từ HSK 1 (sơ cấp) đến HSK 6 (cao cấp).",
+    "icon_name": "book",
+    "provider": "CTI · Hanban (Trung Quốc)",
+    "level": "6 Cấp độ HSK 1 → 6",
+    "exam_minutes": 140,
+    "pass_note": "Tổng điểm ≥ 60% (HSK 1-2 ≥ 120/200, HSK 3-6 ≥ 180/300)",
+    "pass_pct": 60,
+    "accent_hue": 350,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Đầy đủ 6 cấp độ chuẩn HSK 1 đến HSK 6.",
+      "Cấu trúc thi: Nghe (听力), Đọc hiểu (阅读) và Viết (书写, HSK 3–6).",
+      "Thang điểm 200 điểm (HSK 1-2) và 300 điểm (HSK 3-6), chuẩn đậu ≥ 60%."
+    ],
+    "facts": [
+      {
+        "label": "HSK 1",
+        "value": "40 câu / 40 phút (Nghe 20 câu · Đọc 20 câu) · Đậu ≥ 120/200"
+      },
+      {
+        "label": "HSK 2",
+        "value": "60 câu / 55 phút (Nghe 35 câu · Đọc 25 câu) · Đậu ≥ 120/200"
+      },
+      {
+        "label": "HSK 3",
+        "value": "80 câu / 90 phút (Nghe 40 · Đọc 30 · Viết 10) · Đậu ≥ 180/300"
+      },
+      {
+        "label": "HSK 4",
+        "value": "100 câu / 105 phút (Nghe 45 · Đọc 40 · Viết 15) · Đậu ≥ 180/300"
+      },
+      {
+        "label": "HSK 5",
+        "value": "100 câu / 125 phút (Nghe 45 · Đọc 45 · Viết 10) · Đậu ≥ 180/300"
+      },
+      {
+        "label": "HSK 6",
+        "value": "101 câu / 140 phút (Nghe 50 · Đọc 50 · Tóm tắt 1000 chữ) · Đậu ≥ 180/300"
+      }
+    ],
+    "levels": [
+      {
+        "id": "hsk1",
+        "label": "HSK 1",
+        "examMinutes": 40,
+        "passNote": "Tổng ≥ 120/200",
+        "passPct": 60,
+        "sortOrder": 1
+      },
+      {
+        "id": "hsk2",
+        "label": "HSK 2",
+        "examMinutes": 55,
+        "passNote": "Tổng ≥ 120/200",
+        "passPct": 60,
+        "sortOrder": 2
+      },
+      {
+        "id": "hsk3",
+        "label": "HSK 3",
+        "examMinutes": 90,
+        "passNote": "Tổng ≥ 180/300",
+        "passPct": 60,
+        "sortOrder": 3
+      },
+      {
+        "id": "hsk4",
+        "label": "HSK 4",
+        "examMinutes": 105,
+        "passNote": "Tổng ≥ 180/300",
+        "passPct": 60,
+        "sortOrder": 4
+      },
+      {
+        "id": "hsk5",
+        "label": "HSK 5",
+        "examMinutes": 125,
+        "passNote": "Tổng ≥ 180/300",
+        "passPct": 60,
+        "sortOrder": 5
+      },
+      {
+        "id": "hsk6",
+        "label": "HSK 6",
+        "examMinutes": 140,
+        "passNote": "Tổng ≥ 180/300",
+        "passPct": 60,
+        "sortOrder": 6
+      }
+    ],
+    "stages": [
+      {
+        "id": "hsk-de-1",
+        "name": "Đề thi mô phỏng HSK Chuẩn 1",
+        "durationMinutes": 90,
+        "kind": "mc-test",
+        "questionCount": 80
+      }
+    ],
+    "sort_order": 7
+  },
+  {
+    "id": "boki",
+    "short_name": "BOKI",
+    "short_label": "日商簿記",
+    "full_name": "Nissho Boki (Kỳ thi Kế toán Thương mại & Công nghiệp Nhật Bản)",
+    "tagline": "Chuẩn JCCI: 3級 (60' · Kế toán thương mại), 2級 (90' · 5 bài), 1級 (180' · 4 môn) · Đậu ≥ 70%.",
+    "description": "Kỳ thi kế toán thương mại và công nghiệp danh giá của Phòng Thương mại và Công nghiệp Nhật Bản (JCCI). Đánh giá kỹ năng hạch toán kế toán (仕訳), sổ sách, lập báo cáo tài chính và tính giá thành sản phẩm doanh nghiệp.",
+    "icon_name": "barChart",
+    "provider": "JCCI Nhật Bản",
+    "level": "3 Cấp độ 3級 → 1級",
+    "exam_minutes": 180,
+    "pass_note": "Đạt ≥ 70% tổng điểm (1級 bắt buộc mỗi môn ≥ 40%, không có môn liệt)",
+    "pass_pct": 70,
+    "accent_hue": 160,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Chuẩn kế toán doanh nghiệp Nhật Bản theo quy chuẩn JCCI.",
+      "3級: Kế toán thương mại doanh nghiệp nhỏ (60 phút · CBT/Giấy).",
+      "2級: 5 bài kế toán thương mại & kế toán công nghiệp (90 phút).",
+      "1級: 4 môn Kế toán thương mại, Kế toán học, Kế toán công nghiệp, Tính giá thành (180 phút)."
+    ],
+    "facts": [
+      {
+        "label": "Boki 3級",
+        "value": "Kế toán thương mại doanh nghiệp nhỏ (60 phút) · Đậu ≥ 70%"
+      },
+      {
+        "label": "Boki 2級",
+        "value": "5 bài (3 bài Thương mại + 2 bài Công nghiệp · 90 phút) · Đậu ≥ 70%"
+      },
+      {
+        "label": "Boki 1級",
+        "value": "4 môn / 180 phút (Sáng 90' + Chiều 90') · Đậu ≥ 70% & mỗi môn ≥ 40%"
+      },
+      {
+        "label": "Hình thức thi",
+        "value": "Thi máy CBT (2級/3級 quanh năm) & Thi giấy (3 đợt/năm)"
+      }
+    ],
+    "levels": [
+      {
+        "id": "boki3",
+        "label": "Boki 3級",
+        "examMinutes": 60,
+        "passNote": "Đậu ≥ 70%",
+        "passPct": 70,
+        "sortOrder": 1
+      },
+      {
+        "id": "boki2",
+        "label": "Boki 2級",
+        "examMinutes": 90,
+        "passNote": "Đậu ≥ 70%",
+        "passPct": 70,
+        "sortOrder": 2
+      },
+      {
+        "id": "boki1",
+        "label": "Boki 1級",
+        "examMinutes": 180,
+        "passNote": "Tổng ≥ 70% VÀ mỗi môn ≥ 40%",
+        "passPct": 70,
+        "sortOrder": 3
+      }
+    ],
+    "stages": [
+      {
+        "id": "boki-de-1",
+        "name": "Đề luyện thi Boki 3級 Chuẩn",
+        "durationMinutes": 60,
+        "kind": "mc-test",
+        "questionCount": 20
+      }
+    ],
+    "sort_order": 8
+  },
+  {
+    "id": "pmp",
+    "short_name": "PMP",
+    "short_label": "Quản lý Dự án",
+    "full_name": "Project Management Professional (PMP - PMI)",
+    "tagline": "180 câu / 230 phút · 3 Domain: People (42%), Process (50%), Business Environment (8%) · Agile & Predictive.",
+    "description": "Chứng chỉ quản lý dự án chuyên nghiệp tiêu chuẩn vàng quốc tế do Viện Quản lý Dự án Hoa Kỳ (PMI) cấp. Đánh giá năng lực lãnh đạo đội ngũ, quy trình thực thi dự án và chiến lược môi trường kinh doanh kết hợp cả mô hình Agile, Hybrid và Waterfall.",
+    "icon_name": "users",
+    "provider": "PMI (Project Management Institute)",
+    "level": "Professional (Chuyên gia)",
+    "exam_minutes": 230,
+    "pass_note": "Đạt chuẩn Target / Above Target theo chuẩn đánh giá PMI",
+    "pass_pct": 70,
+    "accent_hue": 280,
+    "available": true,
+    "sample_data": false,
+    "bilingual": false,
+    "highlights": [
+      "Tiêu chuẩn vàng quốc tế về quản lý dự án chuyên nghiệp của PMI.",
+      "Tổng 180 câu hỏi tình huống trong 230 phút (3 giờ 50 phút).",
+      "Tỷ trọng khảo thí: People (42%), Process (50%), Business Environment (8%).",
+      "50% câu hỏi về phương pháp Agile/Hybrid và 50% phương pháp truyền thống Waterfall."
+    ],
+    "facts": [
+      {
+        "label": "Tổng số câu & Thời gian",
+        "value": "180 câu / 230 phút (175 câu tính điểm + 5 câu thử nghiệm)"
+      },
+      {
+        "label": "Domain 1: People",
+        "value": "42% (~74 câu: Lãnh đạo, giải quyết xung đột, xây dựng team)"
+      },
+      {
+        "label": "Domain 2: Process",
+        "value": "50% (~87 câu: Phạm vi, tiến độ, chi phí, rủi ro, chất lượng)"
+      },
+      {
+        "label": "Domain 3: Business",
+        "value": "8% (~14 câu: Chiến lược, tuân thủ, giá trị kinh doanh)"
+      },
+      {
+        "label": "Dạng câu hỏi",
+        "value": "Trắc nghiệm 1/nhiều đáp án, Matching nối cặp, Hotspot, Điền khuyết"
+      },
+      {
+        "label": "Nghỉ giải lao",
+        "value": "2 lần nghỉ 10 phút tùy chọn"
+      }
+    ],
+    "levels": [],
+    "stages": [
+      {
+        "id": "pmp-mock-1",
+        "name": "Đề thi mô phỏng PMP 180 câu",
+        "durationMinutes": 230,
+        "kind": "mc-test",
+        "questionCount": 180
+      }
+    ],
+    "sort_order": 9
+  },
+  {
+    "id": "tokutei",
+    "short_name": "Tokutei",
+    "short_label": "特定技能",
+    "full_name": "Tokutei Ginou (Kỳ thi Kỹ năng Đặc định Nhật Bản)",
+    "tagline": "19 Ngành nghề: Tiếng Nhật (JFT-Basic/JLPT N4) + Đề thi kỹ năng chuyên ngành (Lý thuyết & Thực hành).",
+    "description": "Hệ thống khảo thí kỹ năng nghề đặc định làm việc tại Nhật Bản theo 19 ngành nghề được cấp phép. Đòi hỏi ứng viên vượt qua 2 kỳ thi độc lập: Tiếng Nhật giao tiếp (JFT-Basic hoặc JLPT N4 trở lên) và Kỳ thi kiểm tra kỹ năng nghiệp vụ chuyên ngành tương đương Kỹ năng cấp 3 quốc gia Nhật Bản.",
+    "icon_name": "target",
+    "provider": "Bộ Tư pháp & Các Hiệp hội Ngành nghề Nhật Bản",
+    "level": "Kỹ năng đặc định số 1 & 2",
+    "exam_minutes": 60,
+    "pass_note": "Đạt Tiếng Nhật (JFT-Basic/N4) VÀ Đạt Kỹ năng chuyên ngành ≥ 65%",
+    "pass_pct": 65,
+    "accent_hue": 15,
+    "available": true,
+    "sample_data": false,
+    "bilingual": true,
+    "highlights": [
+      "Hệ thống khảo thí visa kỹ năng đặc định Nhật Bản theo 19 ngành nghề.",
+      "Điều kiện 1: Tiếng Nhật JFT-Basic (~60' CBT) hoặc JLPT N4 trở lên.",
+      "Điều kiện 2: Thi kỹ năng nghề (Lý thuyết vệ sinh/kỹ thuật + Thực hành tình huống, đậu ≥ 65%).",
+      "Các ngành mũi nhọn: Nông nghiệp, Ẩm thực (外食業), Khách sạn (宿泊), Điều dưỡng (介護), Xây dựng."
+    ],
+    "facts": [
+      {
+        "label": "Kỳ thi tiếng Nhật",
+        "value": "JFT-Basic (~60 phút CBT) hoặc JLPT N4 trở lên"
+      },
+      {
+        "label": "Ngành Ẩm thực (外食業)",
+        "value": "30 câu Lý thuyết + 15 câu Thực hành (Đậu ≥ 65%)"
+      },
+      {
+        "label": "Ngành Nông nghiệp (農業)",
+        "value": "~70 câu / 60 phút (Tiếng Nhật hiện trường + Kỹ thuật nông nghiệp)"
+      },
+      {
+        "label": "Ngành Điều dưỡng (介護)",
+        "value": "Bắt buộc thêm Kỳ thi tiếng Nhật điều dưỡng chuyên ngành"
+      },
+      {
+        "label": "Miễn thi",
+        "value": "Miễn cả 2 kỳ nếu đã hoàn thành Thực tập sinh số 2 (技能実習2号)"
+      }
+    ],
+    "levels": [
+      {
+        "id": "gaishoku",
+        "label": "Ẩm thực (外食業)",
+        "examMinutes": 60,
+        "passNote": "Lý thuyết & Thực hành ≥ 65%",
+        "passPct": 65,
+        "sortOrder": 1
+      },
+      {
+        "id": "nougyou",
+        "label": "Nông nghiệp (農業)",
+        "examMinutes": 60,
+        "passNote": "Lý thuyết & Tiếng Nhật hiện trường ≥ 65%",
+        "passPct": 65,
+        "sortOrder": 2
+      },
+      {
+        "id": "kaigo",
+        "label": "Điều dưỡng (介護)",
+        "examMinutes": 60,
+        "passNote": "Kỹ năng & Tiếng Nhật điều dưỡng",
+        "passPct": 65,
+        "sortOrder": 3
+      },
+      {
+        "id": "hotel",
+        "label": "Khách sạn (宿泊)",
+        "examMinutes": 60,
+        "passNote": "Nghiệp vụ lưu trú ≥ 65%",
+        "passPct": 65,
+        "sortOrder": 4
+      }
+    ],
+    "stages": [
+      {
+        "id": "tokutei-gaishoku-1",
+        "name": "Đề thi Kỹ năng Ẩm thực (外食業) Số 1",
+        "durationMinutes": 60,
+        "kind": "mc-test",
+        "questionCount": 45
+      }
+    ],
+    "sort_order": 10
   }
 ]

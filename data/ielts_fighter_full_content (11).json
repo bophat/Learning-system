@@ -1,0 +1,92 @@
+{
+  "https://test.ebomb.edu.vn/tests/1624890599?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624890599?site=ielts-fighter",
+      "title": "Speaking test 01"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624890599/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624890599",
+            "test_detail": {
+              "_id": 1624890599,
+              "title": "Web - IELTS Speaking full test 1",
+              "times": 20,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "skill": "speaking",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Speaking Test 1",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "uizcgdwny5",
+              "created_by": 10057,
+              "created_time": 1773300411,
+              "updated_time": 1773301783,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "speaking",
+                  "description": "",
+                  "images": "",
+                  "sound": "",
+                  "transcript": "",
+                  "question_id": [
+                    1724916354,
+                    1724916356
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "speaking",
+                  "description": "",
+                  "images": "",
+                  "sound": "",
+                  "transcript": "",
+                  "question_id": [
+                    1724916355
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "speaking",
+                  "description": "",
+                  "images": "",
+                  "sound": "",
+                  "transcript": "",
+                  "question_id": [
+                    1724916357
+                  ]
+                }
+              ],
+              "is_mark": 1,
+              "number_question": 7,
+              "description": "<p>IELTS Speaking full test 1</p>",
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_description": "IELTS Speaking full test 1",
+              "seo_keyword": null,
+              "seo_title": "IELTS Speaking full test 1"
+            },
+            "number_part": 3,
+            "params": []
+          }
+        }
+      }
+    ]
+  }
+}

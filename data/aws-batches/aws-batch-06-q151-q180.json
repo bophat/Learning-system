@@ -1,0 +1,1082 @@
+[
+  {
+    "n": 151,
+    "question_en": "A company wants to migrate its on-premises data center to AWS. According to the company's compliance requirements, the company can use only the ap-northeast-3 Region. Company administrators are not permitted to connect VPCs to the internet. Which solutions will meet these requirements? (Choose two.)",
+    "question_ja": "ある企業が、オンプレミスのデータセンターをAWSに移行したいと考えています。企業のコンプライアンス要件により、この企業はap-northeast-3リージョンのみを使用できます。企業の管理者は、VPCをインターネットに接続することを許可されていません。これらの要件を満たすソリューションはどれですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "AC",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS Control Tower to implement data residency guardrails to deny internet access and deny access to all AWS Regions except apnortheast-3.",
+        "text_ja": "AWS Control Towerを使用して、インターネットアクセスを拒否し、ap-northeast-3以外のすべてのAWSリージョンへのアクセスを拒否するデータレジデンシーガードレールを実装する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use rules in AWS WAF to prevent internet access. Deny access to all AWS Regions except ap-northeast-3 in the AWS account settings.",
+        "text_ja": "AWS WAFのルールを使用してインターネットアクセスを防止する。AWSアカウント設定で、ap-northeast-3以外のすべてのAWSリージョンへのアクセスを拒否する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Organizations to configure service control policies (SCPS) that prevent VPCs from gaining internet access. Deny access to all AWS Regions except ap-northeast-3.",
+        "text_ja": "AWS Organizationsを使用して、VPCがインターネットアクセスを得られないようにするサービスコントロールポリシー(SCP)を設定する。ap-northeast-3以外のすべてのAWSリージョンへのアクセスを拒否する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an outbound rule for the network ACL in each VPC to deny all traffic from 0.0.0.0/0. Create an IAM policy for each user to prevent the use of any AWS Region other than ap-northeast-3.",
+        "text_ja": "各VPCのネットワークACLに、0.0.0.0/0からのすべてのトラフィックを拒否するアウトバウンドルールを作成する。ap-northeast-3以外のAWSリージョンの使用を禁止する各ユーザー向けのIAMポリシーを作成する。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Use AWS Config to activate managed rules to detect and alert for internet gateways and to detect and alert for new resources deployed outside of ap-northeast-3.",
+        "text_ja": "AWS Configを使用して、マネージドルールを有効にし、インターネットゲートウェイを検出してアラートを出し、ap-northeast-3以外にデプロイされた新しいリソースを検出してアラートを出す。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 152,
+    "question_en": "A company uses a three-tier web application to provide training to new employees. The application is accessed for only 12 hours every day. The company is using an Amazon RDS for MySQL DB instance to store information and wants to minimize costs. What should a solutions architect do to meet these requirements?",
+    "question_ja": "ある企業は、新入社員向けの研修を提供するために3層構成のウェブアプリケーションを使用しています。このアプリケーションは1日12時間のみアクセスされます。この企業は、情報を保存するためにAmazon RDS for MySQL DBインスタンスを使用しており、コストを最小限に抑えたいと考えています。これらの要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure an IAM policy for AWS Systems Manager Session Manager. Create an IAM role for the policy. Update the trust relationship of the role. Set up automatic start and stop for the DB instance.",
+        "text_ja": "AWS Systems Manager Session Manager用のIAMポリシーを設定する。そのポリシー用のIAMロールを作成する。ロールの信頼関係を更新する。DBインスタンスの自動起動・停止を設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon ElastiCache for Redis cache cluster that gives users the ability to access the data from the cache when the DB instance is stopped. Invalidate the cache after the DB instance is started.",
+        "text_ja": "DBインスタンスが停止しているときにユーザーがキャッシュからデータにアクセスできるAmazon ElastiCache for Redisキャッシュクラスターを作成する。DBインスタンスが起動した後にキャッシュを無効化する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Launch an Amazon EC2 instance. Create an IAM role that grants access to Amazon RDS. Attach the role to the EC2 instance. Configure a cron job to start and stop the EC2 instance on the desired schedule.",
+        "text_ja": "Amazon EC2インスタンスを起動する。Amazon RDSへのアクセスを許可するIAMロールを作成する。そのロールをEC2インスタンスにアタッチする。希望のスケジュールでEC2インスタンスを起動・停止するcronジョブを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (Amazon CloudWatch Events) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules.",
+        "text_ja": "DBインスタンスを起動・停止するAWS Lambda関数を作成する。Lambda関数を呼び出すAmazon EventBridge(Amazon CloudWatch Events)のスケジュールルールを作成する。そのルールのイベントターゲットとしてLambda関数を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 153,
+    "question_en": "A company sells ringtones created from clips of popular songs. The files containing the ringtones are stored in Amazon S3 Standard and are at least 128 KB in size. The company has millions of files, but downloads are infrequent for ringtones older than 90 days. The company needs to save money on storage while keeping the most accessed files readily available for its users. Which action should the company take to meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業は、人気のある楽曲のクリップから作成した着信音を販売しています。着信音を含むファイルはAmazon S3 Standardに保存されており、サイズは少なくとも128KBです。この企業には数百万件のファイルがありますが、90日を超えた着信音のダウンロードはまれです。この企業は、ユーザーが最もアクセスするファイルをすぐに利用できる状態に保ちながら、ストレージのコストを削減する必要があります。これらの要件を最もコスト効率よく満たすために、この企業はどのようなアクションを取るべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
+        "text_ja": "オブジェクトの初期ストレージ層として、S3 Standard-Infrequent Access(S3 Standard-IA)ストレージを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Move the files to S3 Intelligent-Tiering and configure it to move objects to a less expensive storage tier after 90 days.",
+        "text_ja": "ファイルをS3 Intelligent-Tieringに移動し、90日後によりコストの低いストレージ層に移行するよう設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure S3 inventory to manage objects and move them to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+        "text_ja": "S3インベントリを設定してオブジェクトを管理し、90日後にS3 Standard-Infrequent Access(S3 Standard-IA)に移動する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Implement an S3 Lifecycle policy that moves the objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+        "text_ja": "オブジェクトを90日後にS3 StandardからS3 Standard-Infrequent Access(S3 Standard-IA)に移行するS3ライフサイクルポリシーを実装する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 154,
+    "question_en": "A company needs to save the results from a medical trial to an Amazon S3 repository. The repository must allow a few scientists to add new files and must restrict all other users to read-only access. No users can have the ability to modify or delete any files in the repository. The company must keep every file in the repository for a minimum of 1 year after its creation date. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、医療試験の結果をAmazon S3のリポジトリに保存する必要があります。このリポジトリは、少数の科学者が新しいファイルを追加できるようにし、それ以外のすべてのユーザーには読み取り専用アクセスに制限する必要があります。どのユーザーも、リポジトリ内のファイルを変更または削除できてはなりません。この企業は、作成日から最低1年間、リポジトリ内のすべてのファイルを保持する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use S3 Object Lock in governance mode with a legal hold of 1 year.",
+        "text_ja": "1年間のリーガルホールドを設定した、ガバナンスモードのS3 Object Lockを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use S3 Object Lock in compliance mode with a retention period of 365 days.",
+        "text_ja": "保持期間365日を設定した、コンプライアンスモードのS3 Object Lockを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use an IAM role to restrict all users from deleting or changing objects in the S3 bucket. Use an S3 bucket policy to only allow the IAM role.",
+        "text_ja": "すべてのユーザーがS3バケット内のオブジェクトを削除または変更できないよう制限するIAMロールを使用する。そのIAMロールのみを許可するS3バケットポリシーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure the S3 bucket to invoke an AWS Lambda function every time an object is added. Configure the function to track the hash of the saved object so that modified objects can be marked accordingly.",
+        "text_ja": "オブジェクトが追加されるたびにAWS Lambda関数を呼び出すようS3バケットを設定する。保存されたオブジェクトのハッシュを追跡し、変更されたオブジェクトに適切にマークを付けるよう関数を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 155,
+    "question_en": "A large media company hosts a web application on AWS. The company wants to start caching confidential media files so that users around the world will have reliable access to the files. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless of where the requests originate geographically. Which solution will meet these requirements?",
+    "question_ja": "ある大手メディア企業が、AWS上でウェブアプリケーションをホストしています。この企業は、世界中のユーザーが確実にファイルにアクセスできるよう、機密性の高いメディアファイルのキャッシングを開始したいと考えています。コンテンツはAmazon S3バケットに保存されています。この企業は、リクエストが地理的にどこから発信されたかに関わらず、コンテンツを迅速に配信する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS DataSync to connect the S3 buckets to the web application.",
+        "text_ja": "AWS DataSyncを使用して、S3バケットをウェブアプリケーションに接続する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy AWS Global Accelerator to connect the S3 buckets to the web application.",
+        "text_ja": "AWS Global Acceleratorをデプロイして、S3バケットをウェブアプリケーションに接続する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy Amazon CloudFront to connect the S3 buckets to CloudFront edge servers.",
+        "text_ja": "Amazon CloudFrontをデプロイして、S3バケットをCloudFrontのエッジサーバーに接続する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Amazon Simple Queue Service (Amazon SQS) to connect the S3 buckets to the web application.",
+        "text_ja": "Amazon Simple Queue Service(Amazon SQS)を使用して、S3バケットをウェブアプリケーションに接続する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 156,
+    "question_en": "A company produces batch data that comes from different databases. The company also produces live stream data from network sensors and application APIs. The company needs to consolidate all the data into one place for business analytics. The company needs to process the incoming data and then stage the data in different Amazon S3 buckets. Teams will later run one-time queries and import the data into a business intelligence tool to show key performance indicators (KPIs). Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
+    "question_ja": "ある企業は、異なるデータベースから来るバッチデータを生成しています。この企業はまた、ネットワークセンサーやアプリケーションAPIからライブストリームデータも生成しています。この企業は、ビジネス分析のためにすべてのデータを一箇所に統合する必要があります。この企業は、受信データを処理した後、異なるAmazon S3バケットにデータをステージングする必要があります。チームは後で1回限りのクエリを実行し、主要業績評価指標(KPI)を示すためにビジネスインテリジェンスツールにデータをインポートします。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たす手順の組み合わせはどれですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "AE",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon Athena for one-time queries. Use Amazon QuickSight to create dashboards for KPIs.",
+        "text_ja": "1回限りのクエリにAmazon Athenaを使用する。KPI用のダッシュボードの作成にAmazon QuickSightを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon Kinesis Data Analytics for one-time queries. Use Amazon QuickSight to create dashboards for KPIs.",
+        "text_ja": "1回限りのクエリにAmazon Kinesis Data Analyticsを使用する。KPI用のダッシュボードの作成にAmazon QuickSightを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create custom AWS Lambda functions to move the individual records from the databases to an Amazon Redshift cluster.",
+        "text_ja": "データベースから個々のレコードをAmazon Redshiftクラスターに移動するカスタムAWS Lambda関数を作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use an AWS Glue extract, transform, and load (ETL) job to convert the data into JSON format. Load the data into multiple Amazon OpenSearch Service (Amazon Elasticsearch Service) clusters.",
+        "text_ja": "AWS Glueの抽出・変換・ロード(ETL)ジョブを使用して、データをJSON形式に変換する。データを複数のAmazon OpenSearch Service(Amazon Elasticsearch Service)クラスターにロードする。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Use blueprints in AWS Lake Formation to identify the data that can be ingested into a data lake. Use AWS Glue to crawl the source, extract the data, and load the data into Amazon S3 in Apache Parquet format.",
+        "text_ja": "AWS Lake Formationのブループリントを使用して、データレイクに取り込めるデータを特定する。AWS Glueを使用してソースをクロールし、データを抽出し、Apache Parquet形式でAmazon S3にデータをロードする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 157,
+    "question_en": "A company stores data in an Amazon Aurora PostgreSQL DB cluster. The company must store all the data for 5 years and must delete all the data after 5 years. The company also must indefinitely keep audit logs of actions that are performed within the database. Currently, the company has automated backups configured for Aurora. Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)",
+    "question_ja": "ある企業が、Amazon Aurora PostgreSQL DBクラスターにデータを保存しています。この企業は、すべてのデータを5年間保存し、5年後にはすべてのデータを削除する必要があります。この企業はまた、データベース内で実行されたアクションの監査ログを無期限に保持する必要があります。現在、この企業はAurora用に自動バックアップを設定しています。これらの要件を満たすために、ソリューションアーキテクトが取るべき組み合わせはどれですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "DE",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Take a manual snapshot of the DB cluster.",
+        "text_ja": "DBクラスターの手動スナップショットを取得する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create a lifecycle policy for the automated backups.",
+        "text_ja": "自動バックアップ用のライフサイクルポリシーを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure automated backup retention for 5 years.",
+        "text_ja": "自動バックアップの保持期間を5年に設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure an Amazon CloudWatch Logs export for the DB cluster.",
+        "text_ja": "DBクラスター用にAmazon CloudWatch Logsのエクスポートを設定する。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Use AWS Backup to take the backups and to keep the backups for 5 years.",
+        "text_ja": "AWS Backupを使用してバックアップを取得し、5年間保持する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 158,
+    "question_en": "A solutions architect is optimizing a website for an upcoming musical event. Videos of the performances will be streamed in real time and then will be available on demand. The event is expected to attract a global online audience. Which service will improve the performance of both the real-time and on-demand streaming?",
+    "question_ja": "あるソリューションアーキテクトが、近日開催予定の音楽イベント向けにウェブサイトを最適化しています。公演の動画はリアルタイムでストリーミングされ、その後オンデマンドで視聴できるようになります。このイベントは、世界中のオンライン視聴者を惹きつけると予想されています。リアルタイムとオンデマンドの両方のストリーミングのパフォーマンスを向上させるサービスはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Amazon CloudFront",
+        "text_ja": "Amazon CloudFront",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "AWS Global Accelerator",
+        "text_ja": "AWS Global Accelerator",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Amazon Route 53",
+        "text_ja": "Amazon Route 53",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Amazon S3 Transfer Acceleration",
+        "text_ja": "Amazon S3 Transfer Acceleration",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 159,
+    "question_en": "A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’s traffic recently spiked due to fraudulent requests from botnets. Which steps should a solutions architect take to block requests from unauthorized users? (Choose two.)",
+    "question_ja": "ある企業は、Amazon API GatewayとAWS Lambdaを使用する、一般公開されているサーバーレスアプリケーションを運用しています。このアプリケーションのトラフィックは、ボットネットからの不正なリクエストにより最近急増しました。不正なユーザーからのリクエストをブロックするために、ソリューションアーキテクトはどのような手順を取るべきですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "CD",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create a usage plan with an API key that is shared with genuine users only.",
+        "text_ja": "正規のユーザーのみと共有されるAPIキーを使用した使用量プランを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Integrate logic within the Lambda function to ignore the requests from fraudulent IP addresses.",
+        "text_ja": "不正なIPアドレスからのリクエストを無視するロジックをLambda関数内に組み込む。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Implement an AWS WAF rule to target malicious requests and trigger actions to filter them out.",
+        "text_ja": "悪意のあるリクエストを対象とし、それらをフィルタリングするアクションをトリガーするAWS WAFルールを実装する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Convert the existing public API to a private API. Update the DNS records to redirect users to the new API endpoint.",
+        "text_ja": "既存のパブリックAPIをプライベートAPIに変換する。新しいAPIエンドポイントにユーザーをリダイレクトするようDNSレコードを更新する。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Create an IAM role for each user attempting to access the API. A user will assume the role when making the API call.",
+        "text_ja": "APIへのアクセスを試みる各ユーザー用にIAMロールを作成する。ユーザーはAPI呼び出しの際にそのロールを引き受ける。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 160,
+    "question_en": "An ecommerce company hosts its analytics application in the AWS Cloud. The application generates about 300 MB of data each month. The data is stored in JSON format. The company is evaluating a disaster recovery solution to back up the data. The data must be accessible in milliseconds if it is needed, and the data must be kept for 30 days. Which solution meets these requirements MOST cost-effectively?",
+    "question_ja": "あるEコマース企業が、AWSクラウドで分析アプリケーションをホストしています。このアプリケーションは、毎月約300MBのデータを生成します。データはJSON形式で保存されています。この企業は、データをバックアップするための災害復旧ソリューションを検討しています。必要な場合、データはミリ秒単位でアクセス可能である必要があり、データは30日間保持される必要があります。これらの要件を最もコスト効率よく満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Amazon OpenSearch Service (Amazon Elasticsearch Service)",
+        "text_ja": "Amazon OpenSearch Service(Amazon Elasticsearch Service)",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Amazon S3 Glacier",
+        "text_ja": "Amazon S3 Glacier",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Amazon S3 Standard",
+        "text_ja": "Amazon S3 Standard",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Amazon RDS for PostgreSQL",
+        "text_ja": "Amazon RDS for PostgreSQL",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 161,
+    "question_en": "A company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company wants to move the application to the AWS Cloud. The company needs a highly available solution that maximizes scalability and minimizes operational overhead. Which solution will meet these requirements?",
+    "question_ja": "ある企業には、JSONドキュメントを処理し、結果をオンプレミスのSQLデータベースに出力する小規模なPythonアプリケーションがあります。このアプリケーションは1日に数千回実行されます。この企業は、このアプリケーションをAWSクラウドに移行したいと考えています。この企業は、スケーラビリティを最大化し、運用上のオーバーヘッドを最小限に抑える高可用性のソリューションを必要としています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Place the JSON documents in an Amazon S3 bucket. Run the Python code on multiple Amazon EC2 instances to process the documents. Store the results in an Amazon Aurora DB cluster.",
+        "text_ja": "JSONドキュメントをAmazon S3バケットに配置する。複数のAmazon EC2インスタンスでPythonコードを実行してドキュメントを処理する。結果をAmazon Aurora DBクラスターに保存する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Place the JSON documents in an Amazon S3 bucket. Create an AWS Lambda function that runs the Python code to process the documents as they arrive in the S3 bucket. Store the results in an Amazon Aurora DB cluster.",
+        "text_ja": "JSONドキュメントをAmazon S3バケットに配置する。ドキュメントがS3バケットに到着したときにそれを処理するPythonコードを実行するAWS Lambda関数を作成する。結果をAmazon Aurora DBクラスターに保存する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Place the JSON documents in an Amazon Elastic Block Store (Amazon EBS) volume. Use the EBS Multi-Attach feature to attach the volume to multiple Amazon EC2 instances. Run the Python code on the EC2 instances to process the documents. Store the results on an Amazon RDS DB instance.",
+        "text_ja": "JSONドキュメントをAmazon Elastic Block Store(Amazon EBS)ボリュームに配置する。EBS Multi-Attach機能を使用して、そのボリュームを複数のAmazon EC2インスタンスにアタッチする。EC2インスタンスでPythonコードを実行してドキュメントを処理する。結果をAmazon RDS DBインスタンスに保存する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Place the JSON documents in an Amazon Simple Queue Service (Amazon SQS) queue as messages. Deploy the Python code as a container on an Amazon Elastic Container Service (Amazon ECS) cluster that is configured with the Amazon EC2 launch type. Use the container to process the SQS messages. Store the results on an Amazon RDS DB instance.",
+        "text_ja": "JSONドキュメントをメッセージとしてAmazon SQSキューに配置する。Amazon EC2起動タイプで設定されたAmazon Elastic Container Service(Amazon ECS)クラスター上のコンテナとしてPythonコードをデプロイする。そのコンテナを使用してSQSメッセージを処理する。結果をAmazon RDS DBインスタンスに保存する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 162,
+    "question_en": "A company wants to use high performance computing (HPC) infrastructure on AWS for financial risk modeling. The company’s HPC workloads run on Linux. Each HPC workflow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output files that are ultimately stored in persistent storage for analytics and long-term future use. The company seeks a cloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available for processing by all EC2 instances. The solution should also be a high performance file system that is integrated with persistent storage to read and write datasets and output files. Which combination of AWS services meets these requirements?",
+    "question_ja": "ある企業が、金融リスクモデリングのためにAWS上でハイパフォーマンスコンピューティング(HPC)インフラストラクチャを使用したいと考えています。この企業のHPCワークロードはLinux上で動作します。各HPCワークフローは、数百のAmazon EC2スポットインスタンス上で動作し、寿命が短く、最終的に分析および長期的な将来の利用のために永続ストレージに保存される数千の出力ファイルを生成します。この企業は、すべてのEC2インスタンスによる処理のためにデータを利用可能にできるよう、オンプレミスのデータを長期永続ストレージにコピーできるクラウドストレージソリューションを求めています。このソリューションはまた、データセットや出力ファイルの読み書きのために永続ストレージと統合された高性能ファイルシステムである必要もあります。これらの要件を満たすAWSサービスの組み合わせはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Amazon FSx for Lustre integrated with Amazon S3",
+        "text_ja": "Amazon S3と統合されたAmazon FSx for Lustre",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Amazon FSx for Windows File Server integrated with Amazon S3",
+        "text_ja": "Amazon S3と統合されたAmazon FSx for Windows File Server",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Amazon S3 Glacier integrated with Amazon Elastic Block Store (Amazon EBS)",
+        "text_ja": "Amazon Elastic Block Store(Amazon EBS)と統合されたAmazon S3 Glacier",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Amazon S3 bucket with a VPC endpoint integrated with an Amazon Elastic Block Store (Amazon EBS) General Purpose SSD (gp2) volume",
+        "text_ja": "Amazon Elastic Block Store(Amazon EBS)の汎用SSD(gp2)ボリュームと統合された、VPCエンドポイントを持つAmazon S3バケット",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 163,
+    "question_en": "A company is building a containerized application on premises and decides to move the application to AWS. The application will have thousands of users soon after it is deployed. The company is unsure how to manage the deployment of containers at scale. The company needs to deploy the containerized application in a highly available architecture that minimizes operational overhead. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、オンプレミスでコンテナ化されたアプリケーションを構築しており、このアプリケーションをAWSに移行することを決定しました。このアプリケーションは、デプロイ後すぐに数千人のユーザーを抱えることになります。この企業は、大規模なコンテナのデプロイをどう管理すべきか分かっていません。この企業は、運用上のオーバーヘッドを最小限に抑えた高可用性のアーキテクチャで、コンテナ化されたアプリケーションをデプロイする必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Store container images in an Amazon Elastic Container Registry (Amazon ECR) repository. Use an Amazon Elastic Container Service (Amazon ECS) cluster with the AWS Fargate launch type to run the containers. Use target tracking to scale automatically based on demand.",
+        "text_ja": "コンテナイメージをAmazon Elastic Container Registry(Amazon ECR)リポジトリに保存する。AWS Fargate起動タイプを使用したAmazon Elastic Container Service(Amazon ECS)クラスターを使用してコンテナを実行する。需要に基づいて自動的にスケーリングするようターゲット追跡を使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Store container images in an Amazon Elastic Container Registry (Amazon ECR) repository. Use an Amazon Elastic Container Service (Amazon ECS) cluster with the Amazon EC2 launch type to run the containers. Use target tracking to scale automatically based on demand.",
+        "text_ja": "コンテナイメージをAmazon Elastic Container Registry(Amazon ECR)リポジトリに保存する。Amazon EC2起動タイプを使用したAmazon Elastic Container Service(Amazon ECS)クラスターを使用してコンテナを実行する。需要に基づいて自動的にスケーリングするようターゲット追跡を使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Store container images in a repository that runs on an Amazon EC2 instance. Run the containers on EC2 instances that are spread across multiple Availability Zones. Monitor the average CPU utilization in Amazon CloudWatch. Launch new EC2 instances as needed.",
+        "text_ja": "Amazon EC2インスタンス上で動作するリポジトリにコンテナイメージを保存する。複数のアベイラビリティーゾーンに分散したEC2インスタンスでコンテナを実行する。Amazon CloudWatchで平均CPU使用率を監視する。必要に応じて新しいEC2インスタンスを起動する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Amazon EC2 Amazon Machine Image (AMI) that contains the container image. Launch EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon CloudWatch alarm to scale out EC2 instances when the average CPU utilization threshold is breached.",
+        "text_ja": "コンテナイメージを含むAmazon EC2のAmazon マシンイメージ(AMI)を作成する。複数のアベイラビリティーゾーンにまたがるAuto ScalingグループでEC2インスタンスを起動する。平均CPU使用率のしきい値を超えたときにEC2インスタンスをスケールアウトするAmazon CloudWatchアラームを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 164,
+    "question_en": "A company has two applications: a sender application that sends messages with payloads to be processed and a processing application intended to receive the messages with payloads. The company wants to implement an AWS service to handle messages between the two applications. The sender application can send about 1,000 messages each hour. The messages may take up to 2 days to be processed: If the messages fail to process, they must be retained so that they do not impact the processing of any remaining messages. Which solution meets these requirements and is the MOST operationally efficient?",
+    "question_ja": "ある企業には2つのアプリケーションがあります。処理すべきペイロードを含むメッセージを送信する送信側アプリケーションと、そのペイロードを含むメッセージを受信することを目的とした処理側アプリケーションです。この企業は、2つのアプリケーション間のメッセージを処理するAWSサービスを実装したいと考えています。送信側アプリケーションは1時間あたり約1,000件のメッセージを送信できます。メッセージの処理には最大2日かかることがあります。メッセージの処理に失敗した場合、残りのメッセージの処理に影響を与えないよう、それらは保持される必要があります。これらの要件を満たし、最も運用効率の良いソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Set up an Amazon EC2 instance running a Redis database. Configure both applications to use the instance. Store, process, and delete the messages, respectively.",
+        "text_ja": "Redisデータベースを実行するAmazon EC2インスタンスをセットアップする。両方のアプリケーションがそのインスタンスを使用するよう設定する。それぞれメッセージの保存、処理、削除を行う。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use an Amazon Kinesis data stream to receive the messages from the sender application. Integrate the processing application with the Kinesis Client Library (KCL).",
+        "text_ja": "Amazon Kinesisデータストリームを使用して、送信側アプリケーションからメッセージを受け取る。処理側アプリケーションをKinesis Client Library(KCL)と統合する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Integrate the sender and processor applications with an Amazon Simple Queue Service (Amazon SQS) queue. Configure a dead-letter queue to collect the messages that failed to process.",
+        "text_ja": "送信側と処理側のアプリケーションをAmazon SQSキューと統合する。処理に失敗したメッセージを収集するデッドレターキューを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Subscribe the processing application to an Amazon Simple Notification Service (Amazon SNS) topic to receive notifications to process. Integrate the sender application to write to the SNS topic.",
+        "text_ja": "処理側アプリケーションを、処理すべき通知を受け取るAmazon SNSトピックにサブスクライブする。送信側アプリケーションをそのSNSトピックに書き込むよう統合する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 165,
+    "question_en": "A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company’s security policy requires that all website traffic be inspected by AWS WAF. How should the solutions architect comply with these requirements?",
+    "question_ja": "あるソリューションアーキテクトは、静的ウェブサイトを保存するために、Amazon S3オリジンを持つAmazon CloudFrontを使用するソリューションを設計する必要があります。この企業のセキュリティポリシーでは、すべてのウェブサイトトラフィックがAWS WAFによって検査される必要があります。この要件を満たすために、ソリューションアーキテクトはどうすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
+        "text_ja": "AWS WAFのAmazonリソースネーム(ARN)からのリクエストのみを受け入れるようS3バケットポリシーを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
+        "text_ja": "S3オリジンからコンテンツをリクエストする前に、受信したすべてのリクエストをAWS WAFに転送するようAmazon CloudFrontを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure a security group that allows Amazon CloudFront IP addresses to access Amazon S3 only. Associate AWS WAF to CloudFront.",
+        "text_ja": "Amazon CloudFrontのIPアドレスのみがAmazon S3にアクセスできるセキュリティグループを設定する。AWS WAFをCloudFrontに関連付ける。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution.",
+        "text_ja": "Amazon CloudFrontとAmazon S3を設定して、オリジンアクセスアイデンティティ(OAI)を使用しS3バケットへのアクセスを制限する。ディストリビューションでAWS WAFを有効にする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 166,
+    "question_en": "Organizers for a global event want to put daily reports online as static HTML pages. The pages are expected to generate millions of views from users around the world. The files are stored in an Amazon S3 bucket. A solutions architect has been asked to design an efficient and effective solution. Which action should the solutions architect take to accomplish this?",
+    "question_ja": "あるグローバルイベントの主催者が、日次レポートを静的HTMLページとしてオンラインに公開したいと考えています。このページは、世界中のユーザーから数百万件のビューを生成すると予想されています。ファイルはAmazon S3バケットに保存されています。ソリューションアーキテクトは、効率的で効果的なソリューションを設計するよう依頼されました。これを実現するために、ソリューションアーキテクトはどのようなアクションを取るべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Generate presigned URLs for the files.",
+        "text_ja": "ファイル用の事前署名付きURLを生成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use cross-Region replication to all Regions.",
+        "text_ja": "すべてのリージョンへのクロスリージョンレプリケーションを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use the geoproximity feature of Amazon Route 53.",
+        "text_ja": "Amazon Route 53のジオプロキシミティ機能を使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Amazon CloudFront with the S3 bucket as its origin.",
+        "text_ja": "S3バケットをオリジンとするAmazon CloudFrontを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 167,
+    "question_en": "A company runs a production application on a fleet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The message volume is unpredictable and often has intermittent traffic. This application should continually process messages without any downtime. Which solution meets these requirements MOST cost-effectively?",
+    "question_ja": "ある企業が、Amazon EC2インスタンス群で本番アプリケーションを運用しています。このアプリケーションは、Amazon SQSキューからデータを読み取り、メッセージを並行して処理します。メッセージ量は予測不可能で、しばしば断続的なトラフィックがあります。このアプリケーションは、ダウンタイムなしで継続的にメッセージを処理する必要があります。これらの要件を最もコスト効率よく満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Spot Instances exclusively to handle the maximum capacity required.",
+        "text_ja": "必要な最大キャパシティを処理するために、スポットインスタンスのみを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Reserved Instances exclusively to handle the maximum capacity required.",
+        "text_ja": "必要な最大キャパシティを処理するために、リザーブドインスタンスのみを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use Reserved Instances for the baseline capacity and use Spot Instances to handle additional capacity.",
+        "text_ja": "ベースラインキャパシティにリザーブドインスタンスを使用し、追加のキャパシティにはスポットインスタンスを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Reserved Instances for the baseline capacity and use On-Demand Instances to handle additional capacity.",
+        "text_ja": "ベースラインキャパシティにリザーブドインスタンスを使用し、追加のキャパシティにはオンデマンドインスタンスを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 168,
+    "question_en": "A security team wants to limit access to specific services or actions in all of the team’s AWS accounts. All accounts belong to a large organization in AWS Organizations. The solution must be scalable and there must be a single point where permissions can be maintained. What should a solutions architect do to accomplish this?",
+    "question_ja": "あるセキュリティチームが、チームのすべてのAWSアカウントで特定のサービスまたはアクションへのアクセスを制限したいと考えています。すべてのアカウントは、AWS Organizations内の大きな組織に属しています。このソリューションはスケーラブルであり、権限を維持できる単一のポイントが存在する必要があります。これを実現するために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an ACL to provide access to the services or actions.",
+        "text_ja": "サービスまたはアクションへのアクセスを提供するACLを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create a security group to allow accounts and attach it to user groups.",
+        "text_ja": "アカウントへのアクセスを許可するセキュリティグループを作成し、ユーザーグループにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create cross-account roles in each account to deny access to the services or actions.",
+        "text_ja": "サービスまたはアクションへのアクセスを拒否するクロスアカウントロールを各アカウントに作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create a service control policy in the root organizational unit to deny access to the services or actions.",
+        "text_ja": "サービスまたはアクションへのアクセスを拒否するサービスコントロールポリシーを、ルート組織単位に作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 169,
+    "question_en": "A company is concerned about the security of its public web application due to recent web attacks. The application uses an Application Load Balancer (ALB). A solutions architect must reduce the risk of DDoS attacks against the application. What should the solutions architect do to meet this requirement?",
+    "question_ja": "ある企業は、最近のウェブ攻撃を受けて、一般公開のウェブアプリケーションのセキュリティを懸念しています。このアプリケーションはApplication Load Balancer(ALB)を使用しています。ソリューションアーキテクトは、このアプリケーションに対するDDoS攻撃のリスクを低減する必要があります。この要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Add an Amazon Inspector agent to the ALB.",
+        "text_ja": "ALBにAmazon Inspectorエージェントを追加する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure Amazon Macie to prevent attacks.",
+        "text_ja": "攻撃を防ぐためにAmazon Macieを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Enable AWS Shield Advanced to prevent attacks.",
+        "text_ja": "攻撃を防ぐためにAWS Shield Advancedを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure Amazon GuardDuty to monitor the ALB.",
+        "text_ja": "ALBを監視するためにAmazon GuardDutyを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 170,
+    "question_en": "A company’s web application is running on Amazon EC2 instances behind an Application Load Balancer. The company recently changed its policy, which now requires the application to be accessed from one specific country only. Which configuration will meet this requirement?",
+    "question_ja": "ある企業のウェブアプリケーションは、Application Load Balancerの背後にあるAmazon EC2インスタンス上で動作しています。この企業は最近ポリシーを変更し、現在ではこのアプリケーションが特定の1つの国からのみアクセスされることを求めています。この要件を満たす設定はどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure the security group for the EC2 instances.",
+        "text_ja": "EC2インスタンスのセキュリティグループを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure the security group on the Application Load Balancer.",
+        "text_ja": "Application Load Balancerのセキュリティグループを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure AWS WAF on the Application Load Balancer in a VPC.",
+        "text_ja": "VPC内のApplication Load BalancerにAWS WAFを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure the network ACL for the subnet that contains the EC2 instances.",
+        "text_ja": "EC2インスタンスを含むサブネットのネットワークACLを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 171,
+    "question_en": "A company provides an API to its users that automates inquiries for tax computations based on item prices. The company experiences a larger number of inquiries during the holiday season only that cause slower response times. A solutions architect needs to design a solution that is scalable and elastic. What should the solutions architect do to accomplish this?",
+    "question_ja": "ある企業は、商品価格に基づく税金計算の問い合わせを自動化するAPIをユーザーに提供しています。この企業は、ホリデーシーズンにのみ問い合わせ数が多くなり、応答時間が遅くなります。ソリューションアーキテクトは、スケーラブルで弾力性のあるソリューションを設計する必要があります。これを実現するために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Provide an API hosted on an Amazon EC2 instance. The EC2 instance performs the required computations when the API request is made.",
+        "text_ja": "Amazon EC2インスタンス上でホストされるAPIを提供する。APIリクエストが行われたときに、EC2インスタンスが必要な計算を実行する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Design a REST API using Amazon API Gateway that accepts the item names. API Gateway passes item names to AWS Lambda for tax computations.",
+        "text_ja": "商品名を受け取るAmazon API GatewayでREST APIを設計する。API Gatewayは商品名をAWS Lambdaに渡して税金計算を行う。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Application Load Balancer that has two Amazon EC2 instances behind it. The EC2 instances will compute the tax on the received item names.",
+        "text_ja": "背後に2台のAmazon EC2インスタンスを配置したApplication Load Balancerを作成する。EC2インスタンスが、受信した商品名に基づいて税金を計算する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Design a REST API using Amazon API Gateway that connects with an API hosted on an Amazon EC2 instance. API Gateway accepts and passes the item names to the EC2 instance for tax computations.",
+        "text_ja": "Amazon EC2インスタンス上でホストされるAPIと接続するAmazon API GatewayでREST APIを設計する。API Gatewayは商品名を受け取り、税金計算のためにEC2インスタンスに渡す。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 172,
+    "question_en": "A solutions architect is creating a new Amazon CloudFront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications. Which action should the solutions architect take?",
+    "question_ja": "あるソリューションアーキテクトが、アプリケーション用に新しいAmazon CloudFrontディストリビューションを作成しています。ユーザーが送信する情報の一部は機密性が高いものです。このアプリケーションはHTTPSを使用していますが、もう1層のセキュリティが必要です。機密情報はアプリケーションスタック全体を通じて保護される必要があり、その情報へのアクセスは特定のアプリケーションに制限される必要があります。ソリューションアーキテクトはどのようなアクションを取るべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure a CloudFront signed URL.",
+        "text_ja": "CloudFrontの署名付きURLを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure a CloudFront signed cookie.",
+        "text_ja": "CloudFrontの署名付きCookieを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure a CloudFront field-level encryption profile.",
+        "text_ja": "CloudFrontのフィールドレベル暗号化プロファイルを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy.",
+        "text_ja": "CloudFrontを設定し、ビューアプロトコルポリシーのオリジンプロトコルポリシー設定をHTTPS Onlyに設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 173,
+    "question_en": "A gaming company hosts a browser-based application on AWS. The users of the application consume a large number of videos and images that are stored in Amazon S3. This content is the same for all users. The application has increased in popularity, and millions of users worldwide accessing these media files. The company wants to provide the files to the users while reducing the load on the origin. Which solution meets these requirements MOST cost-effectively?",
+    "question_ja": "あるゲーム会社が、AWS上でブラウザベースのアプリケーションをホストしています。このアプリケーションのユーザーは、Amazon S3に保存されている大量の動画や画像を消費します。このコンテンツはすべてのユーザーで共通です。このアプリケーションは人気が高まっており、世界中の数百万人のユーザーがこれらのメディアファイルにアクセスしています。この企業は、オリジンへの負荷を軽減しながらユーザーにファイルを提供したいと考えています。これらの要件を最もコスト効率よく満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy an AWS Global Accelerator accelerator in front of the web servers.",
+        "text_ja": "ウェブサーバーの前にAWS Global Acceleratorのアクセラレーターをデプロイする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy an Amazon CloudFront web distribution in front of the S3 bucket.",
+        "text_ja": "S3バケットの前にAmazon CloudFrontのウェブディストリビューションをデプロイする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy an Amazon ElastiCache for Redis instance in front of the web servers.",
+        "text_ja": "ウェブサーバーの前にAmazon ElastiCache for Redisインスタンスをデプロイする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy an Amazon ElastiCache for Memcached instance in front of the web servers.",
+        "text_ja": "ウェブサーバーの前にAmazon ElastiCache for Memcachedインスタンスをデプロイする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 174,
+    "question_en": "A company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an Application Load Balancer (ALB). A solutions architect needs to modify the infrastructure to be highly available without modifying the application. Which architecture should the solutions architect choose that provides high availability?",
+    "question_ja": "ある企業には、単一のアベイラビリティーゾーンにあるAmazon EC2 Auto Scalingグループ内で、Application Load Balancer(ALB)の背後で6台のフロントエンドウェブサーバーを実行するマルチティアアプリケーションがあります。ソリューションアーキテクトは、アプリケーションを変更することなく、インフラストラクチャを高可用性に変更する必要があります。高可用性を提供するために、ソリューションアーキテクトはどのアーキテクチャを選択すべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Auto Scaling group that uses three instances across each of two Regions.",
+        "text_ja": "2つのリージョンそれぞれで3台のインスタンスを使用するAuto Scalingグループを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Modify the Auto Scaling group to use three instances across each of two Availability Zones.",
+        "text_ja": "Auto Scalingグループを変更し、2つのアベイラビリティーゾーンそれぞれで3台のインスタンスを使用するようにする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Auto Scaling template that can be used to quickly create more instances in another Region.",
+        "text_ja": "別のリージョンでより多くのインスタンスをすばやく作成するために使用できるAuto Scalingテンプレートを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Change the ALB in front of the Amazon EC2 instances in a round-robin configuration to balance traffic to the web tier.",
+        "text_ja": "Amazon EC2インスタンスの前にあるALBを、ウェブ層へのトラフィックを分散するラウンドロビン構成に変更する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 175,
+    "question_en": "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During a recent sales event, a sudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers. A solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application. Which solution will meet these requirements?",
+    "question_ja": "あるEコマース企業には、Amazon API GatewayとAWS Lambda関数を使用する注文処理アプリケーションがあります。このアプリケーションは、Amazon Aurora PostgreSQLデータベースにデータを保存しています。最近のセールイベント中に、顧客の注文が突然急増しました。一部の顧客はタイムアウトを経験し、アプリケーションはそれらの顧客の注文を処理できませんでした。ソリューションアーキテクトは、多数の開いた接続が原因でデータベースのCPU使用率とメモリ使用率が高くなっていたと判断しました。ソリューションアーキテクトは、アプリケーションへの変更を最小限に抑えながら、タイムアウトエラーを防ぐ必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.",
+        "text_ja": "Lambda関数のプロビジョンド同時実行数を設定する。データベースを複数のAWSリージョンにまたがるグローバルデータベースに変更する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.",
+        "text_ja": "Amazon RDS Proxyを使用してデータベース用のプロキシを作成する。データベースエンドポイントの代わりにRDS Proxyエンドポイントを使用するようLambda関数を変更する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route traffic to the read replica.",
+        "text_ja": "別のAWSリージョンにデータベースのリードレプリカを作成する。API Gatewayのクエリ文字列パラメーターを使用して、トラフィックをリードレプリカにルーティングする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table.",
+        "text_ja": "AWS Database Migration Service(AWS DMS)を使用して、Aurora PostgreSQLからAmazon DynamoDBにデータを移行する。DynamoDBテーブルを使用するようLambda関数を変更する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 176,
+    "question_en": "An application runs on Amazon EC2 instances in private subnets. The application needs to access an Amazon DynamoDB table. What is the MOST secure way to access the table while ensuring that the traffic does not leave the AWS network?",
+    "question_ja": "あるアプリケーションが、プライベートサブネット内のAmazon EC2インスタンス上で動作しています。このアプリケーションは、Amazon DynamoDBテーブルにアクセスする必要があります。トラフィックがAWSネットワークの外に出ないようにしながら、テーブルにアクセスする最も安全な方法はどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use a VPC endpoint for DynamoDB.",
+        "text_ja": "DynamoDB用のVPCエンドポイントを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use a NAT gateway in a public subnet.",
+        "text_ja": "パブリックサブネットのNATゲートウェイを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use a NAT instance in a private subnet.",
+        "text_ja": "プライベートサブネットのNATインスタンスを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use the internet gateway attached to the VPC.",
+        "text_ja": "VPCにアタッチされたインターネットゲートウェイを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 177,
+    "question_en": "An entertainment company is using Amazon DynamoDB to store media metadata. The application is read intensive and experiencing delays. The company does not have staff to handle additional operational overhead and needs to improve the performance efficiency of DynamoDB without reconfiguring the application. What should a solutions architect recommend to meet this requirement?",
+    "question_ja": "あるエンターテインメント企業が、メディアのメタデータを保存するためにAmazon DynamoDBを使用しています。このアプリケーションは読み取り集中型で、遅延が発生しています。この企業には追加の運用上のオーバーヘッドに対応するスタッフがおらず、アプリケーションを再設定せずにDynamoDBのパフォーマンス効率を改善する必要があります。この要件を満たすために、ソリューションアーキテクトは何を推奨すべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon ElastiCache for Redis.",
+        "text_ja": "Amazon ElastiCache for Redisを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon DynamoDB Accelerator (DAX).",
+        "text_ja": "Amazon DynamoDB Accelerator(DAX)を使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Replicate data by using DynamoDB global tables.",
+        "text_ja": "DynamoDBグローバルテーブルを使用してデータを複製する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Amazon ElastiCache for Memcached with Auto Discovery enabled.",
+        "text_ja": "Auto Discoveryを有効にしたAmazon ElastiCache for Memcachedを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 178,
+    "question_en": "A company’s infrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in a single AWS Region. The company wants to back up its data in a separate Region. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業のインフラストラクチャは、単一のAWSリージョン内のAmazon EC2インスタンスとAmazon RDS DBインスタンスで構成されています。この企業は、データを別のリージョンにバックアップしたいと考えています。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS Backup to copy EC2 backups and RDS backups to the separate Region.",
+        "text_ja": "AWS Backupを使用して、EC2バックアップとRDSバックアップを別のリージョンにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon Data Lifecycle Manager (Amazon DLM) to copy EC2 backups and RDS backups to the separate Region.",
+        "text_ja": "Amazon Data Lifecycle Manager(Amazon DLM)を使用して、EC2バックアップとRDSバックアップを別のリージョンにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create Amazon Machine Images (AMIs) of the EC2 instances. Copy the AMIs to the separate Region. Create a read replica for the RDS DB instance in the separate Region.",
+        "text_ja": "EC2インスタンスのAmazon マシンイメージ(AMI)を作成する。AMIを別のリージョンにコピーする。別のリージョンにRDS DBインスタンスのリードレプリカを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create Amazon Elastic Block Store (Amazon EBS) snapshots. Copy the EBS snapshots to the separate Region. Create RDS snapshots. Export the RDS snapshots to Amazon S3. Configure S3 Cross-Region Replication (CRR) to the separate Region.",
+        "text_ja": "Amazon Elastic Block Store(Amazon EBS)スナップショットを作成する。EBSスナップショットを別のリージョンにコピーする。RDSスナップショットを作成する。RDSスナップショットをAmazon S3にエクスポートする。別のリージョンへのS3クロスリージョンレプリケーション(CRR)を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 179,
+    "question_en": "A solutions architect needs to securely store a database user name and password that an application uses to access an Amazon RDS DB instance. The application that accesses the database runs on an Amazon EC2 instance. The solutions architect wants to create a secure parameter in AWS Systems Manager Parameter Store. What should the solutions architect do to meet this requirement?",
+    "question_ja": "あるソリューションアーキテクトは、アプリケーションがAmazon RDS DBインスタンスにアクセスするために使用するデータベースのユーザー名とパスワードを安全に保存する必要があります。データベースにアクセスするアプリケーションはAmazon EC2インスタンス上で動作しています。ソリューションアーキテクトは、AWS Systems Manager Parameter Storeに安全なパラメーターを作成したいと考えています。この要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an IAM role that has read access to the Parameter Store parameter. Allow Decrypt access to an AWS Key Management Service (AWS KMS) key that is used to encrypt the parameter. Assign this IAM role to the EC2 instance.",
+        "text_ja": "Parameter Storeのパラメーターへの読み取りアクセス権を持つIAMロールを作成する。パラメーターの暗号化に使用されるAWS Key Management Service(AWS KMS)キーへのDecryptアクセスを許可する。このIAMロールをEC2インスタンスに割り当てる。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an IAM policy that allows read access to the Parameter Store parameter. Allow Decrypt access to an AWS Key Management Service (AWS KMS) key that is used to encrypt the parameter. Assign this IAM policy to the EC2 instance.",
+        "text_ja": "Parameter Storeのパラメーターへの読み取りアクセスを許可するIAMポリシーを作成する。パラメーターの暗号化に使用されるAWS Key Management Service(AWS KMS)キーへのDecryptアクセスを許可する。このIAMポリシーをEC2インスタンスに割り当てる。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an IAM trust relationship between the Parameter Store parameter and the EC2 instance. Specify Amazon RDS as a principal in the trust policy.",
+        "text_ja": "Parameter StoreのパラメーターとEC2インスタンスの間にIAM信頼関係を作成する。信頼ポリシーでAmazon RDSをプリンシパルとして指定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an IAM trust relationship between the DB instance and the EC2 instance. Specify Systems Manager as a principal in the trust policy.",
+        "text_ja": "DBインスタンスとEC2インスタンスの間にIAM信頼関係を作成する。信頼ポリシーでSystems Managerをプリンシパルとして指定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 180,
+    "question_en": "A company is designing a cloud communications platform that is driven by APIs. The application is hosted on Amazon EC2 instances behind a Network Load Balancer (NLB). The company uses Amazon API Gateway to provide external users with access to the application through APIs. The company wants to protect the platform against web exploits like SQL injection and also wants to detect and mitigate large, sophisticated DDoS attacks. Which combination of solutions provides the MOST protection? (Choose two.)",
+    "question_ja": "ある企業が、APIによって駆動されるクラウド通信プラットフォームを設計しています。このアプリケーションは、Network Load Balancer(NLB)の背後にあるAmazon EC2インスタンス上でホストされています。この企業は、外部ユーザーにAPI経由でアプリケーションへのアクセスを提供するためにAmazon API Gatewayを使用しています。この企業は、SQLインジェクションなどのウェブ攻撃からプラットフォームを保護したいと考えており、また大規模で高度なDDoS攻撃を検知し軽減したいとも考えています。最も多くの保護を提供するソリューションの組み合わせはどれですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "BC",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS WAF to protect the NLB.",
+        "text_ja": "AWS WAFを使用してNLBを保護する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use AWS Shield Advanced with the NLB.",
+        "text_ja": "NLBでAWS Shield Advancedを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS WAF to protect Amazon API Gateway.",
+        "text_ja": "AWS WAFを使用してAmazon API Gatewayを保護する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Amazon GuardDuty with AWS Shield Standard",
+        "text_ja": "AWS Shield StandardとAmazon GuardDutyを使用する。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Use AWS Shield Standard with Amazon API Gateway.",
+        "text_ja": "Amazon API GatewayでAWS Shield Standardを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  }
+]

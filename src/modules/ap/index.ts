@@ -277,6 +277,7 @@ function renderHome(root: HTMLElement): void {
       }
       startExam({
         moduleId: MODULE_ID,
+        levelId: "",
         stageId: "morning",
         label: "Buổi sáng",
         brandLabel: brandLabel(),

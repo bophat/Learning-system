@@ -1,0 +1,1058 @@
+[
+  {
+    "n": 1,
+    "question_en": "A company collects data for temperature, humidity, and atmospheric pressure in cities across multiple continents. The average volume of data that the company collects from each site daily is 500 GB. Each site has a high-speed Internet connection. The company wants to aggregate the data from all these global sites as quickly as possible in a single Amazon S3 bucket. The solution must minimize operational complexity. Which solution meets these requirements?",
+    "question_ja": "ある企業は、複数の大陸にまたがる都市で気温、湿度、大気圧のデータを収集しています。各サイトが1日に収集するデータ量は平均500GBです。各サイトには高速インターネット接続があります。この企業は、これらすべてのグローバルサイトからのデータを、できるだけ早く単一のAmazon S3バケットに集約したいと考えています。ソリューションは運用の複雑さを最小限に抑える必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Turn on S3 Transfer Acceleration on the destination S3 bucket. Use multipart uploads to directly upload site data to the destination S3 bucket.",
+        "text_ja": "宛先のS3バケットでS3 Transfer Accelerationを有効にする。マルチパートアップロードを使用して、サイトのデータを宛先のS3バケットに直接アップロードする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Upload the data from each site to an S3 bucket in the closest Region. Use S3 Cross-Region Replication to copy objects to the destination S3 bucket. Then remove the data from the origin S3 bucket.",
+        "text_ja": "各サイトのデータを最も近いリージョンのS3バケットにアップロードする。S3クロスリージョンレプリケーションを使用して、オブジェクトを宛先のS3バケットにコピーする。その後、元のS3バケットからデータを削除する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Schedule AWS Snowball Edge Storage Optimized device jobs daily to transfer data from each site to the closest Region. Use S3 CrossRegion Replication to copy objects to the destination S3 bucket.",
+        "text_ja": "各サイトから最も近いリージョンへデータを転送するために、AWS Snowball Edge Storage Optimizedデバイスのジョブを毎日スケジュールする。S3クロスリージョンレプリケーションを使用して、オブジェクトを宛先のS3バケットにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Upload the data from each site to an Amazon EC2 instance in the closest Region. Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. At regular intervals, take an EBS snapshot and copy it to the Region that contains the destination S3 bucket. Restore the EBS volume in that Region.",
+        "text_ja": "各サイトのデータを最も近いリージョンのAmazon EC2インスタンスにアップロードする。データをAmazon Elastic Block Store(Amazon EBS)ボリュームに保存する。定期的にEBSスナップショットを取得し、宛先のS3バケットが存在するリージョンにコピーする。そのリージョンでEBSボリュームを復元する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 2,
+    "question_en": "A company needs the ability to analyze the log files of its proprietary application. The logs are stored in JSON format in an Amazon S3 bucket. Queries will be simple and will run on-demand. A solutions architect needs to perform the analysis with minimal changes to the existing architecture. What should the solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
+    "question_ja": "ある企業は、独自のアプリケーションのログファイルを分析する必要があります。ログはAmazon S3バケットにJSON形式で保存されています。クエリはシンプルで、オンデマンドで実行されます。ソリューションアーキテクトは、既存のアーキテクチャへの変更を最小限に抑えて分析を実行する必要があります。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon Redshift to load all the content into one place and run the SQL queries as needed.",
+        "text_ja": "Amazon Redshiftを使用してすべてのコンテンツを1か所に読み込み、必要に応じてSQLクエリを実行する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon CloudWatch Logs to store the logs. Run SQL queries as needed from the Amazon CloudWatch console.",
+        "text_ja": "Amazon CloudWatch Logsを使用してログを保存する。Amazon CloudWatchコンソールから必要に応じてSQLクエリを実行する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use Amazon Athena directly with Amazon S3 to run the queries as needed.",
+        "text_ja": "Amazon S3と直接連携するAmazon Athenaを使用して、必要に応じてクエリを実行する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Amazon EMR to run the SQL queries as needed.",
+        "text_ja": "AWS Glueを使用してログをカタログ化する。Amazon EMR上の一時的なApache Sparkクラスターを使用して、必要に応じてSQLクエリを実行する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 3,
+    "question_en": "A company uses AWS Organizations to manage multiple AWS accounts for different departments. The management account has an Amazon S3 bucket that contains project reports. The company wants to limit access to this S3 bucket to only users of accounts within the organization in AWS Organizations. Which solution meets these requirements with the LEAST amount of operational overhead?",
+    "question_ja": "ある企業は、AWS Organizationsを使用して、部門ごとに複数のAWSアカウントを管理しています。管理アカウントには、プロジェクトレポートを含むAmazon S3バケットがあります。この企業は、このS3バケットへのアクセスを、AWS Organizations内の組織に属するアカウントのユーザーのみに制限したいと考えています。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.",
+        "text_ja": "組織IDを参照するaws:PrincipalOrgIDグローバル条件キーをS3バケットポリシーに追加する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an organizational unit (OU) for each department. Add the aws:PrincipalOrgPaths global condition key to the S3 bucket policy.",
+        "text_ja": "部門ごとに組織単位(OU)を作成する。aws:PrincipalOrgPathsグローバル条件キーをS3バケットポリシーに追加する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.",
+        "text_ja": "AWS CloudTrailを使用して、CreateAccount、InviteAccountToOrganization、LeaveOrganization、RemoveAccountFromOrganizationの各イベントを監視する。それに応じてS3バケットポリシーを更新する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.",
+        "text_ja": "S3バケットへのアクセスが必要な各ユーザーにタグを付ける。aws:PrincipalTagグローバル条件キーをS3バケットポリシーに追加する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 4,
+    "question_en": "An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet. Which solution will provide private network connectivity to Amazon S3?",
+    "question_ja": "あるアプリケーションはVPC内のAmazon EC2インスタンス上で動作しています。このアプリケーションは、Amazon S3バケットに保存されたログを処理します。EC2インスタンスは、インターネットへの接続なしにS3バケットにアクセスする必要があります。Amazon S3へのプライベートなネットワーク接続を提供するソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create a gateway VPC endpoint to the S3 bucket.",
+        "text_ja": "S3バケットへのゲートウェイ型VPCエンドポイントを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.",
+        "text_ja": "ログをAmazon CloudWatch Logsにストリーミングする。ログをS3バケットにエクスポートする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an instance profile on Amazon EC2 to allow S3 access.",
+        "text_ja": "Amazon EC2にインスタンスプロファイルを作成し、S3へのアクセスを許可する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Amazon API Gateway API with a private link to access the S3 endpoint.",
+        "text_ja": "S3エンドポイントにアクセスするためのプライベートリンクを持つAmazon API Gateway APIを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 5,
+    "question_en": "A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created a second EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time. What should a solutions architect propose to ensure users see all of their documents at once?",
+    "question_ja": "ある企業は、単一のAmazon EC2インスタンスを使用してAWS上でウェブアプリケーションをホストしており、ユーザーがアップロードしたドキュメントをAmazon EBSボリュームに保存しています。スケーラビリティと可用性を向上させるために、この企業はアーキテクチャを複製し、別のアベイラビリティーゾーンに2台目のEC2インスタンスとEBSボリュームを作成し、両方をApplication Load Balancerの背後に配置しました。この変更を完了した後、ユーザーはウェブサイトを更新するたびに、ドキュメントの一方のサブセットまたはもう一方のサブセットしか表示されず、すべてのドキュメントが同時に表示されることはないと報告しました。ユーザーが自分のすべてのドキュメントを一度に見られるようにするために、ソリューションアーキテクトは何を提案すべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Copy the data so both EBS volumes contain all the documents",
+        "text_ja": "両方のEBSボリュームにすべてのドキュメントが含まれるようにデータをコピーする",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure the Application Load Balancer to direct a user to the server with the documents",
+        "text_ja": "ユーザーをドキュメントが存在するサーバーに誘導するようApplication Load Balancerを設定する",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS",
+        "text_ja": "両方のEBSボリュームのデータをAmazon EFSにコピーする。新しいドキュメントをAmazon EFSに保存するようアプリケーションを変更する",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server",
+        "text_ja": "リクエストを両方のサーバーに送信するようApplication Load Balancerを設定する。それぞれのドキュメントを正しいサーバーから返す",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 6,
+    "question_en": "A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the video files as soon as possible while using the least possible network bandwidth. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、NFSを使用してオンプレミスのネットワーク接続ストレージに大容量の動画ファイルを保存しています。各動画ファイルのサイズは1MBから500GBまでさまざまです。総ストレージ容量は70TBで、もう増加していません。この企業は、動画ファイルをAmazon S3に移行することを決定しました。この企業は、ネットワーク帯域幅の使用を最小限に抑えながら、できるだけ早く動画ファイルを移行する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.",
+        "text_ja": "S3バケットを作成する。S3バケットへの書き込み権限を持つIAMロールを作成する。AWS CLIを使用して、すべてのファイルをローカルからS3バケットにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.",
+        "text_ja": "AWS Snowball Edgeジョブを作成する。オンプレミスでSnowball Edgeデバイスを受け取る。Snowball Edgeクライアントを使用してデータをデバイスに転送する。デバイスを返送し、AWSがデータをAmazon S3にインポートできるようにする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.",
+        "text_ja": "オンプレミスにS3 File Gatewayを展開する。S3 File Gatewayに接続するためのパブリックサービスエンドポイントを作成する。S3バケットを作成する。S3 File Gateway上に新しいNFSファイル共有を作成する。新しいファイル共有をS3バケットに向ける。既存のNFSファイル共有からS3 File Gatewayにデータを転送する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.",
+        "text_ja": "オンプレミスネットワークとAWSの間にAWS Direct Connect接続を設定する。オンプレミスにS3 File Gatewayを展開する。S3 File Gatewayに接続するためのパブリック仮想インターフェース(VIF)を作成する。S3バケットを作成する。S3 File Gateway上に新しいNFSファイル共有を作成する。新しいファイル共有をS3バケットに向ける。既存のNFSファイル共有からS3 File Gatewayにデータを転送する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 7,
+    "question_en": "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability. Which solution meets these requirements?",
+    "question_ja": "ある企業には、受信メッセージを取り込むアプリケーションがあります。他の数十のアプリケーションやマイクロサービスがこれらのメッセージを迅速に消費します。メッセージ数は大きく変動し、時には1秒あたり10万件まで急増することがあります。この企業は、ソリューションを疎結合にし、スケーラビリティを向上させたいと考えています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.",
+        "text_ja": "メッセージをAmazon Kinesis Data Analyticsに永続化する。消費側のアプリケーションがメッセージを読み取り処理するように設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.",
+        "text_ja": "取り込みアプリケーションを、Auto Scalingグループ内のAmazon EC2インスタンスにデプロイし、CPUメトリクスに基づいてEC2インスタンス数をスケーリングする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages.",
+        "text_ja": "メッセージを単一シャードのAmazon Kinesis Data Streamsに書き込む。AWS Lambda関数を使用してメッセージを前処理し、Amazon DynamoDBに保存する。消費側のアプリケーションがDynamoDBから読み取ってメッセージを処理するように設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. Configure the consumer applications to process the messages from the queues.",
+        "text_ja": "メッセージを、複数のAmazon Simple Queue Service(Amazon SQS)サブスクリプションを持つAmazon Simple Notification Service(Amazon SNS)トピックにパブリッシュする。消費側のアプリケーションがキューからメッセージを処理するように設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 8,
+    "question_en": "A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with a solution that maximizes resiliency and scalability. How should a solutions architect design the architecture to meet these requirements?",
+    "question_ja": "ある企業は、分散アプリケーションをAWSに移行しています。このアプリケーションは変動するワークロードを処理します。従来のプラットフォームは、複数のコンピュートノード間でジョブを調整するプライマリサーバーで構成されています。この企業は、回復力とスケーラビリティを最大化するソリューションでアプリケーションを最新化したいと考えています。これらの要件を満たすために、ソリューションアーキテクトはどのようにアーキテクチャを設計すべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling to use scheduled scaling.",
+        "text_ja": "ジョブの宛先としてAmazon Simple Queue Service(Amazon SQS)キューを設定する。Auto Scalingグループで管理されるAmazon EC2インスタンスでコンピュートノードを実装する。スケジュールに基づくEC2 Auto Scalingを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.",
+        "text_ja": "ジョブの宛先としてAmazon Simple Queue Service(Amazon SQS)キューを設定する。Auto Scalingグループで管理されるAmazon EC2インスタンスでコンピュートノードを実装する。キューのサイズに基づいてEC2 Auto Scalingを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.",
+        "text_ja": "Auto Scalingグループで管理されるAmazon EC2インスタンスでプライマリサーバーとコンピュートノードを実装する。ジョブの宛先としてAWS CloudTrailを設定する。プライマリサーバーの負荷に基づいてEC2 Auto Scalingを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes.",
+        "text_ja": "Auto Scalingグループで管理されるAmazon EC2インスタンスでプライマリサーバーとコンピュートノードを実装する。ジョブの宛先としてAmazon EventBridge(Amazon CloudWatch Events)を設定する。コンピュートノードの負荷に基づいてEC2 Auto Scalingを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 9,
+    "question_en": "A company is running an SMB file server in its data center. The file server stores large files that are accessed frequently for the first few days after the files are created. After 7 days the files are rarely accessed. The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide file lifecycle management to avoid future storage issues. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、データセンターでSMBファイルサーバーを運用しています。このファイルサーバーは、作成後最初の数日間は頻繁にアクセスされる大容量ファイルを保存しています。7日を過ぎるとファイルはほとんどアクセスされなくなります。データの総サイズは増加を続けており、企業の総ストレージ容量に近づいています。ソリューションアーキテクトは、最近アクセスされたファイルへの低レイテンシーアクセスを損なうことなく、利用可能なストレージ容量を増やす必要があります。ソリューションアーキテクトはまた、将来のストレージ問題を回避するためのファイルライフサイクル管理も提供する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.",
+        "text_ja": "AWS DataSyncを使用して、SMBファイルサーバーから7日より古いデータをAWSにコピーする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+        "text_ja": "企業のストレージ容量を拡張するために、Amazon S3 File Gatewayを作成する。7日後にデータをS3 Glacier Deep Archiveに移行するS3ライフサイクルポリシーを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon FSx for Windows File Server file system to extend the company's storage space.",
+        "text_ja": "企業のストレージ容量を拡張するために、Amazon FSx for Windows File Serverファイルシステムを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.",
+        "text_ja": "各ユーザーのコンピューターにAmazon S3にアクセスするためのユーティリティをインストールする。7日後にデータをS3 Glacier Flexible Retrievalに移行するS3ライフサイクルポリシーを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 10,
+    "question_en": "A company is building an ecommerce web application on AWS. The application sends information about new orders to an Amazon API Gateway REST API to process. The company wants to ensure that orders are processed in the order that they are received. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、AWS上でEコマースウェブアプリケーションを構築しています。このアプリケーションは、新規注文の情報を処理するためにAmazon API Gateway REST APIに送信します。この企業は、注文を受信した順序どおりに処理されるようにしたいと考えています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use an API Gateway integration to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic when the application receives an order. Subscribe an AWS Lambda function to the topic to perform processing.",
+        "text_ja": "アプリケーションが注文を受信した際に、API Gatewayの統合を使用してAmazon Simple Notification Service(Amazon SNS)トピックにメッセージをパブリッシュする。トピックにAWS Lambda関数をサブスクライブして処理を実行する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing.",
+        "text_ja": "アプリケーションが注文を受信した際に、API Gatewayの統合を使用してAmazon Simple Queue Service(Amazon SQS)FIFOキューにメッセージを送信する。SQS FIFOキューがAWS Lambda関数を呼び出して処理するように設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use an API Gateway authorizer to block any requests while the application processes an order.",
+        "text_ja": "アプリケーションが注文を処理している間、リクエストをブロックするAPI Gatewayオーソライザーを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. Configure the SQS standard queue to invoke an AWS Lambda function for processing.",
+        "text_ja": "アプリケーションが注文を受信した際に、API Gatewayの統合を使用してAmazon Simple Queue Service(Amazon SQS)標準キューにメッセージを送信する。SQS標準キューがAWS Lambda関数を呼び出して処理するように設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 11,
+    "question_en": "A company has an application that runs on Amazon EC2 instances and uses an Amazon Aurora database. The EC2 instances connect to the database by using user names and passwords that are stored locally in a file. The company wants to minimize the operational overhead of credential management. What should a solutions architect do to accomplish this goal?",
+    "question_ja": "ある企業には、Amazon EC2インスタンス上で動作し、Amazon Auroraデータベースを使用するアプリケーションがあります。EC2インスタンスは、ローカルファイルに保存されたユーザー名とパスワードを使用してデータベースに接続しています。この企業は、認証情報管理の運用上のオーバーヘッドを最小限に抑えたいと考えています。この目標を達成するために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS Secrets Manager. Turn on automatic rotation.",
+        "text_ja": "AWS Secrets Managerを使用する。自動ローテーションを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use AWS Systems Manager Parameter Store. Turn on automatic rotation.",
+        "text_ja": "AWS Systems Manager Parameter Storeを使用する。自動ローテーションを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon S3 bucket to store objects that are encrypted with an AWS Key Management Service (AWS KMS) encryption key. Migrate the credential file to the S3 bucket. Point the application to the S3 bucket.",
+        "text_ja": "AWS Key Management Service(AWS KMS)の暗号化キーで暗号化されたオブジェクトを保存するAmazon S3バケットを作成する。認証情報ファイルをS3バケットに移行する。アプリケーションをS3バケットに向ける。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential file to the new EBS volume. Point the application to the new EBS volume.",
+        "text_ja": "各EC2インスタンス用に暗号化されたAmazon Elastic Block Store(Amazon EBS)ボリュームを作成する。新しいEBSボリュームを各EC2インスタンスにアタッチする。認証情報ファイルを新しいEBSボリュームに移行する。アプリケーションを新しいEBSボリュームに向ける。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 12,
+    "question_en": "A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and reduce latency for the static data and dynamic data. The company is using its own domain name registered with Amazon Route 53. What should a solutions architect do to meet these requirements?",
+    "question_ja": "あるグローバル企業は、Application Load Balancer(ALB)の背後にあるAmazon EC2インスタンスでウェブアプリケーションをホストしています。このウェブアプリケーションには静的データと動的データがあります。この企業は静的データをAmazon S3バケットに保存しています。この企業は、静的データと動的データの両方についてパフォーマンスを向上させ、レイテンシーを削減したいと考えています。この企業は、Amazon Route 53に登録された独自のドメイン名を使用しています。これらの要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route traffic to the CloudFront distribution.",
+        "text_ja": "S3バケットとALBの両方をオリジンとするAmazon CloudFrontディストリビューションを作成する。CloudFrontディストリビューションにトラフィックをルーティングするようRoute 53を設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route traffic to the CloudFront distribution.",
+        "text_ja": "ALBをオリジンとするAmazon CloudFrontディストリビューションを作成する。S3バケットをエンドポイントとするAWS Global Accelerator標準アクセラレーターを作成する。CloudFrontディストリビューションにトラフィックをルーティングするようRoute 53を設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.",
+        "text_ja": "S3バケットをオリジンとするAmazon CloudFrontディストリビューションを作成する。ALBとCloudFrontディストリビューションの両方をエンドポイントとするAWS Global Accelerator標準アクセラレーターを作成する。アクセラレーターのDNS名を指すカスタムドメイン名を作成する。ウェブアプリケーションのエンドポイントとしてカスタムドメイン名を使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application.",
+        "text_ja": "ALBをオリジンとするAmazon CloudFrontディストリビューションを作成する。S3バケットをエンドポイントとするAWS Global Accelerator標準アクセラレーターを作成する。2つのドメイン名を作成する。1つのドメイン名を動的コンテンツ用にCloudFrontのDNS名に向ける。もう1つのドメイン名を静的コンテンツ用にアクセラレーターのDNS名に向ける。これらのドメイン名をウェブアプリケーションのエンドポイントとして使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 13,
+    "question_en": "A company performs monthly maintenance on its AWS infrastructure. During these maintenance activities, the company needs to rotate the credentials for its Amazon RDS for MySQL databases across multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業は、AWSインフラストラクチャに対して月次メンテナンスを実施しています。このメンテナンス作業中、企業は複数のAWSリージョンにまたがるAmazon RDS for MySQLデータベースの認証情報をローテーションする必要があります。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Store the credentials as secrets in AWS Secrets Manager. Use multi-Region secret replication for the required Regions. Configure Secrets Manager to rotate the secrets on a schedule.",
+        "text_ja": "AWS Secrets Managerにシークレットとして認証情報を保存する。必要なリージョン向けにマルチリージョンシークレットレプリケーションを使用する。スケジュールに基づいてシークレットをローテーションするようSecrets Managerを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Store the credentials as secrets in AWS Systems Manager by creating a secure string parameter. Use multi-Region secret replication for the required Regions. Configure Systems Manager to rotate the secrets on a schedule.",
+        "text_ja": "AWS Systems Managerでセキュアストリングパラメーターを作成し、シークレットとして認証情報を保存する。必要なリージョン向けにマルチリージョンシークレットレプリケーションを使用する。スケジュールに基づいてシークレットをローテーションするようSystems Managerを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Store the credentials in an Amazon S3 bucket that has server-side encryption (SSE) enabled. Use Amazon EventBridge (Amazon CloudWatch Events) to invoke an AWS Lambda function to rotate the credentials.",
+        "text_ja": "サーバーサイド暗号化(SSE)が有効なAmazon S3バケットに認証情報を保存する。Amazon EventBridge(Amazon CloudWatch Events)を使用してAWS Lambda関数を呼び出し、認証情報をローテーションする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Encrypt the credentials as secrets by using AWS Key Management Service (AWS KMS) multi-Region customer managed keys. Store the secrets in an Amazon DynamoDB global table. Use an AWS Lambda function to retrieve the secrets from DynamoDB. Use the RDS API to rotate the secrets.",
+        "text_ja": "AWS Key Management Service(AWS KMS)のマルチリージョンカスタマー管理キーを使用して認証情報をシークレットとして暗号化する。シークレットをAmazon DynamoDBグローバルテーブルに保存する。AWS Lambda関数を使用してDynamoDBからシークレットを取得する。RDS APIを使用してシークレットをローテーションする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 14,
+    "question_en": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance. The database's performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、Application Load Balancerの背後にあるAmazon EC2インスタンスでEコマースアプリケーションを運用しています。インスタンスは、複数のアベイラビリティーゾーンにまたがるAmazon EC2 Auto Scalingグループ内で動作しています。Auto ScalingグループはCPU使用率メトリクスに基づいてスケーリングします。Eコマースアプリケーションは、大規模なEC2インスタンスでホストされているMySQL 8.0データベースにトランザクションデータを保存しています。アプリケーションの負荷が増加すると、データベースのパフォーマンスが急速に低下します。このアプリケーションは、書き込みトランザクションよりも読み取りリクエストのほうが多く処理します。この企業は、高可用性を維持しながら、予測不可能な読み取りワークロードの需要に合わせてデータベースを自動的にスケーリングするソリューションを求めています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon Redshift with a single node for leader and compute functionality.",
+        "text_ja": "リーダーおよびコンピュート機能を単一ノードで処理するAmazon Redshiftを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Amazon RDS with a Single-AZ deployment Configure Amazon RDS to add reader instances in a different Availability Zone.",
+        "text_ja": "シングルAZ配置のAmazon RDSを使用する。別のアベイラビリティーゾーンにリーダーインスタンスを追加するようAmazon RDSを設定する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto Scaling with Aurora Replicas.",
+        "text_ja": "マルチAZ配置のAmazon Auroraを使用する。Auroraレプリカを使用したAurora Auto Scalingを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use Amazon ElastiCache for Memcached with EC2 Spot Instances.",
+        "text_ja": "EC2スポットインスタンスを使用したAmazon ElastiCache for Memcachedを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 15,
+    "question_en": "A company recently migrated to AWS and wants to implement a solution to protect the traffic that flows in and out of the production VPC. The company had an inspection server in its on-premises data center. The inspection server performed specific operations such as traffic flow inspection and traffic filtering. The company wants to have the same functionalities in the AWS Cloud. Which solution will meet these requirements?",
+    "question_ja": "ある企業は最近AWSに移行し、本番VPCに出入りするトラフィックを保護するソリューションを実装したいと考えています。この企業は、オンプレミスのデータセンターに検査サーバーを持っていました。検査サーバーは、トラフィックフローの検査やトラフィックフィルタリングなどの特定の操作を実行していました。この企業は、AWSクラウドでも同様の機能を持ちたいと考えています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "C",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon GuardDuty for traffic inspection and traffic filtering in the production VPC.",
+        "text_ja": "本番VPCでのトラフィック検査およびトラフィックフィルタリングにAmazon GuardDutyを使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Traffic Mirroring to mirror traffic from the production VPC for traffic inspection and filtering.",
+        "text_ja": "トラフィック検査とフィルタリングのために、本番VPCからトラフィックをミラーリングするTraffic Mirroringを使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Network Firewall to create the required rules for traffic inspection and traffic filtering for the production VPC.",
+        "text_ja": "本番VPCのトラフィック検査およびトラフィックフィルタリングに必要なルールを作成するために、AWS Network Firewallを使用する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Firewall Manager to create the required rules for traffic inspection and traffic filtering for the production VPC.",
+        "text_ja": "本番VPCのトラフィック検査およびトラフィックフィルタリングに必要なルールを作成するために、AWS Firewall Managerを使用する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 16,
+    "question_en": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the company's management team should have full access to all the visualizations. The rest of the company should have only limited access. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、AWS上でデータレイクをホストしています。このデータレイクは、Amazon S3とAmazon RDS for PostgreSQLのデータで構成されています。この企業は、データレイク内のすべてのデータソースを含む、データを可視化するレポーティングソリューションを必要としています。企業の経営陣のみがすべての可視化に完全にアクセスできるようにする必要があります。その他の従業員は限られたアクセスのみを持つべきです。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate IAM roles.",
+        "text_ja": "Amazon QuickSightで分析を作成する。すべてのデータソースを接続し、新しいデータセットを作成する。データを可視化するダッシュボードを公開する。適切なIAMロールとダッシュボードを共有する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate users and groups.",
+        "text_ja": "Amazon QuickSightで分析を作成する。すべてのデータソースを接続し、新しいデータセットを作成する。データを可視化するダッシュボードを公開する。適切なユーザーおよびグループとダッシュボードを共有する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an AWS Glue table and crawler for the data in Amazon S3. Create an AWS Glue extract, transform, and load (ETL) job to produce reports. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.",
+        "text_ja": "Amazon S3内のデータ用にAWS Glueテーブルとクローラーを作成する。レポートを作成するAWS Glueの抽出・変換・ロード(ETL)ジョブを作成する。レポートをAmazon S3に公開する。S3バケットポリシーを使用してレポートへのアクセスを制限する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an AWS Glue table and crawler for the data in Amazon S3. Use Amazon Athena Federated Query to access data within Amazon RDS for PostgreSQL. Generate reports by using Amazon Athena. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.",
+        "text_ja": "Amazon S3内のデータ用にAWS Glueテーブルとクローラーを作成する。Amazon Athena Federated Queryを使用してAmazon RDS for PostgreSQL内のデータにアクセスする。Amazon Athenaを使用してレポートを生成する。レポートをAmazon S3に公開する。S3バケットポリシーを使用してレポートへのアクセスを制限する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 17,
+    "question_en": "A company is implementing a new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket. What should the solutions architect do to meet this requirement?",
+    "question_ja": "ある企業が新しいビジネスアプリケーションを実装しています。このアプリケーションは2台のAmazon EC2インスタンス上で動作し、ドキュメントストレージにAmazon S3バケットを使用します。ソリューションアーキテクトは、EC2インスタンスがS3バケットにアクセスできるようにする必要があります。この要件を満たすために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an IAM role that grants access to the S3 bucket. Attach the role to the EC2 instances.",
+        "text_ja": "S3バケットへのアクセスを許可するIAMロールを作成する。そのロールをEC2インスタンスにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an IAM policy that grants access to the S3 bucket. Attach the policy to the EC2 instances.",
+        "text_ja": "S3バケットへのアクセスを許可するIAMポリシーを作成する。そのポリシーをEC2インスタンスにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an IAM group that grants access to the S3 bucket. Attach the group to the EC2 instances.",
+        "text_ja": "S3バケットへのアクセスを許可するIAMグループを作成する。そのグループをEC2インスタンスにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an IAM user that grants access to the S3 bucket. Attach the user account to the EC2 instances.",
+        "text_ja": "S3バケットへのアクセスを許可するIAMユーザーを作成する。そのユーザーアカウントをEC2インスタンスにアタッチする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 18,
+    "question_en": "An application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in a different S3 bucket. A solutions architect needs to design a solution that uses durable, stateless components to process the images automatically. Which combination of actions will meet these requirements? (Choose two.)",
+    "question_ja": "あるアプリケーション開発チームが、大きな画像をより小さく圧縮された画像に変換するマイクロサービスを設計しています。ユーザーがウェブインターフェースを通じて画像をアップロードすると、このマイクロサービスは画像をAmazon S3バケットに保存し、AWS Lambda関数で画像を処理・圧縮し、圧縮された形式の画像を別のS3バケットに保存する必要があります。ソリューションアーキテクトは、耐久性のあるステートレスなコンポーネントを使用して画像を自動的に処理するソリューションを設計する必要があります。これらの要件を満たす組み合わせはどれですか。(2つ選択してください)",
+    "is_multiple_choice": true,
+    "correct_answer": "AB",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure the S3 bucket to send a notification to the SQS queue when an image is uploaded to the S3 bucket.",
+        "text_ja": "Amazon Simple Queue Service(Amazon SQS)キューを作成する。画像がS3バケットにアップロードされたときにSQSキューに通知を送信するようS3バケットを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
+        "text_ja": "Lambda関数がAmazon Simple Queue Service(Amazon SQS)キューを呼び出しのソースとして使用するよう設定する。SQSメッセージが正常に処理されたら、キュー内のメッセージを削除する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Configure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the file name to a text file in memory and use the text file to keep track of the images that were processed.",
+        "text_ja": "Lambda関数がS3バケットへの新しいアップロードを監視するよう設定する。アップロードされた画像が検出されたら、ファイル名をメモリ内のテキストファイルに書き込み、そのテキストファイルを使用して処理済みの画像を追跡する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the file name in a text file on the EC2 instance and invoke the Lambda function.",
+        "text_ja": "Amazon Simple Queue Service(Amazon SQS)キューを監視するAmazon EC2インスタンスを起動する。キューに項目が追加されたら、ファイル名をEC2インスタンス上のテキストファイルに記録し、Lambda関数を呼び出す。",
+        "why": ""
+      },
+      {
+        "label": "E",
+        "text_en": "Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner's email address for further processing.",
+        "text_ja": "S3バケットを監視するAmazon EventBridge(Amazon CloudWatch Events)イベントを設定する。画像がアップロードされたら、さらなる処理のためにアプリケーション所有者のメールアドレス宛にAmazon Simple Notification Service(Amazon SNS)トピックへアラートを送信する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 19,
+    "question_en": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "ある企業は、AWS上に3層構成のウェブアプリケーションを展開しています。ウェブサーバーはVPC内のパブリックサブネットに配置されています。アプリケーションサーバーとデータベースサーバーは、同じVPC内のプライベートサブネットに配置されています。この企業は、検査用VPC内にAWS Marketplaceのサードパーティー製仮想ファイアウォールアプライアンスを展開しています。このアプライアンスは、IPパケットを受け付けられるIPインターフェースで構成されています。ソリューションアーキテクトは、トラフィックがウェブサーバーに到達する前にすべてのトラフィックを検査できるよう、ウェブアプリケーションをこのアプライアンスと統合する必要があります。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Create a Network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+        "text_ja": "アプリケーションのVPCのパブリックサブネットにNetwork Load Balancerを作成し、パケット検査のためにトラフィックをアプライアンスにルーティングする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+        "text_ja": "アプリケーションのVPCのパブリックサブネットにApplication Load Balancerを作成し、パケット検査のためにトラフィックをアプライアンスにルーティングする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.",
+        "text_ja": "検査用VPCにトランジットゲートウェイを展開する。トランジットゲートウェイ経由で受信パケットをルーティングするようルートテーブルを設定する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.",
+        "text_ja": "検査用VPCにGateway Load Balancerを展開する。受信パケットを受け取ってアプライアンスに転送するGateway Load Balancerエンドポイントを作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 20,
+    "question_en": "A company wants to improve its ability to clone large amounts of production data into a test environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data must not affect the production environment. The software that accesses this data requires consistently high I/O performance. A solutions architect needs to minimize the time that is required to clone the production data into the test environment. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、大量の本番データを同一のAWSリージョン内のテスト環境に複製する能力を向上させたいと考えています。データはAmazon EC2インスタンス上のAmazon Elastic Block Store(Amazon EBS)ボリュームに保存されています。複製されたデータへの変更が本番環境に影響を与えてはなりません。このデータにアクセスするソフトウェアは、一貫して高いI/Oパフォーマンスを必要とします。ソリューションアーキテクトは、本番データをテスト環境に複製するのに必要な時間を最小限に抑える必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Take EBS snapshots of the production EBS volumes. Restore the snapshots onto EC2 instance store volumes in the test environment.",
+        "text_ja": "本番のEBSボリュームのEBSスナップショットを取得する。テスト環境のEC2インスタンスストアボリュームにスナップショットを復元する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Configure the production EBS volumes to use the EBS Multi-Attach feature. Take EBS snapshots of the production EBS volumes. Attach the production EBS volumes to the EC2 instances in the test environment.",
+        "text_ja": "本番のEBSボリュームをEBS Multi-Attach機能を使用するように設定する。本番のEBSボリュームのEBSスナップショットを取得する。本番のEBSボリュームをテスト環境のEC2インスタンスにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Take EBS snapshots of the production EBS volumes. Create and initialize new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment before restoring the volumes from the production EBS snapshots.",
+        "text_ja": "本番のEBSボリュームのEBSスナップショットを取得する。新しいEBSボリュームを作成して初期化する。本番のEBSスナップショットから復元する前に、新しいEBSボリュームをテスト環境のEC2インスタンスにアタッチする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Take EBS snapshots of the production EBS volumes. Turn on the EBS fast snapshot restore feature on the EBS snapshots. Restore the snapshots into new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment.",
+        "text_ja": "本番のEBSボリュームのEBSスナップショットを取得する。EBSスナップショットに対してEBS高速スナップショット復元機能を有効にする。スナップショットを新しいEBSボリュームに復元する。新しいEBSボリュームをテスト環境のEC2インスタンスにアタッチする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 21,
+    "question_en": "An ecommerce company wants to launch a one-deal-a-day website on AWS. Each day will feature exactly one product on sale for a period of 24 hours. The company wants to be able to handle millions of requests each hour with millisecond latency during peak hours. Which solution will meet these requirements with the LEAST operational overhead?",
+    "question_ja": "あるEコマース企業が、AWS上で1日1品ずつのセールを行うウェブサイトを立ち上げたいと考えています。毎日、24時間限定で1つの商品がセール対象として掲載されます。この企業は、ピーク時に1時間あたり数百万件のリクエストをミリ秒単位のレイテンシーで処理できるようにしたいと考えています。運用上のオーバーヘッドを最小限に抑えてこれらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use Amazon S3 to host the full website in different S3 buckets. Add Amazon CloudFront distributions. Set the S3 buckets as origins for the distributions. Store the order data in Amazon S3.",
+        "text_ja": "Amazon S3を使用して、ウェブサイト全体を複数のS3バケットでホストする。Amazon CloudFrontディストリビューションを追加する。ディストリビューションのオリジンとしてS3バケットを設定する。注文データをAmazon S3に保存する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALB for the backend APIs. Store the data in Amazon RDS for MySQL.",
+        "text_ja": "複数のアベイラビリティーゾーンにまたがるAuto Scalingグループで実行されるAmazon EC2インスタンスにウェブサイト全体をデプロイする。ウェブサイトのトラフィックを分散するApplication Load Balancer(ALB)を追加する。バックエンドAPI用に別のALBを追加する。データをAmazon RDS for MySQLに保存する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Migrate the full application to run in containers. Host the containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use the Kubernetes Cluster Autoscaler to increase and decrease the number of pods to process bursts in traffic. Store the data in Amazon RDS for MySQL.",
+        "text_ja": "アプリケーション全体をコンテナで実行するよう移行する。Amazon Elastic Kubernetes Service(Amazon EKS)でコンテナをホストする。Kubernetes Cluster Autoscalerを使用して、トラフィックの急増を処理するためポッド数を増減する。データをAmazon RDS for MySQLに保存する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.",
+        "text_ja": "ウェブサイトの静的コンテンツをホストするためにAmazon S3バケットを使用する。Amazon CloudFrontディストリビューションをデプロイする。S3バケットをオリジンとして設定する。バックエンドAPIにAmazon API GatewayとAWS Lambda関数を使用する。データをAmazon DynamoDBに保存する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 22,
+    "question_en": "A solutions architect is using Amazon S3 to design the storage architecture of a new digital media application. The media files must be resilient to the loss of an Availability Zone. Some files are accessed frequently while other files are rarely accessed in an unpredictable pattern. The solutions architect must minimize the costs of storing and retrieving the media files. Which storage option meets these requirements?",
+    "question_ja": "あるソリューションアーキテクトが、新しいデジタルメディアアプリケーションのストレージアーキテクチャを設計するためにAmazon S3を使用しています。メディアファイルは、アベイラビリティーゾーンの喪失に対して耐障害性がなければなりません。一部のファイルは頻繁にアクセスされますが、他のファイルは予測不可能なパターンでめったにアクセスされません。ソリューションアーキテクトは、メディアファイルの保存および取得にかかるコストを最小限に抑える必要があります。これらの要件を満たすストレージオプションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "S3 Standard",
+        "text_ja": "S3 Standard",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "S3 Intelligent-Tiering",
+        "text_ja": "S3 Intelligent-Tiering",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "S3 Standard-Infrequent Access (S3 Standard-IA)",
+        "text_ja": "S3 Standard-Infrequent Access(S3 Standard-IA)",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "S3 One Zone-Infrequent Access (S3 One Zone-IA)",
+        "text_ja": "S3 One Zone-Infrequent Access(S3 One Zone-IA)",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 23,
+    "question_en": "A company is storing backup files by using Amazon S3 Standard storage. The files are accessed frequently for 1 month. However, the files are not accessed after 1 month. The company must keep the files indefinitely. Which storage solution will meet these requirements MOST cost-effectively?",
+    "question_ja": "ある企業は、Amazon S3 Standardストレージを使用してバックアップファイルを保存しています。ファイルは最初の1か月間は頻繁にアクセスされます。しかし、1か月を過ぎるとアクセスされなくなります。この企業はファイルを無期限に保持する必要があります。これらの要件を最もコスト効率よく満たすストレージソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Configure S3 Intelligent-Tiering to automatically migrate objects.",
+        "text_ja": "オブジェクトを自動的に移行するようS3 Intelligent-Tieringを設定する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an S3 Lifecycle configuration to transition objects from S3 Standard to S3 Glacier Deep Archive after 1 month.",
+        "text_ja": "1か月後にオブジェクトをS3 StandardからS3 Glacier Deep Archiveに移行するS3ライフサイクル設定を作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an S3 Lifecycle configuration to transition objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) after 1 month.",
+        "text_ja": "1か月後にオブジェクトをS3 StandardからS3 Standard-Infrequent Access(S3 Standard-IA)に移行するS3ライフサイクル設定を作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Create an S3 Lifecycle configuration to transition objects from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 month.",
+        "text_ja": "1か月後にオブジェクトをS3 StandardからS3 One Zone-Infrequent Access(S3 One Zone-IA)に移行するS3ライフサイクル設定を作成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 24,
+    "question_en": "A company observes an increase in Amazon EC2 costs in its most recent bill. The billing team notices unwanted vertical scaling of instance types for a couple of EC2 instances. A solutions architect needs to create a graph comparing the last 2 months of EC2 costs and perform an in-depth analysis to identify the root cause of the vertical scaling. How should the solutions architect generate the information with the LEAST operational overhead?",
+    "question_ja": "ある企業は、直近のAmazon EC2の請求額の増加に気づきました。請求チームは、いくつかのEC2インスタンスでインスタンスタイプの意図しない垂直スケーリングが発生していることに気づきました。ソリューションアーキテクトは、過去2か月分のEC2コストを比較するグラフを作成し、垂直スケーリングの根本原因を特定するための詳細な分析を行う必要があります。運用上のオーバーヘッドを最小限に抑えてこの情報を生成するために、ソリューションアーキテクトはどうすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "B",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Use AWS Budgets to create a budget report and compare EC2 costs based on instance types.",
+        "text_ja": "AWS Budgetsを使用して予算レポートを作成し、インスタンスタイプに基づいてEC2コストを比較する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use Cost Explorer's granular filtering feature to perform an in-depth analysis of EC2 costs based on instance types.",
+        "text_ja": "Cost Explorerの詳細フィルタリング機能を使用して、インスタンスタイプに基づくEC2コストの詳細な分析を行う。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use graphs from the AWS Billing and Cost Management dashboard to compare EC2 costs based on instance types for the last 2 months.",
+        "text_ja": "AWS Billing and Cost Managementダッシュボードのグラフを使用して、過去2か月間のインスタンスタイプに基づくEC2コストを比較する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Use AWS Cost and Usage Reports to create a report and send it to an Amazon S3 bucket. Use Amazon QuickSight with Amazon S3 as a source to generate an interactive graph based on instance types.",
+        "text_ja": "AWS Cost and Usage Reportsを使用してレポートを作成し、Amazon S3バケットに送信する。Amazon S3をソースとするAmazon QuickSightを使用して、インスタンスタイプに基づくインタラクティブなグラフを生成する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 25,
+    "question_en": "A company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the information in an Amazon Aurora PostgreSQL database. During the proof-of-concept stage, the company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database. A solutions architect must recommend a new design to improve scalability and minimize the configuration effort. Which solution will meet these requirements?",
+    "question_ja": "ある企業がアプリケーションを設計しています。このアプリケーションは、Amazon API Gatewayを通じて情報を受け取り、その情報をAmazon Aurora PostgreSQLデータベースに保存するためにAWS Lambda関数を使用します。概念実証(PoC)の段階で、この企業は、データベースに読み込む必要のある大量のデータを処理するために、Lambdaのクォータを大幅に引き上げなければなりませんでした。ソリューションアーキテクトは、スケーラビリティを向上させ、設定にかかる手間を最小限に抑える新しい設計を提案する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "D",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Refactor the Lambda function code to Apache Tomcat code that runs on Amazon EC2 instances. Connect the database by using native Java Database Connectivity (JDBC) drivers.",
+        "text_ja": "Lambda関数のコードを、Amazon EC2インスタンス上で動作するApache Tomcatのコードにリファクタリングする。ネイティブのJava Database Connectivity(JDBC)ドライバーを使用してデータベースに接続する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Change the platform from Aurora to Amazon DynamoDProvision a DynamoDB Accelerator (DAX) cluster. Use the DAX client SDK to point the existing DynamoDB API calls at the DAX cluster.",
+        "text_ja": "プラットフォームをAuroraからAmazon DynamoDBに変更する。DynamoDB Accelerator(DAX)クラスターをプロビジョニングする。DAXクライアントSDKを使用して、既存のDynamoDB API呼び出しをDAXクラスターに向ける。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using Amazon Simple Notification Service (Amazon SNS).",
+        "text_ja": "2つのLambda関数を設定する。1つの関数は情報を受け取るように設定する。もう1つの関数は情報をデータベースに読み込むように設定する。Amazon Simple Notification Service(Amazon SNS)を使用してLambda関数を統合する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue.",
+        "text_ja": "2つのLambda関数を設定する。1つの関数は情報を受け取るように設定する。もう1つの関数は情報をデータベースに読み込むように設定する。Amazon Simple Queue Service(Amazon SQS)キューを使用してLambda関数を統合する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 26,
+    "question_en": "A company needs to review its AWS Cloud deployment to ensure that its Amazon S3 buckets do not have unauthorized configuration changes. What should a solutions architect do to accomplish this goal?",
+    "question_ja": "ある企業は、Amazon S3バケットに不正な設定変更がないことを確認するために、AWSクラウドのデプロイを見直す必要があります。この目標を達成するために、ソリューションアーキテクトは何をすべきですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Turn on AWS Config with the appropriate rules.",
+        "text_ja": "適切なルールを設定したAWS Configを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Turn on AWS Trusted Advisor with the appropriate checks.",
+        "text_ja": "適切なチェックを設定したAWS Trusted Advisorを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Turn on Amazon Inspector with the appropriate assessment template.",
+        "text_ja": "適切な評価テンプレートを設定したAmazon Inspectorを有効にする。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Turn on Amazon S3 server access logging. Configure Amazon EventBridge (Amazon Cloud Watch Events).",
+        "text_ja": "Amazon S3のサーバーアクセスログを有効にする。Amazon EventBridge(Amazon CloudWatch Events)を設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 27,
+    "question_en": "A company is launching a new application and will display application metrics on an Amazon CloudWatch dashboard. The company's product manager needs to access this dashboard periodically. The product manager does not have an AWS account. A solutions architect must provide access to the product manager by following the principle of least privilege. Which solution will meet these requirements?",
+    "question_ja": "ある企業が新しいアプリケーションを立ち上げ、アプリケーションのメトリクスをAmazon CloudWatchダッシュボードに表示する予定です。この企業のプロダクトマネージャーは、このダッシュボードに定期的にアクセスする必要があります。プロダクトマネージャーはAWSアカウントを持っていません。ソリューションアーキテクトは、最小権限の原則に従ってプロダクトマネージャーにアクセス権を提供する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Share the dashboard from the CloudWatch console. Enter the product manager's email address, and complete the sharing steps. Provide a shareable link for the dashboard to the product manager.",
+        "text_ja": "CloudWatchコンソールからダッシュボードを共有する。プロダクトマネージャーのメールアドレスを入力し、共有の手順を完了する。ダッシュボードの共有可能なリンクをプロダクトマネージャーに提供する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Create an IAM user specifically for the product manager. Attach the CloudWatchReadOnlyAccess AWS managed policy to the user. Share the new login credentials with the product manager. Share the browser URL of the correct dashboard with the product manager.",
+        "text_ja": "プロダクトマネージャー専用のIAMユーザーを作成する。CloudWatchReadOnlyAccessのAWS管理ポリシーをそのユーザーにアタッチする。新しいログイン認証情報をプロダクトマネージャーと共有する。正しいダッシュボードのブラウザURLをプロダクトマネージャーと共有する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create an IAM user for the company's employees. Attach the ViewOnlyAccess AWS managed policy to the IAM user. Share the new login credentials with the product manager. Ask the product manager to navigate to the CloudWatch console and locate the dashboard by name in the Dashboards section.",
+        "text_ja": "企業の従業員用にIAMユーザーを作成する。ViewOnlyAccessのAWS管理ポリシーをそのIAMユーザーにアタッチする。新しいログイン認証情報をプロダクトマネージャーと共有する。プロダクトマネージャーにCloudWatchコンソールに移動し、ダッシュボードセクションで名前によりダッシュボードを探すよう依頼する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy a bastion server in a public subnet. When the product manager requires access to the dashboard, start the server and share the RDP credentials. On the bastion server, ensure that the browser is configured to open the dashboard URL with cached AWS credentials that have appropriate permissions to view the dashboard.",
+        "text_ja": "パブリックサブネットに踏み台サーバーをデプロイする。プロダクトマネージャーがダッシュボードへのアクセスを必要とするときに、サーバーを起動しRDP認証情報を共有する。踏み台サーバー上で、ダッシュボードを表示する適切な権限を持つキャッシュされたAWS認証情報を使用してダッシュボードのURLを開くようブラウザを設定する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 28,
+    "question_en": "A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company's security team needs a single sign-on (SSO) solution across all the company's accounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory. Which solution will meet these requirements?",
+    "question_ja": "ある企業が、アプリケーションをAWSに移行しています。これらのアプリケーションは異なるアカウントにデプロイされています。この企業はAWS Organizationsを使用してアカウントを一元的に管理しています。企業のセキュリティチームは、すべてのアカウントにまたがるシングルサインオン(SSO)ソリューションを必要としています。この企業は、オンプレミスの自己管理型Microsoft Active Directoryでユーザーとグループの管理を継続する必要があります。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a one-way forest trust or a one-way domain trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
+        "text_ja": "AWS SSOコンソールからAWS Single Sign-On(AWS SSO)を有効にする。AWS Directory Service for Microsoft Active Directoryを使用して、企業の自己管理型Microsoft Active DirectoryとAWS SSOを接続する片方向フォレストトラストまたは片方向ドメイントラストを作成する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a two-way forest trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
+        "text_ja": "AWS SSOコンソールからAWS Single Sign-On(AWS SSO)を有効にする。AWS Directory Service for Microsoft Active Directoryを使用して、企業の自己管理型Microsoft Active DirectoryとAWS SSOを接続する双方向フォレストトラストを作成する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Use AWS Directory Service. Create a two-way trust relationship with the company's self-managed Microsoft Active Directory.",
+        "text_ja": "AWS Directory Serviceを使用する。企業の自己管理型Microsoft Active Directoryとの双方向の信頼関係を作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy an identity provider (IdP) on premises. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console.",
+        "text_ja": "オンプレミスにIDプロバイダー(IdP)をデプロイする。AWS SSOコンソールからAWS Single Sign-On(AWS SSO)を有効にする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 29,
+    "question_en": "A company provides a Voice over Internet Protocol (VoIP) service that uses UDP connections. The service consists of Amazon EC2 instances that run in an Auto Scaling group. The company has deployments across multiple AWS Regions. The company needs to route users to the Region with the lowest latency. The company also needs automated failover between Regions. Which solution will meet these requirements?",
+    "question_ja": "ある企業は、UDP接続を使用するVoIP(Voice over Internet Protocol)サービスを提供しています。このサービスは、Auto Scalingグループで動作するAmazon EC2インスタンスで構成されています。この企業は複数のAWSリージョンにデプロイしています。この企業は、レイテンシーが最も低いリージョンにユーザーをルーティングする必要があります。この企業はまた、リージョン間の自動フェイルオーバーも必要としています。これらの要件を満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Deploy a Network Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Use the NLB as an AWS Global Accelerator endpoint in each Region.",
+        "text_ja": "Network Load Balancer(NLB)と関連するターゲットグループをデプロイする。ターゲットグループをAuto Scalingグループに関連付ける。各リージョンでNLBをAWS Global Acceleratorのエンドポイントとして使用する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Deploy an Application Load Balancer (ALB) and an associated target group. Associate the target group with the Auto Scaling group. Use the ALB as an AWS Global Accelerator endpoint in each Region.",
+        "text_ja": "Application Load Balancer(ALB)と関連するターゲットグループをデプロイする。ターゲットグループをAuto Scalingグループに関連付ける。各リージョンでALBをAWS Global Acceleratorのエンドポイントとして使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Deploy a Network Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 latency record that points to aliases for each NLB. Create an Amazon CloudFront distribution that uses the latency record as an origin.",
+        "text_ja": "Network Load Balancer(NLB)と関連するターゲットグループをデプロイする。ターゲットグループをAuto Scalingグループに関連付ける。各NLBのエイリアスを指すAmazon Route 53レイテンシーレコードを作成する。そのレイテンシーレコードをオリジンとするAmazon CloudFrontディストリビューションを作成する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Deploy an Application Load Balancer (ALB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 weighted record that points to aliases for each ALB. Deploy an Amazon CloudFront distribution that uses the weighted record as an origin.",
+        "text_ja": "Application Load Balancer(ALB)と関連するターゲットグループをデプロイする。ターゲットグループをAuto Scalingグループに関連付ける。各ALBのエイリアスを指すAmazon Route 53加重レコードを作成する。その加重レコードをオリジンとするAmazon CloudFrontディストリビューションをデプロイする。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  },
+  {
+    "n": 30,
+    "question_en": "A development team runs monthly resource-intensive tests on its general purpose Amazon RDS for MySQL DB instance with Performance Insights enabled. The testing lasts for 48 hours once a month and is the only process that uses the database. The team wants to reduce the cost of running the tests without reducing the compute and memory attributes of the DB instance. Which solution meets these requirements MOST cost-effectively?",
+    "question_ja": "ある開発チームが、Performance Insightsを有効にした汎用のAmazon RDS for MySQL DBインスタンスで、毎月リソースを大量に消費するテストを実施しています。このテストは月に1回、48時間実行され、データベースを使用する唯一のプロセスです。このチームは、DBインスタンスのコンピュートおよびメモリ属性を低下させることなく、テストの実行コストを削減したいと考えています。これらの要件を最もコスト効率よく満たすソリューションはどれですか。",
+    "is_multiple_choice": false,
+    "correct_answer": "A",
+    "options": [
+      {
+        "label": "A",
+        "text_en": "Stop the DB instance when tests are completed. Restart the DB instance when required.",
+        "text_ja": "テスト完了後にDBインスタンスを停止する。必要なときにDBインスタンスを再起動する。",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "text_en": "Use an Auto Scaling policy with the DB instance to automatically scale when tests are completed.",
+        "text_ja": "テストが完了したときに自動的にスケーリングするAuto Scalingポリシーを、DBインスタンスとともに使用する。",
+        "why": ""
+      },
+      {
+        "label": "C",
+        "text_en": "Create a snapshot when tests are completed. Terminate the DB instance and restore the snapshot when required.",
+        "text_ja": "テスト完了後にスナップショットを作成する。DBインスタンスを終了し、必要なときにスナップショットから復元する。",
+        "why": ""
+      },
+      {
+        "label": "D",
+        "text_en": "Modify the DB instance to a low-capacity instance when tests are completed. Modify the DB instance again when required.",
+        "text_ja": "テスト完了後にDBインスタンスを低容量のインスタンスに変更する。必要なときに再度DBインスタンスを変更する。",
+        "why": ""
+      }
+    ],
+    "explanation_vi": "",
+    "explanation_en": ""
+  }
+]

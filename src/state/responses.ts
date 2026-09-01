@@ -13,6 +13,8 @@ export type AnswerMode = "practice" | "exam" | "srs" | "flashcard" | "browse";
 
 export interface ResponseInput {
   moduleId: string;
+  /** Cấp độ nếu chứng chỉ có chia cấp (JLPT N1..N5), bỏ trống nếu không. */
+  levelId?: string;
   stageId?: string;
   questionN: number;
   /** Các ký tự đáp án đã chọn, ví dụ "AD". Bỏ trống nếu không trả lời. */
@@ -34,6 +36,7 @@ function toRow(r: ResponseInput, uid: string) {
   return {
     user_id: uid,
     module_id: r.moduleId,
+    level_id: r.levelId ?? "",
     stage_id: r.stageId ?? "",
     question_n: r.questionN,
     attempt_id: r.attemptId ?? null,
@@ -85,20 +88,22 @@ export interface QuestionTiming {
   avgTimeMs: number;
 }
 
-/** Tổng hợp theo từng câu cho người đang đăng nhập. */
-export async function loadMyResponseStats(moduleId: string): Promise<QuestionTiming[]> {
+/** Tổng hợp theo từng câu cho người đang đăng nhập. `levelId` bỏ trống thì
+ * gộp mọi cấp — truyền cụ thể để chỉ xem một cấp (JLPT N1, N2...). */
+export async function loadMyResponseStats(moduleId: string, levelId?: string): Promise<QuestionTiming[]> {
   const uid = currentUserId();
   if (!uid) return [];
 
   const rows: { question_n: number; correct: boolean; time_ms: number | null }[] = [];
   const PAGE = 1000;
   for (let from = 0; ; from += PAGE) {
-    const { data, error } = await db()
+    let query = db()
       .from("responses")
       .select("question_n, correct, time_ms")
       .eq("user_id", uid)
-      .eq("module_id", moduleId)
-      .range(from, from + PAGE - 1);
+      .eq("module_id", moduleId);
+    if (levelId !== undefined) query = query.eq("level_id", levelId);
+    const { data, error } = await query.range(from, from + PAGE - 1);
     if (error) throw new Error(error.message);
     rows.push(...(data ?? []));
     if (!data || data.length < PAGE) break;

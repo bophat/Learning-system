@@ -5,6 +5,13 @@
  * vẫn thấy nguyên tiến trình. Sau khi đăng nhập, `loadProgress()` kéo toàn bộ
  * về bộ nhớ một lần; từ đó mọi hàm đọc đều đồng bộ còn thao tác ghi thì cập
  * nhật bộ nhớ trước rồi đẩy lên máy chủ, để giao diện không phải chờ mạng.
+ *
+ * Định danh một câu hỏi cần đủ BỐN phần: module + cấp độ + chặng thi + số câu.
+ * Thiếu levelId/stageId thì các câu trùng số ở chặng/cấp khác nhau (ví dụ câu 1
+ * buổi sáng và câu 1 buổi chiều của AP, hay câu 1 của JLPT N1 và N3) sẽ ghi đè
+ * trạng thái của nhau. `levelId`/`stageId` để trống ("") với chứng chỉ không
+ * chia cấp / chỉ có một chặng — hành vi giữ nguyên như trước khi có hai tham
+ * số này.
  */
 
 import { db } from "../services/supabase";
@@ -13,6 +20,7 @@ import { currentUserId } from "./auth";
 export interface AttemptRecord {
   id: string;
   moduleId: string;
+  levelId: string;
   stageId: string;
   label: string;
   at: number;
@@ -28,12 +36,27 @@ interface QuestionState {
   status: "wrong" | "mastered" | null;
 }
 
+/** Khoá nội bộ đủ bốn phần — luôn dùng hàm này, không tự ghép chuỗi tay. */
+interface StateKey {
+  moduleId: string;
+  levelId: string;
+  stageId: string;
+  n: number;
+}
+
 let attempts: AttemptRecord[] = [];
 const qstate = new Map<string, QuestionState>();
 const pendingState = new Set<string>();
 const listeners = new Set<() => void>();
 
-const key = (moduleId: string, n: number) => `${moduleId}:${n}`;
+function key(k: StateKey): string {
+  return `${k.moduleId} ${k.levelId} ${k.stageId} ${k.n}`;
+}
+
+function parseKey(raw: string): StateKey {
+  const [moduleId, levelId, stageId, n] = raw.split(" ");
+  return { moduleId, levelId, stageId, n: Number(n) };
+}
 
 export function onProgressChange(fn: () => void): () => void {
   listeners.add(fn);
@@ -54,6 +77,8 @@ function logFailure(what: string, error: unknown): void {
 
 interface QuestionStateRow {
   module_id: string;
+  level_id: string;
+  stage_id: string;
   question_n: number;
   bookmarked: boolean;
   status: "wrong" | "mastered" | null;
@@ -69,7 +94,7 @@ async function fetchAllQuestionState(): Promise<QuestionStateRow[]> {
   for (let from = 0; ; from += PAGE) {
     const { data, error } = await db()
       .from("question_state")
-      .select("module_id, question_n, bookmarked, status")
+      .select("module_id, level_id, stage_id, question_n, bookmarked, status")
       .order("module_id", { ascending: true })
       .order("question_n", { ascending: true })
       .range(from, from + PAGE - 1);
@@ -102,6 +127,7 @@ export async function loadProgress(): Promise<void> {
     attempts = (attemptRes.data ?? []).map((r) => ({
       id: r.id,
       moduleId: r.module_id,
+      levelId: r.level_id ?? "",
       stageId: r.stage_id ?? "",
       label: r.label ?? "",
       at: new Date(r.taken_at).getTime(),
@@ -114,10 +140,10 @@ export async function loadProgress(): Promise<void> {
   }
 
   for (const r of stateRows) {
-    qstate.set(key(r.module_id, r.question_n), {
-      bookmarked: !!r.bookmarked,
-      status: r.status ?? null,
-    });
+    qstate.set(
+      key({ moduleId: r.module_id, levelId: r.level_id ?? "", stageId: r.stage_id ?? "", n: r.question_n }),
+      { bookmarked: !!r.bookmarked, status: r.status ?? null }
+    );
   }
   notify();
 }
@@ -145,6 +171,7 @@ export function addAttempt(a: Omit<AttemptRecord, "id" | "at">): AttemptRecord {
       id: record.id,
       user_id: currentUserId(),
       module_id: record.moduleId,
+      level_id: record.levelId,
       stage_id: record.stageId,
       label: record.label,
       correct: record.correct,
@@ -159,8 +186,11 @@ export function addAttempt(a: Omit<AttemptRecord, "id" | "at">): AttemptRecord {
   return record;
 }
 
-export function getAttempts(moduleId?: string): AttemptRecord[] {
-  return moduleId ? attempts.filter((a) => a.moduleId === moduleId) : attempts.slice();
+/** `levelId` lọc thêm nếu chứng chỉ có chia cấp; bỏ trống để lấy mọi cấp. */
+export function getAttempts(moduleId?: string, levelId?: string): AttemptRecord[] {
+  let list = moduleId ? attempts.filter((a) => a.moduleId === moduleId) : attempts.slice();
+  if (levelId !== undefined) list = list.filter((a) => a.levelId === levelId);
+  return list;
 }
 
 export function deleteAttempt(id: string): void {
@@ -182,36 +212,49 @@ export async function clearAttempts(): Promise<void> {
 
 // ---------------------------------------------------------------- câu đã lưu
 
-function stateOf(moduleId: string, n: number): QuestionState {
-  return qstate.get(key(moduleId, n)) ?? { bookmarked: false, status: null };
+function stateOf(moduleId: string, n: number, levelId = "", stageId = ""): QuestionState {
+  return qstate.get(key({ moduleId, levelId, stageId, n })) ?? { bookmarked: false, status: null };
 }
 
-function setState(moduleId: string, n: number, patch: Partial<QuestionState>): void {
-  const next = { ...stateOf(moduleId, n), ...patch };
-  qstate.set(key(moduleId, n), next);
-  pendingState.add(key(moduleId, n));
+function setState(moduleId: string, n: number, patch: Partial<QuestionState>, levelId = "", stageId = ""): void {
+  const k = key({ moduleId, levelId, stageId, n });
+  qstate.set(k, { ...stateOf(moduleId, n, levelId, stageId), ...patch });
+  pendingState.add(k);
 }
 
-function numbersWhere(moduleId: string, test: (s: QuestionState) => boolean): number[] {
+/**
+ * Số câu thoả điều kiện trong một module. Truyền `levelId`/`stageId` để giới
+ * hạn đúng một cấp/chặng; bỏ trống (undefined) để gộp tất cả các cấp/chặng
+ * của module đó lại — dùng khi hiện tổng số câu sai/đã lưu toàn chứng chỉ.
+ */
+function numbersWhere(
+  moduleId: string,
+  test: (s: QuestionState) => boolean,
+  levelId?: string,
+  stageId?: string
+): number[] {
   const out: number[] = [];
   for (const [k, v] of qstate) {
-    const [mid, n] = k.split(":");
-    if (mid === moduleId && test(v)) out.push(Number(n));
+    const p = parseKey(k);
+    if (p.moduleId !== moduleId) continue;
+    if (levelId !== undefined && p.levelId !== levelId) continue;
+    if (stageId !== undefined && p.stageId !== stageId) continue;
+    if (test(v)) out.push(p.n);
   }
   return out.sort((a, b) => a - b);
 }
 
-export function getBookmarks(moduleId: string): number[] {
-  return numbersWhere(moduleId, (s) => s.bookmarked);
+export function getBookmarks(moduleId: string, levelId?: string, stageId?: string): number[] {
+  return numbersWhere(moduleId, (s) => s.bookmarked, levelId, stageId);
 }
 
-export function isBookmarked(moduleId: string, n: number): boolean {
-  return stateOf(moduleId, n).bookmarked;
+export function isBookmarked(moduleId: string, n: number, levelId = "", stageId = ""): boolean {
+  return stateOf(moduleId, n, levelId, stageId).bookmarked;
 }
 
-export function toggleBookmark(moduleId: string, n: number): boolean {
-  const next = !stateOf(moduleId, n).bookmarked;
-  setState(moduleId, n, { bookmarked: next });
+export function toggleBookmark(moduleId: string, n: number, levelId = "", stageId = ""): boolean {
+  const next = !stateOf(moduleId, n, levelId, stageId).bookmarked;
+  setState(moduleId, n, { bookmarked: next }, levelId, stageId);
   flushAnswers();
   notify();
   return next;
@@ -219,17 +262,17 @@ export function toggleBookmark(moduleId: string, n: number): boolean {
 
 // ---------------------------------------------------------------- câu sai / đã thuộc
 
-export function getWrong(moduleId: string): number[] {
-  return numbersWhere(moduleId, (s) => s.status === "wrong");
+export function getWrong(moduleId: string, levelId?: string, stageId?: string): number[] {
+  return numbersWhere(moduleId, (s) => s.status === "wrong", levelId, stageId);
 }
 
-export function getMastered(moduleId: string): number[] {
-  return numbersWhere(moduleId, (s) => s.status === "mastered");
+export function getMastered(moduleId: string, levelId?: string, stageId?: string): number[] {
+  return numbersWhere(moduleId, (s) => s.status === "mastered", levelId, stageId);
 }
 
 /** Ghi nhận kết quả một câu. Gọi liên tiếp nhiều câu rồi `flushAnswers()` một lần. */
-export function recordAnswer(moduleId: string, n: number, correct: boolean): void {
-  setState(moduleId, n, { status: correct ? "mastered" : "wrong" });
+export function recordAnswer(moduleId: string, n: number, correct: boolean, levelId = "", stageId = ""): void {
+  setState(moduleId, n, { status: correct ? "mastered" : "wrong" }, levelId, stageId);
 }
 
 /** Đẩy các thay đổi đang chờ lên máy chủ (gộp thành một lượt ghi). */
@@ -239,12 +282,14 @@ export function flushAnswers(): void {
   if (!uid) return;
 
   const rows = [...pendingState].map((k) => {
-    const [moduleId, n] = k.split(":");
+    const p = parseKey(k);
     const s = qstate.get(k)!;
     return {
       user_id: uid,
-      module_id: moduleId,
-      question_n: Number(n),
+      module_id: p.moduleId,
+      level_id: p.levelId,
+      stage_id: p.stageId,
+      question_n: p.n,
       bookmarked: s.bookmarked,
       status: s.status,
       updated_at: new Date().toISOString(),
@@ -254,12 +299,18 @@ export function flushAnswers(): void {
 
   void db()
     .from("question_state")
-    .upsert(rows, { onConflict: "user_id,module_id,question_n" })
+    .upsert(rows, { onConflict: "user_id,module_id,level_id,stage_id,question_n" })
     .then(({ error }) => error && logFailure("trạng thái câu hỏi", error));
 }
 
-export async function clearWrong(moduleId: string): Promise<void> {
-  for (const n of getWrong(moduleId)) setState(moduleId, n, { status: null });
+export async function clearWrong(moduleId: string, levelId?: string, stageId?: string): Promise<void> {
+  for (const [k, v] of qstate) {
+    const p = parseKey(k);
+    if (p.moduleId !== moduleId) continue;
+    if (levelId !== undefined && p.levelId !== levelId) continue;
+    if (stageId !== undefined && p.stageId !== stageId) continue;
+    if (v.status === "wrong") setState(p.moduleId, p.n, { status: null }, p.levelId, p.stageId);
+  }
   flushAnswers();
   notify();
 }
@@ -278,8 +329,10 @@ export interface ModuleStats {
   totalTimeSec: number;
 }
 
-export function getModuleStats(moduleId: string): ModuleStats {
-  const list = getAttempts(moduleId);
+/** `levelId` để trống thì gộp số liệu của mọi cấp trong module (chứng chỉ
+ * không chia cấp luôn ở trạng thái này). Truyền cụ thể để xem riêng một cấp. */
+export function getModuleStats(moduleId: string, levelId?: string): ModuleStats {
+  const list = getAttempts(moduleId, levelId);
   const pcts = list.map((a) => a.pct);
   return {
     attempts: list.length,
@@ -287,9 +340,9 @@ export function getModuleStats(moduleId: string): ModuleStats {
     avgPct: pcts.length ? Math.round(pcts.reduce((s, p) => s + p, 0) / pcts.length) : 0,
     lastPct: list.length ? list[0].pct : null,
     answeredQuestions: list.reduce((s, a) => s + a.total, 0),
-    masteredCount: getMastered(moduleId).length,
-    wrongCount: getWrong(moduleId).length,
-    bookmarkCount: getBookmarks(moduleId).length,
+    masteredCount: getMastered(moduleId, levelId).length,
+    wrongCount: getWrong(moduleId, levelId).length,
+    bookmarkCount: getBookmarks(moduleId, levelId).length,
     totalTimeSec: list.reduce((s, a) => s + a.durationSec, 0),
   };
 }

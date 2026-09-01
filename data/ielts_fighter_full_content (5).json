@@ -1,0 +1,1541 @@
+{
+  "https://test.ebomb.edu.vn/tests/1624891641?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624891641?site=ielts-fighter",
+      "title": "C21 Listening Test 3"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624891641/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624891641",
+            "test_detail": {
+              "_id": 1624891641,
+              "title": "W - Practice IELTS C21 Test 3 - Listening",
+              "description": "<p>Đề thi Practice IELTS C21 Test 3 - Listening c&oacute; đ&aacute;p &aacute;n v&agrave; giải th&iacute;ch chi tiết</p>",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C21 Test 3 - Listening",
+              "seo_description": "Đề thi Practice IELTS C21 Test 3 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "IELTS C21 Test 3 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "g2rcyclzjs",
+              "created_by": 10057,
+              "created_time": 1785828611,
+              "updated_time": 1785928039,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/04/01287254-5e54-489a-abc1-f411608eba59.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921245
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/05/05107614-aa52-44a2-b185-9964fd73fb48.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921246,
+                    1724921247,
+                    1724921248,
+                    1724921249
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/05/ba448ef7-8fb2-445f-b75c-60df1e911248.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921250,
+                    1724921251,
+                    1724921252
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/05/b1200d48-f84f-4446-a3bf-e00dd32d8dd5.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921253
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "images": null,
+              "link_document": null,
+              "link_solution": null,
+              "pass_score": null,
+              "seo_keyword": null
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624891663?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624891663?site=ielts-fighter",
+      "title": "C21 Listening Test 4"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624891663/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624891663",
+            "test_detail": {
+              "_id": 1624891663,
+              "title": "W - Practice IELTS C21 Test 4 - Listening",
+              "description": "<p>Đề thi Practice IELTS C21 Test 4 - Listening c&oacute; đ&aacute;p &aacute;n v&agrave; giải th&iacute;ch chi tiết</p>",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C21 Test 4 - Listening",
+              "seo_description": "Đề thi Practice IELTS C21 Test 4 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "IELTS C21 Test 4 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "dqdrxtk5tg",
+              "created_by": 10057,
+              "created_time": 1786005204,
+              "updated_time": 1786511147,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/06/1db3b24a-6d88-4641-9bc7-5170d5eb9568.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921351
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/12/2ee235fc-1aee-4cb1-b890-3cce54ca9aa8.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921352,
+                    1724921353,
+                    1724921354
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/12/5b15b289-dd7d-45a5-beb2-c0b5b3069d1d.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921355,
+                    1724921356
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/08/12/0c7a7783-f1ce-4ce3-99f9-c151d9df1b17.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921357
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "images": null,
+              "link_document": null,
+              "link_solution": null,
+              "pass_score": null,
+              "seo_keyword": null
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624891611?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624891611?site=ielts-fighter",
+      "title": "C21 Listening Test 2"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624891611/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624891611",
+            "test_detail": {
+              "_id": 1624891611,
+              "title": "W - Practice IELTS C21 Test 2 - Listening",
+              "description": "<p>Đề thi Practice IELTS C21 Test 2 - Listening c&oacute; đ&aacute;p &aacute;n v&agrave; giải th&iacute;ch chi tiết</p>",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C21 Test 2 - Listening",
+              "seo_description": "Đề thi Practice IELTS C21 Test 2 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "C21 Test 2 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "bt25dn8szo",
+              "created_by": 10057,
+              "created_time": 1785473202,
+              "updated_time": 1785491861,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/31/72736c09-2d66-42f3-90f8-409b682501a3.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921076
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "",
+                  "transcript": "",
+                  "question_id": [
+                    1724921077,
+                    1724921078,
+                    1724921079
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/31/ecbe58a9-8188-4888-8633-0a274a9fce22.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921080,
+                    1724921081,
+                    1724921082,
+                    1724921083
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/31/cef3345c-eb8a-448d-9873-efaa461d58e6.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921084
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "images": null,
+              "link_document": null,
+              "link_solution": null,
+              "pass_score": null,
+              "seo_keyword": null
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624891604?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624891604?site=ielts-fighter",
+      "title": "C21 Listening Test 1"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624891604/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624891604",
+            "test_detail": {
+              "_id": 1624891604,
+              "title": "W - Practice IELTS C21 Test 1 - Listening",
+              "description": "<p>Đề thi Practice IELTS C21 Test 1 - Listening c&oacute; đ&aacute;p &aacute;n v&agrave; giải th&iacute;ch chi tiết</p>",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C21 Test 1 - Listening",
+              "seo_description": "Đề thi Practice IELTS C21 Test 1 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "C21 Test 1 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "no_control": 0,
+              "auto_play": 0,
+              "status": "active",
+              "access_code": "hmhmqhk9bt",
+              "created_by": 10057,
+              "created_time": 1785384781,
+              "updated_time": 1785410159,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/30/1f9807d4-ae7a-4446-a76a-2ef6f59b2df3.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921023,
+                    1724921025
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/30/9219dce0-5826-491b-951a-1700b5071bc9.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921026,
+                    1724921027
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/30/b81f4019-8233-49ea-a3ee-76d872b222d2.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921040,
+                    1724921041,
+                    1724921042
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/07/30/de275891-bbee-44fd-9112-12d638825fd6.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724921043
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "images": null,
+              "link_document": null,
+              "link_solution": null,
+              "pass_score": null,
+              "seo_keyword": null
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887647?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887647?site=ielts-fighter",
+      "title": "Actual Listening Test 6"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887647/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887647",
+            "test_detail": {
+              "_id": 1624887647,
+              "title": "IELTS Mock Test - Listening 01",
+              "times": 32,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "is_group": 0,
+              "no_repeat": 1,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "vgph1j2h5m",
+              "created_by": 20094,
+              "created_time": 1744707162,
+              "updated_time": 1786614403,
+              "question": [
+                {
+                  "title": "PART 1",
+                  "title_show": null,
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/01/08/9de8c0c7-3769-4305-bc7f-62a53ffc8743.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724899923
+                  ]
+                },
+                {
+                  "title": "PART 2",
+                  "title_show": null,
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/test/2025/04/15/931299e4-8e0b-4c55-bbd6-89fbcbcbe3ed.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724899924,
+                    1724899925,
+                    1724899926
+                  ]
+                },
+                {
+                  "title": "PART 3",
+                  "title_show": null,
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/test/2025/04/15/e67737bb-b03c-444a-9a11-2ac0f76ab67e.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724899927,
+                    1724899929
+                  ]
+                },
+                {
+                  "title": "PART 4",
+                  "title_show": null,
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/01/08/46964f04-981c-442a-939a-b004deeff248.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724899935
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_description": null,
+              "seo_keyword": null,
+              "seo_title": null,
+              "title_show": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 1,
+              "link_solution": null
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624888781?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624888781?site=ielts-fighter",
+      "title": "C20 Listening Test 4"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624888781/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624888781",
+            "test_detail": {
+              "_id": 1624888781,
+              "title": "W - Practice IELTS Cam 20 Test 4 - Listening",
+              "description": "<p>Đề thi Practice IELTS C20 Test 4 - Listening c&oacute; đ&aacute;p &aacute;n v&agrave; giải th&iacute;ch chi tiết</p>",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C20 Test 4 - Listening",
+              "seo_description": "Đề thi Practice IELTS C20 Test 4 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice IELTS Cam 20 Test 4 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "d6yfyoxoje",
+              "created_by": 10057,
+              "created_time": 1753758054,
+              "updated_time": 1787734422,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/04/12/48bf56cc-9a26-45ee-8622-e0e2032e15e5.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724911687
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/04/12/7b8225ce-a5a4-45a0-8fd8-bda7d1cf44ec.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724905118,
+                    1724905122,
+                    1724911731
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/04/12/aa87074d-0b1c-4305-9943-277f7fae1b84.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724905126,
+                    1724905128,
+                    1724905129
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "test_audio/question/2026/04/12/a83e0cb9-668c-4b1c-a951-a68b009c464e.mp3",
+                  "transcript": "",
+                  "question_id": [
+                    1724911732
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "images": null,
+              "link_document": "https://ielts-fighter.com/reading/tu-vung-sach-cambridge-ielts-20_mt1641797955.html",
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0,
+              "version": "202512291051411624888781"
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624888761?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624888761?site=ielts-fighter",
+      "title": "C20 Listening Test 3"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624888761/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624888761",
+            "test_detail": {
+              "_id": 1624888761,
+              "title": "W - Practice IELTS Cam 20 Test 3 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C20 Test 3 - Listening",
+              "seo_description": "Đề thi Practice IELTS C20 Test 3 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice IELTS Cam 20 Test 3 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "p56hxzqwus",
+              "created_by": 10057,
+              "created_time": 1753674558,
+              "updated_time": 1787735488,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/28/75484a9c-3121-4d38-af50-744ab4c725e1.mp3",
+                  "question_id": [
+                    1724911848
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/28/fb17f693-10c0-43ad-9fb0-442226cb664a.mp3",
+                  "question_id": [
+                    1724905028,
+                    1724911849
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/28/52b1b1e8-3c16-4772-8f40-1c4797c60e95.mp3",
+                  "question_id": [
+                    1724905049,
+                    1724911850
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/28/d25f616a-4057-413e-ab81-cf89686b9b08.mp3",
+                  "question_id": [
+                    1724911851
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624888541?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624888541?site=ielts-fighter",
+      "title": "C20 Listening Test 2"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624888541/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624888541",
+            "test_detail": {
+              "_id": 1624888541,
+              "title": "W - Practice IELTS Cam 20 Test 2 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C20 Test 2 - Listening",
+              "seo_description": "Đề thi Practice IELTS C20 Test 2 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Đề thi Practice IELTS Cam 20 Test 2 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "togn9a1x68",
+              "created_by": 10057,
+              "created_time": 1753169800,
+              "updated_time": 1787735831,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/22/9b64be8c-9ca9-4543-9577-762388642148.mp3",
+                  "question_id": [
+                    1724904264
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/22/0c5fd021-ccc2-4aa1-ac43-67cd5d123777.mp3",
+                  "question_id": [
+                    1724904297,
+                    1724904302
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/22/a1bd4a9b-d8e6-4724-acbd-8b1b16a8e8f7.mp3",
+                  "question_id": [
+                    1724904316,
+                    1724904320
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/22/da6bd100-a788-4883-8ea1-60ff850e25f6.mp3",
+                  "question_id": [
+                    1724904331
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 39,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624888481?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624888481?site=ielts-fighter",
+      "title": "C20 Listening Test 1"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624888481/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624888481",
+            "test_detail": {
+              "_id": 1624888481,
+              "title": "W - Practice IELTS C20 Test 1 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C20 Test 1 - Listening",
+              "seo_description": "Đề thi Practice IELTS C20 Test 1 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice IELTS C20 Test 1 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "bgkf8aysl4",
+              "created_by": 10057,
+              "created_time": 1753071907,
+              "updated_time": 1770785102,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/21/88ae575b-c69f-4f70-8655-bf3513c76627.mp3",
+                  "question_id": [
+                    1724904078
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/21/115f8666-6de1-4035-bd07-bc06628283aa.mp3",
+                  "question_id": [
+                    1724904084,
+                    1724904094,
+                    1724904096
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/21/6bb9b721-8a96-4118-9c92-c0d5de78eb7f.mp3",
+                  "question_id": [
+                    1724904099,
+                    1724904102,
+                    1724904110,
+                    1724904112
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/07/21/da89b283-4014-4a14-a9f1-3a475094395d.mp3",
+                  "question_id": [
+                    1724904119
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887523?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887523?site=ielts-fighter",
+      "title": "C19 Listening Test 4"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887523/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887523",
+            "test_detail": {
+              "_id": 1624887523,
+              "title": "W - Practice C19 Test 4 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C19 Test 4 - Listening",
+              "seo_description": "Đề thi Practice IELTS C19 Test 4 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice C19 Test 4 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "ydixxycycx",
+              "created_by": 10057,
+              "created_time": 1740992475,
+              "updated_time": 1787737374,
+              "question": [
+                {
+                  "title": "C19 Test 4 - Listening Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/e4298ea0-a3b2-45a3-bcef-fd2897aea170.mp3",
+                  "question_id": [
+                    1724899286,
+                    1724899287
+                  ]
+                },
+                {
+                  "title": "C19 Test 4 - Listening Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/0bb4a367-570f-4408-946c-73350d286153.mp3",
+                  "question_id": [
+                    1724899288,
+                    1724899289,
+                    1724899290,
+                    1724899291
+                  ]
+                },
+                {
+                  "title": "C19 Test 4 - Listening Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/2b1a78b4-1993-4faf-9c91-af3a65a49d11.mp3",
+                  "question_id": [
+                    1724899292,
+                    1724899293
+                  ]
+                },
+                {
+                  "title": "C19 Test 4 - Listening Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/2bdef203-ac1b-4136-9134-2089c1bf37d8.mp3",
+                  "question_id": [
+                    1724899294
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887520?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887520?site=ielts-fighter",
+      "title": "C19 Listening Test 3"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887520/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887520",
+            "test_detail": {
+              "_id": 1624887520,
+              "title": "W - Practice C19 Test 3 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C19 Test 3 - Listening",
+              "seo_description": "Đề thi Practice IELTS C19 Test 3 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice C19 Test 3 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "1q0nnevmcd",
+              "created_by": 10057,
+              "created_time": 1740974144,
+              "updated_time": 1787742520,
+              "question": [
+                {
+                  "title": "C19 Test 3 - Listening Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/3d11d7ca-4eaf-4506-a19a-f94cd139ed64.mp3",
+                  "question_id": [
+                    1724899270,
+                    1724899271
+                  ]
+                },
+                {
+                  "title": "C19 Test 3 - Listening Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/03d3a5d1-78cf-4bf6-91ed-e5a4e1f28058.mp3",
+                  "question_id": [
+                    1724899272,
+                    1724899273,
+                    1724899274
+                  ]
+                },
+                {
+                  "title": "C19 Test 3 - Listening Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/e9e8897a-b848-4ada-9dd1-aadf95cad0e2.mp3",
+                  "question_id": [
+                    1724899275,
+                    1724899276
+                  ]
+                },
+                {
+                  "title": "C19 Test 3 - Listening Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/03/03/6986a768-acde-4705-9eb0-66d56d739067.mp3",
+                  "question_id": [
+                    1724899277
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887517?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887517?site=ielts-fighter",
+      "title": "C19 Listening Test 2"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887517/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887517",
+            "test_detail": {
+              "_id": 1624887517,
+              "title": "W - Practice C19 Test 2 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C19 Test 2 - Listening",
+              "seo_description": "Đề thi Practice IELTS C19 Test 2 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "Practice C19 Test 2 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "eot4an3ru4",
+              "created_by": 10057,
+              "created_time": 1740738070,
+              "updated_time": 1787740021,
+              "question": [
+                {
+                  "title": "C19 Test 2 - Listening Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/9573a08d-c18a-44fd-8c9d-03a8ab53c5bd.mp3",
+                  "question_id": [
+                    1724899252,
+                    1724899253
+                  ]
+                },
+                {
+                  "title": "C19 Test 2 - Listening Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/b475fa00-204c-409e-91da-3838b82ff95d.mp3",
+                  "question_id": [
+                    1724899254,
+                    1724899255,
+                    1724899256
+                  ]
+                },
+                {
+                  "title": "C19 Test 2 - Listening Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/01f3c12f-b610-4c77-8965-b1799eebb35d.mp3",
+                  "question_id": [
+                    1724899257,
+                    1724899258,
+                    1724899259
+                  ]
+                },
+                {
+                  "title": "C19 Test 2 - Listening Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/949f9ef7-f434-4e69-82bb-ccb064980605.mp3",
+                  "question_id": [
+                    1724899260
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624887515?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624887515?site=ielts-fighter",
+      "title": "C19 Listening Test 1"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624887515/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624887515",
+            "test_detail": {
+              "_id": 1624887515,
+              "title": "W - Practice IELTS C19 Test 1 - Listening",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "skilltest",
+              "test_code": "ielts",
+              "seo_title": "Đề thi Practice IELTS C19 Test 1 - Listening",
+              "seo_description": "Đề thi Practice IELTS C19 Test 1 - Listening có đáp án và giải thích chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "C19 Test 1 - Listening",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "u1kluqq2vi",
+              "created_by": 10057,
+              "created_time": 1740731419,
+              "updated_time": 1787739465,
+              "question": [
+                {
+                  "title": "C19 Test 1 - Listening - Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/1e585015-83f1-4b1f-81ae-75f6b8761cbd.mp3",
+                  "question_id": [
+                    1724899245
+                  ]
+                },
+                {
+                  "title": "C19 Test 1 - Listening - Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/811be025-1229-4bd0-9421-2e51dcbd69b0.mp3",
+                  "question_id": [
+                    1724899246,
+                    1724899247
+                  ]
+                },
+                {
+                  "title": "C19 Test 1 - Listening - Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/96e670f9-65a4-4e24-8911-3157142e6f2b.mp3",
+                  "question_id": [
+                    1724899248,
+                    1724899249,
+                    1724899250
+                  ]
+                },
+                {
+                  "title": "C19 Test 1 - Listening - Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/02/28/a8599acf-74ec-4501-a2c5-ff2b4d9453df.mp3",
+                  "question_id": [
+                    1724899251
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624889066?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624889066?site=ielts-fighter",
+      "title": "Actual Listening Test 5"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624889066/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624889066",
+            "test_detail": {
+              "_id": 1624889066,
+              "title": "Web - Listening Actual Test 5",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "seo_title": "IELTS Listening đề thật Actual Test 5",
+              "seo_description": "IELTS Listening đề thật Actual Test 5 kèm đáp án chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "IELTS Listening đề thật Actual Test 5",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "gligwd0iel",
+              "created_by": 10057,
+              "created_time": 1755228531,
+              "updated_time": 1773223964,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/f16cc05f-896c-4165-8576-b29dd72886be.mp3",
+                  "question_id": [
+                    1724907340
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/56e4c794-e34e-442a-9c03-75cc765dcf50.mp3",
+                  "question_id": [
+                    1724907347,
+                    1724907348
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/8b4d4d5d-db1e-4467-a2ba-072fc0f61188.mp3",
+                  "question_id": [
+                    1724907351,
+                    1724907355,
+                    1724907359
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/1dba6027-6e48-4bec-a49d-67d569e249b7.mp3",
+                  "question_id": [
+                    1724907361,
+                    1724907362,
+                    1724907364
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 40,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  },
+  "https://test.ebomb.edu.vn/tests/1624889065?site=ielts-fighter": {
+    "item": {
+      "url": "https://test.ebomb.edu.vn/tests/1624889065?site=ielts-fighter",
+      "title": "Actual Listening Test 4"
+    },
+    "captures": [
+      {
+        "apiUrl": "https://erp-gateway.ebomb.edu.vn/v2/tests/tests/1624889065/start",
+        "data": {
+          "status": "success",
+          "datas": {
+            "test_id": "1624889065",
+            "test_detail": {
+              "_id": 1624889065,
+              "title": "Web - Listening Actual Test 4",
+              "times": 40,
+              "score_type": "ielts",
+              "test_type": "fulltest",
+              "test_code": "ielts",
+              "seo_title": "IELTS Listening đề thật Actual Test 4",
+              "seo_description": "IELTS Listening đề thật Actual Test 4 kèm đáp án chi tiết",
+              "skill": "listening",
+              "is_publish": 1,
+              "is_review": 1,
+              "is_practice": 1,
+              "title_show": "IELTS Listening đề thật Actual Test 4",
+              "is_group": 0,
+              "no_repeat": 0,
+              "listen_order": 0,
+              "status": "active",
+              "access_code": "7dbaeujzyc",
+              "created_by": 10057,
+              "created_time": 1755226039,
+              "updated_time": 1773223938,
+              "question": [
+                {
+                  "title": "Part 1",
+                  "title_show": "Part 1",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/0229a49c-e344-4c8a-9cee-069f23ae01eb.mp3",
+                  "question_id": [
+                    1724907309
+                  ]
+                },
+                {
+                  "title": "Part 2",
+                  "title_show": "Part 2",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/cdc31bbe-98fc-4eb1-8707-6235d58e2356.mp3",
+                  "question_id": [
+                    1724907315,
+                    1724907333
+                  ]
+                },
+                {
+                  "title": "Part 3",
+                  "title_show": "Part 3",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/89d619e9-c3ad-4d77-85ad-ab3169945db0.mp3",
+                  "question_id": [
+                    1724907335,
+                    1724907337
+                  ]
+                },
+                {
+                  "title": "Part 4",
+                  "title_show": "Part 4",
+                  "skill": "listening",
+                  "description": "",
+                  "images": "",
+                  "sound": "/test_audio/test/2025/08/15/85c15a1e-ed9b-4437-8ece-0b074844a64a.mp3",
+                  "question_id": [
+                    1724907339
+                  ]
+                }
+              ],
+              "is_mark": 0,
+              "number_question": 39,
+              "description": null,
+              "images": null,
+              "link_document": null,
+              "pass_score": null,
+              "seo_keyword": null,
+              "is_convert_file": 1,
+              "auto_play": 0,
+              "no_control": 0
+            },
+            "number_part": 4,
+            "params": []
+          }
+        }
+      }
+    ]
+  }
+}

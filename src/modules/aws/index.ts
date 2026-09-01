@@ -21,6 +21,7 @@ import { getModuleStats, getAttempts, getBookmarks, getWrong, isBookmarked, togg
 import { loadSession, clearSession } from "../../state/session";
 import { startExam, resumeExam, hasLiveExam, continueLiveExam } from "../shared/mcExam";
 import { loadMcQuestions } from "../../data/questions";
+import { shuffleAllMcOptions } from "../../lib/shuffle";
 import { getModule, getBankStats } from "../../data/catalog";
 
 const MODULE_ID = "aws";
@@ -325,7 +326,13 @@ function renderHome(root: HTMLElement): void {
     flashcards: () => navigate("/on-tap/aws"),
     lessons: () => navigate("/bai-hoc/aws"),
     practice: () => { state.mode = "practice"; state.source = "all"; save({ mode: "practice", source: "all" }); navigate("/aws/thiet-lap"); },
-    exam: () => { state.mode = "exam"; state.source = "all"; state.count = examCount; save({ mode: "exam", source: "all", count: examCount }); navigate("/aws/thiet-lap"); },
+    exam: () => {
+      // Không chia mã đề như JLPT — thi thử phải mặc định trộn thứ tự câu,
+      // nếu không học viên làm vài lần là thuộc "câu 3 luôn là B".
+      state.mode = "exam"; state.source = "all"; state.count = examCount; state.order = "random";
+      save({ mode: "exam", source: "all", count: examCount, order: "random" });
+      navigate("/aws/thiet-lap");
+    },
     wrong: () => { state.mode = "practice"; state.source = "wrong"; save({ mode: "practice", source: "wrong" }); navigate("/aws/thiet-lap"); },
     saved: () => { state.mode = "practice"; state.source = "saved"; save({ mode: "practice", source: "saved" }); navigate("/aws/thiet-lap"); },
     resume: async () => {
@@ -686,12 +693,16 @@ function renderSetup(root: HTMLElement): void {
         }
         const count = state.count === "all" ? list.length : Math.min(state.count, list.length);
         list = list.slice(0, count);
+        // Tráo vị trí đáp án của từng câu — chặn kiểu học tủ "câu này luôn chọn ô thứ 2"
+        // dù đã trộn thứ tự câu. Luôn làm, không phụ thuộc state.order.
+        list = shuffleAllMcOptions(list);
 
         const label =
           state.source === "wrong" ? "Luyện câu sai" : state.source === "saved" ? "Câu đã lưu" : state.mode === "exam" ? "Thi thử" : "Luyện tập";
 
         startExam({
           moduleId: MODULE_ID,
+          levelId: "",
           stageId: state.mode === "exam" ? "exam" : "practice",
           label,
           brandLabel: brandLabel(),

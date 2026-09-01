@@ -11,24 +11,28 @@
  * scope, giống các module khác trong dự án.
  */
 
-import type { Lang, MultipleChoiceQuestion } from "../../types/exam";
+import type { Lang, MultipleChoiceQuestion, ChoiceOption } from "../../types/exam";
 import { registerRoute, navigate } from "../../router";
 import { bindActions, esc } from "../../components/bindActions";
 import { icon } from "../../components/icons";
 import { renderPage, bindShell, setModuleTheme } from "../../components/appShell";
 import { confirmDialog, promptDialog } from "../../components/modal";
 import { toast } from "../../components/toast";
-import { ring, statBox, formatClock, formatDuration, formatDateTime, percent, crumbs, renderMarkdown } from "../../components/ui";
+import { formatClock, formatDateTime, percent, renderMarkdown } from "../../components/ui";
 import { addAttempt, recordAnswer, flushAnswers, isBookmarked, toggleBookmark, getModuleStats, getWrong, getAttempts } from "../../state/progress";
 import { logResponse, flushResponses } from "../../state/responses";
 import { afterExamBookkeeping } from "../../state/habits";
 import { saveSession, clearSession, flushSessions, type SavedSession } from "../../state/session";
 import { hasNote, getNote, saveNote, loadNotes, loadComments, postComment } from "../../state/social";
+import { preloadAnnotations } from "../../components/highlighter";
+import { initTextHighlighter, openAnnotationsDrawer, loadAllAnnotations, destroyHighlighterUI } from "../../components/highlighter";
 
 export type ExamMode = "practice" | "exam";
 
 export interface ExamLaunch {
   moduleId: string;
+  /** Cấp độ nếu chứng chỉ có chia cấp (JLPT N1..N5); rỗng nếu không. */
+  levelId: string;
   stageId: string;
   /** Nhãn chế độ, ví dụ "Thi thử" / "Luyện tập" / "Buổi sáng". */
   label: string;
@@ -130,6 +134,7 @@ export function resumeExam(saved: SavedSession, ctx: ResumeContext): boolean {
 
   rt = {
     moduleId: saved.moduleId,
+    levelId: saved.levelId,
     stageId: saved.stageId,
     label: saved.label,
     brandLabel: ctx.brandLabel,
@@ -165,6 +170,7 @@ function persist(): void {
   for (const [k, v] of Object.entries(rt.answers)) answers[k] = v;
   const s: SavedSession = {
     moduleId: rt.moduleId,
+    levelId: rt.levelId,
     stageId: rt.stageId,
     label: rt.label,
     mode: rt.mode,
@@ -231,7 +237,7 @@ function finish(auto = false): void {
   r.result = result;
 
   // Câu bỏ trống cũng tính là chưa nắm được, nên vẫn vào ngân hàng câu sai.
-  result.perQuestion.forEach((p) => recordAnswer(r.moduleId, p.n, p.isCorrect));
+  result.perQuestion.forEach((p) => recordAnswer(r.moduleId, p.n, p.isCorrect, r.levelId, r.stageId));
   flushAnswers();
 
   // Chế độ thi thử chấm một lượt ở cuối nên tới đây mới ghi được từng lượt trả
@@ -242,6 +248,7 @@ function finish(auto = false): void {
       if (p.skipped) continue;
       logResponse({
         moduleId: r.moduleId,
+        levelId: r.levelId,
         stageId: r.stageId,
         questionN: p.n,
         chosen: normalize(p.picked),
@@ -255,6 +262,7 @@ function finish(auto = false): void {
 
   const attempt = addAttempt({
     moduleId: r.moduleId,
+    levelId: r.levelId,
     stageId: r.stageId,
     label: `${r.label} · ${result.total} câu`,
     correct: result.correct,
@@ -265,7 +273,7 @@ function finish(auto = false): void {
   });
 
   // Cộng ngày học và xét huy hiệu ở nền, không chặn màn kết quả.
-  const stats = getModuleStats(r.moduleId);
+  const stats = getModuleStats(r.moduleId, r.levelId);
   void afterExamBookkeeping({
     moduleId: r.moduleId,
     passPct: r.passPct,
@@ -273,13 +281,13 @@ function finish(auto = false): void {
     total: result.total,
     durationSec: result.durationSec,
     bestPct: Math.max(stats.bestPct, attempt.pct),
-    examAttempts: getAttempts(r.moduleId).filter((a) => a.stageId !== "practice").length,
-    wrongCount: getWrong(r.moduleId).length,
+    examAttempts: getAttempts(r.moduleId, r.levelId).filter((a) => a.stageId !== "practice").length,
+    wrongCount: getWrong(r.moduleId, r.levelId).length,
   }).then((earned) => {
     if (earned.length) toast(`Nhận huy hiệu mới: ${earned.length} cái. Xem ở trang Tiến trình.`, "good", 4000);
   });
 
-  clearSession(r.moduleId);
+  clearSession(r.moduleId, r.levelId);
   navigate(RESULT_PATH);
   if (auto) toast("Hết giờ — bài thi đã được nộp tự động.", "bad", 3600);
 }
@@ -290,12 +298,204 @@ function currentQuestion(): MultipleChoiceQuestion {
   return rt!.questions[rt!.idx];
 }
 
-function stemOf(q: MultipleChoiceQuestion, lang: Lang): string {
-  return lang === "ja" ? q.ja || q.en : q.en;
+export interface StemParts {
+  instruction: string;
+  passage: string;
+  passageTitle: string;
+  transcript: string;
+  question: string;
 }
 
-function optText(o: { en: string; ja: string }, lang: Lang): string {
-  return lang === "ja" ? o.ja || o.en : o.en;
+export function parseStem(raw: string): StemParts {
+  let instruction = "";
+  let passage = "";
+  let passageTitle = "";
+  let transcript = "";
+  let question = (raw || "").trim();
+
+  // 1. IELTS Reading: "📖 PASSAGE 1\n\nTitle\n\nBody...\n\n---\n\n..."
+  const ieltsPassageMatch = question.match(
+    /^📖\s*(PASSAGE\s*\d+|Bài đọc\s*\d*)[^\n]*\n+([\s\S]*?)(?=\n+---\n+|\n+\[Passage|\n+Statement|\n+Questions?\s*\d+|\n+❓|$)/i
+  );
+  if (ieltsPassageMatch) {
+    const rawPassage = ieltsPassageMatch[2].trim();
+    const lines = rawPassage.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (lines.length > 1 && lines[0].length < 100 && !lines[0].startsWith("A.") && !lines[0].startsWith("Paragraph")) {
+      passageTitle = lines[0];
+      passage = lines.slice(1).join("\n\n");
+    } else {
+      passage = rawPassage;
+    }
+    question = question.slice(ieltsPassageMatch[0].length).replace(/^---\s*/, "").trim();
+  }
+
+  // 2. Standard "📖 Bài đọc:"
+  const standardPassageMatch = question.match(/📖\s*Bài đọc:\s*\n([\s\S]*?)(?=\n\n(?:🎧|❓|【|$))/i);
+  if (standardPassageMatch) {
+    passage = standardPassageMatch[1].trim();
+    question = question.replace(standardPassageMatch[0], "").trim();
+  }
+
+  // 3. Instructions
+  const ieltsInstrMatch = question.match(
+    /^(Do the following statements agree with the information given[\s\S]*?NOT GIVEN[^\n]*)\s*/is
+  );
+  if (ieltsInstrMatch) {
+    instruction = ieltsInstrMatch[1].trim();
+    question = question.slice(ieltsInstrMatch[0].length).trim();
+  }
+
+  const instrBracketMatch = question.match(/^【(.*?)】\s*/s);
+  if (instrBracketMatch) {
+    instruction = instrBracketMatch[1].trim();
+    question = question.slice(instrBracketMatch[0].length).trim();
+  }
+
+  // 4. Transcript
+  const scriptMatch = question.match(/🎧\s*Lời thoại bài nghe:\s*\n([\s\S]*?)(?=\n\n(?:❓|$))/i);
+  if (scriptMatch) {
+    transcript = scriptMatch[1].trim();
+    question = question.replace(scriptMatch[0], "").trim();
+  }
+
+  question = question
+    .replace(/^❓\s*(?:Câu hỏi:\s*)?/i, "")
+    .replace(/^\[Passage\s*\d+\]\s*/i, "")
+    .trim();
+
+  return { instruction, passage, passageTitle, transcript, question };
+}
+
+export interface ExamPartSection {
+  id: string;
+  name: string;
+  shortName: string;
+  startIdx: number;
+  endIdx: number;
+  questions: MultipleChoiceQuestion[];
+}
+
+export function getExamParts(moduleId: string, levelId: string, questions: MultipleChoiceQuestion[]): ExamPartSection[] {
+  const total = questions.length;
+  if (!total) return [];
+
+  // IELTS Reading (40 questions -> 3 Parts: 13, 13, 14)
+  if (moduleId === "ielts" && (levelId === "reading" || total === 40)) {
+    if (total === 40) {
+      return [
+        { id: "part-1", name: "Part 1 (1-13)", shortName: "Part 1", startIdx: 0, endIdx: 12, questions: questions.slice(0, 13) },
+        { id: "part-2", name: "Part 2 (14-26)", shortName: "Part 2", startIdx: 13, endIdx: 25, questions: questions.slice(13, 26) },
+        { id: "part-3", name: "Part 3 (27-40)", shortName: "Part 3", startIdx: 26, endIdx: 39, questions: questions.slice(26, 40) },
+      ];
+    }
+  }
+
+  // IELTS Listening (40 questions -> 4 Parts: 10, 10, 10, 10)
+  if (moduleId === "ielts" && levelId === "listening") {
+    if (total === 40) {
+      return [
+        { id: "part-1", name: "Part 1 (1-10)", shortName: "Part 1", startIdx: 0, endIdx: 9, questions: questions.slice(0, 10) },
+        { id: "part-2", name: "Part 2 (11-20)", shortName: "Part 2", startIdx: 10, endIdx: 19, questions: questions.slice(10, 20) },
+        { id: "part-3", name: "Part 3 (21-30)", shortName: "Part 3", startIdx: 20, endIdx: 29, questions: questions.slice(20, 30) },
+        { id: "part-4", name: "Part 4 (31-40)", shortName: "Part 4", startIdx: 30, endIdx: 39, questions: questions.slice(30, 40) },
+      ];
+    }
+  }
+
+  // TOEIC Reading (100 questions -> Part 5 (30), Part 6 (16), Part 7 (54))
+  if (moduleId === "toeic" && levelId === "reading" && total === 100) {
+    return [
+      { id: "part-5", name: "Part 5 (101-130)", shortName: "Part 5", startIdx: 0, endIdx: 29, questions: questions.slice(0, 30) },
+      { id: "part-6", name: "Part 6 (131-146)", shortName: "Part 6", startIdx: 30, endIdx: 45, questions: questions.slice(30, 46) },
+      { id: "part-7", name: "Part 7 (147-200)", shortName: "Part 7", startIdx: 46, endIdx: 99, questions: questions.slice(46, 100) },
+    ];
+  }
+
+  // TOEIC Listening (100 questions -> Part 1 (6), Part 2 (25), Part 3 (39), Part 4 (30))
+  if (moduleId === "toeic" && levelId === "listening" && total === 100) {
+    return [
+      { id: "part-1", name: "Part 1 (1-6)", shortName: "Part 1", startIdx: 0, endIdx: 5, questions: questions.slice(0, 6) },
+      { id: "part-2", name: "Part 2 (7-31)", shortName: "Part 2", startIdx: 6, endIdx: 30, questions: questions.slice(6, 31) },
+      { id: "part-3", name: "Part 3 (32-70)", shortName: "Part 3", startIdx: 31, endIdx: 69, questions: questions.slice(31, 70) },
+      { id: "part-4", name: "Part 4 (71-100)", shortName: "Part 4", startIdx: 70, endIdx: 99, questions: questions.slice(70, 100) },
+    ];
+  }
+
+  // Grouping by Domain
+  const domainMap = new Map<string, { start: number; end: number; qs: MultipleChoiceQuestion[] }>();
+  questions.forEach((q, idx) => {
+    const d = q.domain || "Phần thi";
+    if (!domainMap.has(d)) {
+      domainMap.set(d, { start: idx, end: idx, qs: [] });
+    }
+    const item = domainMap.get(d)!;
+    item.end = idx;
+    item.qs.push(q);
+  });
+  if (domainMap.size > 1 && domainMap.size <= 8) {
+    return Array.from(domainMap.entries()).map(([name, val], i) => ({
+      id: `sec-${i + 1}`,
+      name: `${name} (${val.start + 1}-${val.end + 1})`,
+      shortName: name,
+      startIdx: val.start,
+      endIdx: val.end,
+      questions: val.qs,
+    }));
+  }
+
+  // Fallback: If >= 30 questions, split into balanced parts
+  if (total >= 30) {
+    const chunkSize = total <= 50 ? Math.ceil(total / 3) : Math.ceil(total / 4);
+    const parts: ExamPartSection[] = [];
+    for (let i = 0; i < total; i += chunkSize) {
+      const end = Math.min(i + chunkSize - 1, total - 1);
+      const partNum = Math.floor(i / chunkSize) + 1;
+      parts.push({
+        id: `part-${partNum}`,
+        name: `Part ${partNum} (${i + 1}-${end + 1})`,
+        shortName: `Part ${partNum}`,
+        startIdx: i,
+        endIdx: end,
+        questions: questions.slice(i, end + 1),
+      });
+    }
+    return parts;
+  }
+
+  return [
+    {
+      id: "part-1",
+      name: `Phần 1 (1-${total})`,
+      shortName: "Phần 1",
+      startIdx: 0,
+      endIdx: total - 1,
+      questions,
+    },
+  ];
+}
+
+function stemOf(q: MultipleChoiceQuestion, lang: Lang): string {
+  if (lang === "vi") return q.vi || q.en;
+  if (lang === "ja") return q.ja || q.en;
+  return q.en;
+}
+
+function optText(o: ChoiceOption, lang: Lang): string {
+  if (lang === "vi") return o.vi || o.en;
+  if (lang === "ja") return o.ja || o.en;
+  return o.en;
+}
+
+function optWhy(o: ChoiceOption, lang: Lang): string {
+  if (lang === "vi") return o.why_vi || o.why || "";
+  if (lang === "ja") return o.why_ja || o.why || "";
+  return o.why_en || o.why || "";
+}
+
+function getExplanationText(q: MultipleChoiceQuestion, lang: Lang): string {
+  if (lang === "vi") return q.explanationVi || q.explanation || "";
+  if (lang === "ja") return q.explanationJa || q.explanation || "";
+  return q.explanation || q.explanationVi || "";
 }
 
 function timerClass(remaining: number | null): string {
@@ -307,149 +507,190 @@ function timerClass(remaining: number | null): string {
 
 function renderExamBar(): string {
   const r = rt!;
-  const done = Object.values(r.answers).filter((a) => a.length > 0).length;
-  const pct = percent(done, r.questions.length);
+  const timerIcon = r.remaining !== null && r.remaining <= 300 ? "alertTriangle" : "clock";
   const timer =
     r.remaining !== null
-      ? `<div class="timer ${timerClass(r.remaining)}" id="examTimer">${icon("clock")}<span>${formatClock(r.remaining)}</span></div>`
-      : `<div class="timer" id="examTimer">${icon("clock")}<span>${formatClock(r.elapsed)}</span></div>`;
+      ? `<div class="cbt-timer ${timerClass(r.remaining)}" id="examTimer">${icon(timerIcon)}<span>${formatClock(r.remaining)}</span></div>`
+      : `<div class="cbt-timer" id="examTimer">${icon("clock")}<span>${formatClock(r.elapsed)}</span></div>`;
 
-  const langToggle = r.bilingual
-    ? `<div class="segmented hide-sm">
-        <button class="${r.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en">EN</button>
-        <button class="${r.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja">日本語</button>
-      </div>`
-    : "";
+  const langToggle = `<div class="segmented sm hide-sm" style="margin-right:8px">
+    <button class="${r.lang === "vi" ? "is-active" : ""}" data-action="lang" data-arg="vi" title="Xem tiếng Việt">🇻🇳 VI</button>
+    <button class="${r.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en" title="Xem tiếng Anh">🇬🇧 EN</button>
+    <button class="${r.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja" title="Xem tiếng Nhật">🇯🇵 JA</button>
+  </div>`;
 
-  const flagBadge = r.flags.size > 0
-    ? `<span class="badge badge-warn hide-sm" title="Số câu đã đánh dấu xem lại">${icon("flag")}${r.flags.size} cờ</span>`
-    : "";
+  const annList = loadAllAnnotations(r.moduleId, r.stageId);
+  const notesBtn = `<button class="btn btn-ghost btn-sm" data-action="openAnnotations" title="Sổ tay ghi chú &amp; từ vựng">
+    ${icon("edit3")}
+    <span class="hide-sm">Ghi chú</span>
+    ${annList.length ? `<span class="badge badge-brand sm nums" id="examNoteBadge" style="margin-left:4px">${annList.length}</span>` : `<span class="badge badge-outline sm nums" id="examNoteBadge" style="margin-left:4px;display:none"></span>`}
+  </button>`;
 
-  return `<div class="exam-bar">
-    <div class="page exam-bar-inner">
-      <button class="icon-btn" data-action="exit" title="Thoát bài làm" aria-label="Thoát">${icon("arrowLeft")}</button>
-      <div class="exam-bar-title hide-sm">
-        <b>${esc(r.label)}</b>
-        <span>${esc(r.brandLabel)} · ${r.questions.length} câu</span>
-      </div>
-      <div class="exam-bar-mid">
-        <div class="exam-bar-progress hide-sm">${`<div class="bar thin"><i style="width:${pct}%"></i></div>`}</div>
-        <span class="exam-bar-count">${done}/${r.questions.length} câu</span>
-        ${flagBadge}
-      </div>
-      ${langToggle}
+  return `<header class="cbt-header">
+    <div class="cbt-header-left">
+      ${icon("bookOpen")}
+      <span class="cbt-header-title">${esc(r.label)}</span>
+    </div>
+    <div class="cbt-header-center">
       ${timer}
-      <button class="btn btn-primary btn-sm" data-action="askSubmit">${icon("send")}<span class="hide-sm">Nộp bài</span></button>
     </div>
-  </div>`;
+    <div class="cbt-header-right">
+      ${notesBtn}
+      ${langToggle}
+      <button class="cbt-btn-submit" data-action="askSubmit">${icon("send")}<span>Nộp bài</span></button>
+      <button class="cbt-btn-exit" data-action="exit">${icon("arrowLeft")}<span>Thoát</span></button>
+    </div>
+  </header>`;
 }
 
-function renderPalette(): string {
+function renderPartStrip(parts: ExamPartSection[]): string {
   const r = rt!;
-  const cells = r.questions
-    .map((q, i) => {
-      const answered = (r.answers[q.n] ?? []).length > 0;
-      const cls = [
-        i === r.idx ? "is-current" : "",
-        answered && i !== r.idx ? "is-done" : "",
-        r.flags.has(q.n) ? "is-flagged" : "",
-      ]
-        .filter(Boolean)
-        .join(" ");
-      return `<button class="pnum ${cls}" data-action="goto" data-arg="${i}" title="Câu ${i + 1}">${i + 1}</button>`;
-    })
-    .join("");
+  if (!parts.length || parts.length <= 1) return "";
 
-  const done = Object.values(r.answers).filter((a) => a.length > 0).length;
-  const firstUnansweredIdx = r.questions.findIndex((q) => !r.answers[q.n]?.length);
-  const jumpUnansweredBtn = firstUnansweredIdx >= 0 && firstUnansweredIdx !== r.idx
-    ? `<button class="btn btn-soft-accent btn-sm btn-block mt-8" data-action="goto" data-arg="${firstUnansweredIdx}">${icon("arrowRight")}Nhảy tới câu chưa làm (#${firstUnansweredIdx + 1})</button>`
-    : "";
-
-  return `<div class="card palette">
-    <div class="palette-handle"></div>
-    <div class="palette-head">
-      <b>Danh sách câu hỏi</b>
-      <span class="text-xs text-muted nums">${done}/${r.questions.length}</span>
-    </div>
-    <div class="palette-grid">${cells}</div>
-    <div class="palette-legend">
-      <div class="legend-row"><span class="legend-key current"></span>Câu đang làm</div>
-      <div class="legend-row"><span class="legend-key done"></span>Đã chọn đáp án</div>
-      <div class="legend-row"><span class="legend-key flag"></span>Đã cắm cờ xem lại</div>
-    </div>
-    ${jumpUnansweredBtn}
-    <button class="btn btn-outline btn-sm btn-block mt-12" data-action="askSubmit">${icon("send")}Nộp bài</button>
-  </div>`;
-}
-
-function renderQuestionCard(): string {
-  const r = rt!;
-  const q = currentQuestion();
-  const picked = r.answers[q.n] ?? [];
-  const isChecked = r.mode === "practice" && r.checked.has(q.n);
-  const answerLetters = (q.answer ?? "").split("");
-  const marked = isBookmarked(r.moduleId, q.n);
-
-  const opts = q.options
-    .map((o) => {
-      const isPicked = picked.includes(o.label);
-      const isRight = answerLetters.includes(o.label);
-      let cls = "";
-      let flag = "";
-      if (isChecked) {
-        if (isRight) {
-          cls = "is-right";
-          flag = `<span class="opt-flag">${icon("check")}Đáp án đúng</span>`;
-        } else if (isPicked) {
-          cls = "is-wrong";
-          flag = `<span class="opt-flag">${icon("close")}Bạn chọn</span>`;
-        } else {
-          cls = "is-dim";
-        }
-      } else if (isPicked) {
-        cls = "is-picked";
-      }
-      const clickable = isChecked ? "" : "clickable";
-      const action = isChecked ? "" : `data-action="pick" data-arg="${esc(o.label)}"`;
-      const optWhy = isChecked && o.why ? `<div class="text-xs text-muted mt-4">${renderMarkdown(o.why)}</div>` : "";
-      return `<button class="opt ${q.multi ? "multi" : ""} ${cls} ${clickable}" ${action}>
-        <span class="opt-mark">${esc(o.label)}</span>
-        <div class="grow" style="min-width:0">
-          <span class="opt-text">${esc(optText(o, r.lang))}</span>
-          ${optWhy}
-        </div>
-        ${flag}
+  const pills = parts
+    .map((p) => {
+      const isActive = r.idx >= p.startIdx && r.idx <= p.endIdx;
+      const doneInPart = p.questions.filter((q) => (r.answers[q.n] ?? []).length > 0).length;
+      return `<button class="cbt-part-pill ${isActive ? "is-active" : ""}" data-action="goto" data-arg="${p.startIdx}">
+        <span>${esc(p.shortName)}</span>
+        <span class="badge badge-outline sm nums" style="border-radius:var(--r-pill);padding:1px 7px;font-size:11px">${doneInPart}/${p.questions.length}</span>
       </button>`;
     })
     .join("");
 
-  const pickedCount = picked.length;
-  const targetCount = answerLetters.length;
-  const isComplete = targetCount > 0 && pickedCount === targetCount;
+  return `<nav class="cbt-part-strip">${pills}</nav>`;
+}
 
-  const multiBadge = q.multi
-    ? `<span class="badge ${isComplete ? "badge-good" : "badge-warn"}">${icon(isComplete ? "checkCircle" : "check")}${isComplete ? `Đã chọn đủ ${pickedCount}/${targetCount} đáp án` : `Chọn ${targetCount || "nhiều"} đáp án (đã chọn ${pickedCount}/${targetCount || "…"})`}</span>`
-    : "";
+function renderPalette(parts: ExamPartSection[]): string {
+  const r = rt!;
+  const doneCount = Object.values(r.answers).filter((a) => a.length > 0).length;
+  const pct = percent(doneCount, r.questions.length);
 
-  const tags = [
-    `<span class="q-num">${icon("list")}Câu ${r.idx + 1}/${r.questions.length}</span>`,
-    multiBadge,
-    q.domain ? `<span class="badge badge-outline">${esc(q.domain)}</span>` : "",
-    `<span class="badge badge-outline hide-sm">#${q.n}</span>`,
-  ]
-    .filter(Boolean)
+  const sectionsHtml = parts
+    .map((p) => {
+      const cells = p.questions
+        .map((q, localIdx) => {
+          const globalIdx = p.startIdx + localIdx;
+          const answered = (r.answers[q.n] ?? []).length > 0;
+          const cls = [
+            globalIdx === r.idx ? "is-current" : "",
+            answered && globalIdx !== r.idx ? "is-done" : "",
+            r.flags.has(q.n) ? "is-flagged" : "",
+          ]
+            .filter(Boolean)
+            .join(" ");
+          return `<button class="cbt-pnum-cell ${cls}" data-action="goto" data-arg="${globalIdx}" title="Câu ${globalIdx + 1}">${globalIdx + 1}</button>`;
+        })
+        .join("");
+
+      return `<div>
+        <div class="cbt-part-group-title">
+          <span>${esc(p.name)}</span>
+        </div>
+        <div class="cbt-pnum-grid">${cells}</div>
+      </div>`;
+    })
     .join("");
+
+  return `<aside class="cbt-sidebar-pane">
+    <div class="cbt-progress-header">
+      <span class="cbt-progress-title">Tiến độ làm bài</span>
+      <span class="cbt-progress-stat">${doneCount}/${r.questions.length} (${pct}%)</span>
+    </div>
+    ${sectionsHtml}
+    <div class="cbt-legend-box">
+      <div class="cbt-legend-item">
+        <span class="cbt-legend-dot answered"></span>
+        <span>Đã trả lời (${doneCount})</span>
+      </div>
+      <div class="cbt-legend-item">
+        <span class="cbt-legend-dot unanswered"></span>
+        <span>Chưa trả lời (${r.questions.length - doneCount})</span>
+      </div>
+      <div class="cbt-legend-item">
+        <span class="cbt-legend-dot flagged"></span>
+        <span>Đã cắm cờ (${r.flags.size})</span>
+      </div>
+    </div>
+  </aside>`;
+}
+
+function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _partNumber: number): string {
+  const r = rt!;
+  const picked = r.answers[q.n] ?? [];
+  const isChecked = r.mode === "practice" && r.checked.has(q.n);
+  const answerLetters = (q.answer ?? "").split("");
+  const marked = isBookmarked(r.moduleId, q.n, r.levelId, r.stageId);
+
+  // Check if options fit in horizontal pill format (e.g. TRUE/FALSE/NOT GIVEN or short options)
+  const isPillMode = q.options.length <= 5 && q.options.every((o) => optText(o, r.lang).length <= 25);
+
+  let optsHtml = "";
+  if (isPillMode) {
+    optsHtml = `<div class="cbt-opt-pill-row">${q.options
+      .map((o) => {
+        const isPicked = picked.includes(o.label);
+        const isRight = answerLetters.includes(o.label);
+        let cls = "";
+        if (isChecked) {
+          if (isRight) cls = "is-right";
+          else if (isPicked) cls = "is-wrong";
+          else cls = "is-dim";
+        } else if (isPicked) {
+          cls = "is-picked";
+        }
+        const action = isChecked ? "" : `data-action="pick" data-arg="${esc(o.label)}"`;
+        return `<button class="cbt-pill-opt ${cls}" ${action}>
+          <span>${esc(optText(o, r.lang))}</span>
+        </button>`;
+      })
+      .join("")}</div>`;
+  } else {
+    optsHtml = `<div class="opt-list">${q.options
+      .map((o) => {
+        const isPicked = picked.includes(o.label);
+        const isRight = answerLetters.includes(o.label);
+        let cls = "";
+        let flag = "";
+        if (isChecked) {
+          if (isRight) {
+            cls = "is-right";
+            flag = `<span class="opt-flag">${icon("check")}Đáp án đúng</span>`;
+          } else if (isPicked) {
+            cls = "is-wrong";
+            flag = `<span class="opt-flag">${icon("close")}Bạn chọn</span>`;
+          } else {
+            cls = "is-dim";
+          }
+        } else if (isPicked) {
+          cls = "is-picked";
+        }
+        const clickable = isChecked ? "" : "clickable";
+        const action = isChecked ? "" : `data-action="pick" data-arg="${esc(o.label)}"`;
+        const whyText = optWhy(o, r.lang);
+        const optWhyHtml = isChecked && whyText ? `<div class="text-xs text-muted mt-4">${renderMarkdown(whyText)}</div>` : "";
+        return `<button class="opt ${q.multi ? "multi" : ""} ${cls} ${clickable}" ${action}>
+          <span class="opt-mark">${esc(o.label)}</span>
+          <div class="grow" style="min-width:0">
+            <span class="opt-text">${esc(optText(o, r.lang))}</span>
+            ${optWhyHtml}
+          </div>
+          ${flag}
+        </button>`;
+      })
+      .join("")}</div>`;
+  }
 
   let verdict = "";
   if (isChecked) {
     const ok = normalize(picked) === normalize(answerLetters);
-    const expText = (r.lang === "ja" && q.explanationJa) ? q.explanationJa : q.explanation;
-    const refsHtml = q.refs && q.refs.length
-      ? `<div class="mt-8 text-xs text-muted"><strong>Tham khảo:</strong> ${q.refs.map((rf) => `<a href="${esc(rf.url)}" target="_blank" rel="noopener noreferrer" class="link-text">${esc(rf.label || rf.url)}</a>`).join(" · ")}</div>`
-      : "";
+    const expText = getExplanationText(q, r.lang);
+    const refsHtml =
+      q.refs && q.refs.length
+        ? `<div class="mt-8 text-xs text-muted"><strong>Tham khảo:</strong> ${q.refs.map((rf) => `<a href="${esc(rf.url)}" target="_blank" rel="noopener noreferrer" class="link-text">${esc(rf.label || rf.url)}</a>`).join(" · ")}</div>`
+        : "";
 
-    verdict = `<div class="verdict ${ok ? "good" : "bad"}">
+    verdict = `<div class="verdict ${ok ? "good" : "bad"}" style="margin-top:16px">
       ${icon(ok ? "checkCircle" : "xCircle")}
       <div>${ok ? "Chính xác!" : "Chưa đúng"}<small>Đáp án đúng: ${esc(answerLetters.join(", ") || "—")}${
         picked.length ? ` · Bạn chọn: ${esc(picked.join(", "))}` : ""
@@ -458,7 +699,14 @@ function renderQuestionCard(): string {
     ${
       expText
         ? `<div class="card card-pad mt-12 mb-16" style="background:var(--surface-2);border-left:3px solid var(--brand)">
-            <div class="fw-700 text-sm mb-4" style="color:var(--brand)">${icon("info")} Giải thích chi tiết:</div>
+            <div class="row between gap-8 mb-12" style="align-items:center;flex-wrap:wrap">
+              <div class="fw-700 text-sm" style="color:var(--brand)">${icon("info")} Giải thích chi tiết:</div>
+              <div class="segmented xs">
+                <button class="${r.lang === "vi" ? "is-active" : ""}" data-action="lang" data-arg="vi">🇻🇳 Tiếng Việt</button>
+                <button class="${r.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en">🇬🇧 English</button>
+                <button class="${r.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja">🇯🇵 日本語</button>
+              </div>
+            </div>
             <div class="text-sm" style="line-height:1.6">${renderMarkdown(expText)}</div>
             ${refsHtml}
           </div>`
@@ -466,9 +714,10 @@ function renderQuestionCard(): string {
     }`;
   }
 
-  const altStem = r.bilingual && r.showAlt
-    ? `<div class="q-stem-alt">${esc(stemOf(q, r.lang === "en" ? "ja" : "en"))}</div>`
-    : "";
+  const altStem =
+    r.bilingual && r.showAlt
+      ? `<div class="q-stem-alt">${esc(stemOf(q, r.lang === "en" ? "ja" : "en"))}</div>`
+      : "";
 
   const isLast = r.idx === r.questions.length - 1;
   let primary: string;
@@ -480,27 +729,69 @@ function renderQuestionCard(): string {
     primary = `<button class="btn btn-accent" data-action="next">Câu tiếp${icon("arrowRight")}</button>`;
   }
 
-  const userHasNote = hasNote(r.moduleId, q.n);
+  const userHasNote = hasNote(r.moduleId, q.n, r.levelId, r.stageId);
 
-  return `<div class="q-card">
-    <div class="q-top">
-      <div class="q-tags">${tags}</div>
-      <div class="q-tools">
-        ${r.bilingual ? `<button class="tool-btn ${r.showAlt ? "is-on mark" : ""}" data-action="alt" title="Hiện bản dịch song song">${icon("language")}</button>` : ""}
-        <button class="tool-btn ${userHasNote ? "is-on mark" : ""}" data-action="note" title="Ghi chú riêng">${icon("pencil")}</button>
-        <button class="tool-btn" data-action="discuss" title="Thảo luận câu này">${icon("messageSquare")}</button>
-        <button class="tool-btn ${marked ? "is-on mark" : ""}" data-action="bookmark" title="Lưu câu này">${icon("bookmark")}</button>
-        <button class="tool-btn ${r.flags.has(q.n) ? "is-on" : ""}" data-action="flag" title="Đánh dấu cờ xem lại sau">${icon("flag")}</button>
+  const instrHtml = parsed.instruction
+    ? `<div class="cbt-group-box">
+        <div class="cbt-group-title">${icon("info")}Hướng dẫn làm bài:</div>
+        <div class="cbt-group-body">${renderMarkdown(parsed.instruction)}</div>
+      </div>`
+    : "";
+
+  const transcriptHtml = parsed.transcript
+    ? `<details class="transcript-collapse mb-16">
+        <summary class="transcript-toggle">
+          <span class="row gap-8" style="align-items:center">
+            ${icon("volume")}
+            <span>Lời thoại bài nghe (Transcript)</span>
+          </span>
+          <span class="badge badge-outline transcript-badge">Bấm để xem / ẩn lời thoại</span>
+        </summary>
+        <div class="transcript-body">${esc(parsed.transcript)}</div>
+      </details>`
+    : "";
+
+  return `<div class="cbt-question-pane">
+    ${instrHtml}
+    <div class="cbt-q-item">
+      <div class="cbt-q-header">
+        <div class="row gap-10" style="align-items:center">
+          <span class="cbt-q-num-badge">${r.idx + 1}</span>
+          ${q.multi ? `<span class="badge badge-warn">${icon("check")}Chọn nhiều đáp án</span>` : ""}
+          <span class="text-xs text-muted nums">Câu #${q.n}</span>
+        </div>
+        <div class="row gap-6">
+          <button class="cbt-flag-toggle ${r.flags.has(q.n) ? "is-flagged" : ""}" data-action="flag">
+            ${icon("flag")}<span>${r.flags.has(q.n) ? "Đã đánh dấu" : "Đánh dấu"}</span>
+          </button>
+          <button class="tool-btn ${userHasNote ? "is-on mark" : ""}" data-action="note" title="Ghi chú">${icon("pencil")}</button>
+          <button class="tool-btn" data-action="discuss" title="Thảo luận">${icon("messageSquare")}</button>
+          <button class="tool-btn ${marked ? "is-on mark" : ""}" data-action="bookmark" title="Lưu">${icon("bookmark")}</button>
+        </div>
+      </div>
+      ${q.audioUrl ? `<div class="audio-wrap mb-16" style="padding:12px 16px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--line)"><div class="text-xs fw-700 mb-6 row gap-6" style="color:var(--brand)">${icon("volume")}Audio bài nghe</div><audio controls src="${esc(q.audioUrl)}" style="width:100%;height:38px"></audio></div>` : ""}
+      ${transcriptHtml}
+      <div class="cbt-q-stem">${esc(parsed.question || stemOf(q, r.lang))}</div>
+      ${altStem}
+      ${optsHtml}
+      ${verdict}
+      <div class="q-nav mt-20 pt-16" style="border-top:1px solid var(--line)">
+        <button class="btn btn-outline" data-action="prev" ${r.idx === 0 ? "disabled" : ""}>${icon("arrowLeft")}Câu trước</button>
+        ${primary}
       </div>
     </div>
-    <div class="q-stem">${esc(stemOf(q, r.lang))}</div>
-    ${altStem}
-    ${verdict}
-    <div class="opt-list">${opts}</div>
-    <div class="q-nav">
-      <button class="btn btn-outline" data-action="prev" ${r.idx === 0 ? "disabled" : ""}>${icon("arrowLeft")}Câu trước</button>
-      ${primary}
-    </div>
+  </div>`;
+}
+
+function renderPassagePane(parsed: StemParts, partIndex: number): string {
+  if (!parsed.passage) return "";
+  const partTag = `📖 BÀI ĐỌC · PHẦN ${partIndex + 1}`;
+  const title = parsed.passageTitle || "Nội dung bài đọc";
+
+  return `<div class="cbt-passage-pane" id="cbtPassagePane">
+    <div class="cbt-pane-tag">${icon("bookOpen")}${esc(partTag)}</div>
+    <h2 class="cbt-passage-title">${esc(title)}</h2>
+    <div class="cbt-passage-body" data-highlightable="true">${renderMarkdown(parsed.passage)}</div>
   </div>`;
 }
 
@@ -508,82 +799,159 @@ function renderRun(root: HTMLElement): void {
   const r = rt!;
   setModuleTheme(r.moduleId);
 
-  const doneCount = Object.values(r.answers).filter((a) => a.length > 0).length;
+  const parts = getExamParts(r.moduleId, r.levelId, r.questions);
+  const currentPartIdx = parts.findIndex((p) => r.idx >= p.startIdx && r.idx <= p.endIdx);
+  const partNum = currentPartIdx >= 0 ? currentPartIdx : 0;
 
-  root.innerHTML = `${renderExamBar()}
-    <div class="page exam-layout">
-      <div class="exam-main">${renderQuestionCard()}</div>
-      <aside class="exam-aside ${r.paletteOpen ? "is-open" : ""}">${renderPalette()}</aside>
-    </div>
-    <div class="palette-scrim ${r.paletteOpen ? "is-open" : ""}" data-action="togglePalette"></div>
-    <div class="mobile-bar">
-      <button class="btn btn-outline btn-sm btn-icon-only" data-action="prev" ${r.idx === 0 ? "disabled" : ""} aria-label="Câu trước">${icon("arrowLeft")}</button>
-      <button class="btn btn-soft-accent btn-sm grow" data-action="togglePalette">${icon("grid")}Câu ${r.idx + 1}/${r.questions.length} (${doneCount} đã làm)</button>
-      <button class="btn btn-outline btn-sm btn-icon-only" data-action="flag" title="Cắm cờ">${icon("flag", r.flags.has(currentQuestion().n) ? "text-brand" : "")}</button>
-      <button class="btn btn-outline btn-sm btn-icon-only" data-action="next" ${r.idx === r.questions.length - 1 ? "disabled" : ""} aria-label="Câu tiếp">${icon("arrowRight")}</button>
-    </div>`;
+  const q = currentQuestion();
+  const parsed = parseStem(stemOf(q, r.lang));
+  const hasPassage = !!parsed.passage;
+
+  const passagePaneHtml = hasPassage ? renderPassagePane(parsed, partNum) : "";
+  const questionPaneHtml = renderQuestionContent(q, parsed, partNum);
+  const sidebarHtml = renderPalette(parts);
+  const partStripHtml = renderPartStrip(parts);
+
+  const gridClass = hasPassage ? "cbt-main-grid" : "cbt-main-grid no-passage";
+
+  root.innerHTML = `<div class="cbt-app">
+    ${renderExamBar()}
+    ${partStripHtml}
+    <main class="${gridClass}">
+      ${passagePaneHtml}
+      ${questionPaneHtml}
+      ${sidebarHtml}
+    </main>
+  </div>`;
+
+  // Initialize highlighter on passage pane if present
+  if (hasPassage) {
+    const passageEl = root.querySelector<HTMLElement>("#cbtPassagePane");
+    if (passageEl) {
+      initTextHighlighter({
+        container: passageEl,
+        moduleId: r.moduleId,
+        levelId: r.levelId,
+        stageId: r.stageId,
+        questionN: q.n,
+        onJumpToQuestion: (targetN) => {
+          const targetIdx = r.questions.findIndex((it) => it.n === targetN);
+          if (targetIdx >= 0) {
+            accrueTime();
+            r.idx = targetIdx;
+            persist();
+            renderRun(root);
+            window.scrollTo({ top: 0 });
+          }
+        },
+      });
+    }
+  }
 
   bindActions(root, {
     exit: () => void exitExam(),
-    lang: (v) => { r.lang = v === "ja" ? "ja" : "en"; persist(); renderRun(root); },
+    lang: (v) => { r.lang = v === "ja" ? "ja" : v === "en" ? "en" : "vi"; persist(); renderRun(root); },
     alt: () => { r.showAlt = !r.showAlt; renderRun(root); },
     bookmark: () => {
-      const on = toggleBookmark(r.moduleId, currentQuestion().n);
+      const on = toggleBookmark(r.moduleId, currentQuestion().n, r.levelId, r.stageId);
       toast(on ? "Đã lưu câu hỏi." : "Đã bỏ lưu câu hỏi.", on ? "good" : "default", 1600);
       renderRun(root);
     },
     note: async () => {
-      const q = currentQuestion();
+      const curQ = currentQuestion();
       await loadNotes(r.moduleId);
-      const currentNote = getNote(r.moduleId, q.n);
+      const currentNote = getNote(r.moduleId, curQ.n, r.levelId, r.stageId);
       const val = await promptDialog({
-        title: `Ghi chú cá nhân — Câu #${q.n}`,
+        title: `Ghi chú cá nhân — Câu #${curQ.n}`,
         text: "Ghi chú riêng tư chỉ mình bạn thấy:",
         defaultValue: currentNote,
         confirmLabel: "Lưu ghi chú",
       });
       if (val !== null) {
-        await saveNote(r.moduleId, q.n, val);
+        await saveNote(r.moduleId, curQ.n, val, r.levelId, r.stageId);
         toast("Đã lưu ghi chú.", "good");
         renderRun(root);
       }
     },
     discuss: async () => {
-      const q = currentQuestion();
+      const curQ = currentQuestion();
       try {
-        const comments = await loadComments(r.moduleId, q.n);
+        const comments = await loadComments(r.moduleId, curQ.n, r.levelId, r.stageId);
         const commentListHtml = comments.length
           ? comments.map((c) => `<div class="comment-box mb-8"><div class="comment-top"><span class="comment-author">${esc(c.authorName)}</span><span class="comment-time">${esc(formatDateTime(c.createdAt))}</span></div><div class="comment-content">${renderMarkdown(c.body)}</div></div>`).join("")
           : "Chưa có thảo luận nào cho câu này.";
 
         const newComment = await promptDialog({
-          title: `Thảo luận cộng đồng — Câu #${q.n}`,
+          title: `Thảo luận cộng đồng — Câu #${curQ.n}`,
           text: `Đóng góp bình luận hoặc câu hỏi của bạn:\n\n${commentListHtml}`,
           defaultValue: "",
           confirmLabel: "Gửi thảo luận",
         });
         if (newComment && newComment.trim()) {
-          await postComment(r.moduleId, q.n, newComment.trim());
-          toast("Đã gửi thảo luận thành công!", "good");
+          await postComment(r.moduleId, curQ.n, newComment.trim(), undefined, r.levelId, r.stageId);
+          toast("Đã gửi thảo luận.", "good");
         }
       } catch (err) {
         toast(err instanceof Error ? err.message : String(err), "bad");
       }
     },
+    openAnnotations: () => {
+      openAnnotationsDrawer(
+        r.moduleId,
+        r.stageId,
+        (targetN) => {
+          const targetIdx = r.questions.findIndex((it) => it.n === targetN);
+          if (targetIdx >= 0) {
+            accrueTime();
+            r.idx = targetIdx;
+            persist();
+            renderRun(root);
+            window.scrollTo({ top: 0 });
+          }
+        },
+        r.levelId
+      );
+    },
+    askSubmit: () => void askSubmit(),
+    goto: (arg) => {
+      const nextIdx = Number(arg);
+      if (Number.isFinite(nextIdx) && nextIdx >= 0 && nextIdx < r.questions.length) {
+        destroyHighlighterUI();
+        accrueTime();
+        r.idx = nextIdx;
+        r.shownAt = Date.now();
+        persist();
+        renderRun(root);
+        window.scrollTo({ top: 0 });
+      }
+    },
+    prev: () => {
+      destroyHighlighterUI();
+      move(-1);
+      renderRun(root);
+    },
+    next: () => {
+      destroyHighlighterUI();
+      move(1);
+      renderRun(root);
+    },
     flag: () => {
-      const n = currentQuestion().n;
-      if (r.flags.has(n)) r.flags.delete(n);
-      else r.flags.add(n);
+      const curN = currentQuestion().n;
+      if (r.flags.has(curN)) r.flags.delete(curN);
+      else r.flags.add(curN);
       persist();
       renderRun(root);
     },
-    pick: (letter) => { if (letter) pick(letter); renderRun(root); },
-    check: () => { checkCurrent(); renderRun(root); },
-    prev: () => { move(-1); renderRun(root); },
-    next: () => { move(1); renderRun(root); },
-    goto: (i) => { accrueTime(); r.idx = Number(i); r.paletteOpen = false; renderRun(root); window.scrollTo({ top: 0 }); },
-    togglePalette: () => { r.paletteOpen = !r.paletteOpen; renderRun(root); },
-    askSubmit: () => void askSubmit(),
+    pick: (letter) => {
+      destroyHighlighterUI();
+      if (letter) pick(letter);
+      renderRun(root);
+    },
+    check: () => {
+      destroyHighlighterUI();
+      checkCurrent();
+      renderRun(root);
+    },
   });
 }
 
@@ -609,10 +977,11 @@ function checkCurrent(): void {
   accrueTime();
   const correct = normalize(picked) === normalize((q.answer ?? "").split(""));
   r.checked.add(q.n);
-  recordAnswer(r.moduleId, q.n, correct);
+  recordAnswer(r.moduleId, q.n, correct, r.levelId, r.stageId);
   flushAnswers();
   logResponse({
     moduleId: r.moduleId,
+    levelId: r.levelId,
     stageId: r.stageId,
     questionN: q.n,
     chosen: normalize(picked),
@@ -689,7 +1058,7 @@ function reviewRows(): string {
       const badgeCls = p.skipped ? "skip" : p.isCorrect ? "ok" : "no";
       const order = res.perQuestion.findIndex((x) => x.n === p.n) + 1;
       const open = r.expanded.has(p.n);
-
+      const expText = getExplanationText(q, r.lang);
       const detail = open
         ? `<div class="opt-list mt-16">${q.options
             .map((o) => {
@@ -701,11 +1070,33 @@ function reviewRows(): string {
                 : isPicked
                   ? `<span class="opt-flag">${icon("close")}Bạn chọn</span>`
                   : "";
-              return `<div class="opt ${cls}"><span class="opt-mark">${esc(o.label)}</span><span class="opt-text">${esc(
-                optText(o, r.lang)
-              )}</span>${flag}</div>`;
+              const whyText = optWhy(o, r.lang);
+              const optWhyHtml = whyText ? `<div class="text-xs text-muted mt-4">${renderMarkdown(whyText)}</div>` : "";
+              return `<div class="opt ${cls}">
+                <span class="opt-mark">${esc(o.label)}</span>
+                <div class="grow" style="min-width:0">
+                  <span class="opt-text">${esc(optText(o, r.lang))}</span>
+                  ${optWhyHtml}
+                </div>
+                ${flag}
+              </div>`;
             })
-            .join("")}</div>`
+            .join("")}</div>
+          ${
+            expText
+              ? `<div class="card card-pad mt-12 mb-8" style="background:var(--surface-2);border-left:3px solid var(--brand)">
+                  <div class="row between gap-8 mb-10" style="align-items:center;flex-wrap:wrap">
+                    <div class="fw-700 text-sm" style="color:var(--brand)">${icon("info")} Giải thích chi tiết:</div>
+                    <div class="segmented xs">
+                      <button class="${r.lang === "vi" ? "is-active" : ""}" data-action="lang" data-arg="vi">🇻🇳 Tiếng Việt</button>
+                      <button class="${r.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en">🇬🇧 English</button>
+                      <button class="${r.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja">🇯🇵 日本語</button>
+                    </div>
+                  </div>
+                  <div class="text-sm" style="line-height:1.6">${renderMarkdown(expText)}</div>
+                </div>`
+              : ""
+          }`
         : "";
 
       return `<div class="review-row" style="flex-direction:column;align-items:stretch;animation:fade-up .3s var(--ease-out) both;animation-delay:${Math.min(i, 12) * 0.02}s">
@@ -752,56 +1143,56 @@ function renderResult(root: HTMLElement): void {
     ["flagged", `Đã đánh dấu (${r.flags.size})`],
   ];
 
-  const content = `<div class="page-head">
-      <div class="page">
-        ${crumbs([
-          { label: "Trang chủ", action: "go", arg: "/" },
-          { label: r.brandLabel, action: "go", arg: r.exitPath },
-          { label: "Kết quả" },
-        ])}
-      </div>
-    </div>
-    <div class="page page-body">
-      <div class="result-hero anim-up">
-        ${ring({ pct: res.pct, size: 132, stroke: 12, label: `${res.correct}/${res.total} câu`, tone })}
-        <div class="result-hero-text">
-          <span class="badge ${res.passed ? "badge-good" : "badge-bad"} mb-12">${icon(res.passed ? "trophy" : "target")}${
-            res.passed ? "Đạt" : "Chưa đạt"
-          }</span>
-          <h1>${headline}</h1>
-          <p>${esc(sub)}</p>
-          <div class="result-stats">
-            ${statBox("checkCircle", "Câu đúng", String(res.correct), `/ ${res.total}`)}
-            ${statBox("xCircle", "Câu sai", String(res.total - res.correct))}
-            ${statBox("clock", "Thời gian", formatDuration(res.durationSec))}
-            ${statBox("target", "Tỷ lệ đúng", `${res.pct}%`)}
-          </div>
-          <div class="result-actions">
-            ${wrongCount ? `<button class="btn btn-primary" data-action="retryWrong">${icon("refresh")}Luyện lại ${wrongCount} câu sai</button>` : ""}
-            <button class="btn btn-outline" data-action="go" data-arg="${esc(r.exitPath)}">${icon("home")}Về trang chứng chỉ</button>
-            <button class="btn btn-ghost" data-action="go" data-arg="/tien-trinh">${icon("chart")}Xem tiến trình</button>
+  const content = `<div class="container-narrow">
+    <div class="result-hero mb-24">
+      <div class="result-score">
+        <div class="ring lg ${tone}" style="--val:${res.pct}">
+          <div class="ring-label">
+            <span class="ring-num nums">${res.pct}%</span>
+            <span class="ring-cap">${res.correct}/${res.total} câu</span>
           </div>
         </div>
       </div>
+      <div class="result-text">
+        <div class="badge badge-${tone} sm mb-8">${res.passed ? "ĐẠT" : "CHƯA ĐẠT"}</div>
+        <h1 class="h2 mb-6">${headline}</h1>
+        <p class="text-muted text-sm mb-16">${esc(sub)}</p>
+        <div class="row gap-8" style="flex-wrap:wrap">
+          <button class="btn btn-primary" data-action="retryWrong" ${wrongCount === 0 ? "disabled" : ""}>
+            ${icon("rotateCcw")}Luyện lại ${wrongCount} câu sai
+          </button>
+          <a href="${esc(r.exitPath)}" class="btn btn-outline">${icon("arrowLeft")}Về trang chặng</a>
+        </div>
+      </div>
+    </div>
 
-      <div class="row-between mt-40 mb-16">
-        <h2 class="card-title" style="font-size:20px">Xem lại bài làm</h2>
-        <div class="segmented">
+    <div class="card card-pad mb-16">
+      <div class="row between gap-12 mb-12" style="align-items:center;flex-wrap:wrap">
+        <div class="segmented sm">
           ${filters
             .map(
-              ([key, label]) =>
-                `<button class="${r.reviewFilter === key ? "is-active" : ""}" data-action="filter" data-arg="${key}">${label}</button>`
+              ([k, label]) =>
+                `<button class="${r.reviewFilter === k ? "is-active" : ""}" data-action="filter" data-arg="${k}">${esc(
+                  label
+                )}</button>`
             )
             .join("")}
         </div>
+        <div class="segmented sm">
+          <button class="${r.lang === "vi" ? "is-active" : ""}" data-action="lang" data-arg="vi">🇻🇳 VI</button>
+          <button class="${r.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en">🇬🇧 EN</button>
+          <button class="${r.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja">🇯🇵 JA</button>
+        </div>
       </div>
-      <div>${reviewRows()}</div>
-    </div>`;
+      <div class="review-list">${reviewRows()}</div>
+    </div>
+  </div>`;
 
   root.innerHTML = renderPage({ content });
 
   bindShell(root, "", {
     filter: (v) => { r.reviewFilter = (v as typeof r.reviewFilter) ?? "all"; renderResult(root); },
+    lang: (v) => { r.lang = (v === "ja" ? "ja" : v === "en" ? "en" : "vi"); persist(); renderResult(root); },
     toggleReview: (n) => {
       const num = Number(n);
       if (r.expanded.has(num)) r.expanded.delete(num);
@@ -813,6 +1204,7 @@ function renderResult(root: HTMLElement): void {
       const list = r.questions.filter((q) => wrongNums.has(q.n));
       startExam({
         moduleId: r.moduleId,
+        levelId: r.levelId,
         stageId: "practice",
         label: "Luyện lại câu sai",
         brandLabel: r.brandLabel,
@@ -833,6 +1225,10 @@ export function registerExamRoutes(): void {
   registerRoute(EXAM_PATH, (root) => {
     if (!rt) { navigate("/"); return; }
     if (rt.result) { navigate(RESULT_PATH); return; }
+
+    // Không chặn màn hình chờ dữ liệu ghi chú — tô/xem ghi chú vẫn dùng được
+    // ngay khi tải xong, chỉ là vài trăm mili giây đầu có thể chưa thấy.
+    void preloadAnnotations(rt.moduleId, rt.stageId, rt.levelId);
 
     renderRun(root);
 
@@ -870,9 +1266,11 @@ export function registerExamRoutes(): void {
   });
 }
 
-/** Bài đang làm dở của module này còn nằm trong bộ nhớ không (chưa nộp). */
-export function hasLiveExam(moduleId: string): boolean {
-  return !!rt && !rt.result && rt.moduleId === moduleId;
+/** Bài đang làm dở của module (và cấp độ, nếu có) này còn nằm trong bộ nhớ
+ * không (chưa nộp). Bỏ trống `levelId` để chỉ kiểm tra theo module. */
+export function hasLiveExam(moduleId: string, levelId?: string): boolean {
+  if (!rt || rt.result || rt.moduleId !== moduleId) return false;
+  return levelId === undefined || rt.levelId === levelId;
 }
 
 export function continueLiveExam(): void {
