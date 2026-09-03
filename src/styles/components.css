@@ -189,8 +189,34 @@
 .choice-card:hover { border-color: var(--line-strong); background: var(--surface-2); }
 .choice-card.is-active { border-color: var(--brand); background: var(--surface-2); }
 .choice-card input { margin-top: 3px; }
-.choice-card h4 { font-size: 15px; margin-bottom: 4px; }
-.choice-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.choice-card h4, .choice-card b {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.choice-card p, .choice-card span > span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- bố cục thiết lập bài thi ---------- */
+.setup-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .setup-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 
 /* ---------- thanh tiến độ & vòng tròn ---------- */
 
@@ -254,8 +280,11 @@
 
 /* ---------- lưới số liệu ---------- */
 
-.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px; }
 .stat-grid.compact { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (max-width: 480px) {
+  .stat-grid:not(.compact) { grid-template-columns: 1fr; gap: 12px; }
+}
 .stat-box {
   padding: 18px 20px;
   border-radius: var(--r-md);
@@ -345,9 +374,15 @@
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 20px;
   align-items: stretch;
+}
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .cert-card {
@@ -497,7 +532,10 @@
 
 /* ---------- thẻ tính năng ---------- */
 
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; }
+@media (max-width: 600px) {
+  .feature-grid { grid-template-columns: 1fr; gap: 14px; }
+}
 .feature {
   padding: 26px 24px;
   border-radius: var(--r-lg);
@@ -512,7 +550,10 @@
 
 /* ---------- thẻ chế độ học ---------- */
 
-.mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px; }
+@media (max-width: 600px) {
+  .mode-grid { grid-template-columns: 1fr; gap: 12px; }
+}
 .mode-card {
   display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
   padding: 22px;

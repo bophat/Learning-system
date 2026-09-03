@@ -592,10 +592,14 @@ function renderPalette(parts: ExamPartSection[]): string {
     })
     .join("");
 
-  return `<aside class="cbt-sidebar-pane">
+  return `<aside class="cbt-sidebar-pane ${r.paletteOpen ? "is-open" : ""}">
+    <div class="cbt-palette-handle" data-action="togglePalette"></div>
     <div class="cbt-progress-header">
       <span class="cbt-progress-title">Tiến độ làm bài</span>
-      <span class="cbt-progress-stat">${doneCount}/${r.questions.length} (${pct}%)</span>
+      <div class="row gap-8" style="align-items:center">
+        <span class="cbt-progress-stat">${doneCount}/${r.questions.length} (${pct}%)</span>
+        <button class="icon-btn only-sm" style="width:28px;height:28px" data-action="togglePalette" aria-label="Đóng bảng câu hỏi">${icon("close")}</button>
+      </div>
     </div>
     ${sectionsHtml}
     <div class="cbt-legend-box">
@@ -814,6 +818,13 @@ function renderRun(root: HTMLElement): void {
 
   const gridClass = hasPassage ? "cbt-main-grid" : "cbt-main-grid no-passage";
 
+  const mobileBarHtml = `<div class="palette-scrim ${r.paletteOpen ? "is-open" : ""}" data-action="togglePalette"></div>
+    <div class="mobile-bar">
+      <button class="btn btn-outline btn-sm btn-icon-only" data-action="prev" ${r.idx === 0 ? "disabled" : ""}>${icon("arrowLeft")}</button>
+      <button class="btn btn-soft-accent btn-sm grow" data-action="togglePalette">${icon("grid")}Câu ${r.idx + 1}/${r.questions.length}</button>
+      <button class="btn btn-outline btn-sm btn-icon-only" data-action="next" ${r.idx === r.questions.length - 1 ? "disabled" : ""}>${icon("arrowRight")}</button>
+    </div>`;
+
   root.innerHTML = `<div class="cbt-app">
     ${renderExamBar()}
     ${partStripHtml}
@@ -822,6 +833,7 @@ function renderRun(root: HTMLElement): void {
       ${questionPaneHtml}
       ${sidebarHtml}
     </main>
+    ${mobileBarHtml}
   </div>`;
 
   // Initialize highlighter on passage pane if present
@@ -913,12 +925,17 @@ function renderRun(root: HTMLElement): void {
       );
     },
     askSubmit: () => void askSubmit(),
+    togglePalette: () => {
+      r.paletteOpen = !r.paletteOpen;
+      renderRun(root);
+    },
     goto: (arg) => {
       const nextIdx = Number(arg);
       if (Number.isFinite(nextIdx) && nextIdx >= 0 && nextIdx < r.questions.length) {
         destroyHighlighterUI();
         accrueTime();
         r.idx = nextIdx;
+        r.paletteOpen = false;
         r.shownAt = Date.now();
         persist();
         renderRun(root);
@@ -1143,7 +1160,7 @@ function renderResult(root: HTMLElement): void {
     ["flagged", `Đã đánh dấu (${r.flags.size})`],
   ];
 
-  const content = `<div class="container-narrow">
+  const content = `<div class="page-narrow page-body">
     <div class="result-hero mb-24">
       <div class="result-score">
         <div class="ring lg ${tone}" style="--val:${res.pct}">

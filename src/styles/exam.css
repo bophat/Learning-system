@@ -788,6 +788,7 @@
   gap: 6px;
   transition: all var(--t-fast);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .cbt-btn-submit:hover {
   filter: brightness(1.08);
@@ -810,6 +811,7 @@
   gap: 6px;
   transition: all var(--t-fast);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .cbt-btn-exit:hover {
   filter: brightness(1.08);
@@ -957,6 +959,7 @@
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
+  flex-wrap: wrap;
 }
 .cbt-q-num-badge {
   width: 28px;
@@ -984,6 +987,7 @@
   transition: color var(--t-fast);
   padding: 4px 8px;
   border-radius: var(--r-sm);
+  white-space: nowrap;
 }
 .cbt-flag-toggle:hover { color: var(--brand); background: var(--surface-2); }
 .cbt-flag-toggle.is-flagged { color: var(--brand); font-weight: 700; }
@@ -1168,19 +1172,166 @@
   border-color: var(--brand);
 }
 
-@media (max-width: 1024px) {
-  .cbt-main-grid {
+.cbt-palette-handle {
+  display: none;
+  width: 44px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line-strong);
+  margin: 0 auto 14px;
+  cursor: pointer;
+}
+
+.reading-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+@media (max-width: 768px) {
+  .reading-split-grid {
     grid-template-columns: 1fr;
-    height: auto;
-    overflow: visible;
+    min-height: auto;
+  }
+  .reading-split-grid > div:first-child {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 1024px) {
+  .cbt-main-grid,
+  .cbt-main-grid.no-passage {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 76px;
   }
   .cbt-passage-pane,
-  .cbt-question-pane,
-  .cbt-sidebar-pane {
+  .cbt-question-pane {
     height: auto;
     max-height: none;
     border-right: none;
     border-bottom: 1px solid var(--line);
   }
+  .cbt-passage-pane {
+    padding: 20px 16px;
+  }
+  .cbt-question-pane {
+    padding: 18px 16px 40px;
+  }
+  .cbt-sidebar-pane {
+    display: none;
+  }
+  .cbt-sidebar-pane.is-open {
+    display: block;
+    position: fixed;
+    inset: auto 0 0 0;
+    top: auto;
+    z-index: var(--z-drawer);
+    max-height: 80vh;
+    overflow-y: auto;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    border-top-left-radius: var(--r-xl);
+    border-top-right-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 14px 18px calc(80px + env(safe-area-inset-bottom));
+    animation: fade-up 0.24s var(--ease-out) both;
+  }
+  .cbt-palette-handle {
+    display: block;
+  }
 }
+
+@media (max-width: 768px) {
+  .cbt-header {
+    height: 54px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .cbt-header-title {
+    display: none;
+  }
+  .cbt-header-left {
+    gap: 6px;
+  }
+  .cbt-timer {
+    padding: 4px 10px;
+    font-size: 13px;
+    gap: 5px;
+  }
+  .cbt-timer svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cbt-header-right {
+    gap: 6px;
+  }
+  .cbt-btn-submit {
+    padding: 6px 12px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    gap: 4px;
+  }
+  .cbt-btn-submit svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cbt-btn-exit {
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    gap: 4px;
+  }
+  .cbt-btn-exit svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cbt-part-strip {
+    padding: 8px 12px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cbt-part-pill {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+  .cbt-q-item {
+    padding: 16px 14px;
+  }
+  .cbt-q-stem {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .cbt-opt-pill-row {
+    gap: 8px;
+  }
+  .cbt-pill-opt {
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 440px) {
+  .cbt-header {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  .cbt-timer {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+  .cbt-btn-exit span {
+    display: none;
+  }
+  .cbt-btn-exit {
+    padding: 6px 8px;
+  }
+  .cbt-pnum-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+}
+
 

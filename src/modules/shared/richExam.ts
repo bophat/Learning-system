@@ -380,7 +380,7 @@ function renderReading(q: ReadingQuestion): string {
   const a = rt!.answers[q.n];
   const subs = a?.kind === "reading" ? a.subs : {};
   return `<div class="q-card" style="padding:0;overflow:hidden">
-    <div style="display:grid;grid-template-columns:1fr 1fr;min-height:520px">
+    <div class="reading-split-grid">
       <div style="border-right:1px solid var(--line);padding:24px 26px;overflow-y:auto;max-height:70vh">
         <div class="passage-title">${icon("bookmark")}Đoạn văn</div>
         ${q.title ? `<h3 style="margin:0 0 12px">${esc(q.title)}</h3>` : ""}

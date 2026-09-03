@@ -75,7 +75,7 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- tiện ích ---------- */
 
 .page { width: 100%; max-width: var(--w-page); margin: 0 auto; padding: 0 var(--pad-page); }
-.page-narrow { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 var(--pad-page); }
+.page-narrow, .container-narrow { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 var(--pad-page); }
 .root-scroll { display: flex; flex-direction: column; min-height: 100vh; }
 
 .stack { display: flex; flex-direction: column; }

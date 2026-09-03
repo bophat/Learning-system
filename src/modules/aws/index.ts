@@ -293,10 +293,10 @@ function renderHome(root: HTMLElement): void {
       </div>
 
       <h2 class="card-title mb-16" style="font-size:20px">Chọn cách ôn</h2>
-      <div class="mode-grid mb-24" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">${mainModes}</div>
+      <div class="mode-grid mb-24">${mainModes}</div>
 
       <h2 class="card-title mb-16" style="font-size:20px">Ôn lại những gì còn yếu</h2>
-      <div class="mode-grid mb-32" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">${reviewModes}</div>
+      <div class="mode-grid mb-32">${reviewModes}</div>
 
       <div class="feature-grid">
         ${historyCard}
@@ -584,18 +584,18 @@ function renderSetup(root: HTMLElement): void {
       </div>
 
       <div class="page page-body">
-        <div class="feature-grid" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:start">
+        <div class="setup-layout">
           <div class="card card-pad">
             <div class="field">
               <span class="field-label">Cách chấm</span>
-              <div class="choice-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+              <div class="choice-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))">
                 <button class="choice-card ${state.mode === "practice" ? "is-active" : ""}" data-action="mode" data-arg="practice">
                   <span class="ck"></span>
-                  <span><b>Luyện tập</b><span>Chấm ngay sau mỗi câu, không giới hạn thời gian.</span></span>
+                  <span class="grow"><b>Luyện tập</b><span>Chấm ngay sau mỗi câu, không giới hạn thời gian.</span></span>
                 </button>
                 <button class="choice-card ${state.mode === "exam" ? "is-active" : ""}" data-action="mode" data-arg="exam">
                   <span class="ck"></span>
-                  <span><b>Thi thử</b><span>Có đồng hồ đếm ngược, chấm sau khi nộp toàn bài.</span></span>
+                  <span class="grow"><b>Thi thử</b><span>Có đồng hồ đếm ngược, chấm sau khi nộp toàn bài.</span></span>
                 </button>
               </div>
             </div>
