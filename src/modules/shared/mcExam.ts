@@ -1213,6 +1213,39 @@ function reviewRows(): string {
     .join("");
 }
 
+/**
+ * Kết quả theo từng phần (Reading/Listening, hay theo domain) — chỉ hiện khi
+ * đề có nhiều hơn 1 phần, tái dùng `getExamParts()` đã dùng để chia Question
+ * Navigator lúc làm bài nên luôn khớp đúng cách chia đã hiển thị khi thi.
+ * Chỉ mang tính thông tin (không có ngưỡng đậu riêng từng phần trong dữ liệu
+ * hiện có) — không tự suy ra "đạt/chưa đạt" từng phần để tránh sai lệch.
+ */
+function renderResultBreakdown(): string {
+  const r = rt!;
+  const res = r.result!;
+  const parts = getExamParts(r.moduleId, r.levelId, r.questions);
+  if (parts.length <= 1) return "";
+
+  const byN = new Map(res.perQuestion.map((p) => [p.n, p]));
+  const rows = parts
+    .map((part) => {
+      const items = part.questions.map((q) => byN.get(q.n)).filter((p): p is PerQuestion => !!p);
+      const correct = items.filter((p) => p.isCorrect).length;
+      const total = items.length;
+      const pct = percent(correct, total);
+      return `<div class="mb-14">
+        <div class="row-between mb-6"><span class="text-sm fw-700">${esc(part.shortName)}</span><span class="text-sm nums text-muted">${correct}/${total} câu · ${pct}%</span></div>
+        <div class="bar"><i style="width:${pct}%"></i></div>
+      </div>`;
+    })
+    .join("");
+
+  return `<div class="card card-pad mb-16">
+    <div class="card-title mb-14">Kết quả theo từng phần</div>
+    ${rows}
+  </div>`;
+}
+
 function renderResult(root: HTMLElement): void {
   const r = rt!;
   const res = r.result!;
@@ -1258,6 +1291,8 @@ function renderResult(root: HTMLElement): void {
         </div>
       </div>
     </div>
+
+    ${renderResultBreakdown()}
 
     <div class="card card-pad mb-16">
       <div class="row between gap-12 mb-12" style="align-items:center;flex-wrap:wrap">
