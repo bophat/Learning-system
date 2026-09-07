@@ -26,6 +26,7 @@ import { saveSession, clearSession, flushSessions, type SavedSession } from "../
 import { hasNote, getNote, saveNote, loadNotes, loadComments, postComment } from "../../state/social";
 import { preloadAnnotations } from "../../components/highlighter";
 import { initTextHighlighter, openAnnotationsDrawer, loadAllAnnotations, destroyHighlighterUI } from "../../components/highlighter";
+import { renderLockedAudioPlayer, bindLockedAudioPlayer } from "../../components/audioPlayer";
 
 export type ExamMode = "practice" | "exam";
 
@@ -70,6 +71,8 @@ interface Runtime extends ExamLaunch {
   answers: Record<number, string[]>;
   checked: Set<number>;
   flags: Set<number>;
+  /** Câu Nghe đã phát xong (chế độ thi thử) — không cho nghe lại. */
+  audioPlayed: Set<number>;
   lang: Lang;
   remaining: number | null;
   elapsed: number;
@@ -99,6 +102,7 @@ export function startExam(launch: ExamLaunch): void {
     answers: {},
     checked: new Set(),
     flags: new Set(),
+    audioPlayed: new Set(),
     lang: "en",
     remaining: launch.durationSec,
     elapsed: 0,
@@ -148,6 +152,7 @@ export function resumeExam(saved: SavedSession, ctx: ResumeContext): boolean {
     answers,
     checked: new Set(saved.checked ?? []),
     flags: new Set(saved.flags ?? []),
+    audioPlayed: new Set(saved.audioPlayed ?? []),
     lang: saved.lang === "ja" ? "ja" : "en",
     remaining: saved.remaining,
     elapsed: saved.elapsed ?? 0,
@@ -179,6 +184,7 @@ function persist(): void {
     answers,
     checked: [...rt.checked],
     flags: [...rt.flags],
+    audioPlayed: [...rt.audioPlayed],
     lang: rt.lang,
     remaining: rt.remaining,
     durationSec: rt.durationSec,
@@ -773,7 +779,16 @@ function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _pa
           <button class="tool-btn ${marked ? "is-on mark" : ""}" data-action="bookmark" title="Lưu">${icon("bookmark")}</button>
         </div>
       </div>
-      ${q.audioUrl ? `<div class="audio-wrap mb-16" style="padding:12px 16px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--line)"><div class="text-xs fw-700 mb-6 row gap-6" style="color:var(--brand)">${icon("volume")}Audio bài nghe</div><audio controls src="${esc(q.audioUrl)}" style="width:100%;height:38px"></audio></div>` : ""}
+      ${
+        q.audioUrl
+          ? r.mode === "exam"
+            ? `<div class="mb-16">
+                <div class="text-xs fw-700 mb-6 row gap-6" style="color:var(--brand)">${icon("volume")}Audio bài nghe</div>
+                ${renderLockedAudioPlayer(q.n, q.audioUrl, r.audioPlayed.has(q.n))}
+              </div>`
+            : `<div class="audio-wrap mb-16" style="padding:12px 16px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--line)"><div class="text-xs fw-700 mb-6 row gap-6" style="color:var(--brand)">${icon("volume")}Audio bài nghe</div><audio controls src="${esc(q.audioUrl)}" style="width:100%;height:38px"></audio></div>`
+          : ""
+      }
       ${transcriptHtml}
       <div class="cbt-q-stem">${esc(parsed.question || stemOf(q, r.lang))}</div>
       ${altStem}
@@ -835,6 +850,15 @@ function renderRun(root: HTMLElement): void {
     </main>
     ${mobileBarHtml}
   </div>`;
+
+  // Gắn player khoá tua cho câu Nghe ở chế độ thi thử — chỉ còn nút Phát nếu
+  // câu này chưa nghe xong lần nào (đã nghe xong thì HTML không còn nút đó).
+  if (q.audioUrl && r.mode === "exam" && !r.audioPlayed.has(q.n)) {
+    bindLockedAudioPlayer(root, q.n, () => {
+      r.audioPlayed.add(q.n);
+      persist();
+    });
+  }
 
   // Initialize highlighter on passage pane if present
   if (hasPassage) {

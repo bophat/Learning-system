@@ -132,7 +132,11 @@ interface HighlighterOptions {
 }
 
 export function initTextHighlighter(opts: HighlighterOptions): () => void {
-  const { container, moduleId, stageId, levelId } = opts;
+  const { container, moduleId, stageId, levelId, questionN } = opts;
+
+  // Vẽ lại các highlight đã lưu từ trước (đổi câu, tải lại trang, quay lại
+  // bài đang làm dở) — dữ liệu đã có sẵn trên Supabase, chỉ thiếu bước này.
+  redrawSavedHighlights(container, moduleId, levelId, stageId, questionN, opts);
 
   const handleSelection = (e: MouseEvent | TouchEvent) => {
     // Không hiện toolbar nếu đang click bên trong toolbar hoặc popover
@@ -256,6 +260,24 @@ function showFloatingToolbar(
   });
 }
 
+/** Bọc một Range bằng thẻ `<mark>` — dùng chung cho highlight mới lẫn vẽ lại highlight cũ. */
+function wrapRangeAsMark(range: Range, annId: string, color: HighlightColor, hasNote: boolean): boolean {
+  try {
+    const mark = document.createElement("mark");
+    mark.className = `hl-mark hl-${color}`;
+    mark.setAttribute("data-ann-id", annId);
+    if (hasNote) mark.setAttribute("data-has-note", "true");
+
+    const contents = range.extractContents();
+    mark.appendChild(contents);
+    range.insertNode(mark);
+    return true;
+  } catch (err) {
+    console.warn("Không thể bọc trực tiếp range:", err);
+    return false;
+  }
+}
+
 function applyHighlight(
   range: Range,
   text: string,
@@ -265,23 +287,81 @@ function applyHighlight(
   opts: HighlighterOptions
 ): ExamAnnotation {
   const ann = addAnnotation(opts.moduleId, opts.stageId, opts.questionN, text, color, type, noteText, opts.levelId);
-
-  try {
-    const mark = document.createElement("mark");
-    mark.className = `hl-mark hl-${color}`;
-    mark.setAttribute("data-ann-id", ann.id);
-    if (noteText) mark.setAttribute("data-has-note", "true");
-
-    const contents = range.extractContents();
-    mark.appendChild(contents);
-    range.insertNode(mark);
-  } catch (err) {
-    console.warn("Không thể bọc trực tiếp range:", err);
-  }
-
+  wrapRangeAsMark(range, ann.id, color, !!noteText);
   window.getSelection()?.removeAllRanges();
   opts.onAnnotationChange?.(loadAllAnnotations(opts.moduleId, opts.stageId, opts.levelId).length);
   return ann;
+}
+
+/**
+ * Tìm lại vị trí của `text` trong các text-node còn "trần" (chưa nằm trong
+ * `.hl-mark`) của `container`, rồi trả về một Range trỏ đúng đoạn đó. Trả về
+ * null nếu không tìm thấy (nội dung đổi khác, hoặc đã được vẽ trước đó).
+ */
+function findRangeForText(container: HTMLElement, text: string): Range | null {
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      return node.parentElement?.closest(".hl-mark") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    },
+  });
+
+  const nodes: Text[] = [];
+  let concatenated = "";
+  let node: Node | null;
+  while ((node = walker.nextNode())) {
+    nodes.push(node as Text);
+    concatenated += (node as Text).data;
+  }
+
+  const idx = concatenated.indexOf(text);
+  if (idx === -1 || text.length === 0) return null;
+
+  let pos = 0;
+  let startNode: Text | null = null;
+  let startOffset = 0;
+  let endNode: Text | null = null;
+  let endOffset = 0;
+  for (const n of nodes) {
+    const len = n.data.length;
+    if (startNode === null && idx < pos + len) {
+      startNode = n;
+      startOffset = idx - pos;
+    }
+    if (startNode !== null && idx + text.length <= pos + len) {
+      endNode = n;
+      endOffset = idx + text.length - pos;
+      break;
+    }
+    pos += len;
+  }
+  if (!startNode || !endNode) return null;
+
+  const range = document.createRange();
+  range.setStart(startNode, startOffset);
+  range.setEnd(endNode, endOffset);
+  return range;
+}
+
+/** Vẽ lại `<mark>` cho mọi highlight đã lưu của câu hiện tại, theo đúng thứ tự tạo (cũ trước). */
+function redrawSavedHighlights(
+  container: HTMLElement,
+  moduleId: string,
+  levelId: string,
+  stageId: string,
+  questionN: number,
+  opts: HighlighterOptions
+): void {
+  const all = loadAllAnnotations(moduleId, stageId, levelId);
+  const mine = all.filter((a) => a.questionN === questionN).sort((a, b) => a.createdAt - b.createdAt);
+
+  for (const ann of mine) {
+    const range = findRangeForText(container, ann.text);
+    if (!range) continue; // nội dung không khớp nữa (đề đổi bản dịch...) — bỏ qua, không crash
+    wrapRangeAsMark(range, ann.id, ann.color, !!ann.note);
+  }
+
+  // Badge trên thanh công cụ đếm theo cả chặng thi, không riêng câu hiện tại.
+  opts.onAnnotationChange?.(all.length);
 }
 
 function showNoteModal(

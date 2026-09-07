@@ -29,6 +29,8 @@ export interface SavedSession {
   /** Các câu đã bấm "Kiểm tra" (chỉ dùng ở chế độ luyện tập). */
   checked: number[];
   flags: number[];
+  /** Câu Nghe đã phát xong ở chế độ thi thử — khoá không cho nghe lại kể cả sau khi tải lại trang. */
+  audioPlayed?: number[];
   lang: Lang;
   remaining: number | null;
   durationSec: number | null;
