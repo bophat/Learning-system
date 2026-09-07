@@ -18,7 +18,7 @@ import { icon } from "../../components/icons";
 import { renderPage, bindShell, setModuleTheme } from "../../components/appShell";
 import { confirmDialog, promptDialog } from "../../components/modal";
 import { toast } from "../../components/toast";
-import { formatClock, formatDateTime, percent, renderMarkdown } from "../../components/ui";
+import { formatClock, formatDateTime, formatDuration, percent, renderMarkdown } from "../../components/ui";
 import { addAttempt, recordAnswer, flushAnswers, isBookmarked, toggleBookmark, getModuleStats, getWrong, getAttempts } from "../../state/progress";
 import { logResponse, flushResponses } from "../../state/responses";
 import { afterExamBookkeeping } from "../../state/habits";
@@ -95,7 +95,59 @@ const RESULT_PATH = "/ket-qua";
 
 // ---------------------------------------------------------------- khởi động
 
+/**
+ * Tóm tắt cấu trúc đề + lưu ý riêng, hiện trong hộp thoại xác nhận trước khi
+ * vào chế độ Thi thử — tương đương màn "S3: Trang tổng quan đề thi" trong
+ * spec-ui-lam-bai-thi.md, gọn thành một bước xác nhận thay vì một route
+ * riêng vì mọi module đều đi qua đúng một hàm `startExam` này.
+ */
+function buildExamBriefing(launch: ExamLaunch): string {
+  const total = launch.questions.length;
+  const hasAudio = launch.questions.some((q) => !!q.audioUrl);
+
+  const factRow = (label: string, value: string) =>
+    `<div class="row-between" style="padding:7px 0;border-bottom:1px solid var(--line)">
+      <span class="text-sm text-muted">${esc(label)}</span><b class="nums">${esc(value)}</b>
+    </div>`;
+
+  const facts = [
+    factRow("Số câu hỏi", `${total} câu`),
+    factRow("Thời gian làm bài", launch.durationSec ? formatDuration(launch.durationSec) : "Không giới hạn"),
+    factRow("Ngưỡng đậu tham chiếu", `${launch.passPct}%`),
+  ].join("");
+
+  const notes: string[] = [];
+  if (launch.durationSec) notes.push("Hết giờ, bài sẽ tự động nộp — không mất dữ liệu đã làm.");
+  if (hasAudio) notes.push("Có phần Nghe: mỗi đoạn audio chỉ phát được một lần, không tua/nghe lại được. Chuẩn bị tai nghe trước khi bắt đầu.");
+  notes.push("Có thể nhảy tự do giữa các câu và đánh dấu (cờ) câu cần xem lại trước khi nộp.");
+
+  const notesHtml = `<ul style="margin:12px 0 0;padding-left:18px;font-size:13px;line-height:1.7;color:var(--ink-2)">
+    ${notes.map((n) => `<li>${esc(n)}</li>`).join("")}
+  </ul>`;
+
+  return `<div class="card card-pad" style="background:var(--surface-2);border:1px solid var(--line);margin:4px 0 0">${facts}</div>${notesHtml}`;
+}
+
+/** Chỉ chặn ở chế độ Thi thử — luyện tập không có gì rủi ro (chấm ngay từng câu, không khoá audio) nên vào thẳng. */
+async function confirmExamStart(launch: ExamLaunch): Promise<boolean> {
+  if (launch.mode !== "exam") return true;
+  return confirmDialog({
+    title: `Bắt đầu ${launch.label}?`,
+    text: "Đề mô phỏng đúng điều kiện phòng thi thật — kiểm tra lại thời gian và (nếu có phần Nghe) tai nghe trước khi bắt đầu, vì không quay lại sửa được sau khi nộp.",
+    confirmLabel: "Bắt đầu làm bài",
+    cancelLabel: "Để sau",
+    extra: buildExamBriefing(launch),
+  });
+}
+
 export function startExam(launch: ExamLaunch): void {
+  void beginExam(launch);
+}
+
+async function beginExam(launch: ExamLaunch): Promise<void> {
+  const ok = await confirmExamStart(launch);
+  if (!ok) return;
+
   rt = {
     ...launch,
     idx: 0,
