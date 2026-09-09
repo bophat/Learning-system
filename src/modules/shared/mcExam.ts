@@ -182,7 +182,20 @@ export interface ResumeContext {
 /** Khôi phục bài đang làm dở từ localStorage. Trả về false nếu dữ liệu không còn khớp. */
 export function resumeExam(saved: SavedSession, ctx: ResumeContext): boolean {
   const byNum = new Map(ctx.pool.map((q) => [q.n, q]));
-  const questions = saved.qNums.map((n) => byNum.get(n)).filter((q): q is MultipleChoiceQuestion => !!q);
+  // Nếu câu hỏi đã bị tráo đáp án lúc bắt đầu bài (vd module AWS — xem
+  // lib/shuffle.ts), ngân hàng đề gốc (ctx.pool) vẫn giữ thứ tự CHƯA tráo.
+  // Phải áp lại đúng options/answer đã lưu trong phiên, không thì phương án
+  // hiện ra sẽ về đúng thứ tự gốc trong khi đáp án đã chọn (theo nhãn cũ)
+  // bị chấm nhầm sang phương án khác — sai lệch y hệt lỗi người dùng báo.
+  const snapshotByN = new Map((saved.optionsSnapshot ?? []).map((s) => [s.n, s]));
+  const questions = saved.qNums
+    .map((n) => {
+      const base = byNum.get(n);
+      if (!base) return undefined;
+      const snap = snapshotByN.get(n);
+      return snap ? { ...base, options: snap.options, answer: snap.answer } : base;
+    })
+    .filter((q): q is MultipleChoiceQuestion => !!q);
   if (questions.length !== saved.qNums.length || questions.length === 0) return false;
 
   const answers: Record<number, string[]> = {};
@@ -237,6 +250,9 @@ function persist(): void {
     checked: [...rt.checked],
     flags: [...rt.flags],
     audioPlayed: [...rt.audioPlayed],
+    // Ghi lại đúng thứ tự phương án + đáp án đúng đang hiển thị (đã tráo hay
+    // chưa tuỳ module) — xem giải thích ở resumeExam().
+    optionsSnapshot: rt.questions.map((q) => ({ n: q.n, options: q.options, answer: q.answer })),
     lang: rt.lang,
     remaining: rt.remaining,
     durationSec: rt.durationSec,

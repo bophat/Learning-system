@@ -10,7 +10,7 @@
  * một người vừa dở bài JLPT N1 vừa dở bài JLPT N3 không đè phiên của nhau.
  */
 
-import type { Lang } from "../types/exam";
+import type { ChoiceOption, Lang } from "../types/exam";
 import { db } from "../services/supabase";
 import { currentUserId } from "./auth";
 import { readJson, writeJson, removeKey } from "./storage";
@@ -31,6 +31,15 @@ export interface SavedSession {
   flags: number[];
   /** Câu Nghe đã phát xong ở chế độ thi thử — khoá không cho nghe lại kể cả sau khi tải lại trang. */
   audioPlayed?: number[];
+  /**
+   * Vị trí phương án + đáp án đúng đã tráo (vd module AWS trộn cả thứ tự câu
+   * lẫn vị trí đáp án — xem `lib/shuffle.ts`), ghi theo từng số câu. Bắt buộc
+   * phải lưu cùng phiên: nếu khôi phục bài đang làm dở mà chỉ tra lại câu hỏi
+   * gốc theo số câu (không có mảng này), phương án sẽ về đúng thứ tự gốc
+   * trong ngân hàng đề — lệch với những gì người học đang thấy trên màn hình
+   * trước khi tải lại trang, khiến đáp án đã chọn bị chấm sai nhãn.
+   */
+  optionsSnapshot?: { n: number; options: ChoiceOption[]; answer: string | null }[];
   lang: Lang;
   remaining: number | null;
   durationSec: number | null;
