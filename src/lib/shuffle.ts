@@ -24,9 +24,24 @@ export function shuffleArray<T>(arr: readonly T[]): T[] {
 const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 /**
- * Tráo vị trí các phương án của MỘT câu, gán lại nhãn A/B/C... theo vị trí
- * mới, và tính lại chuỗi đáp án đúng cho khớp nhãn mới — nội dung phương án
- * (đúng/sai) không đổi, chỉ đổi chỗ đứng và ký hiệu.
+ * Định danh bền của một phương án — dùng ở MỌI nơi so đáp án đúng/đã chọn
+ * (chấm điểm, tô đúng/sai, xem lại bài...). KHÔNG dùng `o.label` cho việc
+ * này vì label đổi mỗi lần tráo; chỉ dùng label để hiển thị/làm khoá bấm
+ * chọn trong một lần vẽ màn hình.
+ */
+export function optionKey(o: ChoiceOption): string {
+  return o.id || o.label;
+}
+
+/**
+ * Tráo vị trí các phương án của MỘT câu và gán lại nhãn hiển thị A/B/C...
+ * theo vị trí mới. Trước khi tráo, gán `id` cố định (nếu chưa có) bằng đúng
+ * nhãn hiện tại — lúc này nhãn vẫn là nhãn gốc do người nạp đề đặt, khớp với
+ * `answer` (đáp án đúng luôn được ghi theo nhãn gốc). Từ đó về sau id không
+ * đổi dù tráo lại bao nhiêu lần, nên KHÔNG cần tính lại `answer` mỗi lần
+ * tráo nữa — đây chính là chỗ bản cũ (tính lại answer theo nhãn mới) từng
+ * sai khi bài đang làm dở được khôi phục từ một lượt tráo khác: nhãn đổi
+ * nhưng answer đã "chốt cứng" theo nhãn cũ mất rồi.
  *
  * Trả về CÂU MỚI, không sửa object gốc — object gốc còn nằm trong bộ nhớ đệm
  * ngân hàng câu hỏi (`data/questions.ts`), sửa tại chỗ sẽ làm những màn khác
@@ -35,19 +50,11 @@ const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function remapOptions<T extends { options: ChoiceOption[]; answer: string | null }>(q: T): T {
   if (q.options.length < 2) return q;
 
-  const order = shuffleArray(q.options);
-  // Nhãn cũ -> nhãn mới, để tính lại answer.
-  const relabel = new Map(order.map((o, i) => [o.label, ALPHA[i]]));
-
+  const withId = q.options.map((o) => (o.id ? o : { ...o, id: o.label }));
+  const order = shuffleArray(withId);
   const options = order.map((o, i) => ({ ...o, label: ALPHA[i] }));
-  const answer = q.answer
-    ? [...q.answer]
-        .map((oldLabel) => relabel.get(oldLabel) ?? oldLabel)
-        .sort()
-        .join("")
-    : q.answer;
 
-  return { ...q, options, answer };
+  return { ...q, options };
 }
 
 /** Tráo phương án của một câu trắc nghiệm. */

@@ -27,6 +27,7 @@ import { hasNote, getNote, saveNote, loadNotes, loadComments, postComment } from
 import { preloadAnnotations } from "../../components/highlighter";
 import { initTextHighlighter, openAnnotationsDrawer, loadAllAnnotations, destroyHighlighterUI } from "../../components/highlighter";
 import { renderLockedAudioPlayer, bindLockedAudioPlayer } from "../../components/audioPlayer";
+import { optionKey } from "../../lib/shuffle";
 
 export type ExamMode = "practice" | "exam";
 
@@ -693,11 +694,18 @@ function renderPalette(parts: ExamPartSection[]): string {
   </aside>`;
 }
 
+/** Đổi định danh cố định (id) về đúng nhãn A/B/C... đang hiển thị của câu này — dùng khi in ra chữ cho người đọc. */
+function keyToLabel(q: MultipleChoiceQuestion, key: string): string {
+  return q.options.find((o) => optionKey(o) === key)?.label ?? key;
+}
+
 function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _partNumber: number): string {
   const r = rt!;
   const picked = r.answers[q.n] ?? [];
   const isChecked = r.mode === "practice" && r.checked.has(q.n);
-  const answerLetters = (q.answer ?? "").split("");
+  // "answer" (và giá trị lưu trong r.answers) là ĐỊNH DANH CỐ ĐỊNH của phương
+  // án, không phải nhãn A/B/C hiện hiển thị — xem lib/shuffle.ts#optionKey.
+  const answerKeys = (q.answer ?? "").split("");
   const marked = isBookmarked(r.moduleId, q.n, r.levelId, r.stageId);
 
   // Check if options fit in horizontal pill format (e.g. TRUE/FALSE/NOT GIVEN or short options)
@@ -707,8 +715,8 @@ function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _pa
   if (isPillMode) {
     optsHtml = `<div class="cbt-opt-pill-row">${q.options
       .map((o) => {
-        const isPicked = picked.includes(o.label);
-        const isRight = answerLetters.includes(o.label);
+        const isPicked = picked.includes(optionKey(o));
+        const isRight = answerKeys.includes(optionKey(o));
         let cls = "";
         if (isChecked) {
           if (isRight) cls = "is-right";
@@ -726,8 +734,8 @@ function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _pa
   } else {
     optsHtml = `<div class="opt-list">${q.options
       .map((o) => {
-        const isPicked = picked.includes(o.label);
-        const isRight = answerLetters.includes(o.label);
+        const isPicked = picked.includes(optionKey(o));
+        const isRight = answerKeys.includes(optionKey(o));
         let cls = "";
         let flag = "";
         if (isChecked) {
@@ -761,17 +769,19 @@ function renderQuestionContent(q: MultipleChoiceQuestion, parsed: StemParts, _pa
 
   let verdict = "";
   if (isChecked) {
-    const ok = normalize(picked) === normalize(answerLetters);
+    const ok = normalize(picked) === normalize(answerKeys);
     const expText = getExplanationText(q, r.lang);
     const refsHtml =
       q.refs && q.refs.length
         ? `<div class="mt-8 text-xs text-muted"><strong>Tham khảo:</strong> ${q.refs.map((rf) => `<a href="${esc(rf.url)}" target="_blank" rel="noopener noreferrer" class="link-text">${esc(rf.label || rf.url)}</a>`).join(" · ")}</div>`
         : "";
+    const answerLabels = answerKeys.map((k) => keyToLabel(q, k));
+    const pickedLabels = picked.map((k) => keyToLabel(q, k));
 
     verdict = `<div class="verdict ${ok ? "good" : "bad"}" style="margin-top:16px">
       ${icon(ok ? "checkCircle" : "xCircle")}
-      <div>${ok ? "Chính xác!" : "Chưa đúng"}<small>Đáp án đúng: ${esc(answerLetters.join(", ") || "—")}${
-        picked.length ? ` · Bạn chọn: ${esc(picked.join(", "))}` : ""
+      <div>${ok ? "Chính xác!" : "Chưa đúng"}<small>Đáp án đúng: ${esc(answerLabels.join(", ") || "—")}${
+        pickedLabels.length ? ` · Bạn chọn: ${esc(pickedLabels.join(", "))}` : ""
       }</small></div>
     </div>
     ${
@@ -1064,15 +1074,21 @@ function renderRun(root: HTMLElement): void {
   });
 }
 
+/** `letter` là nhãn A/B/C đang hiển thị lúc bấm — lưu vào r.answers theo
+ * định danh cố định (optionKey), không lưu thẳng nhãn, vì nhãn có thể đổi
+ * sau này (tráo lại khi mở lại bài đang làm dở) trong khi lựa chọn của
+ * người dùng thì không đổi. */
 function pick(letter: string): void {
   const r = rt!;
   const q = currentQuestion();
   if (r.mode === "practice" && r.checked.has(q.n)) return;
+  const opt = q.options.find((o) => o.label === letter);
+  const key = opt ? optionKey(opt) : letter;
   const cur = r.answers[q.n] ?? [];
   if (q.multi) {
-    r.answers[q.n] = cur.includes(letter) ? cur.filter((l) => l !== letter) : [...cur, letter];
+    r.answers[q.n] = cur.includes(key) ? cur.filter((l) => l !== key) : [...cur, key];
   } else {
-    r.answers[q.n] = cur.length === 1 && cur[0] === letter ? [] : [letter];
+    r.answers[q.n] = cur.length === 1 && cur[0] === key ? [] : [key];
   }
   if (r.answers[q.n].length === 0) delete r.answers[q.n];
   persist();
@@ -1171,8 +1187,8 @@ function reviewRows(): string {
       const detail = open
         ? `<div class="opt-list mt-16">${q.options
             .map((o) => {
-              const isRight = (p.answer || "").includes(o.label);
-              const isPicked = p.picked.includes(o.label);
+              const isRight = (p.answer || "").includes(optionKey(o));
+              const isPicked = p.picked.includes(optionKey(o));
               const cls = isRight ? "is-right" : isPicked ? "is-wrong" : "is-dim";
               const flag = isRight
                 ? `<span class="opt-flag">${icon("check")}Đáp án đúng</span>`
@@ -1216,8 +1232,8 @@ function reviewRows(): string {
               stemOf(q, r.lang).length > 190 ? "…" : ""
             }</span>
             <span class="review-meta">
-              <span>${p.skipped ? "<b>Bỏ trống</b>" : `Bạn chọn: <b class="${p.isCorrect ? "ok" : "no"}">${esc(p.picked.join(", "))}</b>`}</span>
-              <span>Đáp án: <b class="ok">${esc((p.answer || "—").split("").join(", "))}</b></span>
+              <span>${p.skipped ? "<b>Bỏ trống</b>" : `Bạn chọn: <b class="${p.isCorrect ? "ok" : "no"}">${esc(p.picked.map((k) => keyToLabel(q, k)).join(", "))}</b>`}</span>
+              <span>Đáp án: <b class="ok">${esc((p.answer ? [...p.answer].map((k) => keyToLabel(q, k)) : ["—"]).join(", "))}</b></span>
               ${r.flags.has(p.n) ? `<span class="text-muted">${icon("flag")} đã đánh dấu</span>` : ""}
             </span>
           </span>

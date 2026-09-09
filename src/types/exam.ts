@@ -9,8 +9,15 @@ export type Lang = "vi" | "en" | "ja";
 
 /** Một lựa chọn trong câu hỏi trắc nghiệm. */
 export interface ChoiceOption {
-  /** Ký hiệu lựa chọn, ví dụ "A", "B", "C", "D". */
+  /** Ký hiệu lựa chọn hiện đang hiển thị, ví dụ "A", "B", "C", "D" — đổi
+   * theo vị trí mỗi khi phương án bị tráo (xem `lib/shuffle.ts`), nên KHÔNG
+   * dùng trường này để so đáp án đúng/đã chọn, chỉ dùng để hiển thị và làm
+   * khoá bấm chọn trong một lần vẽ màn hình. */
   label: string;
+  /** Định danh cố định, không đổi dù tráo vị trí bao nhiêu lần — dùng để so
+   * đáp án đúng/đã chọn (xem `lib/shuffle.ts#optionKey`). Rỗng với dữ liệu
+   * chưa từng qua tráo — khi đó `label` (nhãn gốc) chính là định danh. */
+  id?: string;
   en: string;
   ja: string;
   vi?: string;
