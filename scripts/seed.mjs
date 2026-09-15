@@ -50,6 +50,9 @@ function normalize(row) {
     prompt: row.prompt ?? null,
     sub_questions: row.sub_questions ?? [],
     required: !!row.required,
+    explanation: row.explanation ?? null,
+    explanation_ja: row.explanation_ja ?? null,
+    explanation_vi: row.explanation_vi ?? null,
   };
 }
 
@@ -63,9 +66,20 @@ const SOURCES = {
         n: q.n,
         stem_en: q.en,
         stem_ja: q.ja,
-        options: (q.opts ?? []).map((o) => ({ label: o.l, en: o.en, ja: o.ja })),
+        options: (q.opts ?? []).map((o) => ({
+          label: o.l,
+          en: o.en,
+          ja: o.ja,
+          why: o.why || undefined,
+          why_vi: o.why_vi || undefined,
+          why_en: o.why_en || undefined,
+          why_ja: o.why_ja || undefined,
+        })),
         answer: q.ans,
         multi: q.multi,
+        explanation: q.explanation || null,
+        explanation_ja: q.explanation_ja || null,
+        explanation_vi: q.explanation_vi || null,
       })
     ),
   ap: () => readJson("seed/ap-questions.json").map((q) => normalize({ module_id: "ap", ...q })),
