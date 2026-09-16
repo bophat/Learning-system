@@ -22,7 +22,6 @@ const MODULE_ID = "toeic";
 
 interface StoredState {
   sectionId: string;
-  browseIdx: number;
   mode: "practice" | "exam";
   count: number | "all";
   order: "sequential" | "random";
@@ -33,13 +32,11 @@ interface StoredState {
 const state = {
   sectionId: "listening",
   lang: "en" as Lang,
-  browseIdx: 0,
   mode: "practice" as "practice" | "exam",
   count: 30 as number | "all",
   order: "sequential" as "sequential" | "random",
   source: "all" as "all" | "wrong" | "saved",
   stageId: "all" as string,
-  browseQuery: "",
   starting: false,
 };
 
@@ -55,7 +52,6 @@ function hydrate(): void {
   const s = loadModuleState<StoredState>(MODULE_ID);
   if (!s) return;
   if (s.sectionId) state.sectionId = s.sectionId;
-  state.browseIdx = s.browseIdx ?? 0;
   state.mode = s.mode ?? "practice";
   state.count = s.count ?? 30;
   state.order = s.order ?? "sequential";
@@ -66,7 +62,6 @@ function hydrate(): void {
 function persist(): void {
   saveModuleState<StoredState>(MODULE_ID, {
     sectionId: state.sectionId,
-    browseIdx: state.browseIdx,
     mode: state.mode,
     count: state.count,
     order: state.order,

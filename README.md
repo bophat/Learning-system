@@ -144,7 +144,6 @@ Supabase để link xác nhận email/đặt lại mật khẩu trỏ đúng ch�
 | `/tai-khoan` | Thông tin tài khoản, đổi tên hiển thị, đăng xuất, xoá dữ liệu học tập |
 | `/quan-tri` | **Chỉ admin** — nạp đề thi, xem số liệu, xoá đề của một chứng chỉ |
 | `/aws`, `/ap` | Tổng quan từng chứng chỉ |
-| `/aws/browse` | Duyệt câu hỏi: tìm kiếm, lọc, song ngữ, lưu câu |
 | `/aws/thiet-lap` | Thiết lập bài làm: cách chấm, nguồn câu, số câu, thứ tự |
 | `/ap/buoi-chieu` · `/ap/tu-luan` · `/ap/hoan-thanh` | Chọn 5/11 đề tự luận → viết bài → tổng kết |
 | `/lam-bai` · `/ket-qua` | Màn làm bài trắc nghiệm dùng chung + màn kết quả |
@@ -263,8 +262,7 @@ src/
 
 ## Ghi chú về dữ liệu
 
-- **AWS SAA-C03**: 904 câu, 651 câu có đáp án tham khảo (253 câu còn lại không có dữ liệu
-  đáp án trong tài liệu nguồn — chỉ xem được ở chế độ Duyệt câu hỏi).
+- **AWS SAA-C03**: 904 câu, cả 904 câu đều có đáp án tham khảo kèm giải thích.
 - **AP**: chưa có ngân hàng đề thật (IPA/VITEC). `seed/ap-questions.json` chứa 5 câu trắc
   nghiệm và 11 đề tự luận **tự soạn để minh hoạ**, chỉ nhằm dựng đúng luồng thi. Khi có đề
   thật, nạp đè qua trang Quản trị rồi tắt cờ `sample_data` của chứng chỉ.

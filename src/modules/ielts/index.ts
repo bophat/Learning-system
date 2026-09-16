@@ -11,12 +11,11 @@ import type { Lang, MultipleChoiceQuestion, ExamLevel } from "../../types/exam";
 import { registerRoute, navigate } from "../../router";
 import { renderPage, bindShell, setModuleTheme } from "../../components/appShell";
 import { icon } from "../../components/icons";
-import { esc, bindInputs, highlight } from "../../components/bindActions";
+import { esc } from "../../components/bindActions";
 import { toast } from "../../components/toast";
-import { withData } from "../../components/loading";
 import { crumbs, formatDuration, formatDateTime, formatNumber, sectionHead, ring } from "../../components/ui";
 import { loadModuleState, saveModuleState } from "../../state/storage";
-import { getModuleStats, getAttempts, getBookmarks, getWrong, isBookmarked, toggleBookmark } from "../../state/progress";
+import { getModuleStats, getAttempts, getBookmarks, getWrong } from "../../state/progress";
 import { loadSession, clearSession } from "../../state/session";
 import { startExam, resumeExam, hasLiveExam, continueLiveExam } from "../shared/mcExam";
 import { loadMcQuestions } from "../../data/questions";
@@ -26,7 +25,6 @@ const MODULE_ID = "ielts";
 
 interface StoredState {
   skillId: string;
-  browseIdx: number;
   mode: "practice" | "exam";
   count: number | "all";
   order: "sequential" | "random";
@@ -37,15 +35,11 @@ interface StoredState {
 const state = {
   skillId: "reading",
   lang: "en" as Lang,
-  browseIdx: 0,
   mode: "practice" as "practice" | "exam",
   count: 30 as number | "all",
   order: "sequential" as "sequential" | "random",
   source: "all" as "all" | "wrong" | "saved",
   stageId: "all" as string,
-  browseQuery: "",
-  browseFilter: "all" as "all" | "answered" | "saved",
-  showAnswer: true,
   starting: false,
 };
 
@@ -67,7 +61,6 @@ function hydrate(): void {
   const s = loadModuleState<StoredState>(MODULE_ID);
   if (!s) return;
   if (s.skillId) state.skillId = s.skillId;
-  state.browseIdx = s.browseIdx ?? 0;
   state.mode = s.mode ?? "practice";
   state.count = s.count ?? 30;
   state.order = s.order ?? "sequential";
@@ -78,7 +71,6 @@ function hydrate(): void {
 function persist(): void {
   saveModuleState<StoredState>(MODULE_ID, {
     skillId: state.skillId,
-    browseIdx: state.browseIdx,
     mode: state.mode,
     count: state.count,
     order: state.order,
@@ -153,14 +145,6 @@ function renderHome(root: HTMLElement, skillParam?: string): void {
     </button>`;
 
   const mainModes = [
-    {
-      action: "browse",
-      iconName: "book",
-      title: `Duyệt ngân hàng ${lvl?.label ?? ""}`,
-      text: `Xem toàn bộ các bộ đề ${lvl?.label ?? ""} kèm bài đọc đầy đủ, file âm thanh MP3 và lời giải.`,
-      meta: [`${formatNumber(skillBank.total)} phần thi`, currentSkillId === "listening" ? "Có Audio MP3" : "Bài đọc dài"],
-      disabled: skillBank.total === 0,
-    },
     {
       action: "practice",
       iconName: "zap",
@@ -377,7 +361,6 @@ function renderHome(root: HTMLElement, skillParam?: string): void {
       if (skId) {
         state.skillId = skId.toLowerCase();
         state.stageId = "all";
-        state.browseIdx = 0;
         persist();
         renderHome(root, state.skillId);
       }
@@ -413,7 +396,6 @@ function renderHome(root: HTMLElement, skillParam?: string): void {
       toast("Đã bỏ bài làm dở.", "good");
       renderHome(root, state.skillId);
     },
-    browse: () => navigate(`/${MODULE_ID}/browse`),
     practice: () => {
       state.mode = "practice";
       persist();
@@ -474,163 +456,6 @@ function renderHome(root: HTMLElement, skillParam?: string): void {
       }
     },
   });
-}
-
-// ------------------------------------------------------------ Màn duyệt đề thi IELTS
-
-function renderBrowse(root: HTMLElement): void {
-  setModuleTheme(MODULE_ID);
-  const questions = cachedQuestionsMap.get(`${MODULE_ID}:${state.skillId}`) ?? [];
-  const m = meta();
-  const lvl = currentLevelMeta();
-  const skillStages = (m?.stages || []).filter((s: any) => !s.skill || s.skill === state.skillId);
-
-  const filtered = questions.filter((q) => {
-    if (state.stageId !== "all" && q.stageId !== state.stageId) return false;
-    if (state.browseFilter === "saved" && !isBookmarked(MODULE_ID, q.n)) return false;
-    if (!state.browseQuery.trim()) return true;
-    const query = state.browseQuery.toLowerCase();
-    const stem = (q.en || q.ja || "").toLowerCase();
-    const exp = (q.explanation || "").toLowerCase();
-    return stem.includes(query) || exp.includes(query);
-  });
-
-  const cur = filtered[state.browseIdx] || filtered[0];
-
-  const content = `
-    <div class="page-head">
-      <div class="page">
-        ${crumbs([
-          { label: "Trang chủ", action: "go", arg: "/" },
-          { label: `IELTS ${lvl?.label ?? ""}`, action: "go", arg: `/${MODULE_ID}/${state.skillId}` },
-          { label: "Duyệt bộ đề" },
-        ])}
-        <div class="page-head-main">
-          <div class="page-head-text">
-            <div class="row gap-8 mb-8">
-              <span class="badge badge-brand">Kỹ năng ${lvl?.label ?? ""}</span>
-              <span class="badge badge-outline">${formatNumber(questions.length)} phần đề</span>
-            </div>
-            <h1>Ngân hàng bộ đề IELTS ${lvl?.label ?? ""}</h1>
-            <p class="lead">${formatNumber(questions.length)} phần bài đọc và bài nghe chính thức từ Cambridge IELTS &amp; Actual Tests.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page page-body">
-      <div class="row-between mb-24 gap-12 wrap">
-        <div class="search-box sm" style="flex:1 1 280px;max-width:420px">
-          ${icon("search")}
-          <input class="input" type="search" placeholder="Tìm kiếm từ khóa bài đọc, chủ đề..." value="${esc(state.browseQuery)}" data-input="browseQuery">
-        </div>
-        <div class="row gap-8 wrap">
-          <select class="select sm" data-select="browseStage" style="width:auto">
-            <option value="all" ${state.stageId === "all" ? "selected" : ""}>Tất cả đề thi (${questions.length})</option>
-            ${skillStages.map((s: any) => `<option value="${esc(s.id)}" ${state.stageId === s.id ? "selected" : ""}>${esc(s.name)}</option>`).join("")}
-          </select>
-          <div class="pill-group">
-            <button class="pill ${state.browseFilter === "all" ? "is-active" : ""}" data-action="filterBrowse" data-arg="all">Tất cả (${filtered.length})</button>
-            <button class="pill ${state.browseFilter === "saved" ? "is-active" : ""}" data-action="filterBrowse" data-arg="saved">Đã lưu</button>
-          </div>
-        </div>
-      </div>
-
-      ${
-        cur
-          ? (() => {
-              return `<div class="card card-pad mb-32">
-                <div class="card-head">
-                  <div>
-                    <span class="badge badge-brand mb-8">Phần ${cur.n} ${cur.domain ? `· ${esc(cur.domain)}` : ""}</span>
-                    <div class="card-title">Đề thi IELTS #${cur.n} (${lvl?.label ?? ""})</div>
-                  </div>
-                  <button class="btn btn-ghost btn-sm" data-action="toggleBookmark" data-arg="${cur.n}">
-                    ${icon(isBookmarked(MODULE_ID, cur.n) ? "bookmarkFill" : "bookmark")}
-                    ${isBookmarked(MODULE_ID, cur.n) ? "Đã lưu" : "Lưu đề này"}
-                  </button>
-                </div>
-
-                ${
-                  cur.audioUrl
-                    ? `<div class="audio-wrap mb-24" style="padding:16px 20px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--line)">
-                        <div class="text-sm fw-700 mb-8 row gap-8" style="color:var(--brand)">${icon("volume")}Audio bài nghe IELTS trực tiếp</div>
-                        <audio controls src="${esc(cur.audioUrl)}" style="width:100%;height:40px"></audio>
-                      </div>`
-                    : ""
-                }
-
-                <div class="question-stem mb-24" style="font-size:16px;line-height:1.85;white-space:pre-wrap;font-family:inherit">${highlight(cur.en || cur.ja, state.browseQuery)}</div>
-
-                ${
-                  cur.explanation
-                    ? `<div class="notice good mb-16">
-                        ${icon("checkCircle")}
-                        <div>
-                          <strong>Ghi chú tài liệu:</strong>
-                          <div class="mt-4" style="white-space:pre-wrap">${esc(cur.explanation)}</div>
-                        </div>
-                      </div>`
-                    : ""
-                }
-
-                <div class="row-between mt-24 pt-16" style="border-top:1px solid var(--line)">
-                  <button class="btn btn-outline" data-action="prevQ" ${state.browseIdx <= 0 ? "disabled" : ""}>${icon("chevronLeft")}Phần trước</button>
-                  <span class="text-sm text-muted nums">${state.browseIdx + 1} / ${filtered.length}</span>
-                  <button class="btn btn-outline" data-action="nextQ" ${state.browseIdx >= filtered.length - 1 ? "disabled" : ""}>Phần sau${icon("chevronRight")}</button>
-                </div>
-              </div>`;
-            })()
-          : `<div class="empty card card-pad"><p>Không tìm thấy đề thi phù hợp với bộ lọc.</p></div>`
-      }
-    </div>
-  `;
-
-  root.innerHTML = renderPage({ active: "certs", content });
-
-  bindShell(root, "certs", {
-    filterBrowse: (f) => {
-      state.browseFilter = (f as typeof state.browseFilter) || "all";
-      state.browseIdx = 0;
-      renderBrowse(root);
-    },
-    prevQ: () => {
-      if (state.browseIdx > 0) {
-        state.browseIdx--;
-        renderBrowse(root);
-      }
-    },
-    nextQ: () => {
-      if (state.browseIdx < filtered.length - 1) {
-        state.browseIdx++;
-        renderBrowse(root);
-      }
-    },
-    toggleBookmark: (arg) => {
-      const n = Number(arg);
-      if (n) {
-        toggleBookmark(MODULE_ID, n);
-        renderBrowse(root);
-      }
-    },
-  });
-
-  bindInputs(root, {
-    browseQuery: (val) => {
-      state.browseQuery = val;
-      state.browseIdx = 0;
-      renderBrowse(root);
-    },
-  });
-
-  const stageSel = root.querySelector<HTMLSelectElement>("[data-select='browseStage']");
-  if (stageSel) {
-    stageSel.addEventListener("change", () => {
-      state.stageId = stageSel.value;
-      state.browseIdx = 0;
-      renderBrowse(root);
-    });
-  }
 }
 
 // ------------------------------------------------------------ Màn thiết lập bài làm IELTS
@@ -819,15 +644,5 @@ function renderSetup(root: HTMLElement): void {
 export function registerIeltsRoutes(): void {
   registerRoute("/ielts", (root) => renderHome(root));
   registerRoute("/ielts/:skill", (root, params) => renderHome(root, params[0]));
-  registerRoute("/ielts/browse", (root) => {
-    void withData(
-      root,
-      async () => {
-        await ensureQuestions(state.skillId);
-      },
-      () => renderBrowse(root),
-      `Đang tải bộ đề IELTS ${state.skillId.toUpperCase()}...`
-    );
-  });
   registerRoute("/ielts/thiet-lap", (root) => renderSetup(root));
 }

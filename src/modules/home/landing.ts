@@ -52,7 +52,7 @@ const FEATURES: { iconName: string; title: string; text: string; tone: string }[
 
 const STEPS = [
   { title: "Chọn chứng chỉ", text: "AWS SAA-C03, AP (応用情報) — hoặc xem trước cấu trúc đề của JLPT và FE." },
-  { title: "Chọn cách ôn", text: "Duyệt câu hỏi kèm đáp án, luyện tập chấm ngay từng câu, hoặc thi thử có đồng hồ đếm ngược." },
+  { title: "Chọn cách ôn", text: "Luyện tập chấm ngay từng câu, hoặc thi thử có đồng hồ đếm ngược đúng như phòng thi." },
   { title: "Xem lại & lấp lỗ hổng", text: "Sau khi nộp bài, xem lại từng câu sai rồi luyện riêng nhóm câu đó cho tới khi chắc." },
 ];
 

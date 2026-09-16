@@ -11,13 +11,12 @@ import type { Lang, MultipleChoiceQuestion } from "../../types/exam";
 import { registerRoute, navigate } from "../../router";
 import { renderPage, bindShell, setModuleTheme } from "../../components/appShell";
 import { icon } from "../../components/icons";
-import { esc, bindInputs, highlight } from "../../components/bindActions";
+import { esc } from "../../components/bindActions";
 import { toast } from "../../components/toast";
-import { withData } from "../../components/loading";
 import { crumbs, notice, ring, formatDuration, formatDateTime, formatNumber } from "../../components/ui";
 import { loadModuleState, saveModuleState } from "../../state/storage";
 import { currentUserId } from "../../state/auth";
-import { getModuleStats, getAttempts, getBookmarks, getWrong, isBookmarked, toggleBookmark } from "../../state/progress";
+import { getModuleStats, getAttempts, getBookmarks, getWrong } from "../../state/progress";
 import { loadSession, clearSession } from "../../state/session";
 import { startExam, resumeExam, hasLiveExam, continueLiveExam } from "../shared/mcExam";
 import { loadMcQuestions } from "../../data/questions";
@@ -28,7 +27,6 @@ const MODULE_ID = "aws";
 
 interface StoredState {
   lang: Lang;
-  browseIdx: number;
   mode: "practice" | "exam";
   count: number | "all";
   order: "sequential" | "random";
@@ -37,14 +35,10 @@ interface StoredState {
 
 const state = {
   lang: "en" as Lang,
-  browseIdx: 0,
   mode: "practice" as "practice" | "exam",
   count: 20 as number | "all",
   order: "sequential" as "sequential" | "random",
   source: "all" as "all" | "wrong" | "saved",
-  browseQuery: "",
-  browseFilter: "all" as "all" | "answered" | "multi" | "saved",
-  showAnswer: true,
   starting: false,
 };
 
@@ -59,7 +53,6 @@ function hydrate(): void {
   hydratedFor = uid;
   const p = loadModuleState<StoredState>(MODULE_ID);
   state.lang = p.lang === "ja" ? "ja" : "en";
-  state.browseIdx = Math.max(0, p.browseIdx ?? 0);
   state.mode = p.mode === "exam" ? "exam" : "practice";
   state.count = p.count ?? 20;
   state.order = p.order === "random" ? "random" : "sequential";
@@ -94,14 +87,6 @@ function pool(): MultipleChoiceQuestion[] {
 
 function save(patch: Partial<StoredState>): void {
   saveModuleState<StoredState>(MODULE_ID, patch);
-}
-
-function stem(q: MultipleChoiceQuestion, lang: Lang): string {
-  return lang === "ja" ? q.ja || q.en : q.en;
-}
-
-function optText(o: { en: string; ja: string }, lang: Lang): string {
-  return lang === "ja" ? o.ja || o.en : o.en;
 }
 
 // ------------------------------------------------------------ trang tổng quan
@@ -156,14 +141,6 @@ function renderHome(root: HTMLElement): void {
   const examMinutes = examStage?.durationMinutes ?? m.examMinutes;
 
   const mainModes = [
-    {
-      action: "browse",
-      iconName: "book",
-      title: "Duyệt câu hỏi",
-      text: `Xem lần lượt ${formatNumber(bank.total)} câu kèm đáp án đúng, đối chiếu bản tiếng Anh và tiếng Nhật.`,
-      meta: [`${formatNumber(bank.total)} câu`, "Có sẵn đáp án"],
-      disabled: bank.total === 0,
-    },
     {
       action: "practice",
       iconName: "zap",
@@ -311,7 +288,7 @@ function renderHome(root: HTMLElement): void {
       ${
         bank.total - bank.withAnswer > 0
           ? `<div class="mt-24">${notice(
-              `<strong>${formatNumber(bank.total - bank.withAnswer)} câu chưa có dữ liệu đáp án</strong> trong tài liệu nguồn nên không đưa vào bài làm được — bạn vẫn đọc được chúng ở chế độ Duyệt câu hỏi.`,
+              `<strong>${formatNumber(bank.total - bank.withAnswer)} câu chưa có dữ liệu đáp án</strong> trong tài liệu nguồn nên không đưa vào bài làm được.`,
               "info",
               "info"
             )}</div>`
@@ -322,7 +299,6 @@ function renderHome(root: HTMLElement): void {
   root.innerHTML = renderPage({ active: "certs", content });
 
   bindShell(root, "certs", {
-    browse: () => navigate("/aws/browse"),
     flashcards: () => navigate("/on-tap/aws"),
     lessons: () => navigate("/bai-hoc/aws"),
     practice: () => { state.mode = "practice"; state.source = "all"; save({ mode: "practice", source: "all" }); navigate("/aws/thiet-lap"); },
@@ -357,170 +333,6 @@ function renderHome(root: HTMLElement): void {
     },
     dropSession: () => { clearSession(MODULE_ID); toast("Đã bỏ bài làm dở."); renderHome(root); },
   });
-}
-
-// ------------------------------------------------------------ duyệt câu hỏi
-
-function filteredBrowse(): MultipleChoiceQuestion[] {
-  const q = state.browseQuery.trim().toLowerCase();
-  const saved = getBookmarks(MODULE_ID);
-  return questions.filter((item) => {
-    if (state.browseFilter === "answered" && !item.answer) return false;
-    if (state.browseFilter === "multi" && !item.multi) return false;
-    if (state.browseFilter === "saved" && !saved.includes(item.n)) return false;
-    if (!q) return true;
-    if (String(item.n) === q) return true;
-    return `${item.en} ${item.ja}`.toLowerCase().includes(q);
-  });
-}
-
-function renderBrowse(root: HTMLElement): void {
-  setModuleTheme(MODULE_ID);
-  hydrate();
-  const m = meta();
-  const total = questions.length;
-  state.browseIdx = Math.min(Math.max(state.browseIdx, 0), Math.max(total - 1, 0));
-
-  const render = () => {
-    const list = filteredBrowse();
-    const current = questions[state.browseIdx];
-    if (!current) {
-      navigate("/aws");
-      return;
-    }
-    const capped = list.slice(0, 150);
-
-    const sideItems = capped
-      .map(
-        (item) => `<button class="browse-item ${item.n === current.n ? "is-current" : ""}" data-action="pickQ" data-arg="${item.n}">
-          <span class="browse-item-n">#${item.n}</span>
-          <span class="browse-item-t">${esc(stem(item, state.lang).slice(0, 110))}</span>
-          ${isBookmarked(MODULE_ID, item.n) ? icon("bookmark") : ""}
-        </button>`
-      )
-      .join("");
-
-    const answerLetters = (current.answer ?? "").split("");
-    const opts = current.options.length
-      ? current.options
-          .map((o) => {
-            const isRight = state.showAnswer && answerLetters.includes(o.label);
-            return `<div class="opt ${isRight ? "is-right" : state.showAnswer && answerLetters.length ? "is-dim" : ""}">
-              <span class="opt-mark">${esc(o.label)}</span>
-              <span class="opt-text">${highlight(optText(o, state.lang), state.browseQuery)}</span>
-              ${isRight ? `<span class="opt-flag">${icon("check")}Đáp án đúng</span>` : ""}
-            </div>`;
-          })
-          .join("")
-      : `<div class="notice warn">${icon("alert")}<div>Tài liệu nguồn thiếu phần phương án của câu này.</div></div>`;
-
-    const filters: [typeof state.browseFilter, string][] = [
-      ["all", "Tất cả"],
-      ["answered", "Có đáp án"],
-      ["multi", "Chọn nhiều"],
-      ["saved", `Đã lưu (${getBookmarks(MODULE_ID).length})`],
-    ];
-
-    const content = `
-      <div class="page-head">
-        <div class="page">
-          ${crumbs([
-            { label: "Trang chủ", action: "go", arg: "/" },
-            { label: m?.shortName ?? "AWS", action: "go", arg: "/aws" },
-            { label: "Duyệt câu hỏi" },
-          ])}
-          <div class="page-head-main">
-            <div class="page-head-text">
-              <h1>Duyệt câu hỏi</h1>
-              <p class="lead">Đọc đề kèm đáp án đúng, chuyển ngôn ngữ để đối chiếu thuật ngữ, và lưu lại những câu bạn muốn ôn kỹ.</p>
-            </div>
-            <div class="page-head-side">
-              ${
-                m?.bilingual
-                  ? `<div class="segmented">
-                      <button class="${state.lang === "en" ? "is-active" : ""}" data-action="lang" data-arg="en">English</button>
-                      <button class="${state.lang === "ja" ? "is-active" : ""}" data-action="lang" data-arg="ja">日本語</button>
-                    </div>`
-                  : ""
-              }
-              <button class="btn btn-outline btn-sm" data-action="toggleAnswer">${icon(state.showAnswer ? "eyeOff" : "eye")}${state.showAnswer ? "Ẩn đáp án" : "Hiện đáp án"}</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page browse-layout">
-        <aside class="browse-side">
-          <div class="card card-pad" style="padding:16px">
-            <div class="search-box sm mb-12">
-              ${icon("search")}
-              <input class="input" type="search" placeholder="Tìm theo từ khoá hoặc số câu" value="${esc(state.browseQuery)}" data-input="q" autocomplete="off">
-            </div>
-            <div class="pill-group mb-12">
-              ${filters
-                .map(([k, label]) => `<button class="pill ${state.browseFilter === k ? "is-active accent" : ""}" style="height:32px;padding:0 12px;font-size:12.5px" data-action="bfilter" data-arg="${k}">${label}</button>`)
-                .join("")}
-            </div>
-            <div class="text-xs text-muted mb-8">${formatNumber(list.length)} câu khớp${list.length > capped.length ? ` · hiện ${capped.length} câu đầu` : ""}</div>
-            <div class="browse-list">${sideItems || `<p class="card-note">Không có câu nào khớp.</p>`}</div>
-          </div>
-        </aside>
-
-        <div>
-          <div class="q-card">
-            <div class="q-top">
-              <div class="q-tags">
-                <span class="q-num">${icon("list")}Câu #${current.n}</span>
-                ${current.multi ? `<span class="badge badge-info">${icon("check")}Chọn nhiều đáp án</span>` : ""}
-                ${current.answer ? `<span class="badge badge-good">${icon("checkCircle")}Đáp án: ${esc(answerLetters.join(", "))}</span>` : `<span class="badge badge-warn">${icon("alert")}Chưa có đáp án</span>`}
-              </div>
-              <div class="q-tools">
-                <button class="tool-btn ${isBookmarked(MODULE_ID, current.n) ? "is-on mark" : ""}" data-action="bookmark" title="Lưu câu này">${icon("bookmark")}</button>
-              </div>
-            </div>
-            <div class="q-stem">${highlight(stem(current, state.lang), state.browseQuery)}</div>
-            ${m?.bilingual ? `<div class="q-stem-alt">${esc(stem(current, state.lang === "en" ? "ja" : "en"))}</div>` : ""}
-            <div class="opt-list">${opts}</div>
-            <div class="q-nav">
-              <button class="btn btn-outline" data-action="prev" ${state.browseIdx === 0 ? "disabled" : ""}>${icon("arrowLeft")}Câu trước</button>
-              <span class="q-nav-hint hide-sm">Câu ${state.browseIdx + 1} / ${formatNumber(total)}</span>
-              <button class="btn btn-accent" data-action="next" ${state.browseIdx >= total - 1 ? "disabled" : ""}>Câu tiếp${icon("arrowRight")}</button>
-            </div>
-          </div>
-        </div>
-      </div>`;
-
-    root.innerHTML = renderPage({ active: "certs", content });
-
-    bindShell(root, "certs", {
-      lang: (v) => { state.lang = v === "ja" ? "ja" : "en"; save({ lang: state.lang }); render(); },
-      toggleAnswer: () => { state.showAnswer = !state.showAnswer; render(); },
-      bfilter: (v) => { state.browseFilter = (v as typeof state.browseFilter) ?? "all"; render(); },
-      pickQ: (n) => {
-        const idx = questions.findIndex((x) => x.n === Number(n));
-        if (idx >= 0) { state.browseIdx = idx; save({ browseIdx: idx }); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
-      },
-      bookmark: () => {
-        const on = toggleBookmark(MODULE_ID, questions[state.browseIdx].n);
-        toast(on ? "Đã lưu câu hỏi." : "Đã bỏ lưu.", on ? "good" : "default", 1500);
-        render();
-      },
-      prev: () => { state.browseIdx = Math.max(0, state.browseIdx - 1); save({ browseIdx: state.browseIdx }); render(); window.scrollTo({ top: 0, behavior: "smooth" }); },
-      next: () => { state.browseIdx = Math.min(total - 1, state.browseIdx + 1); save({ browseIdx: state.browseIdx }); render(); window.scrollTo({ top: 0, behavior: "smooth" }); },
-    });
-
-    bindInputs(root, {
-      q: (value, el) => {
-        state.browseQuery = value;
-        render();
-        const next = root.querySelector<HTMLInputElement>('[data-input="q"]');
-        if (next) { next.focus(); next.setSelectionRange(el.selectionStart ?? value.length, el.selectionEnd ?? value.length); }
-      },
-    });
-  };
-
-  render();
-
 }
 
 // ------------------------------------------------------------ thiết lập bài làm
@@ -722,8 +534,5 @@ function renderSetup(root: HTMLElement): void {
 
 export function registerAwsRoutes(): void {
   registerRoute("/aws", (root) => renderHome(root));
-  registerRoute("/aws/browse", (root) => {
-    void withData(root, ensureQuestions, () => renderBrowse(root), "Đang tải ngân hàng câu hỏi...");
-  });
   registerRoute("/aws/thiet-lap", (root) => renderSetup(root));
 }

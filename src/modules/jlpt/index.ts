@@ -12,14 +12,13 @@ import type { Lang, MultipleChoiceQuestion, ExamLevel } from "../../types/exam";
 import { registerRoute, navigate } from "../../router";
 import { renderPage, bindShell, setModuleTheme } from "../../components/appShell";
 import { icon } from "../../components/icons";
-import { esc, bindInputs, highlight } from "../../components/bindActions";
+import { esc } from "../../components/bindActions";
 import { toast } from "../../components/toast";
-import { withData } from "../../components/loading";
 import { crumbs, formatDuration, formatDateTime, formatNumber, sectionHead, ring } from "../../components/ui";
 import { loadModuleState, saveModuleState } from "../../state/storage";
-import { getModuleStats, getAttempts, getBookmarks, getWrong, isBookmarked, toggleBookmark } from "../../state/progress";
+import { getModuleStats, getAttempts, getBookmarks, getWrong } from "../../state/progress";
 import { loadSession, clearSession } from "../../state/session";
-import { startExam, resumeExam, hasLiveExam, continueLiveExam, parseStem } from "../shared/mcExam";
+import { startExam, resumeExam, hasLiveExam, continueLiveExam } from "../shared/mcExam";
 import { loadMcQuestions } from "../../data/questions";
 import { getModule, getLevelStats } from "../../data/catalog";
 
@@ -27,7 +26,6 @@ const MODULE_ID = "jlpt";
 
 interface StoredState {
   levelId: string;
-  browseIdx: number;
   mode: "practice" | "exam";
   count: number | "all";
   order: "sequential" | "random";
@@ -38,15 +36,11 @@ interface StoredState {
 const state = {
   levelId: "n1",
   lang: "ja" as Lang,
-  browseIdx: 0,
   mode: "practice" as "practice" | "exam",
   count: 30 as number | "all",
   order: "sequential" as "sequential" | "random",
   source: "all" as "all" | "wrong" | "saved",
   stageId: "all" as string,
-  browseQuery: "",
-  browseFilter: "all" as "all" | "answered" | "saved",
-  showAnswer: true,
   starting: false,
 };
 
@@ -68,7 +62,6 @@ function hydrate(): void {
   const s = loadModuleState<StoredState>(MODULE_ID);
   if (!s) return;
   if (s.levelId) state.levelId = s.levelId;
-  state.browseIdx = s.browseIdx ?? 0;
   state.mode = s.mode ?? "practice";
   state.count = s.count ?? 30;
   state.order = s.order ?? "sequential";
@@ -79,7 +72,6 @@ function hydrate(): void {
 function persist(): void {
   saveModuleState<StoredState>(MODULE_ID, {
     levelId: state.levelId,
-    browseIdx: state.browseIdx,
     mode: state.mode,
     count: state.count,
     order: state.order,
@@ -154,14 +146,6 @@ function renderHome(root: HTMLElement, levelParam?: string): void {
     </button>`;
 
   const mainModes = [
-    {
-      action: "browse",
-      iconName: "book",
-      title: `Duyệt ngân hàng ${lvl?.label ?? ""}`,
-      text: `Xem toàn bộ ${formatNumber(levelBank.total)} câu hỏi kèm đáp án đúng, bài đọc, audio và giải thích chi tiết.`,
-      meta: [`${formatNumber(levelBank.total)} câu`, "Có giải thích & Audio"],
-      disabled: levelBank.total === 0,
-    },
     {
       action: "practice",
       iconName: "zap",
@@ -365,7 +349,6 @@ function renderHome(root: HTMLElement, levelParam?: string): void {
       if (lvlId) {
         state.levelId = lvlId.toLowerCase();
         state.stageId = "all";
-        state.browseIdx = 0;
         persist();
         renderHome(root, state.levelId);
       }
@@ -401,7 +384,6 @@ function renderHome(root: HTMLElement, levelParam?: string): void {
       toast("Đã bỏ bài làm dở.", "good");
       renderHome(root, state.levelId);
     },
-    browse: () => navigate(`/${MODULE_ID}/browse`),
     practice: () => {
       state.mode = "practice";
       persist();
@@ -462,207 +444,6 @@ function renderHome(root: HTMLElement, levelParam?: string): void {
       }
     },
   });
-}
-
-// ------------------------------------------------------------ Màn duyệt câu hỏi
-
-function renderBrowse(root: HTMLElement): void {
-  setModuleTheme(MODULE_ID);
-  const questions = cachedQuestionsMap.get(`${MODULE_ID}:${state.levelId}`) ?? [];
-  const m = meta();
-  const lvl = currentLevelMeta();
-  const levelStages = (lvl as any)?.stages || m?.stages || [];
-
-  const filtered = questions.filter((q) => {
-    if (state.stageId !== "all" && q.stageId !== state.stageId) return false;
-    if (state.browseFilter === "saved" && !isBookmarked(MODULE_ID, q.n)) return false;
-    if (!state.browseQuery.trim()) return true;
-    const query = state.browseQuery.toLowerCase();
-    const stem = (q.en || q.ja || "").toLowerCase();
-    const exp = (q.explanation || "").toLowerCase();
-    return stem.includes(query) || exp.includes(query);
-  });
-
-  const cur = filtered[state.browseIdx] || filtered[0];
-
-  const content = `
-    <div class="page-head">
-      <div class="page">
-        ${crumbs([
-          { label: "Trang chủ", action: "go", arg: "/" },
-          { label: `JLPT ${lvl?.label ?? ""}`, action: "go", arg: `/${MODULE_ID}/${state.levelId}` },
-          { label: "Duyệt câu hỏi" },
-        ])}
-        <div class="page-head-main">
-          <div class="page-head-text">
-            <div class="row gap-8 mb-8">
-              <span class="badge badge-brand">Cấp độ ${lvl?.label ?? ""}</span>
-              <span class="badge badge-outline">${formatNumber(questions.length)} câu hỏi</span>
-            </div>
-            <h1>Ngân hàng câu hỏi JLPT ${lvl?.label ?? ""}</h1>
-            <p class="lead">${formatNumber(questions.length)} câu hỏi chính thức, đầy đủ đáp án và lời giải.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page page-body">
-      <div class="row-between mb-24 gap-12 wrap">
-        <div class="search-box sm" style="flex:1 1 280px;max-width:420px">
-          ${icon("search")}
-          <input class="input" type="search" placeholder="Tìm kiếm nội dung, chữ Hán, từ vựng..." value="${esc(state.browseQuery)}" data-input="browseQuery">
-        </div>
-        <div class="row gap-8 wrap">
-          <select class="select sm" data-select="browseStage" style="width:auto">
-            <option value="all" ${state.stageId === "all" ? "selected" : ""}>Tất cả đề thi (${questions.length})</option>
-            ${levelStages.map((s: any) => `<option value="${esc(s.id)}" ${state.stageId === s.id ? "selected" : ""}>${esc(s.name)}</option>`).join("")}
-          </select>
-          <div class="pill-group">
-            <button class="pill ${state.browseFilter === "all" ? "is-active" : ""}" data-action="filterBrowse" data-arg="all">Tất cả (${filtered.length})</button>
-            <button class="pill ${state.browseFilter === "saved" ? "is-active" : ""}" data-action="filterBrowse" data-arg="saved">Đã lưu</button>
-          </div>
-        </div>
-      </div>
-
-      ${
-        cur
-          ? (() => {
-              const p = parseStem(cur.en || cur.ja);
-              return `<div class="card card-pad mb-32">
-                <div class="card-head">
-                  <div>
-                    <span class="badge badge-brand mb-8">Câu ${cur.n} ${cur.domain ? `· ${esc(cur.domain)}` : ""}</span>
-                    <div class="card-title">Câu hỏi #${cur.n} (${lvl?.label ?? ""})</div>
-                  </div>
-                  <button class="btn btn-ghost btn-sm" data-action="toggleBookmark" data-arg="${cur.n}">
-                    ${icon(isBookmarked(MODULE_ID, cur.n) ? "bookmarkFill" : "bookmark")}
-                    ${isBookmarked(MODULE_ID, cur.n) ? "Đã lưu" : "Lưu câu này"}
-                  </button>
-                </div>
-
-                ${
-                  cur.audioUrl
-                    ? `<div class="audio-wrap mb-16" style="padding:12px 16px;background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--line)">
-                        <div class="text-xs fw-700 mb-6 row gap-6" style="color:var(--brand)">${icon("volume")}Audio bài nghe</div>
-                        <audio controls src="${esc(cur.audioUrl)}" style="width:100%;height:38px"></audio>
-                      </div>`
-                    : ""
-                }
-
-                ${
-                  p.instruction
-                    ? `<div class="q-instr mb-14"><span class="badge badge-brand mr-8">Chỉ dẫn</span>${esc(p.instruction)}</div>`
-                    : ""
-                }
-
-                ${
-                  p.passage
-                    ? `<div class="passage-box">
-                        <div class="passage-title">${icon("bookOpen")}Bài đọc hiểu</div>
-                        <div class="passage-body">${highlight(p.passage, state.browseQuery)}</div>
-                      </div>`
-                    : ""
-                }
-
-                ${
-                  p.transcript
-                    ? `<details class="transcript-collapse">
-                        <summary class="transcript-toggle">
-                          <span class="row gap-8" style="align-items:center">
-                            ${icon("volume")}
-                            <span>Lời thoại bài nghe (Transcript)</span>
-                          </span>
-                          <span class="badge badge-outline transcript-badge">Bấm để xem / ẩn lời thoại</span>
-                        </summary>
-                        <div class="transcript-body">${highlight(p.transcript, state.browseQuery)}</div>
-                      </details>`
-                    : ""
-                }
-
-                <div class="question-stem mb-24" style="font-size:17px;line-height:1.8;white-space:pre-wrap">${highlight(p.question || cur.en || cur.ja, state.browseQuery)}</div>
-
-                <div class="choice-grid mb-24">
-                  ${cur.options
-                    .map((o) => {
-                      const isAns = cur.answer && cur.answer.includes(o.label);
-                      return `<div class="choice-card ${isAns ? "is-correct" : ""}" style="cursor:default">
-                        <div class="choice-tag">${o.label}</div>
-                        <div class="choice-text">${esc(o.en || o.ja)}</div>
-                        ${isAns ? `<span class="badge badge-good ml-auto">${icon("checkCircle")}Đáp án</span>` : ""}
-                      </div>`;
-                    })
-                    .join("")}
-                </div>
-
-                ${
-                  cur.explanation
-                    ? `<div class="notice good mb-16">
-                        ${icon("checkCircle")}
-                        <div>
-                          <strong>Giải thích đáp án:</strong>
-                          <div class="mt-4" style="white-space:pre-wrap">${esc(cur.explanation)}</div>
-                        </div>
-                      </div>`
-                    : ""
-                }
-
-                <div class="row-between mt-24 pt-16" style="border-top:1px solid var(--line)">
-                  <button class="btn btn-outline" data-action="prevQ" ${state.browseIdx <= 0 ? "disabled" : ""}>${icon("chevronLeft")}Câu trước</button>
-                  <span class="text-sm text-muted nums">${state.browseIdx + 1} / ${filtered.length}</span>
-                  <button class="btn btn-outline" data-action="nextQ" ${state.browseIdx >= filtered.length - 1 ? "disabled" : ""}>Câu sau${icon("chevronRight")}</button>
-                </div>
-              </div>`;
-            })()
-          : `<div class="empty card card-pad"><p>Không tìm thấy câu hỏi phù hợp với bộ lọc.</p></div>`
-      }
-    </div>
-  `;
-
-  root.innerHTML = renderPage({ active: "certs", content });
-
-  bindShell(root, "certs", {
-    filterBrowse: (f) => {
-      state.browseFilter = (f as typeof state.browseFilter) || "all";
-      state.browseIdx = 0;
-      renderBrowse(root);
-    },
-    prevQ: () => {
-      if (state.browseIdx > 0) {
-        state.browseIdx--;
-        renderBrowse(root);
-      }
-    },
-    nextQ: () => {
-      if (state.browseIdx < filtered.length - 1) {
-        state.browseIdx++;
-        renderBrowse(root);
-      }
-    },
-    toggleBookmark: (arg) => {
-      const n = Number(arg);
-      if (n) {
-        toggleBookmark(MODULE_ID, n);
-        renderBrowse(root);
-      }
-    },
-  });
-
-  bindInputs(root, {
-    browseQuery: (val) => {
-      state.browseQuery = val;
-      state.browseIdx = 0;
-      renderBrowse(root);
-    },
-  });
-
-  const stageSel = root.querySelector<HTMLSelectElement>("[data-select='browseStage']");
-  if (stageSel) {
-    stageSel.addEventListener("change", () => {
-      state.stageId = stageSel.value;
-      state.browseIdx = 0;
-      renderBrowse(root);
-    });
-  }
 }
 
 // ------------------------------------------------------------ Màn thiết lập bài làm
@@ -851,32 +632,11 @@ function renderSetup(root: HTMLElement): void {
 export function registerJlptRoutes(): void {
   registerRoute("/jlpt", (root) => renderHome(root));
   registerRoute("/jlpt/:level", (root, params) => renderHome(root, params[0]));
-  registerRoute("/jlpt/browse", (root) => {
-    void withData(
-      root,
-      async () => {
-        await ensureQuestions(state.levelId);
-      },
-      () => renderBrowse(root),
-      `Đang tải câu hỏi JLPT ${state.levelId.toUpperCase()}...`
-    );
-  });
   registerRoute("/jlpt/thiet-lap", (root) => renderSetup(root));
 
   // Hỗ trợ backwards compatibility nếu người dùng gõ /jlpt-n1, /jlpt-n2...
   for (const lvl of ["n1", "n2", "n3", "n4", "n5"]) {
     registerRoute(`/jlpt-${lvl}`, (root) => renderHome(root, lvl));
-    registerRoute(`/jlpt-${lvl}/browse`, (root) => {
-      state.levelId = lvl;
-      void withData(
-        root,
-        async () => {
-          await ensureQuestions(lvl);
-        },
-        () => renderBrowse(root),
-        `Đang tải câu hỏi JLPT ${lvl.toUpperCase()}...`
-      );
-    });
     registerRoute(`/jlpt-${lvl}/thiet-lap`, (root) => {
       state.levelId = lvl;
       renderSetup(root);

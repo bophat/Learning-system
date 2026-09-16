@@ -10,9 +10,9 @@ const STRATEGY_STEPS = [
   {
     step: "1",
     title: "Giai đoạn 1: Làm quen & Hiểu bản chất",
-    mode: "Duyệt câu hỏi",
+    mode: "Luyện tập (số câu ít)",
     badge: "Bắt đầu",
-    text: "Xem từng câu hỏi kèm ngay đáp án tham chiếu. Đọc kỹ đề bài, đối chiếu thuật ngữ song ngữ (nếu có) và lưu lại các câu chưa chắc bằng nút Bookmark.",
+    text: "Chọn Luyện tập với số câu ít (10–20 câu), bấm Kiểm tra ngay sau mỗi câu để đọc giải thích trong khi còn nhớ suy luận của mình. Lưu lại các câu chưa chắc bằng nút Bookmark.",
     tips: "Không cần bấm giờ. Mục tiêu là hiểu rõ ngữ cảnh và yêu cầu của từng dạng câu hỏi.",
   },
   {
@@ -34,14 +34,6 @@ const STRATEGY_STEPS = [
 ];
 
 const MODES = [
-  {
-    iconName: "book",
-    tone: "info",
-    title: "Duyệt câu hỏi",
-    badge: "Ôn nền tảng",
-    text: "Xem lần lượt từng câu kèm đáp án đúng, có ô tìm kiếm và danh sách câu bên cạnh. Phù hợp khi bạn cần đọc hiểu đề bài và tra cứu thuật ngữ mà không bị áp lực thời gian.",
-    bullets: ["Hiện sẵn đáp án tham chiếu", "Tìm kiếm theo từ khoá, mã số câu", "Lưu lại câu quan trọng để xem lại"],
-  },
   {
     iconName: "zap",
     tone: "warn",

@@ -9,7 +9,7 @@
 import { db } from "../services/supabase";
 import { currentUserId } from "./auth";
 
-export type AnswerMode = "practice" | "exam" | "srs" | "flashcard" | "browse";
+export type AnswerMode = "practice" | "exam" | "srs" | "flashcard";
 
 export interface ResponseInput {
   moduleId: string;
